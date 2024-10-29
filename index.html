@@ -52,6 +52,33 @@
             padding: 20px;
             background-color: rgba(0, 0, 0, 0.8);
         }
+        .cart {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            text-align: center;
+            z-index: 10;
+        }
+        .info {
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .add-to-cart {
+            margin-top: 10px;
+            padding: 5px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        .add-to-cart:hover {
+            background-color: #218838;
+        }
     </style>
 </head>
 <body>
@@ -62,6 +89,12 @@
         <h2>Bienvenido a nuestra tienda</h2>
         <p>Explora nuestros productos y encuentra lo que necesitas para tu computadora.</p>
     </div>
+
+    <!-- Carrito de compras -->
+    <div class="cart" id="cart">
+        <p id="cart-items">Carrito: 0 items - Total: $0</p>
+    </div>
+
     <div class="products">
         <div class="product">
             <a href="https://starproyect778.github.io/starproyect/procesador.html" target="_blank">
@@ -69,6 +102,8 @@
                 <h3>Procesador</h3>
                 <p>Intel i9</p>
                 <p>Precio: $300</p>
+                <button class="add-to-cart" onclick="addToCart('Procesador', 300)">Añadir al carrito</button>
+                <div class="info">Información: Potente procesador de última generación.</div>
             </a>
         </div>
         <div class="product">
@@ -77,6 +112,8 @@
                 <h3>Tarjeta Gráfica</h3>
                 <p>Modelo XYZ</p>
                 <p>Precio: $500</p>
+                <button class="add-to-cart" onclick="addToCart('Tarjeta Gráfica', 500)">Añadir al carrito</button>
+                <div class="info">Información: Tarjeta gráfica ideal para juegos.</div>
             </a>
         </div>
         <div class="product">
@@ -85,6 +122,8 @@
                 <h3>Memoria RAM</h3>
                 <p>32GB DDR4</p>
                 <p>Precio: $150</p>
+                <button class="add-to-cart" onclick="addToCart('Memoria RAM', 150)">Añadir al carrito</button>
+                <div class="info">Información: Módulo de RAM de alta velocidad.</div>
             </a>
         </div>
         <div class="product">
@@ -93,6 +132,8 @@
                 <h3>Fuente de Poder</h3>
                 <p>500W</p>
                 <p>Precio: $80</p>
+                <button class="add-to-cart" onclick="addToCart('Fuente de Poder', 80)">Añadir al carrito</button>
+                <div class="info">Información: Fuente de alimentación confiable.</div>
             </a>
         </div>
         <div class="product">
@@ -101,6 +142,8 @@
                 <h3>Placa Madre</h3>
                 <p>Modelo ABC</p>
                 <p>Precio: $120</p>
+                <button class="add-to-cart" onclick="addToCart('Placa Madre', 120)">Añadir al carrito</button>
+                <div class="info">Información: Placa madre compatible con varios procesadores.</div>
             </a>
         </div>
         <div class="product">
@@ -109,6 +152,8 @@
                 <h3>SSD</h3>
                 <p>1TB</p>
                 <p>Precio: $100</p>
+                <button class="add-to-cart" onclick="addToCart('SSD', 100)">Añadir al carrito</button>
+                <div class="info">Información: Unidad de estado sólido rápida y eficiente.</div>
             </a>
         </div>
         <div class="product">
@@ -117,11 +162,30 @@
                 <h3>HDD</h3>
                 <p>1TB</p>
                 <p>Precio: $60</p>
+                <button class="add-to-cart" onclick="addToCart('HDD', 60)">Añadir al carrito</button>
+                <div class="info">Información: Disco duro tradicional para almacenamiento.</div>
             </a>
         </div>
     </div>
     <footer>
         <p>&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        let cartItems = [];
+        let totalPrice = 0;
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push(itemName);
+            totalPrice += itemPrice;
+            updateCart();
+        }
+
+        function updateCart() {
+            const cart = document.getElementById('cart');
+            const cartItemsDisplay = document.getElementById('cart-items');
+            cartItemsDisplay.innerHTML = `Carrito: ${cartItems.length} items - Total: $${totalPrice}`;
+        }
+    </script>
 </body>
 </html>
