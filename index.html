@@ -10,42 +10,55 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: white;
+            background-color: #222222;
             color: #000;
         }
         header {
-            background: black;
+            background: #222222;
             padding: 20px;
             text-align: center;
+            margin: 0;
         }
         header h1 {
             color: white;
             font-size: 2.5em;
             font-weight: bold;
+            margin: 0;
         }
         .info-section {
             text-align: left;
-            margin: 20px;
-            padding: 20px;
-            background: linear-gradient(135deg, #FA5568 70%, #e0b0ff);
+            padding: 40px;
+            background: linear-gradient(135deg, #FA5568 70%, #4B0082);
             color: white;
+            margin: 0;
+            width: 100%;
+            box-sizing: border-box;
         }
         .info-section h2, .info-section h3 {
             color: white;
             margin-top: 30px;
         }
+        .products-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: #222222;
+        }
         .product {
+            background-color: white;
+            width: calc(33.33% - 40px);
             margin: 20px;
             padding: 20px;
-            background-color: white;
-            display: inline-block;
-            width: calc(33% - 60px);
             box-sizing: border-box;
-            color: black;
             border: 2px solid #FA5568;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
         .product h2 {
             color: #ff8c00;
+            margin-top: 0;
         }
         .cart {
             position: fixed;
@@ -53,7 +66,7 @@
             right: 10px;
             background-color: transparent;
             padding: 10px;
-            color: black;
+            color: white;
             transition: all 0.3s ease;
             cursor: pointer;
             z-index: 1000;
@@ -81,18 +94,19 @@
             border: none;
             padding: 10px;
             cursor: pointer;
+            margin-top: auto;
         }
         button:hover {
             background-color: #e67e00;
         }
         @media (max-width: 768px) {
             .product {
-                width: calc(50% - 60px);
+                width: calc(50% - 40px);
             }
         }
         @media (max-width: 480px) {
             .product {
-                width: calc(100% - 60px);
+                width: calc(100% - 40px);
             }
         }
     </style>
@@ -121,81 +135,83 @@
         <p>En StarProyect, soñamos con ser la tienda informática de referencia para aquellos que valoran la calidad, la innovación y el detalle. Aspiramos a integrar continuamente nuevas tecnologías y colaboraciones, especialmente en el entretenimiento y los videojuegos, para ofrecer experiencias únicas que transformen cada compra en una celebración de la cultura pop.</p>
     </div>
 
-    <div class="product">
-        <h2>Gabinete Tie Fighter V1</h2>
-        <p>Exclusivo gabinete personalizado con diseño del legendario caza TIE Avanzado v1. Incluye iluminación LED, detalles auténticos de Star Wars y sistema de refrigeración optimizado.</p>
-        <p>Precio: $800</p>
-        <button onclick="addToCart('Gabinete Tie Fighter', 800)">Agregar al carrito</button>
-    </div>
+    <div class="products-container">
+        <div class="product">
+            <h2>Gabinete Tie Fighter V1</h2>
+            <p>Exclusivo gabinete personalizado con diseño del legendario caza TIE Avanzado v1. Incluye iluminación LED, detalles auténticos de Star Wars y sistema de refrigeración optimizado.</p>
+            <p>Precio: $800</p>
+            <button onclick="addToCart('Gabinete Tie Fighter', 800)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Mantenimiento Preventivo</h2>
-        <p>Servicio completo de limpieza, actualización de software y optimización de rendimiento para mantener tu equipo en óptimas condiciones.</p>
-        <p>Precio: $150</p>
-        <button onclick="addToCart('Mantenimiento Preventivo', 150)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Mantenimiento Preventivo</h2>
+            <p>Servicio completo de limpieza, actualización de software y optimización de rendimiento para mantener tu equipo en óptimas condiciones.</p>
+            <p>Precio: $150</p>
+            <button onclick="addToCart('Mantenimiento Preventivo', 150)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Mantenimiento Correctivo</h2>
-        <p>Diagnóstico y reparación de problemas de hardware y software. Incluye respaldo de datos y garantía del servicio.</p>
-        <p>Precio: $200</p>
-        <button onclick="addToCart('Mantenimiento Correctivo', 200)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Mantenimiento Correctivo</h2>
+            <p>Diagnóstico y reparación de problemas de hardware y software. Incluye respaldo de datos y garantía del servicio.</p>
+            <p>Precio: $200</p>
+            <button onclick="addToCart('Mantenimiento Correctivo', 200)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Tarjeta Gráfica</h2>
-        <p>Potente tarjeta gráfica para gaming y diseño.</p>
-        <p>Precio: $500</p>
-        <button onclick="addToCart('Tarjeta Gráfica', 500)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Tarjeta Gráfica</h2>
+            <p>Potente tarjeta gráfica para gaming y diseño.</p>
+            <p>Precio: $500</p>
+            <button onclick="addToCart('Tarjeta Gráfica', 500)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Procesador</h2>
-        <p>Procesador de última generación para alto rendimiento.</p>
-        <p>Precio: $300</p>
-        <button onclick="addToCart('Procesador', 300)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Procesador</h2>
+            <p>Procesador de última generación para alto rendimiento.</p>
+            <p>Precio: $300</p>
+            <button onclick="addToCart('Procesador', 300)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Disco Duro</h2>
-        <p>Almacenamiento confiable y rápido.</p>
-        <p>Precio: $100</p>
-        <button onclick="addToCart('Disco Duro', 100)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Disco Duro</h2>
+            <p>Almacenamiento confiable y rápido.</p>
+            <p>Precio: $100</p>
+            <button onclick="addToCart('Disco Duro', 100)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Memoria RAM</h2>
-        <p>Memoria RAM de alta velocidad para multitarea eficiente.</p>
-        <p>Precio: $80</p>
-        <button onclick="addToCart('Memoria RAM', 80)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Memoria RAM</h2>
+            <p>Memoria RAM de alta velocidad para multitarea eficiente.</p>
+            <p>Precio: $80</p>
+            <button onclick="addToCart('Memoria RAM', 80)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Fuente de Poder</h2>
-        <p>Fuente de poder confiable para tu PC.</p>
-        <p>Precio: $120</p>
-        <button onclick="addToCart('Fuente de Poder', 120)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Fuente de Poder</h2>
+            <p>Fuente de poder confiable para tu PC.</p>
+            <p>Precio: $120</p>
+            <button onclick="addToCart('Fuente de Poder', 120)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Placa Madre</h2>
-        <p>Placa madre compatible con los últimos procesadores.</p>
-        <p>Precio: $150</p>
-        <button onclick="addToCart('Placa Madre', 150)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>Placa Madre</h2>
+            <p>Placa madre compatible con los últimos procesadores.</p>
+            <p>Precio: $150</p>
+            <button onclick="addToCart('Placa Madre', 150)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>SSD</h2>
-        <p>Unidad de estado sólido para un rendimiento ultrarrápido.</p>
-        <p>Precio: $200</p>
-        <button onclick="addToCart('SSD', 200)">Agregar al carrito</button>
-    </div>
+        <div class="product">
+            <h2>SSD</h2>
+            <p>Unidad de estado sólido para un rendimiento ultrarrápido.</p>
+            <p>Precio: $200</p>
+            <button onclick="addToCart('SSD', 200)">Agregar al carrito</button>
+        </div>
 
-    <div class="product">
-        <h2>Refrigeración Líquida</h2>
-        <p>Sistema de refrigeración líquida para mantener tu PC fresca.</p>
-        <p>Precio: $250</p>
-        <button onclick="addToCart('Refrigeración Líquida', 250)">Agregar al carrito</button>
+        <div class="product">
+            <h2>Refrigeración Líquida</h2>
+            <p>Sistema de refrigeración líquida para mantener tu PC fresca.</p>
+            <p>Precio: $250</p>
+            <button onclick="addToCart('Refrigeración Líquida', 250)">Agregar al carrito</button>
+        </div>
     </div>
 
     <div class="cart">
