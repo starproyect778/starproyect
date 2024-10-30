@@ -6,16 +6,17 @@
     <title>StarProject - Tienda de Componentes Informáticos</title>
     <style>
         body {
-            background-image: url('https://wallpapers.com/images/hd/star-wars-space-background-1920-x-1080-x2ucf2wswzmi80xp.jpg');
-            color: white;
+            background-color: white;
+            color: #333;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
         header {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #4CAF50;
             padding: 20px;
             text-align: center;
+            color: white;
         }
         h1 {
             margin: 0;
@@ -23,6 +24,9 @@
         .welcome {
             padding: 40px;
             text-align: center;
+            color: #4CAF50;
+            background-color: #f0f8ff;
+            border-bottom: 2px solid #4CAF50;
         }
         .products {
             display: flex;
@@ -31,17 +35,19 @@
             padding: 20px;
         }
         .product {
-            background-color: rgba(0, 0, 0, 0.7);
-            border: 1px solid white;
+            background-color: #f8f8f8;
+            border: 1px solid #ddd;
             border-radius: 5px;
             margin: 10px;
             padding: 10px;
             text-align: center;
-            width: 200px;
+            width: 250px;
             transition: transform 0.2s;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
         }
         .product:hover {
             transform: scale(1.05);
+            border-color: #4CAF50;
         }
         img {
             max-width: 100%;
@@ -50,34 +56,58 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: #4CAF50;
+            color: white;
         }
         .cart {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
+            top: 10px;
+            right: 10px;
+            background-color: #4CAF50;
             color: white;
             padding: 10px;
             text-align: center;
+            border-radius: 5px;
+            cursor: pointer;
             z-index: 10;
         }
-        .info {
-            font-size: 12px;
-            margin-top: 10px;
+        .cart:hover {
+            background-color: #45a049;
+        }
+        .cart-details {
+            display: none;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background-color: #f8f8f8;
+            color: #333;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 5px 0;
         }
         .add-to-cart {
             margin-top: 10px;
             padding: 5px;
-            background-color: #28a745;
+            background-color: #4CAF50;
             color: white;
             border: none;
             cursor: pointer;
             border-radius: 3px;
         }
         .add-to-cart:hover {
-            background-color: #218838;
+            background-color: #45a049;
+        }
+        .info {
+            font-size: 12px;
+            margin-top: 10px;
+            color: #666;
         }
     </style>
 </head>
@@ -87,85 +117,51 @@
     </header>
     <div class="welcome">
         <h2>Bienvenido a nuestra tienda</h2>
-        <p>Explora nuestros productos y encuentra lo que necesitas para tu computadora.</p>
+        <p>Encuentra componentes de calidad para armar tu computadora ideal. ¡Explora nuestras opciones de procesadores, tarjetas gráficas, memoria RAM y más!</p>
     </div>
 
-    <!-- Carrito de compras -->
-    <div class="cart" id="cart">
-        <p id="cart-items">Carrito: 0 items - Total: $0</p>
+    <!-- Botón de Carrito -->
+    <div class="cart" onclick="toggleCartDetails()">Carrito</div>
+    <div class="cart-details" id="cart-details">
+        <h3>Carrito de Compras</h3>
+        <div id="cart-items"></div>
+        <p id="total-price">Total: $0</p>
     </div>
 
     <div class="products">
+        <!-- Ejemplo de Producto con Opciones de Modelo -->
         <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/procesador.html" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
-                <h3>Procesador</h3>
-                <p>Intel i9</p>
-                <p>Precio: $300</p>
-                <button class="add-to-cart" onclick="addToCart('Procesador', 300)">Añadir al carrito</button>
-                <div class="info">Información: Potente procesador de última generación.</div>
-            </a>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+            <h3>Procesador</h3>
+            <p>Elige entre Intel y AMD Ryzen</p>
+            <select id="procesadorSelect">
+                <option value="Intel i5-200">Intel i5 - $200</option>
+                <option value="Intel i7-300">Intel i7 - $300</option>
+                <option value="AMD Ryzen 5-250">AMD Ryzen 5 - $250</option>
+                <option value="AMD Ryzen 7-350">AMD Ryzen 7 - $350</option>
+            </select>
+            <button class="add-to-cart" onclick="addToCart('procesadorSelect')">Añadir al carrito</button>
+            <div class="info">Potentes opciones para tareas exigentes y gaming.</div>
         </div>
+        
+        <!-- Tarjeta Gráfica -->
         <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
-                <h3>Tarjeta Gráfica</h3>
-                <p>Modelo XYZ</p>
-                <p>Precio: $500</p>
-                <button class="add-to-cart" onclick="addToCart('Tarjeta Gráfica', 500)">Añadir al carrito</button>
-                <div class="info">Información: Tarjeta gráfica ideal para juegos.</div>
-            </a>
+            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+            <h3>Tarjeta Gráfica</h3>
+            <p>Elige entre NVIDIA y AMD</p>
+            <select id="graficaSelect">
+                <option value="NVIDIA GTX 1660-400">NVIDIA GTX 1660 - $400</option>
+                <option value="NVIDIA RTX 3060-500">NVIDIA RTX 3060 - $500</option>
+                <option value="AMD RX 5700-450">AMD RX 5700 - $450</option>
+                <option value="AMD RX 6700 XT-600">AMD RX 6700 XT - $600</option>
+            </select>
+            <button class="add-to-cart" onclick="addToCart('graficaSelect')">Añadir al carrito</button>
+            <div class="info">Gráficos avanzados para gaming y diseño.</div>
         </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/ram.html" target="_blank">
-                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
-                <h3>Memoria RAM</h3>
-                <p>32GB DDR4</p>
-                <p>Precio: $150</p>
-                <button class="add-to-cart" onclick="addToCart('Memoria RAM', 150)">Añadir al carrito</button>
-                <div class="info">Información: Módulo de RAM de alta velocidad.</div>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/fuente.html" target="_blank">
-                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
-                <h3>Fuente de Poder</h3>
-                <p>500W</p>
-                <p>Precio: $80</p>
-                <button class="add-to-cart" onclick="addToCart('Fuente de Poder', 80)">Añadir al carrito</button>
-                <div class="info">Información: Fuente de alimentación confiable.</div>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/placamadre.html" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
-                <h3>Placa Madre</h3>
-                <p>Modelo ABC</p>
-                <p>Precio: $120</p>
-                <button class="add-to-cart" onclick="addToCart('Placa Madre', 120)">Añadir al carrito</button>
-                <div class="info">Información: Placa madre compatible con varios procesadores.</div>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/sdd.html" target="_blank">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD">
-                <h3>SSD</h3>
-                <p>1TB</p>
-                <p>Precio: $100</p>
-                <button class="add-to-cart" onclick="addToCart('SSD', 100)">Añadir al carrito</button>
-                <div class="info">Información: Unidad de estado sólido rápida y eficiente.</div>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/hdd.html" target="_blank">
-                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="HDD">
-                <h3>HDD</h3>
-                <p>1TB</p>
-                <p>Precio: $60</p>
-                <button class="add-to-cart" onclick="addToCart('HDD', 60)">Añadir al carrito</button>
-                <div class="info">Información: Disco duro tradicional para almacenamiento.</div>
-            </a>
-        </div>
+
+        <!-- Otros Productos (Ejemplos de formato similar) -->
+        <!-- Añade más productos como la RAM, SSD, Fuente de Poder, etc., siguiendo el mismo formato -->
+
     </div>
     <footer>
         <p>&copy; 2024 StarProject. Todos los derechos reservados.</p>
@@ -175,16 +171,32 @@
         let cartItems = [];
         let totalPrice = 0;
 
-        function addToCart(itemName, itemPrice) {
-            cartItems.push(itemName);
+        function addToCart(selectId) {
+            const selectElement = document.getElementById(selectId);
+            const selectedOption = selectElement.options[selectElement.selectedIndex];
+            const itemText = selectedOption.text;
+            const itemPrice = parseInt(selectedOption.value.split('-')[1]);
+
+            cartItems.push({ name: itemText, price: itemPrice });
             totalPrice += itemPrice;
             updateCart();
         }
 
         function updateCart() {
-            const cart = document.getElementById('cart');
-            const cartItemsDisplay = document.getElementById('cart-items');
-            cartItemsDisplay.innerHTML = `Carrito: ${cartItems.length} items - Total: $${totalPrice}`;
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+            cartItems.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                itemElement.innerHTML = `<span>${item.name}</span> <span>$${item.price}</span>`;
+                cartItemsContainer.appendChild(itemElement);
+            });
+            document.getElementById('total-price').innerText = `Total: $${totalPrice}`;
+        }
+
+        function toggleCartDetails() {
+            const cartDetails = document.getElementById('cart-details');
+            cartDetails.style.display = cartDetails.style.display === 'none' || cartDetails.style.display === '' ? 'block' : 'none';
         }
     </script>
 </body>
