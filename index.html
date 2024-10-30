@@ -17,6 +17,13 @@
             color: white;
             padding: 20px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header img {
+            height: 50px;
+            margin-right: 10px;
         }
         h1 {
             margin: 0;
@@ -97,7 +104,10 @@
         .cart.active {
             display: block;
         }
-        .cart-title {
+        .cart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             font-weight: bold;
             margin-bottom: 10px;
         }
@@ -106,10 +116,15 @@
             justify-content: space-between;
             margin-bottom: 5px;
         }
+        .cart-toggle {
+            cursor: pointer;
+            color: #4a90e2;
+        }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://drive.google.com/uc?export=view&id=15oE39rB1ALdt4lxYF0ofpswXD_CZ_gWu" alt="Logo StarProyect">
         <h1>StarProyect - Tienda de Componentes Informáticos</h1>
     </header>
 
@@ -139,7 +154,51 @@
             <button onclick="window.location.href='https://example.com/tarjeta-info'">Información</button>
             <button onclick="addToCart('Tarjeta Gráfica', 500)">Añadir al carrito</button>
         </div>
-        <!-- Aquí puedes agregar los otros componentes con el mismo formato. -->
+        <!-- Memoria RAM -->
+        <div class="product">
+            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+            <h3>Memoria RAM</h3>
+            <p>Kingston 16GB y Corsair 32GB</p>
+            <p>Desde $100</p>
+            <button onclick="window.location.href='https://example.com/ram-info'">Información</button>
+            <button onclick="addToCart('Memoria RAM', 100)">Añadir al carrito</button>
+        </div>
+        <!-- Fuente de Poder -->
+        <div class="product">
+            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            <h3>Fuente de Poder</h3>
+            <p>500W y 750W</p>
+            <p>Desde $80</p>
+            <button onclick="window.location.href='https://example.com/fuente-info'">Información</button>
+            <button onclick="addToCart('Fuente de Poder', 80)">Añadir al carrito</button>
+        </div>
+        <!-- Placa Madre -->
+        <div class="product">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+            <h3>Placa Madre</h3>
+            <p>MSI B450 y ASUS Z390</p>
+            <p>Desde $120</p>
+            <button onclick="window.location.href='https://example.com/placa-info'">Información</button>
+            <button onclick="addToCart('Placa Madre', 120)">Añadir al carrito</button>
+        </div>
+        <!-- SSD -->
+        <div class="product">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD">
+            <h3>SSD</h3>
+            <p>Kingston 500GB y Samsung 1TB</p>
+            <p>Desde $100</p>
+            <button onclick="window.location.href='https://example.com/ssd-info'">Información</button>
+            <button onclick="addToCart('SSD', 100)">Añadir al carrito</button>
+        </div>
+        <!-- HDD -->
+        <div class="product">
+            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="HDD">
+            <h3>HDD</h3>
+            <p>WD Blue 1TB y Seagate 2TB</p>
+            <p>Desde $50</p>
+            <button onclick="window.location.href='https://example.com/hdd-info'">Información</button>
+            <button onclick="addToCart('HDD', 50)">Añadir al carrito</button>
+        </div>
     </div>
 
     <footer>
@@ -148,7 +207,10 @@
 
     <!-- Carrito de compras -->
     <div class="cart" id="cart">
-        <div class="cart-title">Carrito de Compras</div>
+        <div class="cart-header">
+            <span>Carrito de Compras</span>
+            <span class="cart-toggle" onclick="toggleCart()">Minimizar</span>
+        </div>
         <div id="cart-items"></div>
         <div><strong>Total:</strong> $<span id="total-price">0</span></div>
     </div>
@@ -156,6 +218,7 @@
     <script>
         let cartItems = [];
         let totalPrice = 0;
+        let cartMinimized = false;
 
         function addToCart(item, price) {
             cartItems.push({ item, price });
@@ -174,6 +237,12 @@
             });
             document.getElementById('total-price').textContent = totalPrice;
             document.getElementById('cart').classList.add('active');
+        }
+
+        function toggleCart() {
+            const cart = document.getElementById('cart');
+            cartMinimized = !cartMinimized;
+            cart.style.display = cartMinimized ? 'none' : 'block';
         }
     </script>
 </body>
