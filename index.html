@@ -13,19 +13,26 @@
             padding: 0;
         }
         header {
-            background-color: #004080;
-            color: white;
+            background-color: #222;
             padding: 20px;
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
         h1 {
             margin: 0;
+            color: #00bcd4;
+        }
+        .logo {
+            width: 50px;
+            height: auto;
         }
         .welcome {
             padding: 40px;
             text-align: center;
+            background-color: #f1f1f1;
             color: #333;
-            background-color: #f0f8ff;
         }
         .products {
             display: flex;
@@ -34,8 +41,8 @@
             padding: 20px;
         }
         .product {
-            background-color: #f8f8f8;
-            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
             border-radius: 5px;
             margin: 10px;
             padding: 10px;
@@ -50,156 +57,127 @@
             max-width: 100%;
             height: auto;
         }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: #fff;
+        }
         .cart {
             position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: #004080;
-            color: white;
+            top: 20px;
+            right: 20px;
+            background-color: #00bcd4;
             padding: 10px;
             border-radius: 5px;
+            color: #fff;
             cursor: pointer;
         }
         .cart-items {
-            display: none;
-            background-color: white;
-            color: #333;
-            border: 1px solid #ccc;
             position: fixed;
-            top: 50px;
-            right: 10px;
-            width: 200px;
-            max-height: 300px;
-            overflow-y: auto;
+            top: 60px;
+            right: 20px;
+            background-color: #fff;
             padding: 10px;
+            border: 1px solid #ddd;
             border-radius: 5px;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-        .product-list li {
-            margin-bottom: 5px;
-            font-size: 0.9em;
+            color: #333;
+            max-height: 200px;
+            overflow-y: auto;
+            display: none;
         }
     </style>
 </head>
 <body>
     <header>
+        <img src="https://drive.google.com/uc?export=view&id=15oE39rB1ALdt4lxYF0ofpswXD_CZ_gWu" alt="Logo StarProject" class="logo">
         <h1>StarProject - Tienda de Componentes Informáticos</h1>
     </header>
 
     <div class="welcome">
-        <h2>Bienvenido a StarProject</h2>
-        <p>Explora nuestra tienda de componentes de calidad. Encuentra los mejores productos para potenciar tu PC.</p>
+        <h2>Bienvenido a nuestra tienda</h2>
+        <p>Explora nuestros productos y encuentra lo que necesitas para tu computadora.</p>
     </div>
 
-    <div class="cart" onclick="toggleCart()">
-        🛒 Carrito (<span id="cart-count">0</span>)
-    </div>
-    <div class="cart-items" id="cart-items">
-        <h3>Carrito</h3>
-        <ul id="cart-list"></ul>
-        <p><strong>Total:</strong> $<span id="cart-total">0</span></p>
+    <div class="cart" onclick="toggleCart()">🛒 Carrito</div>
+    <div class="cart-items" id="cartItems">
+        <p>Tu carrito está vacío.</p>
     </div>
 
     <div class="products">
+        <!-- Procesador -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/procesador.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/procesador.html" target="_blank">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
                 <h3>Procesador</h3>
-                <p>Modelos: Intel i9, Ryzen 9</p>
+                <p>Intel i9, Ryzen 7</p>
                 <p>Desde: $300</p>
             </a>
-            <button onclick="addToCart('Procesador', 300)">Añadir al carrito</button>
         </div>
+        <!-- Tarjeta Gráfica -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/targetagrafica.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/targetagrafica.html" target="_blank">
                 <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
                 <h3>Tarjeta Gráfica</h3>
-                <p>Modelos: NVIDIA, AMD</p>
+                <p>Modelos NVIDIA, AMD</p>
                 <p>Desde: $500</p>
             </a>
-            <button onclick="addToCart('Tarjeta Gráfica', 500)">Añadir al carrito</button>
         </div>
+        <!-- RAM -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/ram.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/ram.html" target="_blank">
                 <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
                 <h3>Memoria RAM</h3>
-                <p>Modelos: 16GB, 32GB</p>
+                <p>8GB, 16GB, 32GB DDR4</p>
                 <p>Desde: $150</p>
             </a>
-            <button onclick="addToCart('Memoria RAM', 150)">Añadir al carrito</button>
         </div>
+        <!-- Fuente de Poder -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/fuente.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/fuente.html" target="_blank">
                 <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
                 <h3>Fuente de Poder</h3>
-                <p>Modelos: 500W, 750W</p>
+                <p>500W, 750W</p>
                 <p>Desde: $80</p>
             </a>
-            <button onclick="addToCart('Fuente de Poder', 80)">Añadir al carrito</button>
         </div>
+        <!-- Placa Madre -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/placamadre.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/placamadre.html" target="_blank">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
                 <h3>Placa Madre</h3>
-                <p>Modelos: Intel, AMD</p>
+                <p>Modelos ATX, Micro-ATX</p>
                 <p>Desde: $120</p>
             </a>
-            <button onclick="addToCart('Placa Madre', 120)">Añadir al carrito</button>
         </div>
+        <!-- SSD -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/sdd.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/sdd.html" target="_blank">
                 <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD">
                 <h3>SSD</h3>
-                <p>Modelos: 1TB, 2TB</p>
+                <p>500GB, 1TB</p>
                 <p>Desde: $100</p>
             </a>
-            <button onclick="addToCart('SSD', 100)">Añadir al carrito</button>
         </div>
+        <!-- HDD -->
         <div class="product">
-            <a href="https://raw.githubusercontent.com/starproyect778/starproyect/refs/heads/main/hdd.html" target="_blank">
+            <a href="https://github.com/starproyect778/starproyect/raw/main/hdd.html" target="_blank">
                 <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="HDD">
                 <h3>HDD</h3>
-                <p>Modelos: 1TB, 2TB</p>
+                <p>500GB, 1TB</p>
                 <p>Desde: $60</p>
             </a>
-            <button onclick="addToCart('HDD', 60)">Añadir al carrito</button>
         </div>
     </div>
 
-    <footer class="footer">
+    <footer>
         <p>&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
 
     <script>
-        let cart = [];
-        
-        function addToCart(product, price) {
-            cart.push({ product, price });
-            document.getElementById('cart-count').textContent = cart.length;
-            updateCart();
-        }
-
-        function updateCart() {
-            const cartList = document.getElementById('cart-list');
-            cartList.innerHTML = '';
-            let total = 0;
-            cart.forEach(item => {
-                const li = document.createElement('li');
-                li.textContent = `${item.product} - $${item.price}`;
-                cartList.appendChild(li);
-                total += item.price;
-            });
-            document.getElementById('cart-total').textContent = total;
-        }
-
         function toggleCart() {
-            const cartItems = document.getElementById('cart-items');
-            cartItems.style.display = cartItems.style.display === 'block' ? 'none' : 'block';
+            const cart = document.getElementById("cartItems");
+            cart.style.display = cart.style.display === "none" ? "block" : "none";
         }
     </script>
 </body>
