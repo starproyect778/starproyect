@@ -13,7 +13,7 @@
             color: #000;
         }
         header {
-            background-color: rgba(0, 0, 0, 0.7);
+            background: linear-gradient(to bottom, #F59E87, white);
             padding: 20px;
             text-align: center;
         }
@@ -39,21 +39,17 @@
             font-size: 2.5em;
             font-weight: bold;
         }
-        .intro {
-            text-align: center;
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border: 2px solid #ff8c00;
-        }
-        .info {
+        .info-section {
             text-align: left;
             margin: 20px;
             padding: 20px;
             background-color: #fff;
             border: 2px solid #ff8c00;
         }
-        .info ul {
+        .info-section h2 {
+            color: #ff8c00;
+        }
+        .info-section ul {
             list-style-type: disc;
             margin-left: 20px;
         }
@@ -128,12 +124,10 @@
         </div>
     </header>
 
-    <div class="intro">
+    <div class="info-section">
         <h2>Bienvenido a StarProject</h2>
         <p>Tu tienda de confianza para componentes informáticos de alta calidad.</p>
-    </div>
 
-    <div class="info">
         <h2>¿Quiénes somos?</h2>
         <p>En StarProyect, ofrecemos soluciones informáticas completas y de alta calidad. Nos especializamos en servicios de reparación, personalización de equipos y venta de componentes informáticos. Además, contamos con productos únicos, como gabinetes del caza estelar Tie Avanzado 1 de Star Wars, perfectos para los entusiastas de la tecnología y el universo de Star Wars.</p>
 
@@ -147,6 +141,27 @@
 
         <h3>Visión</h3>
         <p>En StarProyect, soñamos con ser la tienda informática de referencia para aquellos que valoran la calidad, la innovación y el detalle. Aspiramos a integrar continuamente nuevas tecnologías y colaboraciones, especialmente en el entretenimiento y los videojuegos, para ofrecer experiencias únicas que transformen cada compra en una celebración de la cultura pop.</p>
+    </div>
+
+    <div class="product">
+        <h2>Gabinete Tie Fighter V1</h2>
+        <p>Exclusivo gabinete personalizado con diseño del legendario caza TIE Avanzado v1. Incluye iluminación LED, detalles auténticos de Star Wars y sistema de refrigeración optimizado.</p>
+        <p>Precio: $800</p>
+        <button onclick="addToCart('Gabinete Tie Fighter', 800)">Agregar al carrito</button>
+    </div>
+
+    <div class="product">
+        <h2>Mantenimiento Preventivo</h2>
+        <p>Servicio completo de limpieza, actualización de software y optimización de rendimiento para mantener tu equipo en óptimas condiciones.</p>
+        <p>Precio: $150</p>
+        <button onclick="addToCart('Mantenimiento Preventivo', 150)">Agregar al carrito</button>
+    </div>
+
+    <div class="product">
+        <h2>Mantenimiento Correctivo</h2>
+        <p>Diagnóstico y reparación de problemas de hardware y software. Incluye respaldo de datos y garantía del servicio.</p>
+        <p>Precio: $200</p>
+        <button onclick="addToCart('Mantenimiento Correctivo', 200)">Agregar al carrito</button>
     </div>
 
     <div class="product">
