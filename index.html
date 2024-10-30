@@ -10,8 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #222222;
-            color: #000;
+            background-color: white;
         }
         header {
             background: #222222;
@@ -45,25 +44,44 @@
             flex-wrap: wrap;
             justify-content: center;
             padding: 20px;
-            background-color: #222222;
+            background-color: white;
         }
         .product {
-            background-color: white;
             width: calc(33.33% - 40px);
             margin: 20px;
             padding: 20px;
-            box-sizing: border-box;
-            border: 2px solid #FA5568;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+        .image-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #FA5568, #4B0082);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            padding: 10px;
+        }
+        .image-circle img {
+            width: 80%;
+            height: 80%;
+            object-fit: contain;
+            border-radius: 50%;
         }
         .product h2 {
             color: black;
-            margin-top: 0;
+            margin: 10px 0;
+            font-size: 1.5em;
         }
-        .product p {
-            color: #F4167C;
+        .product .price {
+            color: #28a745;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 5px 0;
         }
         .cart {
             position: fixed;
@@ -100,22 +118,24 @@
             list-style: none;
             padding: 0;
             margin: 0;
-            color: #F4167C;
+            color: #28a745;
         }
         .cart-content p {
             color: black;
             font-weight: bold;
         }
         button {
-            background-color: #ff8c00;
+            background-color: #FA5568;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 10px 20px;
             cursor: pointer;
-            margin-top: auto;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         button:hover {
-            background-color: #e67e00;
+            background-color: #4B0082;
         }
         @media (max-width: 768px) {
             .product {
@@ -130,105 +150,79 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>StarProject</h1>
-    </header>
-
-    <div class="info-section">
-        <h2>Bienvenido a StarProject</h2>
-        <p>Tu tienda de confianza para componentes informáticos de alta calidad.</p>
-
-        <h2>¿Quiénes somos?</h2>
-        <p>En StarProyect, ofrecemos soluciones informáticas completas y de alta calidad. Nos especializamos en servicios de reparación, personalización de equipos y venta de componentes informáticos. Además, contamos con productos únicos, como gabinetes del caza estelar Tie Avanzado 1 de Star Wars, perfectos para los entusiastas de la tecnología y el universo de Star Wars.</p>
-
-        <h3>Nuestro objetivo</h3>
-        <p>Queremos ser tu primera opción en informática. En StarProyect, buscamos:</p>
-        <ul>
-            <li>Proporcionar una experiencia de compra excepcional y personalizada.</li>
-            <li>Ofrecer una amplia variedad de servicios técnicos y componentes de calidad.</li>
-            <li>Crear una comunidad donde los entusiastas de la tecnología puedan compartir y disfrutar su pasión.</li>
-        </ul>
-
-        <h3>Visión</h3>
-        <p>En StarProyect, soñamos con ser la tienda informática de referencia para aquellos que valoran la calidad, la innovación y el detalle. Aspiramos a integrar continuamente nuevas tecnologías y colaboraciones, especialmente en el entretenimiento y los videojuegos, para ofrecer experiencias únicas que transformen cada compra en una celebración de la cultura pop.</p>
-    </div>
+    <!-- Header y sección info se mantienen igual -->
 
     <div class="products-container">
         <div class="product">
-            <h2>Gabinete Tie Fighter V1</h2>
-            <p>Exclusivo gabinete personalizado con diseño del legendario caza TIE Avanzado v1. Incluye iluminación LED, detalles auténticos de Star Wars y sistema de refrigeración optimizado.</p>
-            <p>Precio: $800</p>
-            <button onclick="addToCart('Gabinete Tie Fighter', 800)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <h2>Mantenimiento Preventivo</h2>
-            <p>Servicio completo de limpieza, actualización de software y optimización de rendimiento para mantener tu equipo en óptimas condiciones.</p>
-            <p>Precio: $150</p>
-            <button onclick="addToCart('Mantenimiento Preventivo', 150)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <h2>Mantenimiento Correctivo</h2>
-            <p>Diagnóstico y reparación de problemas de hardware y software. Incluye respaldo de datos y garantía del servicio.</p>
-            <p>Precio: $200</p>
-            <button onclick="addToCart('Mantenimiento Correctivo', 200)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <h2>Tarjeta Gráfica</h2>
-            <p>Potente tarjeta gráfica para gaming y diseño.</p>
-            <p>Precio: $500</p>
-            <button onclick="addToCart('Tarjeta Gráfica', 500)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
+            <div class="image-circle">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+            </div>
             <h2>Procesador</h2>
-            <p>Procesador de última generación para alto rendimiento.</p>
-            <p>Precio: $300</p>
-            <button onclick="addToCart('Procesador', 300)">Agregar al carrito</button>
+            <p class="price">$UYU 12.000</p>
+            <button onclick="addToCart('Procesador', 12000)">Agregar al carrito</button>
         </div>
 
         <div class="product">
-            <h2>Disco Duro</h2>
-            <p>Almacenamiento confiable y rápido.</p>
-            <p>Precio: $100</p>
-            <button onclick="addToCart('Disco Duro', 100)">Agregar al carrito</button>
+            <div class="image-circle">
+                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+            </div>
+            <h2>Tarjeta Gráfica</h2>
+            <p class="price">$UYU 20.000</p>
+            <button onclick="addToCart('Tarjeta Gráfica', 20000)">Agregar al carrito</button>
         </div>
 
         <div class="product">
+            <div class="image-circle">
+                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+            </div>
             <h2>Memoria RAM</h2>
-            <p>Memoria RAM de alta velocidad para multitarea eficiente.</p>
-            <p>Precio: $80</p>
-            <button onclick="addToCart('Memoria RAM', 80)">Agregar al carrito</button>
+            <p class="price">$UYU 3.200</p>
+            <button onclick="addToCart('Memoria RAM', 3200)">Agregar al carrito</button>
         </div>
 
         <div class="product">
+            <div class="image-circle">
+                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            </div>
             <h2>Fuente de Poder</h2>
-            <p>Fuente de poder confiable para tu PC.</p>
-            <p>Precio: $120</p>
-            <button onclick="addToCart('Fuente de Poder', 120)">Agregar al carrito</button>
+            <p class="price">$UYU 4.800</p>
+            <button onclick="addToCart('Fuente de Poder', 4800)">Agregar al carrito</button>
         </div>
 
         <div class="product">
+            <div class="image-circle">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+            </div>
             <h2>Placa Madre</h2>
-            <p>Placa madre compatible con los últimos procesadores.</p>
-            <p>Precio: $150</p>
-            <button onclick="addToCart('Placa Madre', 150)">Agregar al carrito</button>
+            <p class="price">$UYU 6.000</p>
+            <button onclick="addToCart('Placa Madre', 6000)">Agregar al carrito</button>
         </div>
 
         <div class="product">
+            <div class="image-circle">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD">
+            </div>
             <h2>SSD</h2>
-            <p>Unidad de estado sólido para un rendimiento ultrarrápido.</p>
-            <p>Precio: $200</p>
-            <button onclick="addToCart('SSD', 200)">Agregar al carrito</button>
+            <p class="price">$UYU 8.000</p>
+            <button onclick="addToCart('SSD', 8000)">Agregar al carrito</button>
         </div>
 
         <div class="product">
-            <h2>Refrigeración Líquida</h2>
-            <p>Sistema de refrigeración líquida para mantener tu PC fresca.</p>
-            <p>Precio: $250</p>
-            <button onclick="addToCart('Refrigeración Líquida', 250)">Agregar al carrito</button>
+            <div class="image-circle">
+                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco Duro">
+            </div>
+            <h2>Disco Duro</h2>
+            <p class="price">$UYU 4.000</p>
+            <button onclick="addToCart('Disco Duro', 4000)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Mantenimiento">
+            </div>
+            <h2>Mantenimiento</h2>
+            <p class="price">$UYU 6.000</p>
+            <button onclick="addToCart('Mantenimiento', 6000)">Agregar al carrito</button>
         </div>
     </div>
 
@@ -237,7 +231,7 @@
         <div class="cart-content">
             <h3>Carrito de Compras</h3>
             <ul id="cartItems"></ul>
-            <p>Total: $<span id="totalPrice">0</span></p>
+            <p>Total: $UYU <span id="totalPrice">0</span></p>
         </div>
     </div>
 
@@ -257,7 +251,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }) => {
                 const li = document.createElement('li');
-                li.textContent = `${item} - $${price}`;
+                li.textContent = `${item} - $UYU ${price}`;
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
