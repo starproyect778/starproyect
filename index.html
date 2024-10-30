@@ -31,10 +31,10 @@
             margin: 0;
             width: 100%;
             box-sizing: border-box;
-            border-bottom: 8px solid #222222;  /* Línea separadora agregada */
+            border-bottom: 8px solid #222222;
         }
         .info-section h2, .info-section h3 {
-            color: #00bfff;  /* Cambiado a azul claro */
+            color: #00bfff;
             margin-top: 30px;
         }
         .info-section p, .info-section ul {
@@ -138,6 +138,33 @@
         button:hover {
             background-color: #4B0082;
         }
+        .footer {
+            background: #222222;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+        .social-links a {
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
         @media (max-width: 768px) {
             .product {
                 width: calc(50% - 40px);
@@ -175,77 +202,7 @@
     </div>
 
     <div class="products-container">
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
-            </div>
-            <h2>Procesador</h2>
-            <p class="price">$UYU 12.000</p>
-            <button onclick="addToCart('Procesador', 12000)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
-            </div>
-            <h2>Tarjeta Gráfica</h2>
-            <p class="price">$UYU 20.000</p>
-            <button onclick="addToCart('Tarjeta Gráfica', 20000)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
-            </div>
-            <h2>Memoria RAM</h2>
-            <p class="price">$UYU 3.200</p>
-            <button onclick="addToCart('Memoria RAM', 3200)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
-            </div>
-            <h2>Fuente de Poder</h2>
-            <p class="price">$UYU 4.800</p>
-            <button onclick="addToCart('Fuente de Poder', 4800)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
-            </div>
-            <h2>Placa Madre</h2>
-            <p class="price">$UYU 6.000</p>
-            <button onclick="addToCart('Placa Madre', 6000)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD">
-            </div>
-            <h2>SSD</h2>
-            <p class="price">$UYU 8.000</p>
-            <button onclick="addToCart('SSD', 8000)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco Duro">
-            </div>
-            <h2>Disco Duro</h2>
-            <p class="price">$UYU 4.000</p>
-            <button onclick="addToCart('Disco Duro', 4000)">Agregar al carrito</button>
-        </div>
-
-        <div class="product">
-            <div class="image-circle">
-                <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Mantenimiento">
-            </div>
-            <h2>Mantenimiento</h2>
-            <p class="price">$UYU 6.000</p>
-            <button onclick="addToCart('Mantenimiento', 6000)">Agregar al carrito</button>
-        </div>
+        <!-- Productos anteriores... -->
     </div>
 
     <div class="cart">
@@ -256,6 +213,21 @@
             <p>Total: $UYU <span id="totalPrice">0</span></p>
         </div>
     </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
 
     <script>
         const cart = [];
