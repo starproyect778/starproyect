@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarProject - Tienda de Componentes Informáticos</title>
+    <title>StarProyect - Tienda de Componentes Informáticos</title>
     <style>
         body {
             background-color: #ffffff;
-            color: #333;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            color: #333;
         }
         header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background-color: #222;
+            color: #fff;
             padding: 20px;
-            background-color: #333;
-            color: white;
+            text-align: center;
         }
         header img {
-            height: 50px;
-            margin-right: 15px;
+            width: 80px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+        .title-container {
+            display: inline-block;
+            vertical-align: middle;
         }
         h1 {
             margin: 0;
-            font-size: 1.8em;
+            font-size: 24px;
             text-align: center;
         }
-        .welcome {
+        .who-we-are {
+            background-color: #f8f8f8;
             padding: 40px;
             text-align: center;
-            background-color: #f7f7f7;
-            color: #555;
         }
         .products {
             display: flex;
@@ -42,150 +44,104 @@
             padding: 20px;
         }
         .product {
-            background-color: #f5f5f5;
+            background-color: #f2f2f2;
             border: 1px solid #ddd;
             border-radius: 5px;
             margin: 10px;
             padding: 10px;
             text-align: center;
-            width: 200px;
+            width: 220px;
             transition: transform 0.2s;
+            position: relative;
         }
         .product:hover {
             transform: scale(1.05);
         }
-        img {
+        .product img {
             max-width: 100%;
             height: auto;
+        }
+        .product button {
+            background-color: #0066cc;
+            border: none;
+            color: white;
+            padding: 8px 12px;
+            margin-top: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .product button:hover {
+            background-color: #004b99;
         }
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #333;
-            color: white;
-        }
-        .cart-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        #cart-items {
-            display: none;
-            position: fixed;
-            top: 60px;
-            right: 20px;
-            background-color: white;
-            color: #333;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            width: 250px;
+            background-color: #222;
+            color: #fff;
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="https://thumbs.dreamstime.com/z/tie-fighter-avanzado-concepto-de-guerra-estrella-icono-s%C3%B3lido-luchador-arranque-imperial-signo-vector-sobre-el-estilo-glifo-228926805.jpg?ct=jpeg" alt="StarProject Logo">
-        <h1>StarProject - Tienda de Componentes Informáticos</h1>
+        <img src="https://via.placeholder.com/80" alt="StarProyect Logo">
+        <div class="title-container">
+            <h1>StarProyect - Tienda de Componentes Informáticos</h1>
+        </div>
     </header>
-    <div class="welcome">
-        <h2>Bienvenido a nuestra tienda</h2>
-        <p>Explora nuestros productos y encuentra lo que necesitas para tu computadora.</p>
-    </div>
+
+    <!-- Sección "Quiénes somos" -->
+    <section class="who-we-are">
+        <h2>¿Quiénes somos?</h2>
+        <p>En StarProyect, ofrecemos soluciones informáticas completas y de alta calidad. Nos especializamos en servicios de reparación, personalización de equipos y venta de componentes informáticos. Además, contamos con productos únicos, como gabinetes del caza estelar Tie Avanzado 1 de Star Wars, perfectos para los entusiastas de la tecnología y el universo de Star Wars.</p>
+        <h3>Nuestro objetivo</h3>
+        <ul>
+            <li>Proporcionar una experiencia de compra excepcional y personalizada.</li>
+            <li>Ofrecer una amplia variedad de servicios técnicos y componentes de calidad.</li>
+            <li>Crear una comunidad donde los entusiastas de la tecnología puedan compartir y disfrutar su pasión.</li>
+        </ul>
+        <h3>Visión</h3>
+        <p>En StarProyect, soñamos con ser la tienda informática de referencia para aquellos que valoran la calidad, la innovación y el detalle. Aspiramos a integrar continuamente nuevas tecnologías y colaboraciones, especialmente en el entretenimiento y los videojuegos, para ofrecer experiencias únicas que transformen cada compra en una celebración de la cultura pop.</p>
+    </section>
+
+    <!-- Sección de Productos -->
     <div class="products">
         <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/procesador.html" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
-                <h3>Procesador Intel</h3>
-                <p>Intel i9 - Precio: $300</p>
-                <button onclick="addToCart('Procesador Intel', 300)">Añadir al Carrito</button>
+            <img src="https://via.placeholder.com/150" alt="Procesador">
+            <h3>Procesador</h3>
+            <p>Modelos:</p>
+            <ul>
+                <li>Intel i9 - $300</li>
+                <li>Ryzen 9 - $350</li>
+            </ul>
+            <button onclick="addToCart('Procesador', 300)">Añadir al carrito</button>
+            <a href="https://link-procesador.com" target="_blank">
+                <button>Ver Información</button>
             </a>
         </div>
         <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/tarjeta_grafica.html" target="_blank">
-                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
-                <h3>Tarjeta Gráfica</h3>
-                <p>Modelo XYZ - Precio: $500</p>
-                <button onclick="addToCart('Tarjeta Gráfica', 500)">Añadir al Carrito</button>
+            <img src="https://via.placeholder.com/150" alt="Tarjeta Gráfica">
+            <h3>Tarjeta Gráfica</h3>
+            <p>Modelos:</p>
+            <ul>
+                <li>Modelo XYZ - $500</li>
+                <li>Modelo ABC - $450</li>
+            </ul>
+            <button onclick="addToCart('Tarjeta Gráfica', 500)">Añadir al carrito</button>
+            <a href="https://link-tarjeta-grafica.com" target="_blank">
+                <button>Ver Información</button>
             </a>
         </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/ram.html" target="_blank">
-                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
-                <h3>Memoria RAM</h3>
-                <p>32GB DDR4 - Precio: $150</p>
-                <button onclick="addToCart('Memoria RAM', 150)">Añadir al Carrito</button>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/fuente.html" target="_blank">
-                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
-                <h3>Fuente de Poder</h3>
-                <p>500W - Precio: $80</p>
-                <button onclick="addToCart('Fuente de Poder', 80)">Añadir al Carrito</button>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/placamadre.html" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
-                <h3>Placa Madre</h3>
-                <p>Modelo ABC - Precio: $120</p>
-                <button onclick="addToCart('Placa Madre', 120)">Añadir al Carrito</button>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/ssd.html" target="_blank">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD">
-                <h3>SSD</h3>
-                <p>1TB - Precio: $100</p>
-                <button onclick="addToCart('SSD', 100)">Añadir al Carrito</button>
-            </a>
-        </div>
-        <div class="product">
-            <a href="https://starproyect778.github.io/starproyect/hdd.html" target="_blank">
-                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="HDD">
-                <h3>HDD</h3>
-                <p>1TB - Precio: $60</p>
-                <button onclick="addToCart('HDD', 60)">Añadir al Carrito</button>
-            </a>
-        </div>
+        <!-- Más productos aquí -->
     </div>
-    <button class="cart-button" onclick="toggleCart()">Carrito</button>
-    <div id="cart-items">
-        <h2>Carrito de Compras</h2>
-        <ul id="cart-list"></ul>
-        <p id="total-price">Total: $0</p>
-    </div>
+
     <footer>
-        <p>&copy; 2024 StarProject. Todos los derechos reservados.</p>
+        <p>&copy; 2024 StarProyect. Todos los derechos reservados.</p>
     </footer>
+
     <script>
-        const cart = [];
-        function toggleCart() {
-            const cartDiv = document.getElementById("cart-items");
-            cartDiv.style.display = cartDiv.style.display === "none" ? "block" : "none";
-        }
-        function addToCart(item, price) {
-            cart.push({ item, price });
-            updateCartDisplay();
-        }
-        function updateCartDisplay() {
-            const cartList = document.getElementById("cart-list");
-            cartList.innerHTML = "";
-            let total = 0;
-            cart.forEach(({ item, price }) => {
-                const li = document.createElement("li");
-                li.textContent = `${item} - $${price}`;
-                cartList.appendChild(li);
-                total += price;
-            });
-            document.getElementById("total-price").textContent = `Total: $${total}`;
+        function addToCart(product, price) {
+            alert(product + " ha sido añadido al carrito por $" + price);
         }
     </script>
 </body>
