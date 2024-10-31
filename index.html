@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="StarProject - Tu tienda de confianza para componentes de PC en Uruguay. Procesadores, RAM, placas madre, SSDs y más.">
-    <meta name="keywords" content="componentes PC, hardware, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay">
+    <meta name="keywords" content="componentes PC, hardware, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay, Star Wars">
     <meta name="author" content="StarProject">
     <meta name="robots" content="index, follow">
     <meta property="og:title" content="StarProject - Componentes de PC">
@@ -40,6 +40,7 @@
             overflow-x: hidden;
         }
 
+        /* Header Styles */
         header {
             background: var(--primary-gradient);
             padding: 20px;
@@ -56,17 +57,17 @@
             animation: fadeInDown 0.8s ease-out;
         }
 
-        .vision-section {
-            background: var(--primary-gradient);
+        /* About Section Styles */
+        .about-section {
+            background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
             color: white;
             padding: 60px 20px;
-            text-align: center;
             margin: 0;
             position: relative;
             overflow: hidden;
         }
 
-        .vision-section::before {
+        .about-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -78,25 +79,45 @@
             animation: backgroundMove 30s linear infinite;
         }
 
-        .vision-content {
+        .about-content {
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
             z-index: 1;
+            text-align: center;
         }
 
-        .vision-section h2 {
+        .about-content h2 {
             color: #00bfff;
             margin-bottom: 30px;
             font-size: 2.2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            padding: 0 20px;
+        }
+
+        /* Vision Section Styles */
+        .vision-section {
+            background: var(--primary-gradient);
+            padding: 60px 20px;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
         .vision-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin-top: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .vision-item {
@@ -116,9 +137,21 @@
             font-size: 2.5em;
             color: #00bfff;
             margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .vision-item h3 {
+            color: #00bfff;
+            margin: 15px 0;
+            font-size: 1.5em;
+        }
+
+        .vision-item p {
+            color: white;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Products Grid Styles */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -138,36 +171,16 @@
             overflow: hidden;
         }
 
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--hover-gradient);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            z-index: 1;
-        }
-
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
 
-        .product-card:hover::before {
-            opacity: 0.05;
-        }
-
         .product-card img {
-            width: 180px;
-            height: 180px;
+            width: 100%;
+            height: 200px;
             object-fit: contain;
-            margin: 0 auto 20px;
-            display: block;
-            position: relative;
-            z-index: 2;
+            margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
 
@@ -179,30 +192,24 @@
             color: #4b6cb7;
             margin: 15px 0;
             font-size: 1.8em;
-            position: relative;
-            z-index: 2;
         }
 
         .product-card p {
             color: #666;
             margin: 15px 0;
             font-size: 1.1em;
-            position: relative;
-            z-index: 2;
         }
 
+        /* Button Styles */
         .button-container {
             display: flex;
             gap: 15px;
             margin-top: 20px;
-            position: relative;
-            z-index: 2;
         }
 
         .buy-button, .info-button {
             flex: 1;
             padding: 12px 20px;
-            text-align: center;
             border-radius: 8px;
             text-decoration: none;
             font-weight: bold;
@@ -210,8 +217,7 @@
             border: none;
             cursor: pointer;
             font-size: 1.1em;
-            position: relative;
-            overflow: hidden;
+            text-align: center;
         }
 
         .buy-button {
@@ -229,7 +235,7 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* Estilos del carrito */
+        /* Cart Styles */
         .cart {
             position: fixed;
             top: 20px;
@@ -268,37 +274,6 @@
         .cart.active .cart-content {
             display: block;
             animation: slideIn 0.3s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                transform: translateY(-20px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes backgroundMove {
-            from {
-                background-position: 0 0;
-            }
-            to {
-                background-position: 100% 100%;
-            }
         }
 
         .cart-items {
@@ -381,18 +356,56 @@
             color: rgba(255,255,255,0.8);
         }
 
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                padding: 0 20px;
+            }
+
             .products-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
+
             .cart-content {
                 width: 90%;
                 right: 5%;
                 min-width: unset;
-            }
-            .vision-grid {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -402,28 +415,32 @@
         <h1>StarProject</h1>
     </header>
 
+    <!-- Sección About -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>¿Qué es StarProyect?</h2>
+            <p>StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
+            <p>Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
+        </div>
+    </section>
+
     <!-- Sección de Visión -->
     <section class="vision-section">
-        <div class="vision-content">
-            <h2>Nuestra Visión</h2>
-            <p>En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
-            
-            <div class="vision-grid">
-                <div class="vision-item">
-                    <i class="fas fa-bullseye"></i>
-                    <h3>Objetivo</h3>
-                    <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
-                </div>
-                <div class="vision-item">
-                    <i class="fas fa-handshake"></i>
-                    <h3>Compromiso</h3>
-                    <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
-                </div>
-                <div class="vision-item">
-                    <i class="fas fa-star"></i>
-                    <h3>Valores</h3>
-                    <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
-                </div>
+        <div class="vision-grid">
+            <div class="vision-item">
+                <i class="fas fa-bullseye"></i>
+                <h3>Objetivo</h3>
+                <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+            </div>
+            <div class="vision-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Compromiso</h3>
+                <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+            </div>
+            <div class="vision-item">
+                <i class="fas fa-star"></i>
+                <h3>Valores</h3>
+                <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
             </div>
         </div>
     </section>
@@ -469,7 +486,7 @@
             <p>Alto rendimiento para gaming</p>
             <div class="button-container">
                 <button onclick="addToCart('Tarjeta Gráfica', 35000)" class="buy-button">Añadir al carrito</button>
-                <a href="#" class="info-button">
+                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
             </div>
@@ -547,9 +564,6 @@
             <p>Servicio técnico especializado</p>
             <div class="button-container">
                 <button onclick="addToCart('Servicio de Mantenimiento', 3000)" class="buy-button">Añadir al carrito</button>
-                <button class="info-button" disabled style="opacity: 0.7;">
-                    <i class="fas fa-info-circle"></i> Info
-                </button>
             </div>
         </div>
     </div>
