@@ -107,6 +107,23 @@
             padding: 20px;
             z-index: 1;
             border-radius: 5px;
+            position: relative;
+            padding-top: 30px;
+        }
+        .minimize-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #808080;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        .minimize-button:hover {
+            color: #4b6cb7;
         }
         .cart.active .cart-content {
             display: block;
@@ -307,6 +324,7 @@
     <div class="cart">
         <i class="fas fa-shopping-cart cart-icon"></i>
         <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
             <ul id="cartItems"></ul>
             <p>Total: $UYU <span id="totalPrice">0</span></p>
@@ -369,6 +387,11 @@
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
         }
 
         function showCheckoutForm() {
