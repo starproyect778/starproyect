@@ -301,29 +301,6 @@
             }
         }
 
-        .minimize-button {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: none;
-            border: none;
-            color: #666;
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-
-        .minimize-button:hover {
-            color: #4b6cb7;
-        }
-
-        .cart-content h3 {
-            color: #4b6cb7;
-            margin: 0 0 20px;
-            padding-right: 30px;
-            font-size: 1.5em;
-        }
-
         .cart-items {
             list-style: none;
             padding: 0;
@@ -340,30 +317,6 @@
             border-bottom: 1px solid #eee;
         }
 
-        .cart-item-info {
-            flex-grow: 1;
-        }
-
-        .cart-item-name {
-            color: #333;
-            font-weight: bold;
-        }
-
-        .cart-item-price {
-            color: #28a745;
-        }
-
-        .remove-item {
-            color: #dc3545;
-            cursor: pointer;
-            padding: 5px;
-            transition: transform 0.2s ease;
-        }
-
-        .remove-item:hover {
-            transform: scale(1.2);
-        }
-
         .cart-total {
             display: flex;
             justify-content: space-between;
@@ -378,9 +331,9 @@
         .checkout-button {
             background: var(--primary-gradient);
             color: white;
-            border: none;
             width: 100%;
             padding: 15px;
+            border: none;
             border-radius: 8px;
             font-size: 1.1em;
             font-weight: bold;
@@ -404,25 +357,11 @@
             overflow: hidden;
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-        }
-
         .social-links {
             display: flex;
             justify-content: center;
             gap: 30px;
             margin: 20px 0;
-            position: relative;
-            z-index: 1;
         }
 
         .social-links a {
@@ -434,36 +373,26 @@
 
         .social-links a:hover {
             transform: scale(1.2) rotate(8deg);
-            text-shadow: 0 0 15px rgba(255,255,255,0.8);
         }
 
         .copyright {
             margin-top: 20px;
-            font-size: 1em;
+            font-size: 0.9em;
             color: rgba(255,255,255,0.8);
-            position: relative;
-            z-index: 1;
         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                padding: 20px;
             }
-
             .cart-content {
                 width: 90%;
                 right: 5%;
                 min-width: unset;
             }
-
             .vision-grid {
                 grid-template-columns: 1fr;
-            }
-
-            header h1 {
-                font-size: 2em;
             }
         }
     </style>
@@ -473,7 +402,7 @@
         <h1>StarProject</h1>
     </header>
 
-    <!-- Sección de Visión y Objetivo -->
+    <!-- Sección de Visión -->
     <section class="vision-section">
         <div class="vision-content">
             <h2>Nuestra Visión</h2>
@@ -499,7 +428,7 @@
         </div>
     </section>
 
-    <!-- Carrito de Compras -->
+    <!-- Carrito -->
     <div class="cart">
         <i class="fas fa-shopping-cart cart-icon"></i>
         <div class="cart-content">
@@ -518,32 +447,55 @@
         </div>
     </div>
 
+    <!-- Grid de Productos -->
     <div class="products-grid">
         <!-- Procesador -->
         <div class="product-card">
-            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/procesador.png" 
-                 alt="Procesador"
-                 loading="lazy">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
             <h2>Procesadores</h2>
             <p>AMD e Intel de última generación</p>
             <div class="button-container">
-                <a href="procesador.html" class="buy-button">Comprar</a>
+                <button onclick="addToCart('Procesador', 25000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
             </div>
         </div>
 
-        <!-- RAM -->
+        <!-- Tarjeta Gráfica -->
         <div class="product-card">
-            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/ram.png" 
-                 alt="Memoria RAM"
-                 loading="lazy">
+            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+            <h2>Tarjeta Gráfica</h2>
+            <p>Alto rendimiento para gaming</p>
+            <div class="button-container">
+                <button onclick="addToCart('Tarjeta Gráfica', 35000)" class="buy-button">Añadir al carrito</button>
+                <a href="#" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Memoria RAM -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
             <h2>Memorias RAM</h2>
             <p>DDR4 y DDR5 de alto rendimiento</p>
             <div class="button-container">
-                <a href="ram.html" class="buy-button">Comprar</a>
+                <button onclick="addToCart('Memoria RAM', 15000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Fuente de Poder -->
+        <div class="product-card">
+            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            <h2>Fuentes de Poder</h2>
+            <p>Certificación 80 Plus, alta eficiencia</p>
+            <div class="button-container">
+                <button onclick="addToCart('Fuente de Poder', 12000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
             </div>
@@ -551,13 +503,11 @@
 
         <!-- Placa Madre -->
         <div class="product-card">
-            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/placa.png" 
-                 alt="Placa Madre"
-                 loading="lazy">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
             <h2>Placas Madre</h2>
             <p>Para AMD e Intel, últimos chipsets</p>
             <div class="button-container">
-                <a href="placa.html" class="buy-button">Comprar</a>
+                <button onclick="addToCart('Placa Madre', 18000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -566,13 +516,11 @@
 
         <!-- SSD -->
         <div class="product-card">
-            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/ssd.png" 
-                 alt="Disco SSD"
-                 loading="lazy">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
             <h2>Discos SSD</h2>
             <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
             <div class="button-container">
-                <a href="ssd.html" class="buy-button">Comprar</a>
+                <button onclick="addToCart('Disco SSD', 8000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -581,35 +529,32 @@
 
         <!-- HDD -->
         <div class="product-card">
-            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/hdd.png" 
-                 alt="Disco HDD"
-                 loading="lazy">
+            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
             <h2>Discos HDD</h2>
             <p>Gran capacidad de almacenamiento</p>
             <div class="button-container">
-                <a href="hdd.html" class="buy-button">Comprar</a>
+                <button onclick="addToCart('Disco HDD', 5000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
             </div>
         </div>
 
-        <!-- Fuente -->
+        <!-- Mantenimiento -->
         <div class="product-card">
-            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/fuente.png" 
-                 alt="Fuente de Poder"
-                 loading="lazy">
-            <h2>Fuentes de Poder</h2>
-            <p>Certificación 80 Plus, alta eficiencia</p>
+            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+            <h2>Mantenimiento</h2>
+            <p>Servicio técnico especializado</p>
             <div class="button-container">
-                <a href="fuente.html" class="buy-button">Comprar</a>
-                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
+                <button onclick="addToCart('Servicio de Mantenimiento', 3000)" class="buy-button">Añadir al carrito</button>
+                <button class="info-button" disabled style="opacity: 0.7;">
                     <i class="fas fa-info-circle"></i> Info
-                </a>
+                </button>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="social-links">
             <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
@@ -671,13 +616,12 @@
                 alert('El carrito está vacío');
                 return;
             }
-            // Aquí iría la lógica para mostrar el formulario de checkout
-            alert('Implementar formulario de checkout');
+            alert(`Total a pagar: $UYU ${totalPrice}\nGracias por tu compra!`);
+            cart.length = 0;
+            totalPrice = 0;
+            updateCart();
+            document.querySelector('.cart').classList.remove('active');
         }
-
-        document.querySelector('.cart-content').addEventListener('click', function(event) {
-            event.stopPropagation();
-        });
 
         document.querySelector('.cart-icon').addEventListener('click', function(event) {
             event.stopPropagation();
@@ -688,28 +632,6 @@
             const cart = document.querySelector('.cart');
             if (!cart.contains(event.target)) {
                 cart.classList.remove('active');
-            }
-        });
-
-        // Lazy loading de imágenes
-        document.addEventListener("DOMContentLoaded", function() {
-            var lazyImages = [].slice.call(document.querySelectorAll("img[loading='lazy']"));
-
-            if ("IntersectionObserver" in window) {
-                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.removeAttribute("loading");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
             }
         });
     </script>
