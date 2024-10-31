@@ -3,112 +3,417 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StarProject - Componentes de PC</title>
+    <meta name="description" content="StarProject - Tu tienda de confianza para componentes de PC en Uruguay. Procesadores, RAM, placas madre, SSDs y más.">
+    <meta name="keywords" content="componentes PC, hardware, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay">
+    <meta name="author" content="StarProject">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="StarProject - Componentes de PC">
+    <meta property="og:description" content="Tu tienda de confianza para componentes de PC en Uruguay">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="https://starproyect778.github.io/starproyect/">
+    
+    <title>StarProject - Componentes de PC en Uruguay</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        :root {
+            --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            --secondary-gradient: linear-gradient(135deg, #28a745 0%, #145a23 100%);
+            --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            --hover-gradient: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+        }
+
+        * {
             margin: 0;
             padding: 0;
-            background-color: white;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            overflow-x: hidden;
         }
 
         header {
-            background: #222222;
+            background: var(--primary-gradient);
             padding: 20px;
             text-align: center;
-            margin: 0;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
             color: white;
             font-size: 2.5em;
             font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        .vision-section {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
             margin: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 3em 3em;
+            animation: backgroundMove 30s linear infinite;
+        }
+
+        .vision-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .vision-section h2 {
+            color: #00bfff;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .vision-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .vision-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .vision-item i {
+            font-size: 2.5em;
+            color: #00bfff;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .product-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-            text-align: center;
+            background: var(--card-gradient);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--hover-gradient);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 1;
         }
 
         .product-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .product-card:hover::before {
+            opacity: 0.05;
         }
 
         .product-card img {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             object-fit: contain;
-            margin-bottom: 15px;
+            margin: 0 auto 20px;
+            display: block;
+            position: relative;
+            z-index: 2;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
         }
 
         .product-card h2 {
             color: #4b6cb7;
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 1.8em;
+            position: relative;
+            z-index: 2;
         }
 
         .product-card p {
             color: #666;
-            margin: 10px 0;
+            margin: 15px 0;
+            font-size: 1.1em;
+            position: relative;
+            z-index: 2;
         }
 
         .button-container {
             display: flex;
-            gap: 10px;
-            margin-top: 15px;
+            gap: 15px;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
         }
 
         .buy-button, .info-button {
             flex: 1;
-            padding: 10px;
+            padding: 12px 20px;
             text-align: center;
-            border-radius: 5px;
+            border-radius: 8px;
             text-decoration: none;
+            font-weight: bold;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            font-size: 1em;
+            font-size: 1.1em;
+            position: relative;
+            overflow: hidden;
         }
 
         .buy-button {
-            background-color: #4b6cb7;
+            background: var(--primary-gradient);
             color: white;
         }
 
         .info-button {
-            background-color: #28a745;
+            background: var(--secondary-gradient);
             color: white;
         }
 
         .buy-button:hover, .info-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        .info-button i {
-            margin-right: 5px;
+        /* Estilos del carrito */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
         }
 
+        .cart-icon {
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-content {
+            display: none;
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            min-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 25px;
+            z-index: 1001;
+        }
+
+        .cart.active .cart-content {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        .minimize-button {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: #666;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .minimize-button:hover {
+            color: #4b6cb7;
+        }
+
+        .cart-content h3 {
+            color: #4b6cb7;
+            margin: 0 0 20px;
+            padding-right: 30px;
+            font-size: 1.5em;
+        }
+
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-item-info {
+            flex-grow: 1;
+        }
+
+        .cart-item-name {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .cart-item-price {
+            color: #28a745;
+        }
+
+        .remove-item {
+            color: #dc3545;
+            cursor: pointer;
+            padding: 5px;
+            transition: transform 0.2s ease;
+        }
+
+        .remove-item:hover {
+            transform: scale(1.2);
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+        }
+
+        .checkout-button {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Footer Styles */
         .footer {
-            background: #222222;
-            padding: 30px 20px;
+            background: var(--primary-gradient);
+            padding: 40px 20px;
             color: white;
             text-align: center;
-            margin-top: 40px;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 3em 3em;
+            animation: backgroundMove 30s linear infinite;
         }
 
         .social-links {
@@ -116,28 +421,49 @@
             justify-content: center;
             gap: 30px;
             margin: 20px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .social-links a {
             color: white;
-            font-size: 28px;
+            font-size: 32px;
             text-decoration: none;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
 
         .social-links a:hover {
-            transform: scale(1.2);
+            transform: scale(1.2) rotate(8deg);
+            text-shadow: 0 0 15px rgba(255,255,255,0.8);
         }
 
         .copyright {
             margin-top: 20px;
-            font-size: 0.9em;
-            color: #888;
+            font-size: 1em;
+            color: rgba(255,255,255,0.8);
+            position: relative;
+            z-index: 1;
         }
 
+        /* Responsive Design */
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                padding: 20px;
+            }
+
+            .cart-content {
+                width: 90%;
+                right: 5%;
+                min-width: unset;
+            }
+
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            header h1 {
+                font-size: 2em;
             }
         }
     </style>
@@ -147,10 +473,57 @@
         <h1>StarProject</h1>
     </header>
 
+    <!-- Sección de Visión y Objetivo -->
+    <section class="vision-section">
+        <div class="vision-content">
+            <h2>Nuestra Visión</h2>
+            <p>En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
+            
+            <div class="vision-grid">
+                <div class="vision-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Objetivo</h3>
+                    <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Compromiso</h3>
+                    <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Valores</h3>
+                    <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito de Compras -->
+    <div class="cart">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">
+                <i class="fas fa-minus"></i>
+            </button>
+            <h3>Carrito de Compras</h3>
+            <ul class="cart-items" id="cartItems"></ul>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$UYU <span id="totalPrice">0</span></span>
+            </div>
+            <button onclick="showCheckoutForm()" class="checkout-button">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
     <div class="products-grid">
         <!-- Procesador -->
         <div class="product-card">
-            <img src="img/procesador.png" alt="Procesador">
+            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/procesador.png" 
+                 alt="Procesador"
+                 loading="lazy">
             <h2>Procesadores</h2>
             <p>AMD e Intel de última generación</p>
             <div class="button-container">
@@ -163,7 +536,9 @@
 
         <!-- RAM -->
         <div class="product-card">
-            <img src="img/ram.png" alt="Memoria RAM">
+            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/ram.png" 
+                 alt="Memoria RAM"
+                 loading="lazy">
             <h2>Memorias RAM</h2>
             <p>DDR4 y DDR5 de alto rendimiento</p>
             <div class="button-container">
@@ -176,7 +551,9 @@
 
         <!-- Placa Madre -->
         <div class="product-card">
-            <img src="img/placa.png" alt="Placa Madre">
+            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/placa.png" 
+                 alt="Placa Madre"
+                 loading="lazy">
             <h2>Placas Madre</h2>
             <p>Para AMD e Intel, últimos chipsets</p>
             <div class="button-container">
@@ -189,7 +566,9 @@
 
         <!-- SSD -->
         <div class="product-card">
-            <img src="img/ssd.png" alt="Disco SSD">
+            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/ssd.png" 
+                 alt="Disco SSD"
+                 loading="lazy">
             <h2>Discos SSD</h2>
             <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
             <div class="button-container">
@@ -202,7 +581,9 @@
 
         <!-- HDD -->
         <div class="product-card">
-            <img src="img/hdd.png" alt="Disco HDD">
+            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/hdd.png" 
+                 alt="Disco HDD"
+                 loading="lazy">
             <h2>Discos HDD</h2>
             <p>Gran capacidad de almacenamiento</p>
             <div class="button-container">
@@ -215,7 +596,9 @@
 
         <!-- Fuente -->
         <div class="product-card">
-            <img src="img/fuente.png" alt="Fuente de Poder">
+            <img src="https://raw.githubusercontent.com/StarProyect778/starproyect/main/img/fuente.png" 
+                 alt="Fuente de Poder"
+                 loading="lazy">
             <h2>Fuentes de Poder</h2>
             <p>Certificación 80 Plus, alta eficiencia</p>
             <div class="button-container">
@@ -241,5 +624,94 @@
         </div>
         <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Scripts -->
+    <script>
+        const cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            totalPrice += price;
+            updateCart();
+            document.querySelector('.cart').classList.add('active');
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach(({ item, price }, index) => {
+                const li = document.createElement('li');
+                li.className = 'cart-item';
+                li.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item}</div>
+                        <div class="cart-item-price">$UYU ${price}</div>
+                    </div>
+                    <i class="fas fa-times remove-item" onclick="removeItem(${index})"></i>
+                `;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        function removeItem(index) {
+            totalPrice -= cart[index].price;
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        function showCheckoutForm() {
+            if (cart.length === 0) {
+                alert('El carrito está vacío');
+                return;
+            }
+            // Aquí iría la lógica para mostrar el formulario de checkout
+            alert('Implementar formulario de checkout');
+        }
+
+        document.querySelector('.cart-content').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        document.querySelector('.cart-icon').addEventListener('click', function(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const cart = document.querySelector('.cart');
+            if (!cart.contains(event.target)) {
+                cart.classList.remove('active');
+            }
+        });
+
+        // Lazy loading de imágenes
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img[loading='lazy']"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.removeAttribute("loading");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
 </body>
 </html>
