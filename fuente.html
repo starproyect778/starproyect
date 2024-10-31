@@ -3,29 +3,541 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de la Memoria RAM</title>
+    <title>Fuentes de Poder - StarProject</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Estilos base */
         body {
-            background-color: #222;
-            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: white;
         }
-        h1 {
+
+        header {
+            background: #222222;
+            padding: 20px;
             text-align: center;
+            margin: 0;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Estilos de la sección info */
+        .product-info {
+            padding: 40px;
+            background: linear-gradient(135deg, #4b6cb7 70%, #182848);
+            color: white;
+        }
+
+        .product-info h2 {
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .product-info h3 {
+            color: #00bfff;
+            margin-top: 30px;
+        }
+
+        .product-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-info li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-info li:before {
+            content: "•";
+            color: #00bfff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Estilos de la cuadrícula de modelos */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .model-card h3 {
+            color: #4b6cb7;
+            margin-top: 0;
+            border-bottom: 2px solid #4b6cb7;
+            padding-bottom: 10px;
+        }
+
+        .model-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .model-card li {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .model-card button {
+            background-color: #4b6cb7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .model-card button:hover {
+            background-color: #182848;
+        }
+
+        /* Estilos del botón volver */
+        .back-button {
+            display: inline-block;
+            background-color: #4b6cb7;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #182848;
+        }
+
+        /* Estilos del carrito */
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .cart-icon {
+            font-size: 24px;
+            color: #808080;
+            cursor: pointer;
+            padding: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-content {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            background-color: white;
+            min-width: 300px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        .cart.active .cart-content {
+            display: block;
+        }
+
+        .minimize-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #808080;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .minimize-button:hover {
+            color: #4b6cb7;
+        }
+
+        .cart-content h3 {
+            color: black;
+            margin-top: 0;
+            padding-right: 30px;
+        }
+
+        .cart-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .cart-content li {
+            color: #28a745;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkout-form {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .checkout-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .checkout-button {
+            background-color: #28a745;
+            width: 100%;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Estilos del footer */
+        .footer {
+            background: #222222;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .models-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .cart-content {
+                width: 90%;
+                right: 5%;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Memoria RAM Kingston 32GB DDR4</h1>
-    <p>Descripción: Memoria RAM de alta velocidad ideal para gaming y multitasking.</p>
-    <p>Especificaciones:</p>
-    <ul>
-        <li>Capacidad: 32GB</li>
-        <li>Tipo: DDR4</li>
-        <li>Frecuencia: 3200 MHz</li>
-    </ul>
-    <a href="index.html">Volver a la tienda</a>
+    <header>
+        <h1>StarProject</h1>
+    </header>
+
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+
+    <div class="product-info">
+        <h2>Fuentes de Poder</h2>
+        <p>La fuente de poder es el corazón energético de tu PC, proporcionando energía estable y confiable a todos los componentes.</p>
+
+        <h3>Características Destacadas</h3>
+        <ul>
+            <li>Certificación 80 PLUS (Gold/Platinum)</li>
+            <li>Diseño modular para mejor gestión de cables</li>
+            <li>Protecciones eléctricas completas</li>
+            <li>Ventiladores de alta calidad</li>
+        </ul>
+
+        <h3>¿Por qué elegir nuestras fuentes?</h3>
+        <ul>
+            <li>Garantía extendida de hasta 10 años</li>
+            <li>Máxima eficiencia energética</li>
+            <li>Componentes de primera calidad</li>
+            <li>Soporte técnico especializado</li>
+            <li>100% nuevas y selladas</li>
+        </ul>
+    </div>
+
+    <div class="models-grid">
+        <!-- Gama Alta -->
+        <div class="model-card">
+            <h3>Corsair RM1000x</h3>
+            <ul>
+                <li>Potencia: 1000W</li>
+                <li>Certificación: 80 PLUS Gold</li>
+                <li>Modularidad: Totalmente modular</li>
+                <li>Ventilador: 135mm con modo Zero RPM</li>
+                <li>Garantía: 10 años</li>
+                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
+                <li>Conectores: 2x EPS, 6x PCIe, 12x SATA</li>
+                <li>Precio: $UYU 32.900</li>
+            </ul>
+            <button onclick="addToCart('Corsair RM1000x 1000W', 32900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>EVGA SuperNOVA 850 G6</h3>
+            <ul>
+                <li>Potencia: 850W</li>
+                <li>Certificación: 80 PLUS Gold</li>
+                <li>Modularidad: Totalmente modular</li>
+                <li>Ventilador: 135mm Fluid Dynamic</li>
+                <li>Garantía: 10 años</li>
+                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
+                <li>Conectores: 2x EPS, 4x PCIe, 10x SATA</li>
+                <li>Precio: $UYU 28.900</li>
+            </ul>
+            <button onclick="addToCart('EVGA SuperNOVA 850 G6', 28900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>be quiet! Dark Power Pro 12</h3>
+            <ul>
+                <li>Potencia: 1200W</li>
+                <li>Certificación: 80 PLUS Titanium</li>
+                <li>Modularidad: Totalmente modular</li>
+                <li>Ventilador: 135mm Silent Wings</li>
+                <li>Garantía: 10 años</li>
+                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
+                <li>Conectores: 2x EPS, 8x PCIe, 14x SATA</li>
+                <li>Precio: $UYU 42.900</li>
+            </ul>
+            <button onclick="addToCart('be quiet! Dark Power Pro 12 1200W', 42900)">Agregar al carrito</button>
+        </div>
+
+        <!-- Gama Media -->
+        <div class="model-card">
+            <h3>Seasonic Focus GX-750</h3>
+            <ul>
+                <li>Potencia: 750W</li>
+                <li>Certificación: 80 PLUS Gold</li>
+                <li>Modularidad: Totalmente modular</li>
+                <li>Ventilador: 120mm con modo híbrido</li>
+                <li>Garantía: 10 años</li>
+                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
+                <li>Conectores: 2x EPS, 4x PCIe, 8x SATA</li>
+                <li>Precio: $UYU 24.900</li>
+            </ul>
+            <button onclick="addToCart('Seasonic Focus GX-750', 24900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Thermaltake Toughpower GF1</h3>
+            <ul>
+                <li>Potencia: 650W</li>
+                <li>Certificación: 80 PLUS Gold</li>
+                <li>Modularidad: Totalmente modular</li>
+                <li>Ventilador: 140mm con modo Zero RPM</li>
+                <li>Garantía: 10 años</li>
+                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
+                <li>Conectores: 1x EPS, 3x PCIe, 8x SATA</li>
+                <li>Precio: $UYU 22.900</li>
+            </ul>
+            <button onclick="addToCart('Thermaltake Toughpower GF1 650W', 22900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Cooler Master MWE Gold 750 V2</h3>
+            <ul>
+                <li>Potencia: 750W</li>
+                <li>Certificación: 80 PLUS Gold</li>
+                <li>Modularidad: Semi-modular</li>
+                <li>Ventilador: 120mm con control térmico</li>
+                <li>Garantía: 5 años</li>
+                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
+                <li>Conectores: 2x EPS, 4x PCIe, 8x SATA</li>
+                <li>Precio: $UYU 20.900</li>
+            </ul>
+            <button onclick="addToCart('Cooler Master MWE Gold 750 V2', 20900)">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">-</button>
+            <h3>Carrito de Compras</h3>
+            <ul id="cartItems"></ul>
+            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
+            
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección de envío:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <button type="submit" class="checkout-button">Confirmar Compra</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            totalPrice += price;
+            updateCart();
+            document.querySelector('.cart').classList.add('active');
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach(({ item, price }) => {
+                const li = document.createElement('li');
+                li.textContent = `${item} - $UYU ${price}`;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        function showCheckoutForm() {
+            document.getElementById('checkoutForm').classList.add('active');
+        }
+
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            alert(`¡Gracias por tu compra ${name}!
+                \nTotal a pagar: $UYU ${totalPrice}
+                \nEnviaremos la confirmación a: ${email}
+                \nTeléfono de contacto: ${phone}
+                \nDirección de envío: ${address}`);
+            
+            cart.length = 0;
+            totalPrice = 0;
+            updateCart();
+            document.querySelector('.cart').classList.remove('active');
+            document.getElementById('checkoutForm').classList.remove('active');
+            this.reset();
+        });
+
+        document.querySelector('.cart-content').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        document.querySelector('.cart-icon').addEventListener('click', function(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const cart = document.querySelector('.cart');
+            const form = document.getElementById('checkoutForm');
+            
+            if (!cart.contains(event.target) && !form.classList.contains('active')) {
+                cart.classList.remove('active');
+            }
+        });
+
+        document.getElementById('checkoutForm').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    </script>
 </body>
 </html>
