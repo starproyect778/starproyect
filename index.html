@@ -6,15 +6,12 @@
     <title>StarProject</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Estilos base */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: white;
         }
-
-        /* Estilos del header */
         header {
             background: #222222;
             padding: 20px;
@@ -27,8 +24,6 @@
             font-weight: bold;
             margin: 0;
         }
-
-        /* Estilos de la sección info */
         .info-section {
             text-align: left;
             padding: 40px;
@@ -45,8 +40,6 @@
         .info-section p, .info-section ul {
             color: white;
         }
-
-        /* Estilos de productos */
         .products-container {
             display: flex;
             flex-wrap: wrap;
@@ -91,8 +84,6 @@
             font-weight: bold;
             margin: 5px 0;
         }
-
-        /* Estilos del carrito */
         .cart {
             position: fixed;
             top: 10px;
@@ -134,8 +125,19 @@
             color: black;
             font-weight: bold;
         }
-
-        /* Estilos del formulario */
+        button {
+            background-color: #4b6cb7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #182848;
+        }
         .checkout-form {
             display: none;
             background: white;
@@ -165,23 +167,6 @@
             width: 100%;
             margin-top: 15px;
         }
-
-        /* Estilos de botones */
-        button {
-            background-color: #4b6cb7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            cursor: pointer;
-            margin-top: 10px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #182848;
-        }
-
-        /* Estilos del footer */
         .footer {
             background: #222222;
             padding: 30px 20px;
@@ -209,8 +194,6 @@
             font-size: 0.9em;
             color: #888;
         }
-
-        /* Responsive */
         @media (max-width: 768px) {
             .product {
                 width: calc(50% - 40px);
@@ -229,11 +212,96 @@
     </header>
 
     <div class="info-section">
-        <!-- Contenido de la sección info... -->
+        <h2>Bienvenido a StarProject</h2>
+        <p>Tu tienda de confianza para componentes informáticos de alta calidad.</p>
+
+        <h2>¿Quiénes somos?</h2>
+        <p>En StarProyect, ofrecemos soluciones informáticas completas y de alta calidad. Nos especializamos en servicios de reparación, personalización de equipos y venta de componentes informáticos. Además, contamos con productos únicos, como gabinetes del caza estelar Tie Avanzado 1 de Star Wars, perfectos para los entusiastas de la tecnología y el universo de Star Wars.</p>
+
+        <h3>Nuestro objetivo</h3>
+        <p>Queremos ser tu primera opción en informática. En StarProyect, buscamos:</p>
+        <ul>
+            <li>Proporcionar una experiencia de compra excepcional y personalizada.</li>
+            <li>Ofrecer una amplia variedad de servicios técnicos y componentes de calidad.</li>
+            <li>Crear una comunidad donde los entusiastas de la tecnología puedan compartir y disfrutar su pasión.</li>
+        </ul>
+
+        <h3>Visión</h3>
+        <p>En StarProyect, soñamos con ser la tienda informática de referencia para aquellos que valoran la calidad, la innovación y el detalle. Aspiramos a integrar continuamente nuevas tecnologías y colaboraciones, especialmente en el entretenimiento y los videojuegos, para ofrecer experiencias únicas que transformen cada compra en una celebración de la cultura pop.</p>
     </div>
 
     <div class="products-container">
-        <!-- Productos actualizados... -->
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador AMD Ryzen 5 5600X">
+            </div>
+            <h2>Procesador AMD Ryzen 5 5600X</h2>
+            <p class="price">$UYU 15.900</p>
+            <button onclick="addToCart('Procesador AMD Ryzen 5 5600X', 15900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="RTX 3060">
+            </div>
+            <h2>RTX 3060</h2>
+            <p class="price">$UYU 24.900</p>
+            <button onclick="addToCart('RTX 3060', 24900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="RAM 16GB">
+            </div>
+            <h2>RAM 16GB</h2>
+            <p class="price">$UYU 4.900</p>
+            <button onclick="addToCart('RAM 16GB', 4900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente 650W">
+            </div>
+            <h2>Fuente 650W</h2>
+            <p class="price">$UYU 5.900</p>
+            <button onclick="addToCart('Fuente 650W', 5900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa B450">
+            </div>
+            <h2>Placa B450</h2>
+            <p class="price">$UYU 8.900</p>
+            <button onclick="addToCart('Placa B450', 8900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="SSD 500GB">
+            </div>
+            <h2>SSD 500GB</h2>
+            <p class="price">$UYU 3.900</p>
+            <button onclick="addToCart('SSD 500GB', 3900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="HDD 1TB">
+            </div>
+            <h2>HDD 1TB</h2>
+            <p class="price">$UYU 2.900</p>
+            <button onclick="addToCart('HDD 1TB', 2900)">Agregar al carrito</button>
+        </div>
+
+        <div class="product">
+            <div class="image-circle">
+                <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Mantenimiento">
+            </div>
+            <h2>Mantenimiento</h2>
+            <p class="price">$UYU 1.900</p>
+            <button onclick="addToCart('Mantenimiento', 1900)">Agregar al carrito</button>
+        </div>
     </div>
 
     <div class="cart">
@@ -267,7 +335,18 @@
     </div>
 
     <footer class="footer">
-        <!-- Contenido del footer... -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
 
     <script>
