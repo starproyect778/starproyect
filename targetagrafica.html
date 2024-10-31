@@ -3,29 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de la Tarjeta Gráfica</title>
+    <title>Tarjetas Gráficas - StarProject</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Mismos estilos que procesador.html -->
     <style>
-        body {
-            background-color: #222;
-            color: white;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-        }
+        /* Aquí van todos los estilos del archivo anterior */
+        /* Los estilos son exactamente los mismos que en procesador.html */
     </style>
 </head>
 <body>
-    <h1>Tarjeta Gráfica RTX 3080</h1>
-    <p>Descripción: La RTX 3080 es una tarjeta gráfica de NVIDIA diseñada para un rendimiento excepcional en gaming y renderizado.</p>
-    <p>Especificaciones:</p>
-    <ul>
-        <li>VRAM: 10GB GDDR6X</li>
-        <li>Ray Tracing: Sí</li>
-        <li>DLSS: Sí</li>
-    </ul>
-    <a href="index.html">Volver a la tienda</a>
+    <header>
+        <h1>StarProject</h1>
+    </header>
+
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+
+    <div class="product-info">
+        <h2>Tarjetas Gráficas</h2>
+        <p>Las tarjetas gráficas son el corazón del rendimiento visual de tu PC, fundamentales para gaming, diseño y renderizado 3D.</p>
+
+        <h3>Marcas Disponibles</h3>
+        <ul>
+            <li>NVIDIA - Líderes en tecnología Ray Tracing y DLSS</li>
+            <li>AMD - Excelente rendimiento con tecnología FSR</li>
+        </ul>
+
+        <h3>¿Por qué elegir nuestras tarjetas gráficas?</h3>
+        <ul>
+            <li>Garantía oficial de fábrica por 3 años</li>
+            <li>Soporte para últimas tecnologías (Ray Tracing, DLSS, FSR)</li>
+            <li>Modelos optimizados para gaming y trabajo profesional</li>
+            <li>Productos 100% nuevos y sellados</li>
+            <li>Asesoramiento técnico especializado</li>
+        </ul>
+    </div>
+
+    <div class="models-grid">
+        <!-- NVIDIA Models -->
+        <div class="model-card">
+            <h3>NVIDIA RTX 3060 12GB</h3>
+            <ul>
+                <li>VRAM: 12GB GDDR6</li>
+                <li>Núcleos CUDA: 3584</li>
+                <li>Frecuencia Base: 1320 MHz</li>
+                <li>Frecuencia Boost: 1777 MHz</li>
+                <li>Ray Tracing: Sí</li>
+                <li>DLSS: 2.0 y 3.0</li>
+                <li>Consumo: 170W</li>
+                <li>Precio: $UYU 24.900</li>
+            </ul>
+            <button onclick="addToCart('NVIDIA RTX 3060 12GB', 24900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>NVIDIA RTX 3070 8GB</h3>
+            <ul>
+                <li>VRAM: 8GB GDDR6X</li>
+                <li>Núcleos CUDA: 5888</li>
+                <li>Frecuencia Base: 1500 MHz</li>
+                <li>Frecuencia Boost: 1725 MHz</li>
+                <li>Ray Tracing: Sí</li>
+                <li>DLSS: 2.0 y 3.0</li>
+                <li>Consumo: 220W</li>
+                <li>Precio: $UYU 34.900</li>
+            </ul>
+            <button onclick="addToCart('NVIDIA RTX 3070 8GB', 34900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>NVIDIA RTX 3080 10GB</h3>
+            <ul>
+                <li>VRAM: 10GB GDDR6X</li>
+                <li>Núcleos CUDA: 8704</li>
+                <li>Frecuencia Base: 1440 MHz</li>
+                <li>Frecuencia Boost: 1710 MHz</li>
+                <li>Ray Tracing: Sí</li>
+                <li>DLSS: 2.0 y 3.0</li>
+                <li>Consumo: 320W</li>
+                <li>Precio: $UYU 44.900</li>
+            </ul>
+            <button onclick="addToCart('NVIDIA RTX 3080 10GB', 44900)">Agregar al carrito</button>
+        </div>
+
+        <!-- AMD Models -->
+        <div class="model-card">
+            <h3>AMD RX 6600 XT 8GB</h3>
+            <ul>
+                <li>VRAM: 8GB GDDR6</li>
+                <li>Unidades de Cómputo: 32</li>
+                <li>Frecuencia Base: 1968 MHz</li>
+                <li>Frecuencia Boost: 2589 MHz</li>
+                <li>Ray Tracing: Sí</li>
+                <li>FSR: 2.0</li>
+                <li>Consumo: 160W</li>
+                <li>Precio: $UYU 22.900</li>
+            </ul>
+            <button onclick="addToCart('AMD RX 6600 XT 8GB', 22900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>AMD RX 6700 XT 12GB</h3>
+            <ul>
+                <li>VRAM: 12GB GDDR6</li>
+                <li>Unidades de Cómputo: 40</li>
+                <li>Frecuencia Base: 2321 MHz</li>
+                <li>Frecuencia Boost: 2581 MHz</li>
+                <li>Ray Tracing: Sí</li>
+                <li>FSR: 2.0</li>
+                <li>Consumo: 230W</li>
+                <li>Precio: $UYU 32.900</li>
+            </ul>
+            <button onclick="addToCart('AMD RX 6700 XT 12GB', 32900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>AMD RX 6800 XT 16GB</h3>
+            <ul>
+                <li>VRAM: 16GB GDDR6</li>
+                <li>Unidades de Cómputo: 72</li>
+                <li>Frecuencia Base: 2015 MHz</li>
+                <li>Frecuencia Boost: 2250 MHz</li>
+                <li>Ray Tracing: Sí</li>
+                <li>FSR: 2.0</li>
+                <li>Consumo: 300W</li>
+                <li>Precio: $UYU 42.900</li>
+            </ul>
+            <button onclick="addToCart('AMD RX 6800 XT 16GB', 42900)">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">-</button>
+            <h3>Carrito de Compras</h3>
+            <ul id="cartItems"></ul>
+            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
+            
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección de envío:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <button type="submit" class="checkout-button">Confirmar Compra</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        // El mismo JavaScript que en procesador.html
+        // Aquí va todo el código JavaScript del carrito
+    </script>
 </body>
 </html>
