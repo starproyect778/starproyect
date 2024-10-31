@@ -1,31 +1,542 @@
+<body>
+    <header>
+        <h1>StarProject</h1>
+    </header>
+
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+
+    <div class="product-info">
+        <h2>Discos SSD</h2>
+        <p>Los discos SSD ofrecen la máxima velocidad y rendimiento para tu sistema, con tiempos de carga ultrarrápidos.</p>
+
+        <h3>Tipos Disponibles</h3>
+        <ul>
+            <li>M.2 NVMe PCIe 4.0</li>
+            <li>M.2 NVMe PCIe 3.0</li>
+            <li>SATA 2.5"</li>
+        </ul>
+
+        <h3>¿Por qué elegir nuestros SSD?</h3>
+        <ul>
+            <li>Máxima velocidad de lectura/escritura</li>
+            <li>Garantía del fabricante</li>
+            <li>Alta durabilidad y fiabilidad</li>
+            <li>Soporte técnico especializado</li>
+            <li>100% nuevos y sellados</li>
+        </ul>
+    </div>
+
+    <div class="models-grid">
+        <!-- SSDs NVMe PCIe 4.0 -->
+        <div class="model-card">
+            <h3>Samsung 990 PRO</h3>
+            <ul>
+                <li>Capacidad: 2TB</li>
+                <li>Interfaz: PCIe 4.0 x4</li>
+                <li>Lectura: 7450 MB/s</li>
+                <li>Escritura: 6900 MB/s</li>
+                <li>DRAM: Sí</li>
+                <li>TBW: 1200TB</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 29.900</li>
+            </ul>
+            <button onclick="addToCart('Samsung 990 PRO 2TB', 29900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>WD Black SN850X</h3>
+            <ul>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: PCIe 4.0 x4</li>
+                <li>Lectura: 7300 MB/s</li>
+                <li>Escritura: 6300 MB/s</li>
+                <li>DRAM: Sí</li>
+                <li>TBW: 600TB</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 19.900</li>
+            </ul>
+            <button onclick="addToCart('WD Black SN850X 1TB', 19900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Corsair Force MP600 PRO</h3>
+            <ul>
+                <li>Capacidad: 2TB</li>
+                <li>Interfaz: PCIe 4.0 x4</li>
+                <li>Lectura: 7100 MB/s</li>
+                <li>Escritura: 6800 MB/s</li>
+                <li>DRAM: Sí</li>
+                <li>TBW: 1200TB</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 27.900</li>
+            </ul>
+            <button onclick="addToCart('Corsair Force MP600 PRO 2TB', 27900)">Agregar al carrito</button>
+        </div>
+
+        <!-- SSDs SATA -->
+        <div class="model-card">
+            <h3>Samsung 870 EVO</h3>
+            <ul>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: SATA III</li>
+                <li>Lectura: 560 MB/s</li>
+                <li>Escritura: 530 MB/s</li>
+                <li>DRAM: Sí</li>
+                <li>TBW: 600TB</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 12.900</li>
+            </ul>
+            <button onclick="addToCart('Samsung 870 EVO 1TB', 12900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Crucial MX500</h3>
+            <ul>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: SATA III</li>
+                <li>Lectura: 560 MB/s</li>
+                <li>Escritura: 510 MB/s</li>
+                <li>DRAM: Sí</li>
+                <li>TBW: 360TB</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 11.900</li>
+            </ul>
+            <button onclick="addToCart('Crucial MX500 1TB', 11900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>WD Blue 3D NAND</h3>
+            <ul>
+                <li>Capacidad: 2TB</li>
+                <li>Interfaz: SATA III</li>
+                <li>Lectura: 560 MB/s</li>
+                <li>Escritura: 530 MB/s</li>
+                <li>DRAM: Sí</li>
+                <li>TBW: 500TB</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 19.900</li>
+            </ul>
+            <button onclick="addToCart('WD Blue 3D NAND 2TB', 19900)">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <!-- Carrito -->
+    <div class="cart">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">-</button>
+            <h3>Carrito de Compras</h3>
+            <ul id="cartItems"></ul>
+            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
+            
+            <form id="checkoutForm" class="checkout-form">
+                <div class="form-group">
+                    <label for="name">Nombre completo:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Dirección de envío:</label>
+                    <input type="text" id="address" required>
+                </div>
+                <button type="submit" class="checkout-button">Confirmar Compra</button>
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        const cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            totalPrice += price;
+            updateCart();
+            document.querySelector('.cart').classList.add('active');
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach(({ item, price }) => {
+                const li = document.createElement('li');
+                li.textContent = `${item} - $UYU ${price}`;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        function showCheckoutForm() {
+            document.getElementById('checkoutForm').classList.add('active');
+        }
+
+        document.getElementById('checkoutForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            alert(`¡Gracias por tu compra ${name}!
+                \nTotal a pagar: $UYU ${totalPrice}
+                \nEnviaremos la confirmación a: ${email}
+                \nTeléfono de contacto: ${phone}
+                \nDirección de envío: ${address}`);
+            
+            cart.length = 0;
+            totalPrice = 0;
+            updateCart();
+            document.querySelector('.cart').classList.remove('active');
+            document.getElementById('checkoutForm').classList.remove('active');
+            this.reset();
+        });
+
+        document.querySelector('.cart-content').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+
+        document.querySelector('.cart-icon').addEventListener('click', function(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const cart = document.querySelector('.cart');
+            const form = document.getElementById('checkoutForm');
+            
+            if (!cart.contains(event.target) && !form.classList.contains('active')) {
+                cart.classList.remove('active');
+            }
+        });
+
+        document.getElementById('checkoutForm').addEventListener('click', function(event) {
+            event.stopPropagation();
+        });
+    </script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles del SSD</title>
+    <title>Discos Duros HDD - StarProject</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+        /* Estilos base */
         body {
-            background-color: #222;
-            color: white;
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            background-color: white;
         }
-        h1 {
+
+        header {
+            background: #222222;
+            padding: 20px;
             text-align: center;
+            margin: 0;
+        }
+
+        header h1 {
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Estilos de la sección info */
+        .product-info {
+            padding: 40px;
+            background: linear-gradient(135deg, #4b6cb7 70%, #182848);
+            color: white;
+        }
+
+        .product-info h2 {
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .product-info h3 {
+            color: #00bfff;
+            margin-top: 30px;
+        }
+
+        .product-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-info li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-info li:before {
+            content: "•";
+            color: #00bfff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Estilos de la cuadrícula de modelos */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .model-card h3 {
+            color: #4b6cb7;
+            margin-top: 0;
+            border-bottom: 2px solid #4b6cb7;
+            padding-bottom: 10px;
+        }
+
+        .model-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .model-card li {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .model-card button {
+            background-color: #4b6cb7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .model-card button:hover {
+            background-color: #182848;
+        }
+
+        /* Estilos del botón volver */
+        .back-button {
+            display: inline-block;
+            background-color: #4b6cb7;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #182848;
+        }
+
+        /* Estilos del carrito */
+        .cart {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
+        }
+
+        .cart-icon {
+            font-size: 24px;
+            color: #808080;
+            cursor: pointer;
+            padding: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-content {
+            display: none;
+            position: fixed;
+            top: 60px;
+            right: 10px;
+            background-color: white;
+            min-width: 300px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 5px;
+            z-index: 1001;
+        }
+
+        .cart.active .cart-content {
+            display: block;
+        }
+
+        .minimize-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            color: #808080;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .minimize-button:hover {
+            color: #4b6cb7;
+        }
+
+        .cart-content h3 {
+            color: black;
+            margin-top: 0;
+            padding-right: 30px;
+        }
+
+        .cart-content ul {
+            list-style: none;
+            padding: 0;
+            margin: 15px 0;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .cart-content li {
+            color: #28a745;
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkout-form {
+            display: none;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .checkout-form.active {
+            display: block;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: black;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .checkout-button {
+            background-color: #28a745;
+            width: 100%;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Estilos del footer */
+        .footer {
+            background: #222222;
+            padding: 30px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 28px;
+            text-decoration: none;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: #888;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .models-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .cart-content {
+                width: 90%;
+                right: 5%;
+            }
         }
     </style>
 </head>
-<body>
-    <h1>SSD 1TB</h1>
-    <p>Descripción: Unidad de estado sólido de alta velocidad para mejorar el rendimiento de tu sistema.</p>
-    <p>Especificaciones:</p>
-    <ul>
-        <li>Capacidad: 1TB</li>
-        <li>Interfaz: SATA III</li>
-        <li>Velocidad de lectura: 550 MB/s</li>
-    </ul>
-    <a href="index.html">Volver a la tienda</a>
-</body>
-</html>
