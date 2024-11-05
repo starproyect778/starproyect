@@ -40,6 +40,7 @@
             overflow-x: hidden;
         }
 
+        /* Header Styles */
         header {
             background: var(--primary-gradient);
             padding: 20px;
@@ -53,10 +54,30 @@
             font-size: 2.5em;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 0.8s ease-out;
+            margin-bottom: 20px;
         }
 
-        /* About Section Styles */
+        .main-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
         .about-section {
             background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
             color: white;
@@ -64,18 +85,6 @@
             margin: 0;
             position: relative;
             overflow: hidden;
-        }
-
-        .about-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
         }
 
         .about-content {
@@ -101,7 +110,7 @@
             padding: 0 20px;
         }
 
-        /* Vision Section Styles */
+        /* Vision Section */
         .vision-section {
             background: var(--primary-gradient);
             padding: 60px 20px;
@@ -170,7 +179,7 @@
             line-height: 1.6;
         }
 
-        /* Products Grid Styles */
+        /* Products Grid */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -219,7 +228,6 @@
             font-size: 1.1em;
         }
 
-        /* Button Styles */
         .button-container {
             display: flex;
             gap: 15px;
@@ -232,9 +240,11 @@
             border-radius: 8px;
             background: var(--secondary-gradient);
             color: white;
-            text-decoration: none;
+            border: none;
             font-weight: bold;
+            cursor: pointer;
             transition: all 0.3s ease;
+            text-decoration: none;
             text-align: center;
         }
 
@@ -243,101 +253,13 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        /* Cart Styles */
-        .cart {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .cart-icon {
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-
-        .cart-content {
-            display: none;
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: white;
-            min-width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            padding: 25px;
-            z-index: 1001;
-        }
-
-        .cart.active .cart-content {
-            display: block;
-            animation: slideIn 0.3s ease-out;
-        }
-
-        .cart-items {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 20px 0;
-            padding-top: 10px;
-            border-top: 2px solid #eee;
-        }
-
-        .checkout-button {
-            background: var(--primary-gradient);
-            color: white;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .checkout-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        /* Footer Styles */
+        /* Footer */
         .footer {
             background: var(--primary-gradient);
             padding: 40px 20px;
             color: white;
             text-align: center;
             margin-top: 60px;
-            position: relative;
-            overflow: hidden;
         }
 
         .social-links {
@@ -365,17 +287,6 @@
         }
 
         /* Animations */
-        @keyframes slideIn {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
         @keyframes fadeInDown {
             from {
                 transform: translateY(-20px);
@@ -410,10 +321,9 @@
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
 
-            .cart-content {
-                width: 90%;
-                right: 5%;
-                min-width: unset;
+            .main-nav {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -421,6 +331,17 @@
 <body>
     <header>
         <h1>StarProject</h1>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="procesador.html">Procesadores</a>
+            <a href="targetagrafica.html">Tarjetas Gráficas</a>
+            <a href="ram.html">Memorias RAM</a>
+            <a href="fuente.html">Fuentes</a>
+            <a href="placamadre.html">Placas Madre</a>
+            <a href="sdd.html">SSD</a>
+            <a href="hdd.html">HDD</a>
+            <a href="mantenimiento.html">Mantenimiento</a>
+        </nav>
     </header>
 
     <!-- Sección About -->
@@ -458,123 +379,80 @@
         </div>
     </section>
 
-    <!-- Carrito -->
-    <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
-        <div class="cart-content">
-            <button class="minimize-button" onclick="minimizeCart(event)">
-                <i class="fas fa-minus"></i>
-            </button>
-            <h3>Carrito de Compras</h3>
-            <ul class="cart-items" id="cartItems"></ul>
-            <div class="cart-total">
-                <span>Total:</span>
-                <span>$UYU <span id="totalPrice">0</span></span>
-            </div>
-            <button onclick="showCheckoutForm()" class="checkout-button">
-                Finalizar Compra
-            </button>
-        </div>
-    </div>
-
-    <!-- Grid de Productos -->
-    <div class="products-grid">
-        <!-- Procesador -->
+    <!-- Sección de Productos -->
+    <section class="products-grid">
         <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+            <img src="img/procesador.png" alt="Procesadores">
             <h2>Procesadores</h2>
-            <p>AMD e Intel de última generación</p>
+            <p>Descubre nuestra selección de procesadores de última generación para gaming y trabajo profesional.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="procesador.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- Tarjeta Gráfica -->
         <div class="product-card">
-            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
-            <h2>Tarjeta Gráfica</h2>
-            <p>Alto rendimiento para gaming</p>
+            <img src="img/grafica.png" alt="Tarjetas Gráficas">
+            <h2>Tarjetas Gráficas</h2>
+            <p>Las mejores tarjetas gráficas para gaming y diseño profesional.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="targetagrafica.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- Memoria RAM -->
         <div class="product-card">
-            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+            <img src="img/ram.png" alt="Memorias RAM">
             <h2>Memorias RAM</h2>
-            <p>DDR4 y DDR5 de alto rendimiento</p>
+            <p>Memorias RAM de alta velocidad para maximizar el rendimiento de tu PC.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="ram.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- Fuente de Poder -->
         <div class="product-card">
-            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            <img src="img/fuente.png" alt="Fuentes de Poder">
             <h2>Fuentes de Poder</h2>
-            <p>Certificación 80 Plus, alta eficiencia</p>
+            <p>Fuentes certificadas para garantizar la estabilidad de tu sistema.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="fuente.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- Placa Madre -->
         <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+            <img src="img/placamadre.png" alt="Placas Madre">
             <h2>Placas Madre</h2>
-            <p>Para AMD e Intel, últimos chipsets</p>
+            <p>La base perfecta para tu nueva build con las mejores características.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="placamadre.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- SSD -->
         <div class="product-card">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
+            <img src="img/ssd.png" alt="SSD">
             <h2>Discos SSD</h2>
-            <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
+            <p>Almacenamiento ultrarrápido para mejorar los tiempos de carga.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="sdd.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- HDD -->
         <div class="product-card">
-            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
+            <img src="img/hdd.png" alt="HDD">
             <h2>Discos HDD</h2>
-            <p>Gran capacidad de almacenamiento</p>
+            <p>Gran capacidad de almacenamiento para todos tus archivos.</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="hdd.html" class="info-button">Ver Más</a>
             </div>
         </div>
 
-        <!-- Mantenimiento -->
         <div class="product-card">
-            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+            <img src="img/mantenimiento.png" alt="Mantenimiento">
             <h2>Mantenimiento</h2>
-            <p>Servicio técnico especializado</p>
+            <p>Servicio técnico especializado para mantener tu PC en óptimas condiciones.</p>
             <div class="button-container">
-                <a href="#" class="info-button" style="opacity: 0.7; pointer-events: none;">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
+                <a href="mantenimiento.html" class="info-button">Ver Más</a>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -591,6 +469,5 @@
         </div>
         <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
-    <script>
 </body>
 </html>
