@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StarProject - Servicio de mantenimiento de PC en Uruguay">
+    <meta name="keywords" content="mantenimiento PC, servicio técnico, reparación PC, mantenimiento hardware, mantenimiento software, Uruguay">
+    <meta name="author" content="StarProject">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="StarProject - Mantenimiento de PC">
+    <meta property="og:description" content="Servicio técnico especializado en mantenimiento de PC">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="https://starproyect778.github.io/starproyect/mantenimiento.html">
+    
+    <title>StarProject - Mantenimiento de PC</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* [Los mismos estilos base que index.html] */
+
+        /* Estilos específicos para mantenimiento */
+        .maintenance-section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .maintenance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .maintenance-card {
+            background: var(--card-gradient);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .maintenance-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+
+        .maintenance-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .maintenance-card h3 {
+            color: #4b6cb7;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+        }
+
+        .maintenance-features {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .maintenance-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 0;
+            color: #666;
+        }
+
+        .maintenance-features li i {
+            color: #28a745;
+        }
+
+        .maintenance-price {
+            font-size: 1.4em;
+            color: #28a745;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .maintenance-button {
+            background: var(--primary-gradient);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .maintenance-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StarProject</h1>
+        <nav class="main-nav">
+            <a href="index.html">Inicio</a>
+            <a href="procesador.html">Procesadores</a>
+            <a href="targetagrafica.html">Tarjetas Gráficas</a>
+            <a href="ram.html">Memorias RAM</a>
+            <a href="fuente.html">Fuentes</a>
+            <a href="placamadre.html">Placas Madre</a>
+            <a href="sdd.html">SSD</a>
+            <a href="hdd.html">HDD</a>
+        </nav>
+    </header>
+
+    <!-- Carrito (igual que en las otras páginas) -->
+    <div class="cart">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">
+                <i class="fas fa-minus"></i>
+            </button>
+            <h3>Carrito de Compras</h3>
+            <ul class="cart-items" id="cartItems"></ul>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$UYU <span id="totalPrice">0</span></span>
+            </div>
+            <button onclick="showCheckoutForm()" class="checkout-button">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Sección de Mantenimiento -->
+    <section class="maintenance-section">
+        <h2 class="section-title">Servicios de Mantenimiento</h2>
+        <div class="maintenance-grid">
+            <!-- Mantenimiento Hardware -->
+            <div class="maintenance-card">
+                <img src="ruta/imagen-hardware.jpg" alt="Mantenimiento Hardware">
+                <h3>Mantenimiento Hardware</h3>
+                <ul class="maintenance-features">
+                    <li><i class="fas fa-check"></i> Limpieza profunda de componentes</li>
+                    <li><i class="fas fa-check"></i> Cambio de pasta térmica</li>
+                    <li><i class="fas fa-check"></i> Diagnóstico de hardware</li>
+                    <li><i class="fas fa-check"></i> Reparación de componentes</li>
+                    <li><i class="fas fa-check"></i> Actualización de hardware</li>
+                    <li><i class="fas fa-check"></i> Optimización de ventilación</li>
+                </ul>
+                <div class="maintenance-price">$UYU 2500</div>
+                <button class="maintenance-button" onclick="addToCart('Mantenimiento Hardware', 2500)">
+                    Solicitar Servicio
+                </button>
+            </div>
+
+            <!-- Mantenimiento Software -->
+            <div class="maintenance-card">
+                <img src="ruta/imagen-software.jpg" alt="Mantenimiento Software">
+                <h3>Mantenimiento Software</h3>
+                <ul class="maintenance-features">
+                    <li><i class="fas fa-check"></i> Instalación de Windows</li>
+                    <li><i class="fas fa-check"></i> Actualización de drivers</li>
+                    <li><i class="fas fa-check"></i> Eliminación de malware</li>
+                    <li><i class="fas fa-check"></i> Optimización del sistema</li>
+                    <li><i class="fas fa-check"></i> Backup de datos</li>
+                    <li><i class="fas fa-check"></i> Instalación de programas</li>
+                </ul>
+                <div class="maintenance-price">$UYU 1800</div>
+                <button class="maintenance-button" onclick="addToCart('Mantenimiento Software', 1800)">
+                    Solicitar Servicio
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Clase para manejar el carrito
+        class ShoppingCart {
+            constructor() {
+                this.cart = [];
+                this.totalPrice = 0;
+                this.loadCart();
+            }
+
+            loadCart() {
+                const savedCart = localStorage.getItem('starProjectCart');
+                const savedTotal = localStorage.getItem('starProjectTotal');
+                if (savedCart) {
+                    this.cart = JSON.parse(savedCart);
+                    this.totalPrice = Number(savedTotal);
+                    this.updateCartDisplay();
+                }
+            }
+
+            saveCart() {
+                localStorage.setItem('starProjectCart', JSON.stringify(this.cart));
+                localStorage.setItem('starProjectTotal', this.totalPrice.toString());
+            }
+
+            addItem(item, price) {
+                this.cart.push({ item, price });
+                this.totalPrice += price;
+                this.saveCart();
+                this.updateCartDisplay();
+                document.querySelector('.cart').classList.add('active');
+            }
+
+            removeItem(index) {
+                this.totalPrice -= this.cart[index].price;
+                this.cart.splice(index, 1);
+                this.saveCart();
+                this.updateCartDisplay();
+            }
+
+            updateCartDisplay() {
+                const cartItems = document.getElementById('cartItems');
+                cartItems.innerHTML = '';
+                this.cart.forEach(({ item, price }, index) => {
+                    const li = document.createElement('li');
+                    li.className = 'cart-item';
+                    li.innerHTML = `
+                        <div class="cart-item-info">
+                            <div class="cart-item-name">${item}</div>
+                            <div class="cart-item-price">$UYU ${price}</div>
+                        </div>
+                        <i class="fas fa-times remove-item" onclick="shoppingCart.removeItem(${index})"></i>
+                    `;
+                    cartItems.appendChild(li);
+                });
+                document.getElementById('totalPrice').textContent = this.totalPrice;
+            }
+
+            checkout() {
+                if (this.cart.length === 0) {
+                    alert('El carrito está vacío');
+                    return;
+                }
+                alert(`Total a pagar: $UYU ${this.totalPrice}\nGracias por tu compra!`);
+                this.cart = [];
+                this.totalPrice = 0;
+                this.saveCart();
+                this.updateCartDisplay();
+                document.querySelector('.cart').classList.remove('active');
+            }
+        }
+
+        // Crear instancia del carrito
+        const shoppingCart = new ShoppingCart();
+
+        // Funciones globales
+        function addToCart(item, price) {
+            shoppingCart.addItem(item, price);
+        }
+
+        function showCheckoutForm() {
+            shoppingCart.checkout();
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            shoppingCart.loadCart();
+
+            document.querySelector('.cart-icon').addEventListener('click', (event) => {
+                event.stopPropagation();
+                document.querySelector('.cart').classList.toggle('active');
+            });
+
+            document.addEventListener('click', (event) => {
+                const cart = document.querySelector('.cart');
+                if (!cart.contains(event.target)) {
+                    cart.classList.remove('active');
+                }
+            });
+        });
+
+        // Actualizar carrito cuando la ventana recibe el foco
+        window.addEventListener('focus', () => {
+            shoppingCart.loadCart();
+        });
+    </script>
+</body>
+</html>
