@@ -40,6 +40,7 @@
             overflow-x: hidden;
         }
 
+        /* Header Styles */
         header {
             background: var(--primary-gradient);
             padding: 20px;
@@ -56,7 +57,7 @@
             animation: fadeInDown 0.8s ease-out;
         }
 
-        /* Estilos para la sección About */
+        /* About Section Styles */
         .about-section {
             background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
             color: white;
@@ -101,7 +102,7 @@
             padding: 0 20px;
         }
 
-        /* Estilos para la sección de visión */
+        /* Vision Section Styles */
         .vision-section {
             background: var(--primary-gradient);
             padding: 60px 20px;
@@ -150,7 +151,7 @@
             line-height: 1.6;
         }
 
-        /* Estilos para productos y carrito [continúa igual que antes] */
+        /* Products Grid Styles */
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -170,8 +171,224 @@
             overflow: hidden;
         }
 
-        /* [Resto de los estilos anteriores para productos, carrito, etc.] */
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
 
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .product-card h2 {
+            color: #4b6cb7;
+            margin: 15px 0;
+            font-size: 1.8em;
+        }
+
+        .product-card p {
+            color: #666;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        /* Button Styles */
+        .button-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .buy-button, .info-button {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        .buy-button {
+            background: var(--primary-gradient);
+            color: white;
+        }
+
+        .info-button {
+            background: var(--secondary-gradient);
+            color: white;
+        }
+
+        .buy-button:hover, .info-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Cart Styles */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .cart-icon {
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cart-icon:hover {
+            transform: scale(1.1);
+        }
+
+        .cart-content {
+            display: none;
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            min-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 25px;
+            z-index: 1001;
+        }
+
+        .cart.active .cart-content {
+            display: block;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
+        }
+
+        .checkout-button {
+            background: var(--primary-gradient);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .checkout-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-gradient);
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 32px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
             .vision-grid {
                 grid-template-columns: 1fr;
@@ -184,9 +401,13 @@
             .products-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
-        }
 
-        /* [Resto de los estilos anteriores] */
+            .cart-content {
+                width: 90%;
+                right: 5%;
+                min-width: unset;
+            }
+        }
     </style>
 </head>
 <body>
@@ -223,7 +444,8 @@
             </div>
         </div>
     </section>
-        <!-- Carrito -->
+
+    <!-- Carrito -->
     <div class="cart">
         <i class="fas fa-shopping-cart cart-icon"></i>
         <div class="cart-content">
@@ -232,4 +454,200 @@
             </button>
             <h3>Carrito de Compras</h3>
             <ul class="cart-items" id="cartItems"></ul>
-            
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$UYU <span id="totalPrice">0</span></span>
+            </div>
+            <button onclick="showCheckoutForm()" class="checkout-button">
+                Finalizar Compra
+            </button>
+        </div>
+    </div>
+
+    <!-- Grid de Productos -->
+    <div class="products-grid">
+        <!-- Procesador -->
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+            <h2>Procesadores</h2>
+            <p>AMD e Intel de última generación</p>
+            <div class="button-container">
+                <button onclick="addToCart('Procesador', 25000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta Gráfica -->
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+            <h2>Tarjeta Gráfica</h2>
+            <p>Alto rendimiento para gaming</p>
+            <div class="button-container">
+                <button onclick="addToCart('Tarjeta Gráfica', 35000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Memoria RAM -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+            <h2>Memorias RAM</h2>
+            <p>DDR4 y DDR5 de alto rendimiento</p>
+            <div class="button-container">
+                <button onclick="addToCart('Memoria RAM', 15000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Fuente de Poder -->
+        <div class="product-card">
+            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            <h2>Fuentes de Poder</h2>
+            <p>Certificación 80 Plus, alta eficiencia</p>
+            <div class="button-container">
+                <button onclick="addToCart('Fuente de Poder', 12000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Placa Madre -->
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+            <h2>Placas Madre</h2>
+            <p>Para AMD e Intel, últimos chipsets</p>
+            <div class="button-container">
+                <button onclick="addToCart('Placa Madre', 18000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- SSD -->
+        <div class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
+            <h2>Discos SSD</h2>
+            <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
+            <div class="button-container">
+                <button onclick="addToCart('Disco SSD', 8000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- HDD -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
+            <h2>Discos HDD</h2>
+            <p>Gran capacidad de almacenamiento</p>
+            <div class="button-container">
+                <button onclick="addToCart('Disco HDD', 5000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Mantenimiento -->
+        <div class="product-card">
+            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+            <h2>Mantenimiento</h2>
+            <p>Servicio técnico especializado</p>
+            <div class="button-container">
+                <button onclick="addToCart('Servicio de Mantenimiento', 3000)" class="buy-button">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            totalPrice += price;
+            updateCart();
+            document.querySelector('.cart').classList.add('active');
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach(({ item, price }, index) => {
+                const li = document.createElement('li');
+                li.className = 'cart-item';
+                li.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item}</div>
+                        <div class="cart-item-price">$UYU ${price}</div>
+                    </div>
+                    <i class="fas fa-times remove-item" onclick="removeItem(${index})"></i>
+                `;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        function removeItem(index) {
+            totalPrice -= cart[index].price;
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        function showCheckoutForm() {
+            if (cart.length === 0) {
+                alert('El carrito está vacío');
+                return;
+            }
+            alert(`Total a pagar: $UYU ${totalPrice}\nGracias por tu compra!`);
+            cart.length = 0;
+            totalPrice = 0;
+            updateCart();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        document.querySelector('.cart-icon').addEventListener('click', function(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const cart = document.querySelector('.cart');
+            if (!cart.contains(event.target)) {
+                cart.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
