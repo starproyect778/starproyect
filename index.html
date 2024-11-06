@@ -11,14 +11,11 @@
     <meta property="og:description" content="Tu tienda de confianza para componentes de PC en Uruguay">
     <meta property="og:image" content="img/logo.png">
     <meta property="og:url" content="https://starproyect778.github.io/starproyect/">
-    <meta name="theme-color" content="#FF3C3C">
+    <meta name="theme-color" content="#4b6cb7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     
     <title>StarProject - Componentes de PC en Uruguay</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
@@ -28,14 +25,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Variables CSS actualizadas */
+        /* Variables CSS */
         :root {
-            --primary-gradient: linear-gradient(135deg, #FF3C3C 0%, #CC0000 100%);
-            --secondary-gradient: linear-gradient(135deg, #FF5555 0%, #FF3C3C 100%);
+            --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            --secondary-gradient: linear-gradient(135deg, #28a745 0%, #145a23 100%);
             --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-            --hover-gradient: linear-gradient(135deg, #CC0000 0%, #FF3C3C 100%);
-            --primary-color: #FF3C3C;
-            --secondary-color: #CC0000;
+            --hover-gradient: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+            --primary-color: #4b6cb7;
+            --secondary-color: #28a745;
             --text-color: #333333;
             --light-text: #ffffff;
             --dark-text: #666666;
@@ -45,7 +42,6 @@
             --transition: all 0.3s ease;
             --spacing: 20px;
             --max-width: 1400px;
-            --font-primary: 'Orbitron', sans-serif;
         }
 
         /* Reset y Estilos Base */
@@ -62,7 +58,7 @@
         }
 
         body {
-            font-family: var(--font-primary);
+            font-family: Arial, sans-serif;
             background-color: #f0f2f5;
             overflow-x: hidden;
             line-height: 1.6;
@@ -92,12 +88,11 @@
             animation: fadeInDown 0.8s ease-out;
             margin: 0;
             padding: 10px 0;
-            letter-spacing: 2px;
         }
 
         /* About Section Styles */
         .about-section {
-            background: linear-gradient(135deg, #CC0000 0%, #FF3C3C 100%);
+            background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
             color: var(--light-text);
             padding: calc(var(--spacing) * 3) var(--spacing);
             margin: 0;
@@ -128,23 +123,106 @@
         }
 
         .about-content h2 {
-            color: var(--light-text);
+            color: #00bfff;
             margin-bottom: 30px;
             font-size: 2.2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
             position: relative;
             display: inline-block;
-            letter-spacing: 3px;
+        }
+
+        .about-content h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 3px;
+            background: var(--secondary-gradient);
+            border-radius: 2px;
+        }
+
+        .about-content p {
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Vision Section Styles */
         .vision-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: var(--primary-gradient);
             padding: calc(var(--spacing) * 3) var(--spacing);
             text-align: center;
             margin: 0;
             position: relative;
             overflow: hidden;
+        }
+
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        .vision-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: var(--transition);
+            transform: translateY(0);
+        }
+
+        .vision-item:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .vision-item i {
+            font-size: 2.5em;
+            color: #00bfff;
+            margin-bottom: 20px;
+            transition: var(--transition);
+        }
+
+        .vision-item:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .vision-item h3 {
+            color: #00bfff;
+            margin: 15px 0;
+            font-size: 1.5em;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .vision-item h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40%;
+            height: 2px;
+            background: var(--secondary-gradient);
+            border-radius: 1px;
+        }
+
+        .vision-item p {
+            color: var(--light-text);
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* Products Grid Styles */
@@ -155,346 +233,466 @@
             padding: calc(var(--spacing) * 2) var(--spacing);
             max-width: var(--max-width);
             margin: 0 auto;
-            background: #f8f9fa;
         }
 
         .product-card {
             background: var(--card-gradient);
             border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Testimonials Styles - Nueva sección */
-        .testimonials-section {
-            padding: calc(var(--spacing) * 3) var(--spacing);
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: var(--light-text);
-        }
-
-        .testimonials-section h2 {
-            text-align: center;
-            color: var(--primary-color);
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing);
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
             padding: 25px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .testimonial-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            border: 2px solid var(--primary-color);
-        }
-
-        .testimonial-info h3 {
-            color: var(--light-text);
-            margin: 0;
-            font-size: 1.1em;
-            letter-spacing: 1px;
-        }
-
-        .stars {
-            color: #FFD700;
-            margin: 5px 0;
-        }
-
-        .date {
-            font-size: 0.9em;
-            color: rgba(255,255,255,0.6);
-        }
-
-        .testimonial-card p {
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
-            font-style: italic;
-        }
-
-        /* Footer y Media Queries existentes... */
-    </style>
-</head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="StarProject - Tu tienda de confianza para componentes de PC en Uruguay. Procesadores, RAM, placas madre, SSDs y más.">
-    <meta name="keywords" content="componentes PC, hardware, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay, Star Wars">
-    <meta name="author" content="StarProject">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="StarProject - Componentes de PC">
-    <meta property="og:description" content="Tu tienda de confianza para componentes de PC en Uruguay">
-    <meta property="og:image" content="img/logo.png">
-    <meta property="og:url" content="https://starproyect778.github.io/starproyect/">
-    <meta name="theme-color" content="#FF3C3C">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    <title>StarProject - Componentes de PC en Uruguay</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="img/favicon.png">
-    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-    <link rel="manifest" href="manifest.json">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        /* Variables CSS actualizadas */
-        :root {
-            --primary-gradient: linear-gradient(135deg, #FF3C3C 0%, #CC0000 100%);
-            --secondary-gradient: linear-gradient(135deg, #FF5555 0%, #FF3C3C 100%);
-            --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-            --hover-gradient: linear-gradient(135deg, #CC0000 0%, #FF3C3C 100%);
-            --primary-color: #FF3C3C;
-            --secondary-color: #CC0000;
-            --text-color: #333333;
-            --light-text: #ffffff;
-            --dark-text: #666666;
-            --border-radius: 15px;
-            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            --hover-shadow: 0 12px 24px rgba(0,0,0,0.15);
-            --transition: all 0.3s ease;
-            --spacing: 20px;
-            --max-width: 1400px;
-            --font-primary: 'Orbitron', sans-serif;
-        }
-
-        /* Reset y Estilos Base */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: var(--font-primary);
-            background-color: #f0f2f5;
-            overflow-x: hidden;
-            line-height: 1.6;
-            color: var(--text-color);
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        /* Header Styles */
-        header {
-            background: var(--primary-gradient);
-            padding: var(--spacing);
-            text-align: center;
-            position: relative;
             box-shadow: var(--box-shadow);
-            z-index: 100;
-        }
-
-        header h1 {
-            color: var(--light-text);
-            font-size: 2.5em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 0.8s ease-out;
-            margin: 0;
-            padding: 10px 0;
-            letter-spacing: 2px;
-        }
-
-        /* About Section Styles */
-        .about-section {
-            background: linear-gradient(135deg, #CC0000 0%, #FF3C3C 100%);
-            color: var(--light-text);
-            padding: calc(var(--spacing) * 3) var(--spacing);
-            margin: 0;
+            transition: var(--transition);
             position: relative;
             overflow: hidden;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
-        .about-section::before {
+        .product-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
-        }
-
-        .about-content {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 0 var(--spacing);
-        }
-
-        .about-content h2 {
-            color: var(--light-text);
-            margin-bottom: 30px;
-            font-size: 2.2em;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            position: relative;
-            display: inline-block;
-            letter-spacing: 3px;
-        }
-
-        /* Vision Section Styles */
-        .vision-section {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: calc(var(--spacing) * 3) var(--spacing);
-            text-align: center;
-            margin: 0;
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Products Grid Styles */
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: calc(var(--spacing) * 2) var(--spacing);
-            max-width: var(--max-width);
-            margin: 0 auto;
-            background: #f8f9fa;
-        }
-
-        .product-card {
-            background: var(--card-gradient);
-            border-radius: var(--border-radius);
-            padding: 20px;
-            text-align: center;
-            transition: var(--transition);
-            box-shadow: var(--box-shadow);
-            position: relative;
-            overflow: hidden;
-        }
-
-        /* Testimonials Styles - Nueva sección */
-        .testimonials-section {
-            padding: calc(var(--spacing) * 3) var(--spacing);
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            color: var(--light-text);
-        }
-
-        .testimonials-section h2 {
-            text-align: center;
-            color: var(--primary-color);
-            font-size: 2.2em;
-            margin-bottom: 40px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .testimonials-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing);
-        }
-
-        .testimonial-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            height: 5px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
             transition: var(--transition);
         }
 
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .product-card:hover::before {
+            transform: scaleX(1);
         }
 
-        .testimonial-header {
-            display: flex;
-            align-items: center;
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
             margin-bottom: 20px;
+            transition: var(--transition);
         }
 
-        .avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-            border: 2px solid var(--primary-color);
+        .product-card:hover img {
+            transform: scale(1.05);
         }
 
-        .testimonial-info h3 {
-            color: var(--light-text);
-            margin: 0;
+        .product-card h2 {
+            color: var(--primary-color);
+            margin: 15px 0;
+            font-size: 1.8em;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .product-card h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: var(--primary-gradient);
+        }
+
+        .product-card p {
+            color: var(--dark-text);
+            margin: 15px 0;
             font-size: 1.1em;
-            letter-spacing: 1px;
+            flex-grow: 1;
         }
 
-        .stars {
-            color: #FFD700;
-            margin: 5px 0;
+        /* Button Styles */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: auto;
+            padding-top: var(--spacing);
         }
 
-        .date {
+        .info-button {
+            background: var(--secondary-gradient);
+            color: var(--light-text);
+            padding: 12px 30px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: var(--transition);
+            display: inline-block;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .info-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-100%);
+            transition: var(--transition);
+        }
+
+        .info-button:hover::before {
+            transform: translateX(0);
+        }
+
+        .info-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-gradient);
+            padding: calc(var(--spacing) * 2) var(--spacing);
+            color: var(--light-text);
+            text-align: center;
+            margin-top: calc(var(--spacing) * 3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: var(--light-text);
+            font-size: 32px;
+            text-decoration: none;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .social-links a::before {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--light-text);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .social-links a:hover::before {
+            transform: scaleX(1);
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) rotate(8deg);
+            color: #00bfff;
+        }
+
+        .copyright {
+            margin-top: 20px;
             font-size: 0.9em;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.8);
         }
 
-        .testimonial-card p {
-            color: rgba(255,255,255,0.9);
-            line-height: 1.6;
-            font-style: italic;
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
-        /* Footer y Media Queries existentes... */
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .vision-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --spacing: 15px;
+            }
+            
+            .vision-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content {
+                padding: 0 var(--spacing);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .about-content h2 {
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --spacing: 10px;
+            }
+
+            .product-card {
+                padding: 15px;
+            }
+
+            .social-links {
+                gap: 20px;
+            }
+
+            .social-links a {
+                font-size: 24px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .vision-section,
+            .products-grid,
+            .footer {
+                break-inside: avoid;
+            }
+        }
     </style>
 </head>
+<body>
+    <header>
+        <h1>StarProject</h1>
+    </header>
+
+    <!-- Sección About -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>¿Qué es StarProyect?</h2>
+            <p>StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
+            <p>Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Visión -->
+    <section class="vision-section">
+        <div class="vision-grid">
+            <div class="vision-item">
+                <i class="fas fa-bullseye"></i>
+                <h3>Objetivo</h3>
+                <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+            </div>
+            <div class="vision-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Compromiso</h3>
+                <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+            </div>
+            <div class="vision-item">
+                <i class="fas fa-star"></i>
+                <h3>Valores</h3>
+                <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Grid de Productos -->
+    <div class="products-grid">
+        <!-- Procesador -->
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+            <h2>Procesadores</h2>
+            <p>AMD e Intel de última generación</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Tarjeta Gráfica -->
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+            <h2>Tarjeta Gráfica</h2>
+            <p>Alto rendimiento para gaming</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Memoria RAM -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+            <h2>Memorias RAM</h2>
+            <p>DDR4 y DDR5 de alto rendimiento</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Fuente de Poder -->
+        <div class="product-card">
+            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            <h2>Fuentes de Poder</h2>
+            <p>Certificación 80 Plus, alta eficiencia</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Placa Madre -->
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+            <h2>Placas Madre</h2>
+            <p>Para AMD e Intel, últimos chipsets</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- SSD -->
+        <div class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
+            <h2>Discos SSD</h2>
+            <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- HDD -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
+            <h2>Discos HDD</h2>
+            <p>Gran capacidad de almacenamiento</p>
+            <div class="button-container">
+                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Mantenimiento -->
+        <div class="product-card">
+            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+            <h2>Mantenimiento</h2>
+            <p>Servicio técnico especializado</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts para animaciones y efectos -->
+    <script>
+        // Animación suave al scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animación de entrada para las tarjetas de productos
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.product-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease-out';
+            observer.observe(card);
+        });
+
+        // Efecto parallax para el fondo del about
+        window.addEventListener('scroll', () => {
+            const aboutSection = document.querySelector('.about-section');
+            const scrolled = window.pageYOffset;
+            aboutSection.style.backgroundPositionY = scrolled * 0.5 + 'px';
+        });
+    </script>
+</body>
+</html>
