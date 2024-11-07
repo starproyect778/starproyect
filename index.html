@@ -19,7 +19,6 @@
     <meta name="application-name" content="Star Proyect">
     <meta name="msapplication-TileColor" content="#4b6cb7">
     <meta name="msapplication-config" content="browserconfig.xml">
-    <meta name="theme-color" content="#4b6cb7">
     
     <title>Star Proyect - Componentes de PC en Uruguay</title>
     
@@ -38,7 +37,6 @@
     <style>
         /* Variables CSS */
         :root {
-            /* Gradientes principales */
             --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
             --secondary-gradient: linear-gradient(135deg, #6a85d1 0%, #4b6cb7 100%);
             --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
@@ -47,7 +45,6 @@
             --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
             --accent-gradient: linear-gradient(45deg, #4b6cb7, #6a85d1);
             
-            /* Colores base */
             --primary-color: #4b6cb7;
             --secondary-color: #182848;
             --accent-color: #6a85d1;
@@ -59,42 +56,18 @@
             --warning-color: #ffc107;
             --info-color: #17a2b8;
             
-            /* Efectos y decoración */
-            --border-radius-sm: 8px;
-            --border-radius: 15px;
-            --border-radius-lg: 20px;
-            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            --hover-shadow: 0 12px 24px rgba(0,0,0,0.15);
-            --blue-shadow: 0 8px 16px rgba(75,108,183,0.2);
-            --text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            
-            /* Espaciado y dimensiones */
-            --spacing-xs: 5px;
-            --spacing-sm: 10px;
-            --spacing: 20px;
-            --spacing-md: 30px;
-            --spacing-lg: 40px;
-            --spacing-xl: 60px;
-            --max-width: 1400px;
-            --header-height: 80px;
-            --footer-height: 200px;
-            
-            /* Tipografía */
-            --main-font: 'Orbitron', sans-serif;
-            --font-size-xs: 0.75rem;
-            --font-size-sm: 0.875rem;
-            --font-size: 1rem;
-            --font-size-md: 1.125rem;
-            --font-size-lg: 1.25rem;
-            --font-size-xl: 1.5rem;
-            --font-size-xxl: 2rem;
-            
-            /* Animaciones */
-            --transition: all 0.3s ease;
-            --transition-fast: all 0.2s ease;
-            --transition-slow: all 0.5s ease;
-            --animation-duration: 0.8s;
-            --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+            --border-radius-sm: 5px; /* Reducido */
+            --border-radius: 10px; /* Reducido */
+            --border-radius-lg: 15px; /* Reducido */
+            --box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Reducido */
+            --hover-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Reducido */
+            --max-width: 1200px; /* Reducido */
+            --header-height: 60px; /* Reducido */
+            --footer-height: 150px; /* Reducido */
+            --font-size: 0.9rem; /* Reducido */
+            --font-size-lg: 1.1rem; /* Reducido */
+            --font-size-xl: 1.3rem; /* Reducido */
+            --font-size-xxl: 1.5rem; /* Reducido */
         }
 
         /* Reset y Estilos Base */
@@ -116,10 +89,10 @@
         }
 
         body {
-            font-family: var(--main-font);
+            font-family: 'Orbitron', sans-serif;
             background-color: #f0f2f5;
             overflow-x: hidden;
-            line-height: 1.6;
+            line-height: 1.4; /* Reducido */
             color: var(--text-color);
             min-height: 100%;
             display: flex;
@@ -210,17 +183,6 @@
             }
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         @keyframes scaleIn {
             from {
                 opacity: 0;
@@ -232,344 +194,147 @@
             }
         }
 
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        /* Estilos de los Cuadrados Animados */
+        .component-card {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 10px; /* Reducido */
+            margin: 10px; /* Reducido */
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .component-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+        .component-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius);
         }
 
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        /* Header Styles Extendidos */
+        /* Estilos del Header */
         header {
             background: var(--primary-gradient);
-            padding: calc(var(--spacing) * 1.5) var(--spacing);
+            color: var(--light-text);
+            padding: 20px 0;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-        }
-
-        header.scrolled {
-            padding: var(--spacing) var(--spacing);
-            background: rgba(75, 108, 183, 0.95);
-            backdrop-filter: blur(10px);
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
-            opacity: 0.5;
         }
 
         header h1 {
-            color: var(--light-text);
             font-size: var(--font-size-xxl);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: var(--text-shadow);
-            margin: 0;
-            position: relative;
-            z-index: 1;
-            animation: fadeInDown var(--animation-duration) var(--animation-timing);
+            margin-bottom: 10px;
         }
 
-        /* Navigation Styles */
         .nav-menu {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing);
+            margin-top: 10px;
         }
 
         .nav-link {
             color: var(--light-text);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--border-radius-sm);
-            transition: var(--transition);
+            margin: 0 15px;
+            font-size: var(--font-size-lg);
         }
 
-        .nav-link:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
+        /* Estilos de las Secciones */
+        section {
+            padding: 40px 0;
         }
 
-        /* Products Grid Styles */
+        .about-section {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        .about-content h2 {
+            font-size: var(--font-size-xl);
+            margin-bottom: 10px;
+        }
+
+        .about-content h3 {
+            font-size: var(--font-size-lg);
+            margin: 10px 0;
+        }
+
+        .about-content p {
+            font-size: var(--font-size);
+            margin-bottom: 20px;
+        }
+
+        /* Estilos de Productos */
         .products-section {
-            padding: calc(var(--header-height) + var(--spacing-xl)) var(--spacing) var(--spacing-xl);
-            background: var(--dark-gradient);
-            position: relative;
-            overflow: hidden;
+            background: #f8f9fa;
         }
 
-        .products-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
+        .categories-filter {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .category-button {
+            background: var(--secondary-color);
+            color: var(--light-text);
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius);
+            margin: 0 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .category-button:hover {
+            background: var(--primary-color);
         }
 
         .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: var(--spacing-lg) var(--spacing);
-            position: relative;
-            z-index: 1;
-        }
-
-        .product-card {
-            background: var(--card-gradient);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
             display: flex;
-            flex-direction: column;
-            height: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .product-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--blue-shadow);
-        }
-
-        .product-image-container {
-            position: relative;
-            padding-bottom: 75%;
-            overflow: hidden;
-            border-radius: var(--border-radius-sm);
-            margin-bottom: var(--spacing);
-        }
-
-        .product-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .product-card:hover .product-image {
-            transform: scale(1.1);
-        }
-
-        .product-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            opacity: 0;
-            transition: var(--transition);
-            display: flex;
-            align-items: flex-end;
-            padding: var(--spacing);
-        }
-
-        .product-card:hover .product-overlay {
-            opacity: 1;
-        }
-
-        .product-title {
-            color: var(--text-color);
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            margin: var(--spacing) 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.4;
-        }
-
-        .product-description {
-            color: var(--dark-text);
-            font-size: var(--font-size);
-            line-height: 1.6;
-            margin-bottom: var(--spacing);
-            flex-grow: 1;
-        }
-
-        .product-actions {
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .product-button {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: var(--border-radius-sm);
-            background: var(--primary-gradient);
-            color: var(--light-text);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .product-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--blue-shadow);
-        }
-
-        /* Reviews Section */
+        /* Estilos de Reseñas */
         .reviews-section {
-            padding: var(--spacing-xl) var(--spacing);
-            background: var(--light-text);
-        }
-
-        .reviews-header {
-            text-align: center;
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .reviews-title {
-            font-size: var(--font-size-xl);
-            font-weight: 700;
-            margin-bottom: var(--spacing);
-        }
-
-        .reviews-subtitle {
-            font-size: var(--font-size-md);
-            color: var(--dark-text);
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
+            background: #ffffff;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
         }
 
         .review-card {
-            background: var(--card-gradient);
+            background: #f8f9fa;
             border-radius: var(--border-radius);
-            padding: var(--spacing-md);
+            padding: 15px;
+            margin: 10px;
             box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            transition: transform 0.3s;
+        }
+
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--hover-shadow);
         }
 
         .review-header {
             display: flex;
             align-items: center;
-            margin-bottom: var(--spacing);
         }
 
         .review-avatar {
-            margin-right: var(--spacing);
+            margin-right: 10px;
         }
 
-        .review-info {
-            flex-grow: 1;
-        }
-
-        .review-name {
-            font-weight: 700;
-            margin-bottom: var(--spacing-xs);
+        .review-info h3 {
+            font-size: var(--font-size-lg);
         }
 
         .review-rating {
-            color: var(--primary-color);
+            color: var(--success-color);
         }
 
         .review-date {
@@ -578,259 +343,101 @@
         }
 
         .review-content {
-            margin-top: var(--spacing);
+            margin-top: 10px;
         }
 
         .review-text {
-            margin-bottom: var(--spacing);
+            font-size: var(--font-size);
+            margin-bottom: 10px;
         }
 
         .review-tags {
-            display: flex;
-            gap: var(--spacing-xs);
+            margin-bottom: 5px;
         }
 
         .review-tag {
-            background: var(--primary-gradient);
+            background: var(--primary-color);
             color: var(--light-text);
-            padding: var(--spacing-xs);
-            border-radius: var(--border-radius-sm);
-            font-size: var(--font-size-xs);
+            padding: 5px 10px;
+            border-radius: var(--border-radius);
+            margin-right: 5px;
+            font-size: var(--font-size-sm);
         }
 
         .review-verified {
-            display: flex;
-            align-items: center;
-            font-size: var(--font-size-xs);
+            font-size: var(--font-size-sm);
             color: var(--success-color);
         }
 
-        /* Footer Styles */
+        /* Estilos del Footer */
         .footer {
             background: var(--secondary-color);
             color: var(--light-text);
-            padding: var(--spacing-xl) 0;
+            padding: 20px 0;
         }
 
         .footer-content {
             display: flex;
-            justify-content: space-between;
-            padding: 0 var(--spacing);
+            justify-content: space-around;
+            flex-wrap: wrap;
         }
 
         .footer-section {
+            margin: 10px;
             flex: 1;
-            margin: var(--spacing);
+            min-width: 200px;
         }
 
         .footer-title {
             font-size: var(--font-size-lg);
-            margin-bottom: var(--spacing);
+            margin-bottom: 10px;
         }
 
         .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing);
+            margin-top: 10px;
         }
 
         .contact-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing);
-            color: rgba(255,255,255,0.8);
-            font-size: var(--font-size);
+            margin-bottom: 5px;
         }
 
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(75,108,183,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
+        .footer-social {
+            margin-top: 10px;
+        }
+
+        .social-link {
+            color: var(--light-text);
+            margin: 0 5px;
             font-size: var(--font-size-lg);
-            transition: var(--transition);
-        }
-
-        .contact-item:hover i {
-            background: var(--primary-gradient);
-            color: var(--light-text);
-            transform: rotate(360deg);
-        }
-
-        .footer-newsletter {
-            margin-top: var(--spacing);
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing);
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: var(--spacing-sm) var(--spacing);
-            border-radius: var(--border-radius-sm);
-            background: rgba(255,255,255,0.1);
-            color: var(--light-text);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .newsletter-input::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
-
-        .newsletter-input:focus {
-            border-color: var(--primary-color);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .newsletter-button {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: var(--border-radius-sm);
-            background: var(--primary-gradient);
-            color: var(--light-text);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--blue-shadow);
         }
 
         .footer-bottom {
-            margin-top: var(--spacing-xl);
-            padding-top: var(--spacing);
-            border-top: 1px solid rgba(255,255,255,0.1);
             text-align: center;
-            color: rgba(255,255,255,0.6);
+            margin-top: 20px;
             font-size: var(--font-size-sm);
         }
 
-        .footer-bottom a {
-            color: var(--primary-color);
-            font-weight: 600;
+        /* Estilos del Botón de Scroll */
+        .scroll-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--primary-color);
+            color: var(--light-text);
+            border: none;
+            border-radius: var(--border-radius);
+            padding: 10px;
+            cursor: pointer;
+            display: none;
+            transition: background 0.3s;
         }
 
-        /* Media Queries */
-        @media (max-width: 1200px) {
-            :root {
-                --font-size-xxl: 1.8rem;
-                --font-size-xl: 1.4rem;
-                --font-size-lg: 1.2rem;
-                --spacing-xl: 50px;
-            }
-
-            .products-grid,
-            .reviews-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .scroll-top.visible {
+            display: block;
         }
 
-        @media (max-width: 992px) {
-            :root {
-                --font-size-xxl: 1.6rem;
-                --font-size-xl: 1.3rem;
-                --spacing-xl: 40px;
-            }
-
-            .products-grid,
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --font-size-xxl: 1.4rem;
-                --font-size-xl: 1.2rem;
-                --spacing-lg: 30px;
-            }
-
-            .products-grid,
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .product-card,
-            .review-card {
-                max-width: 400px;
-                margin: 0 auto;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .footer-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .contact-item {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            :root {
-                --font-size-xxl: 1.3rem;
-                --font-size-xl: 1.1rem;
-                --spacing: 15px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-button {
-                width: 100%;
-            }
-
-            .social-link {
-                width: 35px;
-                height: 35px;
-                font-size: var(--font-size);
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            .footer-newsletter,
-            .footer-social,
-            .newsletter-form {
-                display: none;
-            }
-
-            .footer {
-                background: none;
-                color: black;
-            }
-
-            .footer-title {
-                color: black;
-            }
-
-            .footer-link,
-            .contact-item {
-                color: black;
-            }
+        .scroll-top:hover {
+            background: var(--secondary-color);
         }
     </style>
 </head>
@@ -882,99 +489,75 @@
             
             <div class="products-grid">
                 <!-- Procesador -->
-                <div class="product-card" data-category="procesadores">
-                    <div class="product-image-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Nuevo</span>
+                <div class="component-card" data-category="procesadores">
+                    <div class="component-image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador" class="component-image">
+                        <div class="component-overlay">
+                            <span class="component-badge">Nuevo</span>
                         </div>
                     </div>
-                    <h3 class="product-title">Procesadores</h3>
-                    <p class="product-description">AMD e Intel de última generación para máximo rendimiento</p>
-                    <div class="product-actions">
-                        <a href="procesador.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
-                    </div>
+                    <h3 class="component-title">Procesadores</h3>
+                    <p class="component-description">AMD e Intel de última generación para máximo rendimiento</p>
                 </div>
 
                 <!-- Tarjeta Gráfica -->
-                <div class="product-card" data-category="graficas">
-                    <div class="product-image-container">
-                        <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Popular</span>
+                <div class="component-card" data-category="graficas">
+                    <div class="component-image-container">
+                        <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica" class="component-image">
+                        <div class="component-overlay">
+                            <span class="component-badge">Popular</span>
                         </div>
                     </div>
-                    <h3 class="product-title">Tarjetas Gráficas</h3>
-                    <p class="product-description">Alto rendimiento para gaming y diseño profesional</p>
-                    <div class="product-actions">
-                        <a href="targetagrafica.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
-                    </div>
+                    <h3 class="component-title">Tarjetas Gráficas</h3>
+                    <p class="component-description">Alto rendimiento para gaming y diseño profesional</p>
                 </div>
 
                 <!-- Memoria RAM -->
-                <div class="product-card" data-category="memorias">
-                    <div class="product-image-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUv2cBPvqnY_1Qa3lS8h0zBZGwbBQePH_Yw&s" alt="Memoria RAM" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Oferta</span>
+                <div class="component-card" data-category="memorias">
+                    <div class="component-image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUv2cBPvqnY_1Qa3lS8h0zBZGwbBQePH_Yw&s" alt="Memoria RAM" class="component-image">
+                        <div class="component-overlay">
+                            <span class="component-badge">Oferta</span>
                         </div>
                     </div>
-                    <h3 class="product-title">Memorias RAM</h3>
-                    <p class="product-description">DDR4 y DDR5 de alta velocidad</p>
-                    <div class="product-actions">
-                        <a href="ram.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
-                    </div>
+                    <h3 class="component-title">Memorias RAM</h3>
+                    <p class="component-description">DDR4 y DDR5 de alta velocidad</p>
                 </div>
 
                 <!-- HDD -->
-                <div class="product-card" data-category="hdd">
-                    <div class="product-image-container">
-                        <img src="https://example.com/hdd-image.jpg" alt="HDD" class="product-image"> <!-- Cambia la URL por la imagen real -->
-                        <div class="product-overlay">
-                            <span class="product-badge">Nuevo</span>
+                <div class="component-card" data-category="hdd">
+                    <div class="component-image-container">
+                        <img src="https://example.com/hdd-image.jpg" alt="HDD" class="component-image"> <!-- Cambia la URL por la imagen real -->
+                        <div class="component-overlay">
+                            <span class="component-badge">Nuevo</span>
                         </div>
                     </div>
-                    <h3 class="product-title">HDD</h3>
-                    <p class="product-description">Discos duros de alta capacidad para almacenamiento masivo.</p>
-                    <div class="product-actions">
-                        <a href="hdd.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
-                    </div>
+                    <h3 class="component-title">HDD</h3>
+                    <p class="component-description">Discos duros de alta capacidad para almacenamiento masivo.</p>
                 </div>
 
                 <!-- SSD -->
-                <div class="product-card" data-category="ssd">
-                    <div class="product-image-container">
-                        <img src="https://example.com/ssd-image.jpg" alt="SSD" class="product-image"> <!-- Cambia la URL por la imagen real -->
-                        <div class="product-overlay">
-                            <span class="product-badge">Nuevo</span>
+                <div class="component-card" data-category="ssd">
+                    <div class="component-image-container">
+                        <img src="https://example.com/ssd-image.jpg" alt="SSD" class="component-image"> <!-- Cambia la URL por la imagen real -->
+                        <div class="component-overlay">
+                            <span class="component-badge">Nuevo</span>
                         </div>
                     </div>
-                    <h3 class="product-title">SSD</h3>
-                    <p class="product-description">Unidades de estado sólido para un rendimiento superior.</p>
-                    <div class="product-actions">
-                        <a href="ssd.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
-                    </div>
+                    <h3 class="component-title">SSD</h3>
+                    <p class="component-description">Unidades de estado sólido para un rendimiento superior.</p>
                 </div>
 
                 <!-- Placa Madre -->
-                <div class="product-card" data-category="placas madre">
-                    <div class="product-image-container">
-                        <img src="https://example.com/motherboard-image.jpg" alt="Placa Madre" class="product-image"> <!-- Cambia la URL por la imagen real -->
-                        <div class="product-overlay">
-                            <span class="product-badge">Nuevo</span>
+                <div class="component-card" data-category="placas madre">
+                    <div class="component-image-container">
+                        <img src="https://example.com/motherboard-image.jpg" alt="Placa Madre" class="component-image"> <!-- Cambia la URL por la imagen real -->
+                        <div class="component-overlay">
+                            <span class="component-badge">Nuevo</span>
                         </div>
                     </div>
-                    <h3 class="product-title">Placas Madre</h3>
-                    <p class="product-description">Placas madre de última generación para todas tus necesidades.</p>
-                    <div class="product-actions">
-                        <a href="placamadre.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
-                    </div>
+                    <h3 class="component-title">Placas Madre</h3>
+                    <p class="component-description">Placas madre de última generación para todas tus necesidades.</p>
                 </div>
             </div>
         </div>
@@ -982,178 +565,108 @@
 
     <!-- Reviews Section -->
     <section class="reviews-section" id="reviews">
-        <div class="reviews-header">
-            <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
-            <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
-        </div>
-        
-        <div class="reviews-grid">
-            <!-- Review 1 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Santiago Rodríguez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
+        <div class="container">
+            <h2>Opiniones de Nuestros Clientes</h2>
+            <div class="reviews-grid">
+                <!-- Review 1 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
                         </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            15 marzo 2024
-                        </span>
+                        <div class="review-info">
+                            <h3>Juan Pérez</h3>
+                            <div class="review-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <span class="review-date">
+                                <i class="far fa-calendar-alt"></i>
+                                15 enero 2024
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">"La mejor tienda para componentes de PC. Siempre encuentro lo que necesito y a buen precio."</p>
+                        <div class="review-tags">
+                            <span class="review-tag">Componentes</span>
+                            <span class="review-tag">Precios</span>
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            Compra verificada
+                        </div>
                     </div>
                 </div>
-                <div class="review-content">
-                    <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Gaming PC</span>
-                        <span class="review-tag">Servicio Técnico</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
 
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">María Fernández</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star-half-alt star"></i>
+                <!-- Review 2 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente">
                         </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            20 marzo 2024
-                        </span>
+                        <div class="review-info">
+                            <h3>Lucía Gómez</h3>
+                            <div class="review-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star-half-alt star"></i>
+                                <i class="far fa-star star"></i>
+                            </div>
+                            <span class="review-date">
+                                <i class="far fa-calendar-alt"></i>
+                                30 marzo 2024
+                            </span>
+                        </div>
+                    </div>
+                    <div class="review-content">
+                        <p class="review-text">"El servicio de mantenimiento es excelente. Me ayudaron a optimizar mi PC y ahora funciona como nueva."</p>
+                        <div class="review-tags">
+                            <span class="review-tag">Mantenimiento</span>
+                            <span class="review-tag">Optimización</span>
+                        </div>
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            Compra verificada
+                        </div>
                     </div>
                 </div>
-                <div class="review-content">
-                    <p class="review-text">"Excelente atención al cliente y productos de calidad. Estoy muy satisfecha con mi compra."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Calidad</span>
-                        <span class="review-tag">Atención</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
 
-            <!-- Review 3 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Carlos Pérez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
+                <!-- Review 3 -->
+                <div class="review-card">
+                    <div class="review-header">
+                        <div class="review-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente">
                         </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            25 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"La mejor tienda para componentes de PC. Siempre encuentro lo que necesito y a buen precio."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Componentes</span>
-                        <span class="review-tag">Precios</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 4 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3>Lucía Gómez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star-half-alt star"></i>
-                            <i class="far fa-star star"></i>
+                        <div class="review-info">
+                            <h3>Javier Martínez</h3>
+                            <div class="review-rating">
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                                <i class="fas fa-star star"></i>
+                            </div>
+                            <span class="review-date">
+                                <i class="far fa-calendar-alt"></i>
+                                5 abril 2024
+                            </span>
                         </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            30 marzo 2024
-                        </span>
                     </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"El servicio de mantenimiento es excelente. Me ayudaron a optimizar mi PC y ahora funciona como nueva."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Mantenimiento</span>
-                        <span class="review-tag">Optimización</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 5 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3>Javier Martínez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
+                    <div class="review-content">
+                        <p class="review-text">"Gran variedad de productos y un servicio al cliente excepcional. Definitivamente volveré a comprar aquí."</p>
+                        <div class="review-tags">
+                            <span class="review-tag">Variedad</span>
+                            <span class="review-tag">Servicio</span>
                         </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            5 abril 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"Gran variedad de productos y un servicio al cliente excepcional. Definitivamente volveré a comprar aquí."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Variedad</span>
-                        <span class="review-tag">Servicio</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
+                        <div class="review-verified">
+                            <i class="fas fa-check-circle"></i>
+                            Compra verificada
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1238,7 +751,7 @@
 
         // Product Filtering
         const categoryButtons = document.querySelectorAll('.category-button');
-        const productCards = document.querySelectorAll('.product-card');
+        const productCards = document.querySelectorAll('.component-card');
 
         categoryButtons.forEach(button => {
             button.addEventListener('click', () => {
@@ -1270,7 +783,7 @@
             threshold: 0.1
         });
 
-        document.querySelectorAll('.product-card, .review-card').forEach(card => {
+        document.querySelectorAll('.component-card, .review-card').forEach(card => {
             observer.observe(card);
         });
 
