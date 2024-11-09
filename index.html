@@ -40,7 +40,6 @@
             overflow-x: hidden;
         }
 
-        /* Header Styles */
         header {
             background: var(--primary-gradient);
             padding: 20px;
@@ -112,12 +111,32 @@
             overflow: hidden;
         }
 
+        .vision-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .vision-content h2 {
+            color: white;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .vision-content > p {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
         .vision-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
+            margin-top: 40px;
         }
 
         .vision-item {
@@ -207,30 +226,19 @@
             margin-top: 20px;
         }
 
-        .buy-button, .info-button {
+        .info-button {
             flex: 1;
             padding: 12px 20px;
             border-radius: 8px;
+            background: var(--secondary-gradient);
+            color: white;
             text-decoration: none;
             font-weight: bold;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1.1em;
             text-align: center;
         }
 
-        .buy-button {
-            background: var(--primary-gradient);
-            color: white;
-        }
-
-        .info-button {
-            background: var(--secondary-gradient);
-            color: white;
-        }
-
-        .buy-button:hover, .info-button:hover {
+        .info-button:hover {
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
@@ -426,21 +434,26 @@
 
     <!-- Sección de Visión -->
     <section class="vision-section">
-        <div class="vision-grid">
-            <div class="vision-item">
-                <i class="fas fa-bullseye"></i>
-                <h3>Objetivo</h3>
-                <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
-            </div>
-            <div class="vision-item">
-                <i class="fas fa-handshake"></i>
-                <h3>Compromiso</h3>
-                <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
-            </div>
-            <div class="vision-item">
-                <i class="fas fa-star"></i>
-                <h3>Valores</h3>
-                <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
+        <div class="vision-content">
+            <h2>Nuestra Visión</h2>
+            <p>En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
+            
+            <div class="vision-grid">
+                <div class="vision-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Objetivo</h3>
+                    <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Compromiso</h3>
+                    <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+                </div>
+                <div class="vision-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Valores</h3>
+                    <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -472,7 +485,6 @@
             <h2>Procesadores</h2>
             <p>AMD e Intel de última generación</p>
             <div class="button-container">
-                <button onclick="addToCart('Procesador', 25000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -485,7 +497,6 @@
             <h2>Tarjeta Gráfica</h2>
             <p>Alto rendimiento para gaming</p>
             <div class="button-container">
-                <button onclick="addToCart('Tarjeta Gráfica', 35000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -498,7 +509,6 @@
             <h2>Memorias RAM</h2>
             <p>DDR4 y DDR5 de alto rendimiento</p>
             <div class="button-container">
-                <button onclick="addToCart('Memoria RAM', 15000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -511,7 +521,6 @@
             <h2>Fuentes de Poder</h2>
             <p>Certificación 80 Plus, alta eficiencia</p>
             <div class="button-container">
-                <button onclick="addToCart('Fuente de Poder', 12000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -524,7 +533,6 @@
             <h2>Placas Madre</h2>
             <p>Para AMD e Intel, últimos chipsets</p>
             <div class="button-container">
-                <button onclick="addToCart('Placa Madre', 18000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -537,7 +545,6 @@
             <h2>Discos SSD</h2>
             <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
             <div class="button-container">
-                <button onclick="addToCart('Disco SSD', 8000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -550,7 +557,6 @@
             <h2>Discos HDD</h2>
             <p>Gran capacidad de almacenamiento</p>
             <div class="button-container">
-                <button onclick="addToCart('Disco HDD', 5000)" class="buy-button">Añadir al carrito</button>
                 <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
                 </a>
@@ -563,7 +569,9 @@
             <h2>Mantenimiento</h2>
             <p>Servicio técnico especializado</p>
             <div class="button-container">
-                <button onclick="addToCart('Servicio de Mantenimiento', 3000)" class="buy-button">Añadir al carrito</button>
+                <a href="#" class="info-button" style="opacity: 0.7; pointer-events: none;">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
             </div>
         </div>
     </div>
@@ -586,13 +594,31 @@
 
     <!-- Scripts -->
     <script>
-        const cart = [];
+        let cart = [];
         let totalPrice = 0;
+
+        // Cargar carrito desde localStorage
+        function loadCart() {
+            const savedCart = localStorage.getItem('cart');
+            const savedTotal = localStorage.getItem('totalPrice');
+            if (savedCart) {
+                cart = JSON.parse(savedCart);
+                totalPrice = Number(savedTotal);
+                updateCart();
+            }
+        }
+
+        // Guardar carrito en localStorage
+        function saveCart() {
+            localStorage.setItem('cart', JSON.stringify(cart));
+            localStorage.setItem('totalPrice', totalPrice);
+        }
 
         function addToCart(item, price) {
             cart.push({ item, price });
             totalPrice += price;
             updateCart();
+            saveCart();
             document.querySelector('.cart').classList.add('active');
         }
 
@@ -618,6 +644,7 @@
             totalPrice -= cart[index].price;
             cart.splice(index, 1);
             updateCart();
+            saveCart();
         }
 
         function minimizeCart(event) {
@@ -634,6 +661,7 @@
             cart.length = 0;
             totalPrice = 0;
             updateCart();
+            saveCart();
             document.querySelector('.cart').classList.remove('active');
         }
 
@@ -648,6 +676,9 @@
                 cart.classList.remove('active');
             }
         });
+
+        // Cargar carrito al iniciar la página
+        document.addEventListener('DOMContentLoaded', loadCart);
     </script>
 </body>
 </html>
