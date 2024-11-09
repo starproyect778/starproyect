@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9"> <!-- Reducción del zoom -->
+    <meta name="description" content="Star Proyect - Tu tienda de confianza para componentes de PC en Uruguay. Gabinetes, componentes, mantenimiento y más.">
+    <meta name="keywords" content="componentes PC, hardware, gabinetes, mantenimiento, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay, Star Wars, Star Proyect, gaming PC, computadoras, hardware gaming">
+    <meta name="author" content="Star Proyect">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Star Proyect - Componentes de PC">
+    <meta property="og:description" content="Tu tienda de confianza para componentes de PC en Uruguay">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="https://starproyect778.github.io/starproyect/">
+    <meta name="theme-color" content="#4b6cb7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-title" content="Star Proyect">
+    <meta name="application-name" content="Star Proyect">
+    <meta name="msapplication-TileColor" content="#4b6cb7">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    
+    <title>Star Proyect - Componentes de PC en Uruguay</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#4b6cb7">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Variables CSS */
+        :root {
+            /* Gradientes principales */
+            --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
+            --secondary-gradient: linear-gradient(135deg, #6a85d1 0%, #4b6cb7 100%);
+            --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
+            --hover-gradient: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+            --dark-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            --accent-gradient: linear-gradient(45deg, #4b6cb7, #6a85d1);
+            
+            /* Colores base */
+            --primary-color: #4b6cb7;
+            --secondary-color: #182848;
+            --accent-color: #6a85d1;
+            --text-color: #333333;
+            --light-text: #ffffff;
+            --dark-text: #666666;
+            --error-color: #dc3545;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --info-color: #17a2b8;
+            
+            /* Efectos y decoración */
+            --border-radius-sm: 8px;
+            --border-radius: 15px;
+            --border-radius-lg: 20px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --hover-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            --blue-shadow: 0 8px 16px rgba(75,108,183,0.2);
+            --text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            
+            /* Espaciado y dimensiones */
+            --spacing-xs: 5px;
+            --spacing-sm: 10px;
+            --spacing: 20px;
+            --spacing-md: 30px;
+            --spacing-lg: 40px;
+            --spacing-xl: 60px;
+            --max-width: 1400px;
+            --header-height: 80px;
+            --footer-height: 200px;
+            
+            /* Tipografía */
+            --main-font: 'Orbitron', sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size: 1rem;
+            --font-size-md: 1.125rem;
+            --font-size-lg: 1.25rem;
+            --font-size-xl: 1.5rem;
+            --font-size-xxl: 2rem;
+            
+            /* Animaciones */
+            --transition: all 0.3s ease;
+            --transition-fast: all 0.2s ease;
+            --transition-slow: all 0.5s ease;
+            --animation-duration: 0.8s;
+            --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Reset y Estilos Base */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 14px; /* Reducción del zoom */
+            overflow-x: hidden;
+            height: 100%;
+            scroll-padding-top: var(--header-height);
+        }
+
+        body {
+            font-family: var(--main-font);
+            background-color: #f0f2f5;
+            overflow-x: hidden;
+            line-height: 1.6;
+            color: var(--text-color);
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        button {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+            border: none;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        /* Utilidades Globales */
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            width: 100%;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* Animaciones Base */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        /* Header Styles Extendidos */
+        header {
+            background: var(--primary-gradient);
+            padding: calc(var(--spacing) * 1.2) var(--spacing); /* Reducción del padding */
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: var(--spacing) var(--spacing);
+            background: rgba(75, 108, 183, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 3em 3em;
+            animation: backgroundMove 30s linear infinite;
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        header h1 {
+            color: var(--light-text);
+            font-size: var(--font-size-xl); /* Ajuste del tamaño de fuente */
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: var(--text-shadow);
+            margin: 0;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown var(--animation-duration) var(--animation-timing);
+        }
+
+        /* Navigation Styles */
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing);
+        }
+
+        .nav-link {
+            color: var(--light-text);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* About Section Styles */
+        .about-section {
+            padding: var(--spacing-xl) var(--spacing);
+            background: var(--dark-gradient);
+            color: var(--light-text);
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-content h2 {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing);
+        }
+
+        .about-content p {
+            font-size: var(--font-size);
+            line-height: 1.6;
+            margin-bottom: var(--spacing);
+        }
+
+        /* Mission and Vision Styles */
+        .mission-vision {
+            padding: var(--spacing-xl) var(--spacing);
+            background: var(--card-gradient);
+            color: var(--text-color);
+            text-align: center;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin: var(--spacing) 0;
+        }
+
+        .mission-vision h3 {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .mission-vision p {
+            font-size: var(--font-size);
+            line-height: 1.6;
+            margin-bottom: var(--spacing);
+        }
+
+        /* Products Grid Styles */
+        .products-section {
+            padding: calc(var(--header-height) + var(--spacing-xl)) var(--spacing) var(--spacing-xl);
+            background: var(--dark-gradient);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .products-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
+            background-size: 3em 3em;
+            animation: backgroundMove 30s linear infinite;
+            pointer-events: none;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing-lg) var(--spacing);
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card {
+            background: var(--card-gradient);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-md);
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--blue-shadow);
+        }
+
+        .product-image-container {
+            position: relative;
+            padding-bottom: 75%;
+            overflow: hidden;
+            border-radius: var(--border-radius-sm);
+            margin-bottom: var(--spacing);
+        }
+
+        .product-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image {
+            transform: scale(1.1);
+        }
+
+        .product-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-end;
+            padding: var(--spacing);
+        }
+
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+
+        .product-title {
+            color: var(--text-color);
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            margin: var(--spacing) 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
+
+        .product-description {
+            color: var(--dark-text);
+            font-size: var(--font-size);
+            line-height: 1.6;
+            margin-bottom: var(--spacing);
+            flex-grow: 1;
+        }
+
+        .product-price {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: var(--spacing-sm) 0;
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .product-price-old {
+            text-decoration: line-through;
+            color: var(--dark-text);
+            font-size: var(--font-size);
+            font-weight: normal;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: var(--spacing);
+            right: var(--spacing);
+            background: var(--primary-gradient);
+            color: var(--light-text);
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 1;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: auto;
+        }
+
+        .product-button {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing);
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .button-primary {
+            background: var(--primary-gradient);
+            color: var(--light-text);
+        }
+
+        .button-secondary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--blue-shadow);
+        }
+
+        .button-secondary:hover {
+            background: var(--primary-color);
+            color: var(--light-text);
+        }
+
+        /* Product Categories */
+        .categories-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .category-button {
+            padding: var(--spacing-xs) var(--spacing);
+            border-radius: var(--border-radius-sm);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            background: transparent;
+            color: var(--light-text);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .category-button:hover,
+        .category-button.active {
+            background: var(--primary-gradient);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* Reviews Section Styles */
+        .reviews-section {
+            padding: var(--spacing-xl) var(--spacing);
+            background: var(--dark-gradient);
+            position: relative;
+            overflow: hidden;
+            color: var(--light-text);
+        }
+
+        .reviews-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
+            background-size: 3em 3em;
+            animation: backgroundMove 30s linear infinite;
+            pointer-events: none;
+        }
+
+        .reviews-header {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+            position: relative;
+            z-index: 2;
+        }
+
+        .reviews-title {
+            color: var(--primary-color);
+            font-size: var(--font-size-xxl);
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing);
+            text-shadow: var(--text-shadow);
+            position: relative;
+            display: inline-block;
+        }
+
+        .reviews-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 4px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .reviews-subtitle {
+            color: var(--light-text);
+            font-size: var(--font-size-md);
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-lg);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--border-radius);
+            padding: var(--spacing-lg);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+        }
+
+        .review-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: var(--spacing);
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: var(--spacing);
+        }
+
+        .review-avatar img {
+            width: 100%;
+            height: auto;
+        }
+
+        .review-info {
+            flex-grow: 1;
+        }
+
+        .review-name {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .review-rating {
+            color: var(--success-color);
+        }
+
+        .review-date {
+            font-size: var(--font-size-sm);
+            color: var(--dark-text);
+        }
+
+        .review-content {
+            margin-top: var(--spacing);
+        }
+
+        .review-text {
+            font-size: var(--font-size);
+            line-height: 1.6;
+            margin-bottom: var(--spacing);
+        }
+
+        .review-tags {
+            display: flex;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing);
+        }
+
+        .review-tag {
+            background: rgba(75,108,183,0.1);
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: var(--font-size-xs);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .review-tag:hover {
+            background: var(--primary-color);
+            color: var(--light-text);
+            transform: translateY(-2px);
+        }
+
+        .review-verified {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+            color: var(--success-color);
+            font-size: var(--font-size-sm);
+            margin-top: var(--spacing);
+        }
+
+        .review-verified i {
+            font-size: var(--font-size-xs);
+        }
+
+        /* Review Animations */
+        @keyframes starPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .review-card:hover .star {
+            animation: starPulse 1s infinite;
+        }
+
+        /* Review Grid Animations */
+        .reviews-grid {
+            perspective: 1000px;
+        }
+
+        .review-card {
+            transform-style: preserve-3d;
+            animation: reviewCardIn var(--animation-duration) var(--animation-timing);
+        }
+
+        @keyframes reviewCardIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px) rotateX(-10deg);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) rotateX(0);
+            }
+        }
+
+        /* Review Loading Skeleton */
+        .review-skeleton {
+            background: linear-gradient(90deg, 
+                rgba(255,255,255,0.05) 25%, 
+                rgba(255,255,255,0.1) 50%, 
+                rgba(255,255,255,0.05) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: var(--dark-gradient);
+            color: var(--light-text);
+            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            position: relative;
+            overflow: hidden;
+            margin-top: auto;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-xl);
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-section {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing);
+        }
+
+        .footer-title {
+            color: var(--primary-color);
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--spacing);
+            position: relative;
+            padding-bottom: var(--spacing-sm);
+        }
+
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+        }
+
+        .footer-link {
+            color: rgba(255,255,255,0.8);
+            font-size: var(--font-size);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+
+        .footer-link i {
+            font-size: var(--font-size-sm);
+            color: var(--primary-color);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+            color: var(--light-text);
+            font-size: var(--font-size-lg);
+        }
+
+        .social-link:hover {
+            background: var(--primary-gradient);
+            transform: translateY(-5px);
+            box-shadow: var(--blue-shadow);
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing);
+            color: rgba(255,255,255,0.8);
+            font-size: var(--font-size);
+        }
+
+        .contact-item i {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(75,108,183,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            font-size: var(--font-size-lg);
+            transition: var(--transition);
+        }
+
+        .contact-item:hover i {
+            background: var(--primary-gradient);
+            color: var(--light-text);
+            transform: rotate(360deg);
+        }
+
+        .footer-newsletter {
+            margin-top: var(--spacing);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing);
+        }
+
+        .newsletter-input {
+            flex: 1;
+            padding: var(--spacing-sm) var(--spacing);
+            border-radius: var(--border-radius-sm);
+            background: rgba(255,255,255,0.1);
+            color: var(--light-text);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .newsletter-input::placeholder {
+            color: rgba(255,255,255,0.5);
+        }
+
+        .newsletter-input:focus {
+            border-color: var(--primary-color);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .newsletter-button {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-sm);
+            background: var(--primary-gradient);
+            color: var(--light-text);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .newsletter-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--blue-shadow);
+        }
+
+        .footer-bottom {
+            margin-top: var(--spacing-xl);
+            padding-top: var(--spacing);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: var(--font-size-sm);
+        }
+
+        .footer-bottom a {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1200px) {
+            :root {
+                --font-size-xxl: 1.8rem;
+                --font-size-xl: 1.4rem;
+                --font-size-lg: 1.2rem;
+                --spacing-xl: 50px;
+            }
+
+            .products-grid,
+            .reviews-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            :root {
+                --font-size-xxl: 1.6rem;
+                --font-size-xl: 1.3rem;
+                --spacing-xl: 40px;
+            }
+
+            .products-grid,
+            .reviews-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --font-size-xxl: 1.4rem;
+                --font-size-xl: 1.2rem;
+                --spacing-lg: 30px;
+            }
+
+            .products-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card,
+            .review-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .footer-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .contact-item {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --font-size-xxl: 1.3rem;
+                --font-size-xl: 1.1rem;
+                --spacing: 15px;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+
+            .newsletter-button {
+                width: 100%;
+            }
+
+            .social-link {
+                width: 35px;
+                height: 35px;
+                font-size: var(--font-size);
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .footer-newsletter,
+            .footer-social,
+            .newsletter-form {
+                display: none;
+            }
+
+            .footer {
+                background: none;
+                color: black;
+            }
+
+            .footer-title {
+                color: black;
+            }
+
+            .footer-link,
+            .contact-item {
+                color: black;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div class="loading">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <header>
+        <h1>Star Proyect</h1> <!-- Cambiado de "tie" a "Star Proyect" -->
+        <nav class="nav-menu">
+            <a href="#about" class="nav-link">Sobre Nosotros</a>
+            <a href="#products" class="nav-link">Productos</a>
+            <a href="#reviews" class="nav-link">Opiniones</a>
+            <a href="#contact" class="nav-link">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <h2>¿Qué es Star Proyect?</h2>
+            <p>Star Proyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de gabinetes, componentes de hardware, y servicios de mantenimiento.</p>
+            <p>Nuestra misión es proporcionar a nuestros clientes los mejores productos y servicios, asegurando que cada experiencia de compra sea excepcional. Nuestra visión es ser la tienda de referencia en Uruguay para todos los entusiastas de la tecnología.</p>
+        </div>
+    </section>
+
+    <!-- Mission and Vision Section -->
+    <section class="mission-vision">
+        <h3>Misión</h3>
+        <p>Ofrecer productos de alta calidad y un servicio al cliente excepcional, ayudando a nuestros clientes a construir sus sistemas ideales.</p>
+        <h3>Visión</h3>
+        <p>Convertirnos en el líder del mercado en la venta de componentes de PC y servicios de mantenimiento en Uruguay.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="products">
+        <div class="container">
+            <div class="categories-filter">
+                <button class="category-button active">Todos</button>
+                <button class="category-button">Procesadores</button>
+                <button class="category-button">Tarjetas Gráficas</button>
+                <button class="category-button">Memorias</button>
+                <button class="category-button">HDD</button> <!-- Cambiado de "Almacenamiento" a "HDD" -->
+                <button class="category-button">SSD</button>
+                <button class="category-button">Gabinetes</button>
+                <button class="category-button">Placas Madre</button> <!-- Añadido "Placas Madre" -->
+                <button class="category-button">Mantenimiento</button> <!-- Añadido "Mantenimiento" -->
+            </div>
+            
+            <div class="products-grid">
+                <!-- Procesador -->
+                <div class="product-card" data-category="procesadores">
+                    <div class="product-image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador" class="product-image">
+                        <div class="product-overlay">
+                            <span class="product-badge">Nuevo</span>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Procesadores</h3>
+                    <p class="product-description">AMD e Intel de última generación para máximo rendimiento</p>
+                    <div class="product-actions">
+                        <a href="procesador.html" class="product-button button-primary">Ver Más</a>
+                        <button class="product-button button-secondary">Info</button>
+                    </div>
+                </div>
+
+                <!-- Tarjeta Gráfica -->
+                <div class="product-card" data-category="graficas">
+                    <div class="product-image-container">
+                        <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica" class="product-image">
+                        <div class="product-overlay">
+                            <span class="product-badge">Popular</span>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Tarjetas Gráficas</h3>
+                    <p class="product-description">Alto rendimiento para gaming y diseño profesional</p>
+                    <div class="product-actions">
+                        <a href="targetagrafica.html" class="product-button button-primary">Ver Más</a>
+                        <button class="product-button button-secondary">Info</button>
+                    </div>
+                </div>
+
+                <!-- Memoria RAM -->
+                <div class="product-card" data-category="memorias">
+                    <div class="product-image-container">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUv2cBPvqnY_1Qa3lS8h0zBZGwbBQePH_Yw&s" alt="Memoria RAM" class="product-image">
+                        <div class="product-overlay">
+                            <span class="product-badge">Oferta</span>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Memorias RAM</h3>
+                    <p class="product-description">DDR4 y DDR5 de alta velocidad</p>
+                    <div class="product-actions">
+                        <a href="ram.html" class="product-button button-primary">Ver Más</a>
+                        <button class="product-button button-secondary">Info</button>
+                    </div>
+                </div>
+
+                <!-- HDD -->
+                <div class="product-card" data-category="hdd">
+                    <div class="product-image-container">
+                        <img src="https://www.seagate.com/www-content/dam/seagate/migration/solutions/enterprise-hdd/enterprise-hdd-hero.jpg" alt="HDD" class="product-image">
+                        <div class="product-overlay">
+                            <span class="product-badge">Destacado</span>
+                        </div>
+                    </div>
+                    <h3 class="product-title">HDD</h3>
+                    <p class="product-description">Almacenamiento confiable y de gran capacidad</p>
+                    <div class="product-actions">
+                        <a href="hdd.html" class="product-button button-primary">Ver Más</a>
+                        <button class="product-button button-secondary">Info</button>
+                    </div>
+                </div>
+
+                <!-- SSD -->
+                <div class="product-card" data-category="ssd">
+                    <div class="product-image-container">
+                        <img src="https://www.crucial.com/na/en/ssd/ct1000mx500ssd1/ct1000mx500ssd1-1" alt="SSD" class="product-image">
+                        <div class="product-overlay">
+                            <span class="product-badge">Rápido</span>
+                        </div>
+                    </div>
+                    <h3 class="product-title">SSD</h3>
+                    <p class="product-description">Velocidades de lectura y escritura ultrarrápidas</p>
+                    <div class="product-actions">
+                        <a href="ssd.html" class="product-button button-primary">Ver Más</a>
+                        <button class="product-button button-secondary">Info</button>
+                    </div>
+                </div>
+
+                <!-- Gabinete -->
+                <div class="product-card" data-category="gabinetes">
+                    <div class="product-image-container">
+                        <img src="https://www.coolermaster.com/uploads/products/1/1/1/1111/1111_1.jpg" alt="Gabinete" class="product-image">
+                        <div class="product-overlay">
+                            <span class="product-badge">Nuevo</span>
+                        </div>
+                    </div>
+                    <h3 class="product-title">Gabinete</h3>
+                    <p class="product-description">Diseños elegantes y funcionales para tu PC</p>
+                    <div class="product-actions">
+                        <a href="gabinete.html" class="product-button button-primary">Ver Más</a>
+                        <button class="product-button button-secondary">Info</button>
+                    </div>
+                </div>
+                                <!-- Reseñas de Clientes -->
+                                <div class="reviews-section" id="reviews">
+                                    <div class="reviews-header">
+                                        <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
+                                        <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
+                                    </div>
+                                    
+                                    <div class="reviews-grid">
+                                        <!-- Review 1 -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Santiago Rodríguez</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        15 marzo 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Gaming PC</span>
+                                                    <span class="review-tag">Servicio Técnico</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 2 -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">María Fernández</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star-half-alt star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        10 marzo 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"Los productos son de excelente calidad y el servicio al cliente es inmejorable. Definitivamente volveré a comprar aquí."</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Calidad</span>
+                                                    <span class="review-tag">Servicio</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 3 -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Carlos Pérez</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        5 marzo 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"La mejor tienda para comprar componentes de PC. Tienen todo lo que necesitas y más. ¡Recomendados!"</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Componentes</span>
+                                                    <span class="review-tag">Recomendados</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 4 -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Lucía Gómez</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        1 marzo 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"El mantenimiento de mi PC fue rápido y eficiente. Estoy muy satisfecha con el servicio."</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Mantenimiento</span>
+                                                    <span class="review-tag">Satisfacción</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 5 -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Javier Martínez</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star-half-alt star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        20 febrero 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Variedad</span>
+                                                    <span class="review-tag">Precios</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 6 (Ficticia) -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Fernando López</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        25 febrero 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"El servicio de mantenimiento fue excepcional. Mi PC funciona como nueva. ¡Recomiendo Star Proyect a todos!"</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Mantenimiento</span>
+                                                    <span class="review-tag">Recomendado</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 7 (Ficticia) -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Ana Torres</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        28 febrero 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"Excelente atención al cliente y productos de alta calidad. Estoy muy satisfecha con mi compra."</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Calidad</span>
+                                                    <span class="review-tag">Atención</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <!-- Review 8 (Ficticia) -->
+                                        <div class="review-card">
+                                            <div class="review-header">
+                                                <div class="review-avatar">
+                                                    <img src="https://randomuser.me/api/portraits/men/8.jpg" alt="Cliente">
+                                                </div>
+                                                <div class="review-info">
+                                                    <h3 class="review-name">Diego Martínez</h3>
+                                                    <div class="review-rating">
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star star"></i>
+                                                        <i class="fas fa-star-half-alt star"></i>
+                                                    </div>
+                                                    <span class="review-date">
+                                                        <i class="far fa-calendar-alt"></i>
+                                                        30 febrero 2024
+                                                    </span>
+                                                </div>
+                                            </div>
+                                            <div class="review-content">
+                                                <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
+                                                <div class="review-tags">
+                                                    <span class="review-tag">Variedad</span>
+                                                    <span class="review-tag">Precios</span>
+                                                </div>
+                                                <div class="review-verified">
+                                                    <i class="fas fa-check-circle"></i>
+                                                    Compra verificada
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                
+                                <!-- Footer -->
+                                <footer class="footer" id="contact">
+                                    <div class="footer-content">
+                                        <div class="footer-section">
+                                            <h3 class="footer-title">Contacto</h3>
+                                            <div class="footer-contact">
+                                                <div class="contact-item">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                    <span>Av. 8 de Octubre 2738, Montevideo, Uruguay</span>
+                                                </div>
+                                                <div class="contact-item">
+                                                    <i class="fas fa-phone"></i>
+                                                    <span>+598 99 999 999</span>
+                                                </div>
+                                                <div class="contact-item">
+                                                    <i class="fas fa-envelope"></i>
+                                                    <span>info@starproyect.com.uy</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                
+                                        <div class="footer-section">
+                                            <h3 class="footer-title">Síguenos</h3>
+                                            <div class="footer-social">
+                                                <a href="https://www.instagram.com/empresa_starproyect/" class="social-link" target="_blank">
+                                                    <i class="fab fa-instagram"></i>
+                                                </a>
+                                                <a href="https://www.facebook.com/profile.php?id=61565967616974" class="social-link" target="_blank">
+                                                    <i class="fab fa-facebook"></i>
+                                                </a>
+                                                <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" class="social-link" target="_blank">
+                                                    <i class="fas fa-map-marker-alt"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                
+                                        <div class="footer-section">
+                                            <h3 class="footer-title">Newsletter</h3>
+                                            <p>Suscríbete para recibir las últimas novedades y ofertas</p>
+                                            <form class="newsletter-form">
+                                                <input type="email" class="newsletter-input" placeholder="Tu email">
+                                                <button type="submit" class="newsletter-button">Suscribirse</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                
+                                    <div class="footer-bottom">
+                                        <p>&copy; 2024 Star Proyect. Todos los derechos reservados.</p>
+                                    </div>
+                                </footer>
+                
+                                <!-- Scripts -->
+                                <script>
+                                    // Loading Screen
+                                    window.addEventListener('load', () => {
+                                        document.querySelector('.loading').style.display = 'none';
+                                    });
+                
+                                    // Scroll to Top
+                                    const scrollTopBtn = document.querySelector('.scroll-top');
+                                    
+                                    window.addEventListener('scroll', () => {
+                                        if (window.pageYOffset > 300) {
+                                            scrollTopBtn.classList.add('visible');
+                                        } else {
+                                            scrollTopBtn.classList.remove('visible');
+                                        }
+                                    });
+                
+                                    scrollTopBtn.addEventListener('click', () => {
+                                        window.scrollTo({
+                                            top: 0,
+                                            behavior: 'smooth'
+                                        });
+                                    });
+                
+                                    // Product Filtering
+                                    const categoryButtons = document.querySelectorAll('.category-button');
+                                    const productCards = document.querySelectorAll('.product-card');
+                
+                                    categoryButtons.forEach(button => {
+                                        button.addEventListener('click', () => {
+                                            // Remove active class from all buttons
+                                            categoryButtons.forEach(btn => btn.classList.remove('active'));
+                                            // Add active class to clicked button
+                                            button.classList.add('active');
+                
+                                            const category = button.textContent.toLowerCase();
+                
+                                            productCards.forEach(card => {
+                                                if (category === 'todos' || card.dataset.category === category) {
+                                                    card.style.display = 'block';
+                                                } else {
+                                                    card.style.display = 'none';
+                                                }
+                                            });
+                                        });
+                                    });
+                
+                                    // Intersection Observer for animations
+                                    const observer = new IntersectionObserver((entries) => {
+                                        entries.forEach(entry => {
+                                            if (entry.isIntersecting) {
+                                                entry.target.classList.add('animate');
+                                            }
+                                        });
+                                    }, {
+                                        threshold: 0.1
+                                    });
+                
+                                    document.querySelectorAll('.product-card, .review-card').forEach(card => {
+                                        observer.observe(card);
+                                    });
+                
+                                    // Newsletter Form
+                                    const newsletterForm = document.querySelector('.newsletter-form');
+                                    newsletterForm.addEventListener('submit', (e) => {
+                                        e.preventDefault();
+                                        const email = newsletterForm.querySelector('input').value;
+                                        if (email) {
+                                            alert('¡Gracias por suscribirte!');
+                                            newsletterForm.reset();
+                                        }
+                                    });
+                                </script>
+                            </body>
+                </html>
