@@ -429,23 +429,22 @@
     animation: starPulse 1s infinite;
 }
 
-/* Ajustes para diseño responsivo */
-@media (max-width: 768px) {
-    .reviews-carousel {
-        flex-direction: column;
-    }
-    .review-card {
-        margin-bottom: 20px;
-    }
+.reviews-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-@media (min-width: 769px) {
-    .reviews-carousel {
-        flex-direction: row;
-    }
-    .review-card {
-        margin-right: 20px;
-    }
+.reviews-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    min-width: 300px; /* Ajusta el ancho según sea necesario */
+    margin: 0 10px; /* Espaciado entre tarjetas */
 }
 
         /* Footer Styles */
@@ -746,7 +745,7 @@
         </div>
     </div>
 
-  <!-- Reviews Section -->
+<!-- Reviews Section -->
 <section class="reviews-section" id="reviews">
     <div class="reviews-header">
         <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
@@ -812,11 +811,10 @@
     </div>
     
     <div class="carousel-controls">
-        <button class="prev-btn">&#10094;</button>
-        <button class="next-btn">&#10095;</button>
+        <button class="prev-btn" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next-btn" onclick="plusSlides(1)">&#10095;</button>
     </div>
 </section>
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -937,5 +935,29 @@
         }
 
     </script>
+
+<script>
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        const slides = document.querySelectorAll(".review-card");
+        if (n >= slides.length) { slideIndex = 0; }
+        if (n < 0) { slideIndex = slides.length - 1; }
+        slides.forEach((slide, index) => {
+            slide.style.display = (index === slideIndex) ? "block" : "none";
+        });
+    }
+
+    // Inicializa el carrusel para mostrar la primera tarjeta
+    document.addEventListener("DOMContentLoaded", function() {
+        showSlides(slideIndex);
+    });
+</script>
+
 </body>
 </html>
