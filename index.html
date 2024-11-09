@@ -408,7 +408,12 @@
             transition: var(--transition);
             border: 1px solid rgba(255, 255, 255, 0.1);
             position: relative;
-            margin-bottom: var(--spacing-lg); /* Nueva línea para separar las opiniones */
+            margin-bottom: var(--spacing-xl); /* Increased margin for better separation */
+        }
+
+        .review-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .review-header {
