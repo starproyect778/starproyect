@@ -335,6 +335,7 @@
     color: var(--light-text);
     text-align: center;
     position: relative;
+    overflow: hidden; /* Ajuste para evitar superposición */
 }
 
 .reviews-header {
@@ -363,11 +364,13 @@
     align-items: center;
     overflow: hidden;
     position: relative;
+    width: 100%; /* Ajuste para diseño responsivo */
 }
 
 .reviews-wrapper {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ajuste para diseño responsivo */
 }
 
 .review-card {
@@ -376,7 +379,8 @@
     border-radius: 10px;
     padding: 20px;
     margin-right: 20px;
-    width: 300px;
+    width: calc(100% - 40px); /* Ajuste para diseño responsivo */
+    max-width: 300px; /* Ajuste para diseño responsivo */
     transition: transform 0.3s;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -392,6 +396,7 @@
     display: flex;
     justify-content: space-between;
     transform: translateY(-50%);
+    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
 }
 
 .prev-btn, .next-btn {
@@ -400,6 +405,7 @@
     color: var(--primary-color);
     font-size: 2rem;
     cursor: pointer;
+    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
 }
 
 .prev-btn:hover, .next-btn:hover {
@@ -421,6 +427,25 @@
 
 .review-card:hover .star {
     animation: starPulse 1s infinite;
+}
+
+/* Ajustes para diseño responsivo */
+@media (max-width: 768px) {
+    .reviews-carousel {
+        flex-direction: column;
+    }
+    .review-card {
+        margin-bottom: 20px;
+    }
+}
+
+@media (min-width: 769px) {
+    .reviews-carousel {
+        flex-direction: row;
+    }
+    .review-card {
+        margin-right: 20px;
+    }
 }
 
         /* Footer Styles */
@@ -458,7 +483,7 @@
             color: rgba(255,255,255,0.8);
         }
 
-        /* Animations */
+        /* Animaciones mejoradas y adicionales */
         @keyframes slideIn {
             from {
                 transform: translateX(100%);
@@ -487,6 +512,57 @@
             }
             to {
                 background-position: 100% 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                transform: scale(0.9);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes zoomOut {
+            from {
+                transform: scale(1);
+                opacity: 1;
+            }
+            to {
+                transform: scale(0.9);
+                opacity: 0;
             }
         }
 
@@ -842,46 +918,23 @@
                 cart.classList.remove('active');
             }
         });
+        let slideIndex = 0;
+        showSlides(slideIndex);
 
-        document.addEventListener('DOMContentLoaded', function() {
-    const prevButton = document.querySelector('.prev-btn');
-    const nextButton = document.querySelector('.next-btn');
-    const reviewsWrapper = document.querySelector('.reviews-wrapper');
-    const reviewCards = document.querySelectorAll('.review-card');
-    
-    let currentIndex = 0;
-
-    function showNextReview() {
-        if (currentIndex < reviewCards.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0;
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
         }
-        updateCarouselPosition();
-    }
 
-    function showPreviousReview() {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = reviewCards.length - 1;
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slides[slideIndex-1].style.display = "block";  
         }
-        updateCarouselPosition();
-    }
-
-    function updateCarouselPosition() {
-        const offset = -currentIndex * (reviewCards[0].offsetWidth + 20);
-        reviewsWrapper.style.transform = `translateX(${offset}px)`;
-    }
-
-    prevButton.addEventListener('click', showPreviousReview);
-    nextButton.addEventListener('click', showNextReview);
-
-    // Initialize the carousel
-    updateCarouselPosition();
-});
-
-
 
     </script>
 </body>
