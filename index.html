@@ -243,174 +243,7 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        /* Cart Styles */
-        .cart {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-
-        .cart-icon {
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-            padding: 15px;
-            background: var(--primary-gradient);
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-        }
-
-        .cart-icon:hover {
-            transform: scale(1.1);
-        }
-
-        .cart-content {
-            display: none;
-            position: fixed;
-            top: 80px;
-            right: 20px;
-            background: white;
-            min-width: 350px;
-            border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            padding: 25px;
-            z-index: 1001;
-        }
-
-        .cart.active .cart-content {
-            display: block;
-            animation: slideIn 0.3s ease-out;
-        }
-
-        .cart-items {
-            list-style: none;
-            padding: 0;
-            margin: 0 0 20px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 1.2em;
-            font-weight: bold;
-            margin: 20px 0;
-            padding-top: 10px;
-            border-top: 2px solid #eee;
-        }
-
-        .checkout-button {
-            background: var(--primary-gradient);
-            color: white;
-            width: 100%;
-            padding: 15px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1em;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .checkout-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .reviews-section {
-    padding: var(--spacing-xl) var(--spacing);
-    background: var(--dark-gradient);
-    color: var(--light-text);
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Ajuste para evitar superposición */
-}
-
-.reviews-header {
-    margin-bottom: var(--spacing-xl);
-}
-
-.reviews-title {
-    font-size: var(--font-size-xxl);
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: var(--spacing);
-    color: var(--primary-color);
-}
-
-.reviews-subtitle {
-    font-size: var(--font-size-md);
-    color: var(--light-text);
-    margin: 0 auto;
-    opacity: 0.8;
-    max-width: 600px;
-}
-
-.reviews-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%; /* Ajuste para diseño responsivo */
-}
-
-.reviews-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* Ajuste para diseño responsivo */
-}
-
-.review-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 20px;
-    margin-right: 20px;
-    width: calc(100% - 40px); /* Ajuste para diseño responsivo */
-    max-width: 300px; /* Ajuste para diseño responsivo */
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.review-card:hover {
-    transform: translateY(-5px);
-}
-
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
-}
-
-.prev-btn, .next-btn {
-    background-color: transparent;
-    border: none;
-    color: var(--primary-color);
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
-}
-
-.prev-btn:hover, .next-btn:hover {
-    color: var(--highlight-color);
-}
+        
 
 /* Animation for stars */
 @keyframes starPulse {
@@ -484,107 +317,122 @@
 
         /* Animaciones mejoradas y adicionales */
         @keyframes slideIn {
-            from {
-                transform: translateX(100%);
+            0% {
+                transform: translateX(100%) scale(0.9);
                 opacity: 0;
             }
-            to {
-                transform: translateX(0);
+            50% {
+                transform: translateX(10%) scale(0.95);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateX(0) scale(1);
                 opacity: 1;
             }
         }
 
         @keyframes fadeInDown {
-            from {
-                transform: translateY(-20px);
+            0% {
+                transform: translateY(-30px) scale(0.95);
                 opacity: 0;
             }
-            to {
-                transform: translateY(0);
+            60% {
+                transform: translateY(-10px) scale(0.98);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(0) scale(1);
                 opacity: 1;
             }
         }
 
         @keyframes backgroundMove {
-            from {
+            0% {
                 background-position: 0 0;
             }
-            to {
+            50% {
+                background-position: 50% 50%;
+            }
+            100% {
                 background-position: 100% 100%;
             }
         }
 
         @keyframes fadeIn {
-            from {
+            0% {
                 opacity: 0;
+                transform: scale(0.95);
             }
-            to {
+            50% {
+                opacity: 0.5;
+                transform: scale(0.98);
+            }
+            100% {
                 opacity: 1;
+                transform: scale(1);
             }
         }
 
         @keyframes slideOut {
-            from {
-                transform: translateX(0);
+            0% {
+                transform: translateX(0) scale(1);
                 opacity: 1;
             }
-            to {
-                transform: translateX(-100%);
+            50% {
+                transform: translateX(-50%) scale(0.98);
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateX(-100%) scale(0.95);
                 opacity: 0;
             }
         }
 
         @keyframes fadeOut {
-            from {
+            0% {
                 opacity: 1;
+                transform: scale(1);
             }
-            to {
+            50% {
+                opacity: 0.5;
+                transform: scale(0.98);
+            }
+            100% {
                 opacity: 0;
+                transform: scale(0.95);
             }
         }
 
         @keyframes zoomIn {
-            from {
-                transform: scale(0.9);
+            0% {
+                transform: scale(0.8) rotate(-2deg);
                 opacity: 0;
             }
-            to {
-                transform: scale(1);
+            50% {
+                transform: scale(0.95) rotate(1deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(1) rotate(0);
                 opacity: 1;
             }
         }
 
         @keyframes zoomOut {
-            from {
-                transform: scale(1);
+            0% {
+                transform: scale(1) rotate(0);
                 opacity: 1;
             }
-            to {
-                transform: scale(0.9);
+            50% {
+                transform: scale(0.95) rotate(-1deg);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(0.8) rotate(2deg);
                 opacity: 0;
             }
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .vision-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .about-content {
-                padding: 0 20px;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-
-            .cart-content {
-                width: 90%;
-                right: 5%;
-                min-width: unset;
-            }
-        }
     </style>
 </head>
 <body>
@@ -604,19 +452,19 @@
     <!-- Sección de Visión -->
     <section class="vision-section">
         <div class="vision-content">
-            <h2>Nuestra Visión</h2>
-            <p>En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
+            <h2>Nuestro Compromiso con la Excelencia</h2>
+            <p>En StarProject nos esforzamos por revolucionar el mercado de componentes informáticos con un servicio personalizado y productos de primera calidad.</p>
             
             <div class="vision-grid">
                 <div class="vision-item">
                     <i class="fas fa-bullseye"></i>
-                    <h3>Objetivo</h3>
-                    <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+                    <h3>Misión</h3>
+                    <p>Brindar soluciones tecnológicas innovadoras y personalizadas, garantizando la máxima satisfacción de nuestros clientes a través de productos de calidad y un servicio excepcional.</p>
                 </div>
                 <div class="vision-item">
                     <i class="fas fa-handshake"></i>
-                    <h3>Compromiso</h3>
-                    <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+                    <h3>Visión</h3>
+                    <p>Convertirnos en el referente nacional en tecnología y componentes informáticos, destacándonos por nuestra atención personalizada y conocimiento experto.</p>
                 </div>
                 <div class="vision-item">
                     <i class="fas fa-star"></i>
@@ -627,24 +475,6 @@
         </div>
     </section>
 
-    <!-- Carrito -->
-    <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
-        <div class="cart-content">
-            <button class="minimize-button" onclick="minimizeCart(event)">
-                <i class="fas fa-minus"></i>
-            </button>
-            <h3>Carrito de Compras</h3>
-            <ul class="cart-items" id="cartItems"></ul>
-            <div class="cart-total">
-                <span>Total:</span>
-                <span>$UYU <span id="totalPrice">0</span></span>
-            </div>
-            <button onclick="showCheckoutForm()" class="checkout-button">
-                Finalizar Compra
-            </button>
-        </div>
-    </div>
 
     <!-- Grid de Productos -->
     <div class="products-grid">
@@ -745,77 +575,6 @@
         </div>
     </div>
 
-<!-- Reviews Section -->
-<section class="reviews-section" id="reviews">
-    <div class="reviews-header">
-        <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
-        <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
-    </div>
-    
-    <div class="reviews-carousel">
-        <div class="reviews-wrapper">
-            <!-- Review 1 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Santiago Rodríguez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            15 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
-                </div>
-            </div>
-
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">María Fernández</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star-half-alt star"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            10 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"Los productos son de excelente calidad y el servicio al cliente es inmejorable. Definitivamente volveré a comprar aquí."</p>
-                </div>
-            </div>
-
-            <!-- Additional Reviews... -->
-        </div>
-    </div>
-    
-    <div class="carousel-controls">
-        <button class="prev-btn" onclick="plusSlides(-1)">&#10094;</button>
-        <button class="next-btn" onclick="plusSlides(1)">&#10095;</button>
-    </div>
-</section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="social-links">
@@ -831,132 +590,5 @@
         </div>
         <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        let cart = [];
-        let totalPrice = 0;
-
-        // Cargar carrito desde localStorage
-        function loadCart() {
-            const savedCart = localStorage.getItem('cart');
-            const savedTotal = localStorage.getItem('totalPrice');
-            if (savedCart) {
-                cart = JSON.parse(savedCart);
-                totalPrice = Number(savedTotal);
-                updateCart();
-            }
-        }
-
-        // Guardar carrito en localStorage
-        function saveCart() {
-            localStorage.setItem('cart', JSON.stringify(cart));
-            localStorage.setItem('totalPrice', totalPrice);
-        }
-
-        function addToCart(item, price) {
-            cart.push({ item, price });
-            totalPrice += price;
-            updateCart();
-            saveCart();
-            document.querySelector('.cart').classList.add('active');
-        }
-
-        function updateCart() {
-            const cartItems = document.getElementById('cartItems');
-            cartItems.innerHTML = '';
-            cart.forEach(({ item, price }, index) => {
-                const li = document.createElement('li');
-                li.className = 'cart-item';
-                li.innerHTML = `
-                    <div class="cart-item-info">
-                        <div class="cart-item-name">${item}</div>
-                        <div class="cart-item-price">$UYU ${price}</div>
-                    </div>
-                    <i class="fas fa-times remove-item" onclick="removeItem(${index})"></i>
-                `;
-                cartItems.appendChild(li);
-            });
-            document.getElementById('totalPrice').textContent = totalPrice;
-        }
-
-        function removeItem(index) {
-            totalPrice -= cart[index].price;
-            cart.splice(index, 1);
-            updateCart();
-            saveCart();
-        }
-
-        function minimizeCart(event) {
-            event.stopPropagation();
-            document.querySelector('.cart').classList.remove('active');
-        }
-
-        function showCheckoutForm() {
-            if (cart.length === 0) {
-                alert('El carrito está vacío');
-                return;
-            }
-            alert(`Total a pagar: $UYU ${totalPrice}\nGracias por tu compra!`);
-            cart.length = 0;
-            totalPrice = 0;
-            updateCart();
-            saveCart();
-            document.querySelector('.cart').classList.remove('active');
-        }
-
-        document.querySelector('.cart-icon').addEventListener('click', function(event) {
-            event.stopPropagation();
-            document.querySelector('.cart').classList.toggle('active');
-        });
-
-        document.addEventListener('click', function(event) {
-            const cart = document.querySelector('.cart');
-            if (!cart.contains(event.target)) {
-                cart.classList.remove('active');
-            }
-        });
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slides[slideIndex-1].style.display = "block";  
-        }
-
-    </script>
-
-<script>
-    let slideIndex = 0;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function showSlides(n) {
-        const slides = document.querySelectorAll(".review-card");
-        if (n >= slides.length) { slideIndex = 0; }
-        if (n < 0) { slideIndex = slides.length - 1; }
-        slides.forEach((slide, index) => {
-            slide.style.display = (index === slideIndex) ? "block" : "none";
-        });
-    }
-
-    // Inicializa el carrusel para mostrar la primera tarjeta
-    document.addEventListener("DOMContentLoaded", function() {
-        showSlides(slideIndex);
-    });
-</script>
-
 </body>
 </html>
