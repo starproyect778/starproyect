@@ -545,8 +545,9 @@
 
         @keyframes zoomIn {
             from {
-                transform: scale(0.9);
+                transform: scale(0.5) rotate(-15deg);
                 opacity: 0;
+                filter: blur(10px);
             }
             to {
                 transform: scale(1);
@@ -600,23 +601,22 @@
             <p>Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
         </div>
     </section>
-
-    <!-- Sección de Visión -->
+    <!-- Sección de Principios -->
     <section class="vision-section">
         <div class="vision-content">
-            <h2>Nuestra Visión</h2>
+            <h2>Nuestros Principios</h2>
             <p>En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
             
             <div class="vision-grid">
                 <div class="vision-item">
                     <i class="fas fa-bullseye"></i>
-                    <h3>Objetivo</h3>
-                    <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+                    <h3>Misión</h3>
+                    <p>Proporcionar soluciones tecnológicas innovadoras y de alta calidad, brindando asesoramiento personalizado para satisfacer las necesidades específicas de cada cliente, mientras construimos relaciones duraderas basadas en la confianza y el conocimiento experto.</p>
                 </div>
                 <div class="vision-item">
                     <i class="fas fa-handshake"></i>
-                    <h3>Compromiso</h3>
-                    <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+                    <h3>Visión</h3>
+                    <p>Ser reconocidos como el referente líder en el mercado tecnológico uruguayo, destacándonos por nuestra excelencia en servicio, innovación constante y compromiso con la satisfacción total del cliente.</p>
                 </div>
                 <div class="vision-item">
                     <i class="fas fa-star"></i>
@@ -649,97 +649,145 @@
     <!-- Grid de Productos -->
     <div class="products-grid">
         <!-- Procesador -->
-        <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800">
+            <div class="product-image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+                <div class="product-overlay">
+                    <span class="product-details">Hasta 5.8GHz • 24 núcleos • Socket AM5/LGA1700</span>
+                </div>
+            </div>
             <h2>Procesadores</h2>
             <p>AMD e Intel de última generación</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Tarjeta Gráfica -->
-        <div class="product-card">
-            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+            <div class="product-image-container">
+                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+                <div class="product-overlay">
+                    <span class="product-details">GDDR6X • Ray Tracing • DLSS 3.0</span>
+                </div>
+            </div>
             <h2>Tarjeta Gráfica</h2>
             <p>Alto rendimiento para gaming</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Memoria RAM -->
-        <div class="product-card">
-            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+            <div class="product-image-container">
+                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+                <div class="product-overlay">
+                    <span class="product-details">DDR5 hasta 6400MHz • RGB Sync • XMP 3.0</span>
+                </div>
+            </div>
             <h2>Memorias RAM</h2>
             <p>DDR4 y DDR5 de alto rendimiento</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Fuente de Poder -->
-        <div class="product-card">
-            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
+            <div class="product-image-container">
+                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+                <div class="product-overlay">
+                    <span class="product-details">80+ Titanium • Modular • Hasta 1600W</span>
+                </div>
+            </div>
             <h2>Fuentes de Poder</h2>
             <p>Certificación 80 Plus, alta eficiencia</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Placa Madre -->
-        <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
+            <div class="product-image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+                <div class="product-overlay">
+                    <span class="product-details">PCIe 5.0 • WiFi 6E • DDR5</span>
+                </div>
+            </div>
             <h2>Placas Madre</h2>
             <p>Para AMD e Intel, últimos chipsets</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- SSD -->
-        <div class="product-card">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
+            <div class="product-image-container">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
+                <div class="product-overlay">
+                    <span class="product-details">7000MB/s • PCIe Gen4 • NVMe 2.0</span>
+                </div>
+            </div>
             <h2>Discos SSD</h2>
             <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- HDD -->
-        <div class="product-card">
-            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
+            <div class="product-image-container">
+                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
+                <div class="product-overlay">
+                    <span class="product-details">7200RPM • Cache 256MB • Hasta 18TB</span>
+                </div>
+            </div>
             <h2>Discos HDD</h2>
             <p>Gran capacidad de almacenamiento</p>
             <div class="button-container">
                 <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Mantenimiento -->
-        <div class="product-card">
-            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
+            <div class="product-image-container">
+                <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+                <div class="product-overlay">
+                    <span class="product-details">Servicio Premium • Garantía • 24/7</span>
+                </div>
+            </div>
             <h2>Mantenimiento</h2>
             <p>Servicio técnico especializado</p>
             <div class="button-container">
                 <a href="#" class="info-button" style="opacity: 0.7; pointer-events: none;">
                     <i class="fas fa-info-circle"></i> Info
+                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
@@ -753,7 +801,7 @@
     </div>
     
     <div class="reviews-carousel">
-        <div class="reviews-wrapper">
+        <div class="reviews-wrapper" id="reviewsContainer">
             <!-- Review 1 -->
             <div class="review-card">
                 <div class="review-header">
@@ -806,14 +854,92 @@
                 </div>
             </div>
 
-            <!-- Additional Reviews... -->
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-header">
+                    <div class="review-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente">
+                    </div>
+                    <div class="review-info">
+                        <h3 class="review-name">Carlos Méndez</h3>
+                        <div class="review-rating">
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                        </div>
+                        <span class="review-date">
+                            <i class="far fa-calendar-alt"></i>
+                            5 marzo 2024
+                        </span>
+                    </div>
+                </div>
+                <div class="review-content">
+                    <p class="review-text">"El servicio de mantenimiento es excelente. Resolvieron todos los problemas de mi PC y ahora funciona mejor que nunca."</p>
+                </div>
+            </div>
         </div>
     </div>
     
     <div class="carousel-controls">
-        <button class="prev-btn" onclick="plusSlides(-1)">&#10094;</button>
-        <button class="next-btn" onclick="plusSlides(1)">&#10095;</button>
+        <button class="prev-btn" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next-btn" onclick="moveSlide(1)">&#10095;</button>
     </div>
+
+    <div class="carousel-dots" id="carouselDots">
+        <span class="dot active" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        let sliding = false;
+        
+        function moveSlide(n) {
+            if (!sliding) {
+                sliding = true;
+                showSlides(slideIndex += n);
+                setTimeout(() => sliding = false, 500);
+            }
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            const slides = document.getElementsByClassName("review-card");
+            const dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            // Actualizar posición del carrusel
+            const container = document.getElementById("reviewsContainer");
+            const slideWidth = slides[0].offsetWidth;
+            container.style.transform = `translateX(-${(slideIndex - 1) * slideWidth}px)`;
+            
+            // Actualizar dots
+            for (let i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Inicializar carrusel
+        document.addEventListener('DOMContentLoaded', () => {
+            showSlides(slideIndex);
+            
+            // Auto-scroll cada 5 segundos
+            setInterval(() => {
+                if (!document.hidden) {
+                    moveSlide(1);
+                }
+            }, 5000);
+        });
+    </script>
 </section>
 
     <!-- Footer -->
@@ -937,24 +1063,74 @@
 
 <script>
     let slideIndex = 0;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
+    let autoSlideInterval;
 
     function showSlides(n) {
         const slides = document.querySelectorAll(".review-card");
         if (n >= slides.length) { slideIndex = 0; }
         if (n < 0) { slideIndex = slides.length - 1; }
+        
         slides.forEach((slide, index) => {
-            slide.style.display = (index === slideIndex) ? "block" : "none";
+            slide.style.display = "none";
+            slide.classList.remove('active');
+        });
+        
+        slides[slideIndex].style.display = "block";
+        slides[slideIndex].classList.add('active');
+        
+        // Actualiza los indicadores
+        actualizarIndicadores(slideIndex);
+    }
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function autoSlide() {
+        plusSlides(1);
+    }
+
+    function actualizarIndicadores(indiceActivo) {
+        const contenedorIndicadores = document.querySelector('.indicadores-carrusel');
+        contenedorIndicadores.innerHTML = '';
+        
+        const slides = document.querySelectorAll(".review-card");
+        slides.forEach((_, index) => {
+            const indicador = document.createElement('span');
+            indicador.classList.add('indicador');
+            if(index === indiceActivo) {
+                indicador.classList.add('activo');
+            }
+            indicador.onclick = () => {
+                slideIndex = index;
+                showSlides(slideIndex);
+            };
+            contenedorIndicadores.appendChild(indicador);
         });
     }
 
-    // Inicializa el carrusel para mostrar la primera tarjeta
     document.addEventListener("DOMContentLoaded", function() {
+        // Crear contenedor de indicadores si no existe
+        if(!document.querySelector('.indicadores-carrusel')) {
+            const indicadores = document.createElement('div');
+            indicadores.classList.add('indicadores-carrusel');
+            document.querySelector('.reviews-container').appendChild(indicadores);
+        }
+        
         showSlides(slideIndex);
+        
+        // Iniciar rotación automática
+        autoSlideInterval = setInterval(autoSlide, 5000);
+        
+        // Pausar rotación al pasar el mouse
+        const contenedorCarrusel = document.querySelector('.reviews-container');
+        contenedorCarrusel.addEventListener('mouseenter', () => {
+            clearInterval(autoSlideInterval);
+        });
+        
+        contenedorCarrusel.addEventListener('mouseleave', () => {
+            autoSlideInterval = setInterval(autoSlide, 5000);
+        });
     });
 </script>
 
