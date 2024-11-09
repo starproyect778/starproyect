@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,45 +22,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes backgroundMove {
-            from { background-position: 0 0; }
-            to { background-position: 100% 100%; }
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px rgba(0,191,255,0.5); }
-            50% { box-shadow: 0 0 20px rgba(0,191,255,0.8); }
-            100% { box-shadow: 0 0 5px rgba(0,191,255,0.5); }
-        }
-
         :root {
             --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
             --secondary-gradient: linear-gradient(135deg, #28a745 0%, #145a23 100%);
@@ -77,7 +39,6 @@
             font-family: Arial, sans-serif;
             background-color: #f0f2f5;
             overflow-x: hidden;
-            animation: fadeInDown 1s ease-out;
         }
 
         header {
@@ -86,7 +47,6 @@
             text-align: center;
             position: relative;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            animation: slideIn 1s ease-out;
         }
 
         header h1 {
@@ -94,7 +54,7 @@
             font-size: 2.5em;
             font-weight: bold;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: fadeInDown 0.8s ease-out, glow 2s infinite;
+            animation: fadeInDown 0.8s ease-out;
         }
 
         /* About Section Styles */
@@ -105,7 +65,6 @@
             margin: 0;
             position: relative;
             overflow: hidden;
-            animation: fadeInDown 1s ease-out;
         }
 
         .about-section::before {
@@ -126,7 +85,6 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            animation: fadeInDown 1.2s ease-out;
         }
 
         .about-content h2 {
@@ -134,7 +92,6 @@
             margin-bottom: 30px;
             font-size: 2.2em;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: pulse 2s infinite;
         }
 
         .about-content p {
@@ -143,7 +100,6 @@
             margin-bottom: 20px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
             padding: 0 20px;
-            animation: slideIn 1.5s ease-out;
         }
 
         /* Vision Section Styles */
@@ -154,13 +110,11 @@
             margin: 0;
             position: relative;
             overflow: hidden;
-            animation: fadeInDown 1.5s ease-out;
         }
 
         .vision-content {
             max-width: 1200px;
             margin: 0 auto;
-            animation: slideIn 1.8s ease-out;
         }
 
         .vision-content h2 {
@@ -168,7 +122,6 @@
             font-size: 2.2em;
             margin-bottom: 20px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            animation: pulse 2s infinite;
         }
 
         .vision-content > p {
@@ -178,7 +131,6 @@
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
-            animation: fadeInDown 2s ease-out;
         }
 
         .vision-grid {
@@ -186,7 +138,6 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
             margin-top: 40px;
-            animation: fadeInDown 2.2s ease-out;
         }
 
         .vision-item {
@@ -195,34 +146,29 @@
             border-radius: 15px;
             backdrop-filter: blur(5px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeInDown 2.5s ease-out;
         }
 
         .vision-item:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            animation: glow 2s infinite;
         }
 
         .vision-item i {
             font-size: 2.5em;
             color: #00bfff;
             margin-bottom: 20px;
-            animation: pulse 2s infinite;
         }
 
         .vision-item h3 {
             color: #00bfff;
             margin: 15px 0;
             font-size: 1.5em;
-            animation: fadeInDown 2.8s ease-out;
         }
 
         .vision-item p {
             color: white;
             font-size: 1.1em;
             line-height: 1.6;
-            animation: fadeInDown 3s ease-out;
         }
 
         /* Products Grid Styles */
@@ -233,7 +179,6 @@
             padding: 40px 20px;
             max-width: 1400px;
             margin: 0 auto;
-            animation: fadeInDown 3.2s ease-out;
         }
 
         .product-card {
@@ -244,13 +189,11 @@
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            animation: fadeInDown 3.5s ease-out;
         }
 
         .product-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-            animation: glow 2s infinite;
         }
 
         .product-card img {
@@ -259,43 +202,22 @@
             object-fit: contain;
             margin-bottom: 20px;
             transition: transform 0.3s ease;
-            animation: pulse 3s infinite;
         }
 
         .product-card:hover img {
-            transform: scale(1.05) rotate(3deg);
-            animation: productHover 1.5s infinite;
-        }
-
-        @keyframes productHover {
-            0% { transform: scale(1.05) rotate(3deg); }
-            50% { transform: scale(1.08) rotate(-3deg); }
-            100% { transform: scale(1.05) rotate(3deg); }
+            transform: scale(1.05);
         }
 
         .product-card h2 {
             color: #4b6cb7;
             margin: 15px 0;
             font-size: 1.8em;
-            transition: all 0.3s ease;
-            animation: titleFade 0.5s ease-in;
-        }
-
-        @keyframes titleFade {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .product-card p {
             color: #666;
             margin: 15px 0;
             font-size: 1.1em;
-            animation: textSlide 0.7s ease-out;
-        }
-
-        @keyframes textSlide {
-            from { opacity: 0; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
         }
 
         /* Button Styles */
@@ -303,13 +225,6 @@
             display: flex;
             gap: 15px;
             margin-top: 20px;
-            animation: buttonPop 0.5s ease-out;
-        }
-
-        @keyframes buttonPop {
-            0% { transform: scale(0); }
-            70% { transform: scale(1.1); }
-            100% { transform: scale(1); }
         }
 
         .info-button {
@@ -322,25 +237,11 @@
             font-weight: bold;
             transition: all 0.3s ease;
             text-align: center;
-            animation: buttonGlow 2s infinite;
-        }
-
-        @keyframes buttonGlow {
-            0% { box-shadow: 0 0 5px rgba(75, 108, 183, 0.5); }
-            50% { box-shadow: 0 0 20px rgba(75, 108, 183, 0.8); }
-            100% { box-shadow: 0 0 5px rgba(75, 108, 183, 0.5); }
         }
 
         .info-button:hover {
-            transform: translateY(-2px) scale(1.05);
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            animation: buttonShake 0.5s ease;
-        }
-
-        @keyframes buttonShake {
-            0%, 100% { transform: translateY(-2px) scale(1.05); }
-            25% { transform: translateY(-2px) scale(1.05) translateX(-2px); }
-            75% { transform: translateY(-2px) scale(1.05) translateX(2px); }
         }
 
         /* Cart Styles */
@@ -349,12 +250,6 @@
             top: 20px;
             right: 20px;
             z-index: 1000;
-            animation: cartFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes cartFloat {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
         }
 
         .cart-icon {
@@ -366,23 +261,10 @@
             border-radius: 50%;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
-            animation: iconSpin 1s ease-out;
-        }
-
-        @keyframes iconSpin {
-            from { transform: rotate(-180deg); }
-            to { transform: rotate(0); }
         }
 
         .cart-icon:hover {
-            transform: scale(1.1) rotate(15deg);
-            animation: iconPulse 1s infinite;
-        }
-
-        @keyframes iconPulse {
-            0% { transform: scale(1.1) rotate(15deg); }
-            50% { transform: scale(1.2) rotate(-15deg); }
-            100% { transform: scale(1.1) rotate(15deg); }
+            transform: scale(1.1);
         }
 
         .cart-content {
@@ -400,18 +282,7 @@
 
         .cart.active .cart-content {
             display: block;
-            animation: cartSlideIn 0.5s ease-out;
-        }
-
-        @keyframes cartSlideIn {
-            from { 
-                transform: translateX(100%) scale(0.8);
-                opacity: 0;
-            }
-            to { 
-                transform: translateX(0) scale(1);
-                opacity: 1;
-            }
+            animation: slideIn 0.3s ease-out;
         }
 
         .cart-items {
@@ -420,12 +291,6 @@
             margin: 0 0 20px;
             max-height: 300px;
             overflow-y: auto;
-            animation: listFade 0.8s ease-in;
-        }
-
-        @keyframes listFade {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
         }
 
         .cart-item {
@@ -434,12 +299,6 @@
             align-items: center;
             padding: 10px 0;
             border-bottom: 1px solid #eee;
-            animation: itemSlide 0.5s ease-out;
-        }
-
-        @keyframes itemSlide {
-            from { transform: translateX(-100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
         }
 
         .cart-total {
@@ -451,13 +310,6 @@
             margin: 20px 0;
             padding-top: 10px;
             border-top: 2px solid #eee;
-            animation: totalBounce 0.8s ease;
-        }
-
-        @keyframes totalBounce {
-            0% { transform: scale(0); }
-            60% { transform: scale(1.1); }
-            100% { transform: scale(1); }
         }
 
         .checkout-button {
@@ -471,32 +323,230 @@
             font-weight: bold;
             cursor: pointer;
             transition: all 0.3s ease;
-            animation: checkoutPulse 2s infinite;
-        }
-
-        @keyframes checkoutPulse {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(75, 108, 183, 0.7); }
-            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(75, 108, 183, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(75, 108, 183, 0); }
         }
 
         .checkout-button:hover {
-            transform: translateY(-2px) scale(1.02);
+            transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            animation: checkoutWiggle 0.5s ease;
+        }
+        .reviews-section {
+    padding: var(--spacing-xl) var(--spacing);
+    background: var(--dark-gradient);
+    color: var(--light-text);
+    text-align: center;
+    position: relative;
+    overflow: hidden; /* Ajuste para evitar superposición */
+}
+
+.reviews-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.reviews-title {
+    font-size: var(--font-size-xxl);
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing);
+    color: var(--primary-color);
+}
+
+.reviews-subtitle {
+    font-size: var(--font-size-md);
+    color: var(--light-text);
+    margin: 0 auto;
+    opacity: 0.8;
+    max-width: 600px;
+}
+
+.reviews-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    width: 100%; /* Ajuste para diseño responsivo */
+}
+
+.reviews-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 100%; /* Ajuste para diseño responsivo */
+}
+
+.review-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px); /* Ajuste para diseño responsivo */
+    max-width: 300px; /* Ajuste para diseño responsivo */
+    transition: transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
+}
+
+.prev-btn, .next-btn {
+    background-color: transparent;
+    border: none;
+    color: var(--primary-color);
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
+}
+
+.prev-btn:hover, .next-btn:hover {
+    color: var(--highlight-color);
+}
+
+/* Animation for stars */
+@keyframes starPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.review-card:hover .star {
+    animation: starPulse 1s infinite;
+}
+
+.reviews-carousel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.reviews-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-card {
+    min-width: 300px; /* Ajusta el ancho según sea necesario */
+    margin: 0 10px; /* Espaciado entre tarjetas */
+}
+
+        /* Footer Styles */
+        .footer {
+            background: var(--primary-gradient);
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes checkoutWiggle {
-            0%, 100% { transform: translateY(-2px) scale(1.02); }
-            25% { transform: translateY(-2px) scale(1.02) rotate(-2deg); }
-            75% { transform: translateY(-2px) scale(1.02) rotate(2deg); }
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 32px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.2) rotate(8deg);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* Animaciones mejoradas y adicionales */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0;
+            }
         }
 
         @keyframes zoomIn {
             from {
-                transform: scale(0.5) rotate(-15deg);
+                transform: scale(0.9);
                 opacity: 0;
-                filter: blur(10px);
             }
             to {
                 transform: scale(1);
@@ -543,32 +593,33 @@
     </header>
 
     <!-- Sección About -->
-    <section class="about-section" data-aos="fade-up" data-aos-duration="1000">
+    <section class="about-section">
         <div class="about-content">
-            <h2 class="animate__animated animate__fadeInDown">¿Qué es StarProyect?</h2>
-            <p class="animate__animated animate__fadeIn animate__delay-1s">StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
-            <p class="animate__animated animate__fadeIn animate__delay-2s">Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
+            <h2>¿Qué es StarProyect?</h2>
+            <p>StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
+            <p>Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
         </div>
     </section>
-    <!-- Sección de Principios -->
-    <section class="vision-section" data-aos="fade-up" data-aos-duration="1000">
+
+    <!-- Sección de Visión -->
+    <section class="vision-section">
         <div class="vision-content">
-            <h2 class="animate__animated animate__fadeInDown">Nuestros Principios</h2>
-            <p class="animate__animated animate__fadeIn animate__delay-1s">En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
+            <h2>Nuestra Visión</h2>
+            <p>En StarProject nos dedicamos a proporcionar los mejores componentes de PC a precios competitivos, garantizando calidad y servicio excepcional.</p>
             
             <div class="vision-grid">
-                <div class="vision-item animate__animated animate__zoomIn animate__delay-1s">
-                    <i class="fas fa-bullseye fa-bounce"></i>
-                    <h3>Misión</h3>
-                    <p>Proporcionar soluciones tecnológicas innovadoras y de alta calidad, brindando asesoramiento personalizado para satisfacer las necesidades específicas de cada cliente, mientras construimos relaciones duraderas basadas en la confianza y el conocimiento experto.</p>
+                <div class="vision-item">
+                    <i class="fas fa-bullseye"></i>
+                    <h3>Objetivo</h3>
+                    <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
                 </div>
-                <div class="vision-item animate__animated animate__zoomIn animate__delay-2s">
-                    <i class="fas fa-handshake fa-shake"></i>
-                    <h3>Visión</h3>
-                    <p>Ser reconocidos como el referente líder en el mercado tecnológico uruguayo, destacándonos por nuestra excelencia en servicio, innovación constante y compromiso con la satisfacción total del cliente.</p>
+                <div class="vision-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Compromiso</h3>
+                    <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
                 </div>
-                <div class="vision-item animate__animated animate__zoomIn animate__delay-3s">
-                    <i class="fas fa-star fa-spin"></i>
+                <div class="vision-item">
+                    <i class="fas fa-star"></i>
                     <h3>Valores</h3>
                     <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
                 </div>
@@ -578,8 +629,8 @@
 
     <!-- Carrito -->
     <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon fa-bounce"></i>
-        <div class="cart-content animate__animated animate__fadeInRight">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
             <button class="minimize-button" onclick="minimizeCart(event)">
                 <i class="fas fa-minus"></i>
             </button>
@@ -598,161 +649,113 @@
     <!-- Grid de Productos -->
     <div class="products-grid">
         <!-- Procesador -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800">
-            <div class="product-image-container">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">Hasta 5.8GHz • 24 núcleos • Socket AM5/LGA1700</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
             <h2>Procesadores</h2>
             <p>AMD e Intel de última generación</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Tarjeta Gráfica -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
-            <div class="product-image-container">
-                <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">GDDR6X • Ray Tracing • DLSS 3.0</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
             <h2>Tarjeta Gráfica</h2>
             <p>Alto rendimiento para gaming</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Memoria RAM -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
-            <div class="product-image-container">
-                <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">DDR5 hasta 6400MHz • RGB Sync • XMP 3.0</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
             <h2>Memorias RAM</h2>
             <p>DDR4 y DDR5 de alto rendimiento</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Fuente de Poder -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="300">
-            <div class="product-image-container">
-                <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">80+ Titanium • Modular • Hasta 1600W</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
             <h2>Fuentes de Poder</h2>
             <p>Certificación 80 Plus, alta eficiencia</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Placa Madre -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="400">
-            <div class="product-image-container">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">PCIe 5.0 • WiFi 6E • DDR5</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
             <h2>Placas Madre</h2>
             <p>Para AMD e Intel, últimos chipsets</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- SSD -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="500">
-            <div class="product-image-container">
-                <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">7000MB/s • PCIe Gen4 • NVMe 2.0</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
             <h2>Discos SSD</h2>
             <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- HDD -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="600">
-            <div class="product-image-container">
-                <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">7200RPM • Cache 256MB • Hasta 18TB</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
             <h2>Discos HDD</h2>
             <p>Gran capacidad de almacenamiento</p>
             <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button animate__animated animate__heartBeat animate__infinite">
+                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
 
         <!-- Mantenimiento -->
-        <div class="product-card" data-aos="fade-up" data-aos-duration="800" data-aos-delay="700">
-            <div class="product-image-container">
-                <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento" class="animate__animated animate__pulse animate__infinite">
-                <div class="product-overlay">
-                    <span class="product-details">Servicio Premium • Garantía • 24/7</span>
-                </div>
-            </div>
+        <div class="product-card">
+            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
             <h2>Mantenimiento</h2>
             <p>Servicio técnico especializado</p>
             <div class="button-container">
                 <a href="#" class="info-button" style="opacity: 0.7; pointer-events: none;">
                     <i class="fas fa-info-circle"></i> Info
-                    <span class="button-hover-effect"></span>
                 </a>
             </div>
         </div>
     </div>
 
 <!-- Reviews Section -->
-<section class="reviews-section" id="reviews" data-aos="fade-up" data-aos-duration="1000">
+<section class="reviews-section" id="reviews">
     <div class="reviews-header">
-        <h2 class="reviews-title animate__animated animate__fadeInDown">Opiniones de Nuestros Clientes</h2>
-        <p class="reviews-subtitle animate__animated animate__fadeIn animate__delay-1s">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
+        <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
+        <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
     </div>
     
     <div class="reviews-carousel">
-        <div class="reviews-wrapper" id="reviewsContainer">
+        <div class="reviews-wrapper">
             <!-- Review 1 -->
-            <div class="review-card active animate__animated animate__fadeIn">
+            <div class="review-card">
                 <div class="review-header">
                     <div class="review-avatar">
                         <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
@@ -760,14 +763,14 @@
                     <div class="review-info">
                         <h3 class="review-name">Santiago Rodríguez</h3>
                         <div class="review-rating">
-                            <i class="fas fa-star star animate__animated animate__tada"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-1s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-2s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-3s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-4s"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
                         </div>
                         <span class="review-date">
-                            <i class="far fa-calendar-alt fa-bounce"></i>
+                            <i class="far fa-calendar-alt"></i>
                             15 marzo 2024
                         </span>
                     </div>
@@ -778,7 +781,7 @@
             </div>
 
             <!-- Review 2 -->
-            <div class="review-card animate__animated animate__fadeIn">
+            <div class="review-card">
                 <div class="review-header">
                     <div class="review-avatar">
                         <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente">
@@ -786,14 +789,14 @@
                     <div class="review-info">
                         <h3 class="review-name">María Fernández</h3>
                         <div class="review-rating">
-                            <i class="fas fa-star star animate__animated animate__tada"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-1s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-2s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-3s"></i>
-                            <i class="fas fa-star-half-alt star animate__animated animate__tada animate__delay-4s"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star-half-alt star"></i>
                         </div>
                         <span class="review-date">
-                            <i class="far fa-calendar-alt fa-bounce"></i>
+                            <i class="far fa-calendar-alt"></i>
                             10 marzo 2024
                         </span>
                     </div>
@@ -803,154 +806,26 @@
                 </div>
             </div>
 
-            <!-- Review 3 -->
-            <div class="review-card animate__animated animate__fadeIn">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Carlos Méndez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star animate__animated animate__tada"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-1s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-2s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-3s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-4s"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt fa-bounce"></i>
-                            5 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"El servicio de mantenimiento es excelente. Resolvieron todos los problemas de mi PC y ahora funciona mejor que nunca."</p>
-                </div>
-            </div>
-
-            <!-- Review 4 -->
-            <div class="review-card animate__animated animate__fadeIn">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Ana Valencia</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star animate__animated animate__tada"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-1s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-2s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-3s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-4s"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt fa-bounce"></i>
-                            1 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"Excelente atención y asesoramiento para elegir los componentes de mi PC de diseño gráfico. El rendimiento es espectacular."</p>
-                </div>
-            </div>
-
-            <!-- Review 5 -->
-            <div class="review-card animate__animated animate__fadeIn">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Gabriel Torres</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star animate__animated animate__tada"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-1s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-2s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-3s"></i>
-                            <i class="fas fa-star star animate__animated animate__tada animate__delay-4s"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt fa-bounce"></i>
-                            25 febrero 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"La mejor tienda de componentes que he encontrado. Precios justos y un servicio post-venta excepcional. Totalmente recomendado."</p>
-                </div>
-            </div>
+            <!-- Additional Reviews... -->
         </div>
     </div>
-
-    <div class="carousel-dots" id="carouselDots">
-        <span class="dot active" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
+    
+    <div class="carousel-controls">
+        <button class="prev-btn" onclick="plusSlides(-1)">&#10094;</button>
+        <button class="next-btn" onclick="plusSlides(1)">&#10095;</button>
     </div>
-
-    <script>
-        let slideIndex = 1;
-        let sliding = false;
-        
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            const slides = document.getElementsByClassName("review-card");
-            const dots = document.getElementsByClassName("dot");
-            
-            if (n > slides.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = slides.length}
-            
-            // Ocultar todas las opiniones con fade out
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.opacity = "0";
-                slides[i].style.display = "none";
-                slides[i].style.transform = "scale(0.95)";
-            }
-            
-            // Mostrar la opinión actual con fade in y scale
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(() => {
-                slides[slideIndex-1].style.opacity = "1";
-                slides[slideIndex-1].style.transform = "scale(1)";
-            }, 50);
-            
-            // Actualizar dots
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            dots[slideIndex-1].className += " active";
-        }
-
-        // Inicializar carrusel
-        document.addEventListener('DOMContentLoaded', () => {
-            showSlides(slideIndex);
-            
-            // Auto-scroll cada 5 segundos
-            setInterval(() => {
-                if (!document.hidden) {
-                    moveSlide(1);
-                }
-            }, 5000);
-        });
-    </script>
 </section>
 
     <!-- Footer -->
-    <footer class="footer animate__animated animate__fadeInUp">
+    <footer class="footer">
         <div class="social-links">
-            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram" class="animate__animated animate__bounce animate__infinite">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook" class="animate__animated animate__bounce animate__infinite">
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí" class="animate__animated animate__bounce animate__infinite">
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
                 <i class="fas fa-map-marker-alt"></i>
             </a>
         </div>
@@ -992,7 +867,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }, index) => {
                 const li = document.createElement('li');
-                li.className = 'cart-item animate__animated animate__fadeInRight';
+                li.className = 'cart-item';
                 li.innerHTML = `
                     <div class="cart-item-info">
                         <div class="cart-item-name">${item}</div>
@@ -1041,15 +916,47 @@
                 cart.classList.remove('active');
             }
         });
+        showSlides(slideIndex);
 
-        // Inicializar el carrusel mostrando solo la primera opinión
-        document.addEventListener('DOMContentLoaded', () => {
-            const slides = document.getElementsByClassName("review-card");
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = i === 0 ? "block" : "none";
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
             }
-        });
+            slides[slideIndex-1].style.display = "block";  
+        }
+
     </script>
+
+<script>
+    let slideIndex = 0;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        const slides = document.querySelectorAll(".review-card");
+        if (n >= slides.length) { slideIndex = 0; }
+        if (n < 0) { slideIndex = slides.length - 1; }
+        slides.forEach((slide, index) => {
+            slide.style.display = (index === slideIndex) ? "block" : "none";
+        });
+    }
+
+    // Inicializa el carrusel para mostrar la primera tarjeta
+    document.addEventListener("DOMContentLoaded", function() {
+        showSlides(slideIndex);
+    });
+</script>
 
 </body>
 </html>
