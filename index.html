@@ -329,202 +329,228 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
         .reviews-section {
-            padding: var(--spacing-xl) var(--spacing);
-            background: var(--dark-gradient);
-            position: relative;
-            overflow: hidden;
-            color: var(--light-text);
-        }
+    padding: var(--spacing-xl) var(--spacing);
+    background: var(--dark-gradient);
+    position: relative;
+    overflow: hidden;
+    color: var(--light-text);
+}
 
-        .reviews-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
-        }
+.reviews-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
+    background-size: 3em 3em;
+    animation: backgroundMove 30s linear infinite;
+    pointer-events: none;
+}
 
-        .reviews-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            position: relative;
-            z-index: 2;
-        }
+.reviews-header {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    position: relative;
+    z-index: 2;
+}
 
-        .reviews-title {
-            color: var(--primary-color);
-            font-size: var(--font-size-xxl);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: var(--spacing);
-            text-shadow: var(--text-shadow);
-            position: relative;
-            display: inline-block;
-        }
+.reviews-title {
+    color: var(--primary-color);
+    font-size: var(--font-size-xxl);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: var(--spacing);
+    text-shadow: var(--text-shadow);
+    position: relative;
+    display: inline-block;
+}
 
-        .reviews-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 4px;
-            background: var(--primary-gradient);
-            border-radius: 2px;
-        }
+.reviews-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: var(--primary-gradient);
+    border-radius: 2px;
+}
 
-        .reviews-subtitle {
-            color: var(--light-text);
-            font-size: var(--font-size-md);
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.8;
-        }
+.reviews-subtitle {
+    color: var(--light-text);
+    font-size: var(--font-size-md);
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
 
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            max-width: var(--max-width);
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
 
-        .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-lg);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            margin-bottom: var(--spacing-xl); /* Increased margin for better separation */
-        }
+.review-card {
+    display: none; /* Ocultar opiniones */
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: var(--transition);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0 20px; /* Separación entre opiniones */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    opacity: 0;
+    transform: translateX(50%);
+    position: relative;
+    z-index: 2;
+    animation: fadeSlideIn 0.8s forwards;
+}
 
-        .review-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
+.review-card.active {
+    display: block; /* Muestra la opinión activa */
+    opacity: 1;
+    transform: translateX(0);
+}
 
-        .review-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--spacing);
-        }
+@keyframes fadeSlideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
 
-        .review-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin-right: var(--spacing);
-        }
+.carousel-control {
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    transition: color 0.3s ease;
+}
 
-        .review-avatar img {
-            width: 100%;
-            height: auto;
-        }
+.carousel-control:hover {
+    color: var(--primary-hover-color);
+}
 
-        .review-info {
-            flex-grow: 1;
-        }
+.prev {
+    left: 0;
+}
 
-        .review-name {
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            color: var(--primary-color);
-        }
+.next {
+    right: 0;
+}
 
-        .review-rating {
-            color: var(--success-color);
-        }
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: var(--spacing);
+}
 
-        .review-date {
-            font-size: var(--font-size-sm);
-            color: var(--dark-text);
-        }
+.review-avatar img {
+    width: 100%;
+    height: auto;
+}
 
-        .review-content {
-            margin-top: var(--spacing);
-        }
+.review-info {
+    flex-grow: 1;
+}
 
-        .review-text {
-            font-size: var(--font-size);
-            line-height: 1.6;
-            margin-bottom: var(--spacing);
-        }
+.review-name {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--primary-color);
+}
 
-        .review-tags {
-            display: flex;
-            gap: var(--spacing-xs);
-            margin-bottom: var(--spacing);
-        }
+.review-rating {
+    color: var(--success-color);
+}
 
-        .review-tag {
-            background: rgba(75,108,183,0.1);
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: var(--font-size-xs);
-            font-weight: 500;
-            transition: var(--transition);
-        }
+.review-date {
+    font-size: var(--font-size-sm);
+    color: var(--dark-text);
+}
 
-        .review-tag:hover {
-            background: var(--primary-color);
-            color: var(--light-text);
-            transform: translateY(-2px);
-        }
+.review-content {
+    margin-top: var(--spacing);
+}
 
-        .review-verified {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-            color: var(--success-color);
-            font-size: var(--font-size-sm);
-            margin-top: var(--spacing);
-        }
+.review-text {
+    font-size: var(--font-size);
+    line-height: 1.6;
+    margin-bottom: var(--spacing);
+}
 
-        .review-verified i {
-            font-size: var(--font-size-xs);
-        }
+.review-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing);
+}
 
-        /* Review Animations */
-        @keyframes starPulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
+.review-tag {
+    background: rgba(75,108,183,0.1);
+    color: var(--primary-color);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    transition: var(--transition);
+}
 
-        .review-card:hover .star {
-            animation: starPulse 1s infinite;
-        }
+.review-tag:hover {
+    background: var(--primary-color);
+    color: var(--light-text);
+    transform: translateY(-2px);
+}
 
-        /* Review Grid Animations */
-        .reviews-grid {
-            perspective: 1000px;
-        }
+.review-verified {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--success-color);
+    font-size: var(--font-size-sm);
+    margin-top: var(--spacing);
+}
 
-        .review-card {
-            transform-style: preserve-3d;
-            animation: reviewCardIn var(--animation-duration) var(--animation-timing);
-        }
+.review-verified i {
+    font-size: var(--font-size-xs);
+}
+
+@keyframes starPulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.review-card:hover .star {
+    animation: starPulse 1s infinite;
+}
+
         /* Footer Styles */
         .footer {
             background: var(--primary-gradient);
@@ -772,16 +798,16 @@
         </div>
     </div>
 
-       <!-- Reviews Section -->
-       <section class="reviews-section" id="reviews">
+    <section class="reviews-section" id="reviews">
         <div class="reviews-header">
             <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
             <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
         </div>
         
-        <div class="reviews-grid">
-            <!-- Review 1 -->
-            <div class="review-card">
+        <div class="carousel">
+            <button class="carousel-control prev" onclick="showPreviousReview()">❮</button>
+            
+            <div class="review-card active">
                 <div class="review-header">
                     <div class="review-avatar">
                         <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
@@ -789,168 +815,44 @@
                     <div class="review-info">
                         <h3 class="review-name">Santiago Rodríguez</h3>
                         <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
+                            <i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i><i class="fas fa-star star"></i>
                         </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            15 marzo 2024
-                        </span>
+                        <span class="review-date">15 marzo 2024</span>
                     </div>
                 </div>
                 <div class="review-content">
                     <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Gaming PC</span>
-                        <span class="review-tag">Servicio Técnico</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
+                    <div class="review-tags"><span class="review-tag">Gaming PC</span><span class="review-tag">Servicio Técnico</span></div>
+                    <div class="review-verified"><i class="fas fa-check-circle"></i>Compra verificada</div>
                 </div>
             </div>
-
-            <!-- Review 2 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">María Fernández</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star-half-alt star"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            10 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"Los productos son de excelente calidad y el servicio al cliente es inmejorable. Definitivamente volveré a comprar aquí."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Calidad</span>
-                        <span class="review-tag">Servicio</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 3 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Carlos Pérez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            5 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"La mejor tienda para comprar componentes de PC. Tienen todo lo que necesitas y más. ¡Recomendados!"</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Componentes</span>
-                        <span class="review-tag">Recomendados</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 4 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Lucía Gómez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            1 marzo 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"El mantenimiento de mi PC fue rápido y eficiente. Estoy muy satisfecha con el servicio."</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Mantenimiento</span>
-                        <span class="review-tag">Satisfacción</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
-
-            <!-- Review 5 -->
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="review-avatar">
-                        <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente">
-                    </div>
-                    <div class="review-info">
-                        <h3 class="review-name">Javier Martínez</h3>
-                        <div class="review-rating">
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star star"></i>
-                            <i class="fas fa-star-half-alt star"></i>
-                        </div>
-                        <span class="review-date">
-                            <i class="far fa-calendar-alt"></i>
-                            20 febrero 2024
-                        </span>
-                    </div>
-                </div>
-                <div class="review-content">
-                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                    <div class="review-tags">
-                        <span class="review-tag">Variedad</span>
-                        <span class="review-tag">Precios</span>
-                    </div>
-                    <div class="review-verified">
-                        <i class="fas fa-check-circle"></i>
-                        Compra verificada
-                    </div>
-                </div>
-            </div>
+    
+            <!-- Más opiniones aquí -->
+    
+            <button class="carousel-control next" onclick="showNextReview()">❯</button>
         </div>
     </section>
+    
+    <script>
+    let currentIndex = 0;
+    const reviews = document.querySelectorAll('.review-card');
+    
+    function showReview(index) {
+        reviews.forEach((review, i) => {
+            review.classList.toggle('active', i === index);
+        });
+    }
+    
+    function showNextReview() {
+        currentIndex = (currentIndex + 1) % reviews.length;
+        showReview(currentIndex);
+    }
+    
+    function showPreviousReview() {
+        currentIndex = (currentIndex - 1 + reviews.length) % reviews.length;
+        showReview(currentIndex);
+    }
+    </script>    
 
     <!-- Footer -->
     <footer class="footer">
