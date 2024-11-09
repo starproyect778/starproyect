@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -459,123 +458,39 @@
         </div>
     </section>
 
-    <!-- Carrito -->
-    <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
-        <div class="cart-content">
-            <button class="minimize-button" onclick="minimizeCart(event)">
-                <i class="fas fa-minus"></i>
-            </button>
-            <h3>Carrito de Compras</h3>
-            <ul class="cart-items" id="cartItems"></ul>
-            <div class="cart-total">
-                <span>Total:</span>
-                <span>$UYU <span id="totalPrice">0</span></span>
+    <!-- Opiniones -->
+    <section class="opinions-section">
+        <div class="opinions-carousel">
+            <div class="opinion">
+                <div class="opinion-header">
+                    <img src="profile1.jpg" alt="Profile Picture">
+                    <div class="opinion-details">
+                        <h3>Nombre del Cliente</h3>
+                        <p>Fecha de la opinión</p>
+                    </div>
+                    <div class="opinion-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <p class="opinion-text">Opinión del cliente...</p>
             </div>
-            <button onclick="showCheckoutForm()" class="checkout-button">
-                Finalizar Compra
-            </button>
+            <!-- Repeat the above structure for each opinion -->
         </div>
-    </div>
+    </section>
 
-    <!-- Grid de Productos -->
-    <div class="products-grid">
-        <!-- Procesador -->
-        <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
-            <h2>Procesadores</h2>
-            <p>AMD e Intel de última generación</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
+    <!-- Productos -->
+    <section class="products-section">
+        <!-- Productos aquí -->
+    </section>
 
-        <!-- Tarjeta Gráfica -->
-        <div class="product-card">
-            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
-            <h2>Tarjeta Gráfica</h2>
-            <p>Alto rendimiento para gaming</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-
-        <!-- Memoria RAM -->
-        <div class="product-card">
-            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
-            <h2>Memorias RAM</h2>
-            <p>DDR4 y DDR5 de alto rendimiento</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-
-        <!-- Fuente de Poder -->
-        <div class="product-card">
-            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
-            <h2>Fuentes de Poder</h2>
-            <p>Certificación 80 Plus, alta eficiencia</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-
-        <!-- Placa Madre -->
-        <div class="product-card">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
-            <h2>Placas Madre</h2>
-            <p>Para AMD e Intel, últimos chipsets</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-
-        <!-- SSD -->
-        <div class="product-card">
-            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
-            <h2>Discos SSD</h2>
-            <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-
-        <!-- HDD -->
-        <div class="product-card">
-            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
-            <h2>Discos HDD</h2>
-            <p>Gran capacidad de almacenamiento</p>
-            <div class="button-container">
-                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-
-        <!-- Mantenimiento -->
-        <div class="product-card">
-            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
-            <h2>Mantenimiento</h2>
-            <p>Servicio técnico especializado</p>
-            <div class="button-container">
-                <a href="#" class="info-button" style="opacity: 0.7; pointer-events: none;">
-                    <i class="fas fa-info-circle"></i> Info
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- Contacto -->
+    <section class="contact-section">
+        <!-- Contacto aquí -->
+    </section>
 
     <!-- Footer -->
     <footer class="footer">
@@ -678,8 +593,6 @@
             }
         });
 
-        // Cargar carrito al iniciar la página
-        document.addEventListener('DOMContentLoaded', loadCart);
     </script>
 </body>
 </html>
