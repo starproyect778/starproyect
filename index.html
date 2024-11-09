@@ -330,122 +330,122 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
         .reviews-section {
-    padding: var(--spacing-xl) var(--spacing);
-    background: var(--dark-gradient);
-    color: var(--light-text);
-    text-align: center;
-    position: relative;
-    overflow: hidden; /* Ajuste para evitar superposición */
-}
+            padding: var(--spacing-xl) var(--spacing);
+            background: var(--dark-gradient);
+            color: var(--light-text);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
 
-.reviews-header {
-    margin-bottom: var(--spacing-xl);
-}
+        .reviews-header {
+            margin-bottom: var(--spacing-xl);
+        }
 
-.reviews-title {
-    font-size: var(--font-size-xxl);
-    font-weight: 800;
-    letter-spacing: 3px;
-    margin-bottom: var(--spacing);
-    color: var(--primary-color);
-}
+        .reviews-title {
+            font-size: var(--font-size-xxl);
+            font-weight: 800;
+            letter-spacing: 3px;
+            margin-bottom: var(--spacing);
+            color: var(--primary-color);
+        }
 
-.reviews-subtitle {
-    font-size: var(--font-size-md);
-    color: var(--light-text);
-    margin: 0 auto;
-    opacity: 0.8;
-    max-width: 600px;
-}
+        .reviews-subtitle {
+            font-size: var(--font-size-md);
+            color: var(--light-text);
+            margin: 0 auto;
+            opacity: 0.8;
+            max-width: 600px;
+        }
 
-.reviews-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    width: 100%; /* Ajuste para diseño responsivo */
-}
+        .reviews-carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
 
-.reviews-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%; /* Ajuste para diseño responsivo */
-}
+        .reviews-wrapper {
+            display: flex;
+            width: 100%;
+            position: relative;
+        }
 
-.review-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 10px;
-    padding: 20px;
-    margin-right: 20px;
-    width: calc(100% - 40px); /* Ajuste para diseño responsivo */
-    max-width: 300px; /* Ajuste para diseño responsivo */
-    transition: transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
+        .review-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            padding: 20px;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            display: none;
+            transition: opacity 0.3s ease-in-out;
+        }
 
-.review-card:hover {
-    transform: translateY(-5px);
-}
+        .review-card.active {
+            display: block;
+        }
 
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
-}
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
 
-.prev-btn, .next-btn {
-    background-color: transparent;
-    border: none;
-    color: var(--primary-color);
-    font-size: 2rem;
-    cursor: pointer;
-    z-index: 1; /* Ajuste para que las flechas estén encima del carrusel */
-}
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            z-index: 1;
+            padding: 0 20px;
+        }
 
-.prev-btn:hover, .next-btn:hover {
-    color: var(--highlight-color);
-}
+        .prev-btn, .next-btn {
+            background-color: transparent;
+            border: none;
+            color: var(--primary-color);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 1;
+            transition: color 0.3s ease;
+        }
 
-/* Animation for stars */
-@keyframes starPulse {
-    0% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.2);
-    }
-    100% {
-        transform: scale(1);
-    }
-}
+        .prev-btn:hover, .next-btn:hover {
+            color: var(--highlight-color);
+        }
 
-.review-card:hover .star {
-    animation: starPulse 1s infinite;
-}
+        @keyframes starPulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
 
-.reviews-carousel {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-}
+        .review-card:hover .star {
+            animation: starPulse 1s infinite;
+        }
 
-.reviews-wrapper {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
 
-.review-card {
-    min-width: 300px; /* Ajusta el ancho según sea necesario */
-    margin: 0 10px; /* Espaciado entre tarjetas */
-}
+        .review-card.active {
+            animation: fadeIn 0.5s ease-in-out;
+        }
 
         /* Footer Styles */
         .footer {
@@ -803,7 +803,7 @@
     <div class="reviews-carousel">
         <div class="reviews-wrapper" id="reviewsContainer">
             <!-- Review 1 -->
-            <div class="review-card">
+            <div class="review-card active">
                 <div class="review-header">
                     <div class="review-avatar">
                         <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente">
@@ -916,10 +916,13 @@
             if (n > slides.length) {slideIndex = 1}
             if (n < 1) {slideIndex = slides.length}
             
-            // Actualizar posición del carrusel
-            const container = document.getElementById("reviewsContainer");
-            const slideWidth = slides[0].offsetWidth;
-            container.style.transform = `translateX(-${(slideIndex - 1) * slideWidth}px)`;
+            // Ocultar todas las opiniones
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // Mostrar solo la opinión actual
+            slides[slideIndex-1].style.display = "block";
             
             // Actualizar dots
             for (let i = 0; i < dots.length; i++) {
@@ -1042,97 +1045,15 @@
                 cart.classList.remove('active');
             }
         });
-        showSlides(slideIndex);
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
+        // Inicializar el carrusel mostrando solo la primera opinión
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.getElementsByClassName("review-card");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = i === 0 ? "block" : "none";
             }
-            slides[slideIndex-1].style.display = "block";  
-        }
-
+        });
     </script>
-
-<script>
-    let slideIndex = 0;
-    let autoSlideInterval;
-
-    function showSlides(n) {
-        const slides = document.querySelectorAll(".review-card");
-        if (n >= slides.length) { slideIndex = 0; }
-        if (n < 0) { slideIndex = slides.length - 1; }
-        
-        slides.forEach((slide, index) => {
-            slide.style.display = "none";
-            slide.classList.remove('active');
-        });
-        
-        slides[slideIndex].style.display = "block";
-        slides[slideIndex].classList.add('active');
-        
-        // Actualiza los indicadores
-        actualizarIndicadores(slideIndex);
-    }
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function autoSlide() {
-        plusSlides(1);
-    }
-
-    function actualizarIndicadores(indiceActivo) {
-        const contenedorIndicadores = document.querySelector('.indicadores-carrusel');
-        contenedorIndicadores.innerHTML = '';
-        
-        const slides = document.querySelectorAll(".review-card");
-        slides.forEach((_, index) => {
-            const indicador = document.createElement('span');
-            indicador.classList.add('indicador');
-            if(index === indiceActivo) {
-                indicador.classList.add('activo');
-            }
-            indicador.onclick = () => {
-                slideIndex = index;
-                showSlides(slideIndex);
-            };
-            contenedorIndicadores.appendChild(indicador);
-        });
-    }
-
-    document.addEventListener("DOMContentLoaded", function() {
-        // Crear contenedor de indicadores si no existe
-        if(!document.querySelector('.indicadores-carrusel')) {
-            const indicadores = document.createElement('div');
-            indicadores.classList.add('indicadores-carrusel');
-            document.querySelector('.reviews-container').appendChild(indicadores);
-        }
-        
-        showSlides(slideIndex);
-        
-        // Iniciar rotación automática
-        autoSlideInterval = setInterval(autoSlide, 5000);
-        
-        // Pausar rotación al pasar el mouse
-        const contenedorCarrusel = document.querySelector('.reviews-container');
-        contenedorCarrusel.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-        
-        contenedorCarrusel.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(autoSlide, 5000);
-        });
-    });
-</script>
 
 </body>
 </html>
