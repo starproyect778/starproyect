@@ -58,14 +58,14 @@
             --warning-color: #ffc107;
             --info-color: #17a2b8;
             
-            /* Efectos y decoración */
-            --border-radius-sm: 8px;
-            --border-radius: 15px;
-            --border-radius-lg: 20px;
-            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            --hover-shadow: 0 12px 24px rgba(0,0,0,0.15);
-            --blue-shadow: 0 8px 16px rgba(75,108,183,0.2);
-            --text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            /* Efectos y decoración mejorados */
+            --border-radius-sm: 10px;
+            --border-radius: 20px;
+            --border-radius-lg: 25px;
+            --box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+            --hover-shadow: 0 16px 32px rgba(0,0,0,0.2);
+            --blue-shadow: 0 10px 20px rgba(75,108,183,0.25);
+            --text-shadow: 3px 3px 5px rgba(0,0,0,0.4);
             
             /* Espaciado y dimensiones */
             --spacing-xs: 5px;
@@ -75,7 +75,7 @@
             --spacing-lg: 40px;
             --spacing-xl: 60px;
             --max-width: 1400px;
-            --header-height: 60px; /* Reducido el tamaño del header */
+            --header-height: 50px; /* Reducido el tamaño del header */
             --footer-height: 200px;
             /* Tipografía */
             --main-font: 'Orbitron', sans-serif;
@@ -297,7 +297,7 @@
         /* Header Styles Extendidos */
         header {
             background: var(--primary-gradient);
-            padding: calc(var(--spacing) * 1.2) var(--spacing); /* Reducción del padding */
+            padding: calc(var(--spacing) * 1.5) var(--spacing); /* Aumento del padding para un diseño más atractivo */
             text-align: center;
             position: fixed;
             width: 100%;
@@ -306,12 +306,17 @@
             z-index: 1000;
             box-shadow: var(--box-shadow);
             transition: var(--transition);
+            /* Estilos adicionales para un diseño más atractivo */
+            border-bottom: 2px solid var(--accent-color); /* Bordes inferiores para un diseño más atractivo */
+            box-sizing: border-box; /* Ajuste de caja para incluir el borde en el ancho total */
         }
 
         header.scrolled {
             padding: var(--spacing) var(--spacing);
             background: rgba(75, 108, 183, 0.95);
             backdrop-filter: blur(10px);
+            /* Estilos adicionales para un diseño más atractivo */
+            border-bottom: 2px solid var(--accent-color); /* Bordes inferiores para un diseño más atractivo */
         }
 
         header::before {
@@ -326,11 +331,13 @@
             animation: backgroundMove 30s linear infinite;
             pointer-events: none;
             opacity: 0.5;
+            /* Estilos adicionales para un diseño más atractivo */
+            background-size: 4em 4em; /* Ajuste del tamaño del fondo para un diseño más atractivo */
         }
 
         header h1 {
             color: var(--light-text);
-            font-size: var(--font-size-xl); /* Ajuste del tamaño de fuente */
+            font-size: var(--font-size-lg); /* Reducción del tamaño de fuente */
             font-weight: 800;
             text-transform: uppercase;
             letter-spacing: 4px;
@@ -339,6 +346,9 @@
             position: relative;
             z-index: 1;
             animation: fadeInDown var(--animation-duration) var(--animation-timing);
+            /* Estilos adicionales para un diseño más atractivo */
+            font-size: var(--font-size-xl); /* Aumento del tamaño de fuente para un diseño más atractivo */
+            text-shadow: var(--text-shadow), 0 0 8px var(--accent-color); /* Sombra de texto adicional para un diseño más atractivo */
         }
 
         /* Navigation Styles */
@@ -347,6 +357,8 @@
             justify-content: center;
             gap: var(--spacing-md);
             margin-top: var(--spacing);
+            /* Estilos adicionales para un diseño más atractivo */
+            margin-top: calc(var(--spacing) * 1.5); /* Ajuste del margen superior para un diseño más atractivo */
         }
 
         .nav-link {
@@ -358,11 +370,17 @@
             padding: var(--spacing-xs) var(--spacing-sm);
             border-radius: var(--border-radius-sm);
             transition: var(--transition);
+            /* Estilos adicionales para un diseño más atractivo */
+            padding: var(--spacing-sm) var(--spacing-md); /* Ajuste del padding para un diseño más atractivo */
+            border-radius: var(--border-radius-md); /* Ajuste del radio de borde para un diseño más atractivo */
         }
 
         .nav-link:hover {
             background: rgba(255,255,255,0.1);
             transform: translateY(-2px);
+            /* Estilos adicionales para un diseño más atractivo */
+            background: rgba(255,255,255,0.2); /* Ajuste del fondo para un diseño más atractivo */
+            transform: translateY(-4px); /* Ajuste de la transformación para un diseño más atractivo */
         }
 
         /* Estilos de la Sección Acerca de */
@@ -426,7 +444,7 @@
             transform: translateY(-2px);
         }
 
-        /* Mission and Vision Styles */
+        /* Estilos de la Misión y Visión */
         .mission-vision {
             padding: var(--spacing-xl) var(--spacing);
             background: var(--card-gradient);
@@ -435,17 +453,36 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             margin: var(--spacing) 0;
+            animation: fadeInUp var(--animation-duration) var(--animation-timing);
+            transform: scale(0.9);
+            transition: var(--transition);
+        }
+
+        .mission-vision:hover {
+            transform: scale(1);
+            box-shadow: var(--hover-shadow);
         }
 
         .mission-vision h3 {
             font-size: var(--font-size-lg);
             margin-bottom: var(--spacing-sm);
+            animation: fadeIn var(--animation-duration) var(--animation-timing);
+            color: var(--accent-color);
+            text-shadow: var(--text-shadow);
         }
 
         .mission-vision p {
             font-size: var(--font-size);
             line-height: 1.6;
             margin-bottom: var(--spacing);
+            animation: fadeIn var(--animation-duration) var(--animation-timing);
+            opacity: 0.8;
+            transition: var(--transition);
+        }
+
+        .mission-vision p:hover {
+            opacity: 1;
+            transform: translateY(-2px);
         }
         /* Estilos de la Sección de Productos */
         .products-section {
@@ -454,6 +491,8 @@
             position: relative;
             overflow: hidden;
             animation: fadeInUp var(--animation-duration) var(--animation-timing);
+            background-image: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
+            background-size: 3em 3em;
         }
 
         .products-section::before {
@@ -1271,9 +1310,8 @@
         <i class="fas fa-chevron-up"></i>
         <span>Subir</span>
     </button>
-
-    <header>
-        <h1>Star Proyect</h1> <!-- Cambiado de "tie" a "Star Proyect" -->
+    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; padding: 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h1 style="font-size: 20px;">Star Proyect</h1>
         <nav class="nav-menu">
             <a href="#about" class="nav-link">Sobre Nosotros</a>
             <a href="#products" class="nav-link">Productos</a>
@@ -1283,7 +1321,7 @@
     </header>
 
     <!-- Sección Acerca de -->
-    <section class="about-section" id="about">
+    <section class="about-section" id="about" style="margin-top: 50px;">
         <div class="about-content">
             <h2>¿Qué es Star Proyect?</h2>
             <p>Star Proyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de gabinetes, componentes de hardware, y servicios de mantenimiento.</p>
@@ -1327,7 +1365,6 @@
                     <p class="product-description">AMD e Intel de última generación para máximo rendimiento</p>
                     <div class="product-actions">
                         <a href="procesador.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
                     </div>
                 </div>
 
@@ -1343,7 +1380,6 @@
                     <p class="product-description">Alto rendimiento para gaming y diseño profesional</p>
                     <div class="product-actions">
                         <a href="targetagrafica.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
                     </div>
                 </div>
 
@@ -1359,7 +1395,6 @@
                     <p class="product-description">DDR4 y DDR5 de alta velocidad</p>
                     <div class="product-actions">
                         <a href="ram.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
                     </div>
                 </div>
 
@@ -1375,7 +1410,6 @@
                     <p class="product-description">Almacenamiento confiable y de gran capacidad</p>
                     <div class="product-actions">
                         <a href="hdd.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
                     </div>
                 </div>
 
@@ -1391,7 +1425,6 @@
                     <p class="product-description">Velocidades de lectura y escritura ultrarrápidas</p>
                     <div class="product-actions">
                         <a href="ssd.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
                     </div>
                 </div>
 
@@ -1407,7 +1440,6 @@
                     <p class="product-description">Diseños elegantes y funcionales para tu PC</p>
                     <div class="product-actions">
                         <a href="gabinete.html" class="product-button button-primary">Ver Más</a>
-                        <button class="product-button button-secondary">Info</button>
                     </div>
                 </div>
                 <div class="reviews-section" id="reviews">
@@ -1415,306 +1447,315 @@
                         <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
                         <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
                     </div>
-                    <div class="reviews-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                        <!-- Review 1 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Santiago Rodríguez</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
+                    <div class="reviews-carousel">
+                        <!-- Carrusel de Opiniones -->
+                        <div class="reviews-carousel" data-aos="fade-up">
+                            <!-- Review 1 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente" class="avatar">
                                     </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        15 marzo 2024
-                                    </span>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Santiago Rodríguez</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            15 marzo 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Gaming PC</span>
+                                        <span class="review-tag">Servicio Técnico</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
                                 </div>
                             </div>
-                            <div class="review-content">
-                                <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Gaming PC</span>
-                                    <span class="review-tag">Servicio Técnico</span>
+                
+                            <!-- Review 2 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">María Fernández</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star-half-alt star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            10 marzo 2024
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
+                                <div class="review-content">
+                                    <p class="review-text">"Los productos son de excelente calidad y el servicio al cliente es inmejorable. Definitivamente volveré a comprar aquí."</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Calidad</span>
+                                        <span class="review-tag">Servicio</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Review 3 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Carlos Pérez</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            5 marzo 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"La mejor tienda para comprar componentes de PC. Tienen todo lo que necesitas y más. ¡Recomendados!"</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Componentes</span>
+                                        <span class="review-tag">Recomendados</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Review 4 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Lucía Gómez</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            1 marzo 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"El mantenimiento de mi PC fue rápido y eficiente. Estoy muy satisfecha con el servicio."</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Mantenimiento</span>
+                                        <span class="review-tag">Satisfacción</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Review 5 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Javier Martínez</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star-half-alt star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            20 febrero 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Variedad</span>
+                                        <span class="review-tag">Precios</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Review 6 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Fernando López</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            15 febrero 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Variedad</span>
+                                        <span class="review-tag">Precios</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Review 7 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Ana Torres</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            28 febrero 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"Excelente atención al cliente y productos de alta calidad. Estoy muy satisfecha con mi compra."</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Calidad</span>
+                                        <span class="review-tag">Atención</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
+                                </div>
+                            </div>
+                
+                            <!-- Review 8 -->
+                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
+                                <div class="review-header">
+                                    <div class="review-avatar">
+                                        <img src="https://randomuser.me/api/portraits/men/8.jpg" alt="Cliente" class="avatar">
+                                    </div>
+                                    <div class="review-info">
+                                        <h3 class="review-name">Diego Martínez</h3>
+                                        <div class="review-rating">
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star star"></i>
+                                            <i class="fas fa-star-half-alt star"></i>
+                                        </div>
+                                        <span class="review-date">
+                                            <i class="far fa-calendar-alt"></i>
+                                            30 febrero 2024
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="review-content">
+                                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
+                                    <div class="review-tags">
+                                        <span class="review-tag">Variedad</span>
+                                        <span class="review-tag">Precios</span>
+                                    </div>
+                                    <div class="review-verified">
+                                        <i class="fas fa-check-circle"></i>
+                                        Compra verificada
+                                    </div>
                                 </div>
                             </div>
                         </div>
                 
-                        <!-- Review 2 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">María Fernández</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star-half-alt star"></i>
+                        <!-- Sección de Newsletter y Síguenos -->
+                        <div class="newsletter-follow-section">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="newsletter-section">
+                                        <div class="newsletter-header">
+                                            <h3 class="newsletter-title">Newsletter</h3>
+                                            <p>Suscríbete para recibir las últimas novedades y ofertas</p>
+                                        </div>
+                                        <form class="newsletter-form">
+                                            <input type="email" class="newsletter-input" placeholder="Tu email">
+                                            <button type="submit" class="newsletter-button">Suscribirse</button>
+                                        </form>
                                     </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        10 marzo 2024
-                                    </span>
                                 </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"Los productos son de excelente calidad y el servicio al cliente es inmejorable. Definitivamente volveré a comprar aquí."</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Calidad</span>
-                                    <span class="review-tag">Servicio</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
+                                <div class="col-md-6">
+                                    <div class="follow-us-section">
+                                        <h3 class="follow-us-title">Síguenos</h3>
+                                        <div class="follow-us-social">
+                                            <a href="https://www.instagram.com/empresa_starproyect/" class="social-link" target="_blank">
+                                                <i class="fab fa-instagram"></i>
+                                            </a>
+                                            <a href="https://www.facebook.com/profile.php?id=61565967616974" class="social-link" target="_blank">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" class="social-link" target="_blank">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                
-                        <!-- Review 3 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Carlos Pérez</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        5 marzo 2024
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"La mejor tienda para comprar componentes de PC. Tienen todo lo que necesitas y más. ¡Recomendados!"</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Componentes</span>
-                                    <span class="review-tag">Recomendados</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Review 4 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Lucía Gómez</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        1 marzo 2024
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"El mantenimiento de mi PC fue rápido y eficiente. Estoy muy satisfecha con el servicio."</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Mantenimiento</span>
-                                    <span class="review-tag">Satisfacción</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Review 5 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Javier Martínez</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star-half-alt star"></i>
-                                    </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        20 febrero 2024
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Variedad</span>
-                                    <span class="review-tag">Precios</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Review 6 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Fernando López</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        15 febrero 2024
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Variedad</span>
-                                    <span class="review-tag">Precios</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Review 7 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Ana Torres</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                    </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        28 febrero 2024
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"Excelente atención al cliente y productos de alta calidad. Estoy muy satisfecha con mi compra."</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Calidad</span>
-                                    <span class="review-tag">Atención</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Review 8 -->
-                        <div class="review-card" data-aos="fade-up" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                            <div class="review-header">
-                                <div class="review-avatar">
-                                    <img src="https://randomuser.me/api/portraits/men/8.jpg" alt="Cliente" class="avatar">
-                                </div>
-                                <div class="review-info">
-                                    <h3 class="review-name">Diego Martínez</h3>
-                                    <div class="review-rating">
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star star"></i>
-                                        <i class="fas fa-star-half-alt star"></i>
-                                    </div>
-                                    <span class="review-date">
-                                        <i class="far fa-calendar-alt"></i>
-                                        30 febrero 2024
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="review-content">
-                                <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                                <div class="review-tags">
-                                    <span class="review-tag">Variedad</span>
-                                    <span class="review-tag">Precios</span>
-                                </div>
-                                <div class="review-verified">
-                                    <i class="fas fa-check-circle"></i>
-                                    Compra verificada
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h3 class="footer-title">Síguenos</h3>
-                    <div class="footer-social">
-                        <a href="https://www.instagram.com/empresa_starproyect/" class="social-link" target="_blank">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61565967616974" class="social-link" target="_blank">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" class="social-link" target="_blank">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-                
-            <div class="footer-section">
-                <h3 class="footer-title">Newsletter</h3>
-                <p>Suscríbete para recibir las últimas novedades y ofertas</p>
-                <form class="newsletter-form">
-                    <input type="email" class="newsletter-input" placeholder="Tu email">
-                    <button type="submit" class="newsletter-button">Suscribirse</button>
-                </form>
-            </div>
-        </div>
                                     <div class="footer-bottom">
                                         <p>&copy; 2024 Star Proyect. Todos los derechos reservados.</p>
                                     </div>
@@ -1722,12 +1763,11 @@
                 
                                 <!-- Scripts -->
                                 <script>
-                                    // Loading Screen
+                                    // Pantalla de carga
                                     window.addEventListener('load', () => {
                                         document.querySelector('.loading').style.display = 'none';
                                     });
-                
-                                    // Scroll to Top
+                                    // Desplazarse hacia arriba
                                     const scrollTopBtn = document.querySelector('.scroll-top');
                                     
                                     window.addEventListener('scroll', () => {
@@ -1745,15 +1785,15 @@
                                         });
                                     });
                 
-                                    // Product Filtering
+                                    // Filtrado de productos
                                     const categoryButtons = document.querySelectorAll('.category-button');
                                     const productCards = document.querySelectorAll('.product-card');
                 
                                     categoryButtons.forEach(button => {
                                         button.addEventListener('click', () => {
-                                            // Remove active class from all buttons
+                                            // Eliminar la clase activa de todos los botones
                                             categoryButtons.forEach(btn => btn.classList.remove('active'));
-                                            // Add active class to clicked button
+                                            // Agregar la clase activa al botón clickeado
                                             button.classList.add('active');
                 
                                             const category = button.textContent.toLowerCase();
@@ -1768,7 +1808,7 @@
                                         });
                                     });
                 
-                                    // Intersection Observer for animations
+                                    // Observador de Intersección para animaciones
                                     const observer = new IntersectionObserver((entries) => {
                                         entries.forEach(entry => {
                                             if (entry.isIntersecting) {
@@ -1783,7 +1823,7 @@
                                         observer.observe(card);
                                     });
                 
-                                    // Newsletter Form
+                                    // Formulario de Newsletter
                                     const newsletterForm = document.querySelector('.newsletter-form');
                                     newsletterForm.addEventListener('submit', (e) => {
                                         e.preventDefault();
