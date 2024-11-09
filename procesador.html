@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mantenimiento - StarProject</title>
+    <title>Procesadores - StarProject</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         /* Estilos base */
@@ -63,8 +63,8 @@
             left: 0;
         }
 
-        /* Estilos de la cuadrícula de servicios */
-        .services-grid {
+        /* Estilos de la cuadrícula de modelos */
+        .models-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -72,7 +72,7 @@
             background-color: white;
         }
 
-        .service-card {
+        .model-card {
             background: white;
             border-radius: 10px;
             padding: 20px;
@@ -80,28 +80,28 @@
             transition: transform 0.3s ease;
         }
 
-        .service-card:hover {
+        .model-card:hover {
             transform: translateY(-5px);
         }
 
-        .service-card h3 {
+        .model-card h3 {
             color: #4b6cb7;
             margin-top: 0;
             border-bottom: 2px solid #4b6cb7;
             padding-bottom: 10px;
         }
 
-        .service-card ul {
+        .model-card ul {
             list-style: none;
             padding: 0;
         }
 
-        .service-card li {
+        .model-card li {
             margin: 10px 0;
             color: #333;
         }
 
-        .service-card button {
+        .model-card button {
             background-color: #4b6cb7;
             color: white;
             border: none;
@@ -112,7 +112,7 @@
             transition: background-color 0.3s;
         }
 
-        .service-card button:hover {
+        .model-card button:hover {
             background-color: #182848;
         }
 
@@ -283,7 +283,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            .services-grid {
+            .models-grid {
                 grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
             .cart-content {
@@ -303,61 +303,116 @@
     </a>
 
     <div class="product-info">
-        <h2>Mantenimiento</h2>
-        <p>Ofrecemos servicios de mantenimiento técnico para asegurar que tu computadora funcione de manera óptima y prolongar su vida útil.</p>
+        <h2>Procesadores</h2>
+        <p>Los procesadores son el cerebro de tu computadora, responsables de ejecutar todas las instrucciones y cálculos necesarios para el funcionamiento del sistema.</p>
 
-        <h3>Servicios Disponibles</h3>
+        <h3>Marcas Disponibles</h3>
         <ul>
-            <li>Revisión y limpieza de hardware</li>
-            <li>Actualización de componentes</li>
-            <li>Instalación de software y sistemas operativos</li>
-            <li>Diagnóstico de problemas y reparación</li>
-            <li>Asesoramiento personalizado para mejoras</li>
+            <li>AMD - Rendimiento excepcional y mejor relación precio-rendimiento</li>
+            <li>Intel - Líder en innovación y rendimiento de alta gama</li>
         </ul>
 
-        <h3>¿Por qué elegir nuestro servicio de mantenimiento?</h3>
+        <h3>¿Por qué elegir nuestros procesadores?</h3>
         <ul>
-            <li>Profesionales capacitados y con experiencia</li>
-            <li>Garantía de satisfacción en todos nuestros servicios</li>
-            <li>Atención personalizada y asesoramiento técnico</li>
-            <li>Precios competitivos y transparentes</li>
-            <li>Soporte técnico post-servicio</li>
+            <li>Garantía oficial de fábrica por 3 años</li>
+            <li>Asesoramiento personalizado para tu build</li>
+            <li>Instalación profesional disponible</li>
+            <li>Productos 100% originales y sellados</li>
+            <li>Soporte técnico post-venta</li>
         </ul>
     </div>
 
-    <div class="services-grid">
-        <div class="service-card">
-            <h3>Mantenimiento Básico</h3>
+    <div class="models-grid">
+        <!-- AMD Models -->
+        <div class="model-card">
+            <h3>AMD Ryzen 5 5600X</h3>
             <ul>
-                <li>Revisión general del sistema</li>
-                <li>Limpieza de componentes internos</li>
-                <li>Actualización de software básico</li>
-                <li>Precio: $UYU 2.500</li>
+                <li>Núcleos: 6</li>
+                <li>Hilos: 12</li>
+                <li>Frecuencia base: 3.7 GHz</li>
+                <li>Frecuencia máxima: 4.6 GHz</li>
+                <li>Cache L3: 32MB</li>
+                <li>TDP: 65W</li>
+                <li>Socket: AM4</li>
+                <li>Precio: $UYU 15.900</li>
             </ul>
-            <button onclick="addToCart('Mantenimiento Básico', 2500)">Agregar al carrito</button>
+            <button onclick="addToCart('AMD Ryzen 5 5600X', 15900)">Agregar al carrito</button>
         </div>
 
-        <div class="service-card">
-            <h3>Mantenimiento Avanzado</h3>
+        <div class="model-card">
+            <h3>AMD Ryzen 7 5800X</h3>
             <ul>
-                <li>Revisión completa del sistema</li>
-                <li>Limpieza profunda de hardware</li>
-                <li>Instalación de software y drivers</li>
-                <li>Diagnóstico de problemas</li>
-                <li>Precio: $UYU 4.500</li>
+                <li>Núcleos: 8</li>
+                <li>Hilos: 16</li>
+                <li>Frecuencia base: 3.8 GHz</li>
+                <li>Frecuencia máxima: 4.7 GHz</li>
+                <li>Cache L3: 32MB</li>
+                <li>TDP: 105W</li>
+                <li>Socket: AM4</li>
+                <li>Precio: $UYU 19.900</li>
             </ul>
-            <button onclick="addToCart('Mantenimiento Avanzado', 4500)">Agregar al carrito</button>
+            <button onclick="addToCart('AMD Ryzen 7 5800X', 19900)">Agregar al carrito</button>
         </div>
 
-        <div class="service-card">
-            <h3>Actualización de Componentes</h3>
+        <div class="model-card">
+            <h3>AMD Ryzen 9 5900X</h3>
             <ul>
-                <li>Asesoramiento sobre mejoras</li>
-                <li>Instalación de nuevos componentes</li>
-                <li>Optimización del rendimiento</li>
-                <li>Precio: $UYU 3.000</li>
+                <li>Núcleos: 12</li>
+                <li>Hilos: 24</li>
+                <li>Frecuencia base: 3.7 GHz</li>
+                <li>Frecuencia máxima: 4.8 GHz</li>
+                <li>Cache L3: 64MB</li>
+                <li>TDP: 105W</li>
+                <li>Socket: AM4</li>
+                <li>Precio: $UYU 24.900</li>
             </ul>
-            <button onclick="addToCart('Actualización de Componentes', 3000)">Agregar al carrito</button>
+            <button onclick="addToCart('AMD Ryzen 9 5900X', 24900)">Agregar al carrito</button>
+        </div>
+
+        <!-- Intel Models -->
+        <div class="model-card">
+            <h3>Intel Core i5-12600K</h3>
+            <ul>
+                <li>Núcleos: 10 (6P + 4E)</li>
+                <li>Hilos: 16</li>
+                <li>Frecuencia base P-core: 3.7 GHz</li>
+                <li>Frecuencia máxima P-core: 4.9 GHz</li>
+                <li>Cache inteligente: 20MB</li>
+                <li>TDP: 125W</li>
+                <li>Socket: LGA 1700</li>
+                <li>Precio: $UYU 18.900</li>
+            </ul>
+            <button onclick="addToCart('Intel Core i5-12600K', 18900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Intel Core i7-12700K</h3>
+            <ul>
+                <li>Núcleos: 12 (8P + 4E)</li>
+                <li>Hilos: 20</li>
+                <li>Frecuencia base P-core: 3.6 GHz</li>
+                <li>Frecuencia máxima P-core: 5.0 GHz</li>
+                <li>Cache inteligente: 25MB</li>
+                <li>TDP: 125W</li>
+                <li>Socket: LGA 1700</li>
+                <li>Precio: $UYU 22.900</li>
+            </ul>
+            <button onclick="addToCart('Intel Core i7-12700K', 22900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Intel Core i9-12900K</h3>
+            <ul>
+                <li>Núcleos: 16 (8P + 8E)</li>
+                <li>Hilos: 24</li>
+                <li>Frecuencia base P-core: 3.2 GHz</li>
+                <li>Frecuencia máxima P-core: 5.2 GHz</li>
+                <li>Cache inteligente: 30MB</li>
+                <li>TDP: 125W</li>
+                <li>Socket: LGA 1700</li>
+                <li>Precio: $UYU 29.900</li>
+            </ul>
+            <button onclick="addToCart('Intel Core i9-12900K', 29900)">Agregar al carrito</button>
         </div>
     </div>
 
