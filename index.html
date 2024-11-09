@@ -6,6 +6,123 @@
     <title>Procesadores - StarProject</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
+
+        /* Estilos del carrito */
+.cart {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.cart-icon {
+    font-size: 24px;
+    color: #808080;
+    cursor: pointer;
+    padding: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.cart-content {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 10px;
+    background-color: white;
+    min-width: 300px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1001;
+}
+
+.cart.active .cart-content {
+    display: block;
+}
+
+.minimize-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #808080;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.minimize-button:hover {
+    color: #4b6cb7;
+}
+
+.cart-content h3 {
+    color: black;
+    margin-top: 0;
+    padding-right: 30px;
+}
+
+.cart-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-content li {
+    color: #28a745;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-form {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.checkout-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.checkout-button {
+    background-color: #28a745;
+    width: 100%;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
         /* Estilos base */
         body {
             font-family: Arial, sans-serif;
@@ -26,6 +143,110 @@
             font-size: 2.5em;
             font-weight: bold;
             margin: 0;
+        }
+
+        /* Estilos de la sección info */
+        .product-info {
+            padding: 40px;
+            background: linear-gradient(135deg, #4b6cb7 70%, #182848);
+            color: white;
+        }
+
+        .product-info h2 {
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .product-info h3 {
+            color: #00bfff;
+            margin-top: 30px;
+        }
+
+        .product-info ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .product-info li {
+            margin: 10px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .product-info li:before {
+            content: "•";
+            color: #00bfff;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Estilos de la cuadrícula de modelos */
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .model-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .model-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .model-card h3 {
+            color: #4b6cb7;
+            margin-top: 0;
+            border-bottom: 2px solid #4b6cb7;
+            padding-bottom: 10px;
+        }
+
+        .model-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .model-card li {
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .model-card button {
+            background-color: #4b6cb7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .model-card button:hover {
+            background-color: #182848;
+        }
+
+        /* Estilos del botón volver */
+        .back-button {
+            display: inline-block;
+            background-color: #4b6cb7;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #182848;
         }
 
         /* Estilos del carrito */
@@ -142,110 +363,6 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-        }
-
-        /* Estilos de la sección info */
-        .product-info {
-            padding: 40px;
-            background: linear-gradient(135deg, #4b6cb7 70%, #182848);
-            color: white;
-        }
-
-        .product-info h2 {
-            color: #00bfff;
-            margin-bottom: 20px;
-        }
-
-        .product-info h3 {
-            color: #00bfff;
-            margin-top: 30px;
-        }
-
-        .product-info ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .product-info li {
-            margin: 10px 0;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .product-info li:before {
-            content: "•";
-            color: #00bfff;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Estilos de la cuadrícula de modelos */
-        .models-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            background-color: white;
-        }
-
-        .model-card {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .model-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .model-card h3 {
-            color: #4b6cb7;
-            margin-top: 0;
-            border-bottom: 2px solid #4b6cb7;
-            padding-bottom: 10px;
-        }
-
-        .model-card ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .model-card li {
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .model-card button {
-            background-color: #4b6cb7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            width: 100%;
-            transition: background-color 0.3s;
-        }
-
-        .model-card button:hover {
-            background-color: #182848;
-        }
-
-        /* Estilos del botón volver */
-        .back-button {
-            display: inline-block;
-            background-color: #4b6cb7;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #182848;
         }
 
         /* Estilos del footer */
