@@ -2,396 +2,69 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.9"> <!-- Reducción del zoom -->
-    <meta name="description" content="Star Proyect - Tu tienda de confianza para componentes de PC en Uruguay. Gabinetes, componentes, mantenimiento y más.">
-    <meta name="keywords" content="componentes PC, hardware, gabinetes, mantenimiento, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay, Star Wars, Star Proyect, gaming PC, computadoras, hardware gaming">
-    <meta name="author" content="Star Proyect">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StarProject - Tu tienda de confianza para componentes de PC en Uruguay. Procesadores, RAM, placas madre, SSDs y más.">
+    <meta name="keywords" content="componentes PC, hardware, procesadores, RAM, SSD, HDD, fuentes de poder, placas madre, Uruguay, Star Wars">
+    <meta name="author" content="StarProject">
     <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Star Proyect - Componentes de PC">
+    <meta property="og:title" content="StarProject - Componentes de PC">
     <meta property="og:description" content="Tu tienda de confianza para componentes de PC en Uruguay">
     <meta property="og:image" content="img/logo.png">
     <meta property="og:url" content="https://starproyect778.github.io/starproyect/">
-    <meta name="theme-color" content="#4b6cb7">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-title" content="Star Proyect">
-    <meta name="application-name" content="Star Proyect">
-    <meta name="msapplication-TileColor" content="#4b6cb7">
-    <meta name="msapplication-config" content="browserconfig.xml">
     
-    <title>Star Proyect - Componentes de PC en Uruguay</title>
+    <title>StarProject - Componentes de PC en Uruguay</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-    <link rel="manifest" href="manifest.json">
-    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#4b6cb7">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
     
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        /* Variables CSS */
         :root {
-            /* Gradientes principales */
             --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-            --secondary-gradient: linear-gradient(135deg, #6a85d1 0%, #4b6cb7 100%);
+            --secondary-gradient: linear-gradient(135deg, #28a745 0%, #145a23 100%);
             --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
             --hover-gradient: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-            --dark-gradient: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            --glass-gradient: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            --accent-gradient: linear-gradient(45deg, #4b6cb7, #6a85d1);
-            
-            /* Colores base */
-            --primary-color: #4b6cb7;
-            --secondary-color: #182848;
-            --accent-color: #6a85d1;
-            --text-color: #333333;
-            --light-text: #ffffff;
-            --dark-text: #666666;
-            --error-color: #dc3545;
-            --success-color: #28a745;
-            --warning-color: #ffc107;
-            --info-color: #17a2b8;
-            
-            /* Efectos y decoración mejorados */
-            --border-radius-sm: 10px;
-            --border-radius: 20px;
-            --border-radius-lg: 25px;
-            --box-shadow: 0 6px 10px rgba(0,0,0,0.15);
-            --hover-shadow: 0 16px 32px rgba(0,0,0,0.2);
-            --blue-shadow: 0 10px 20px rgba(75,108,183,0.25);
-            --text-shadow: 3px 3px 5px rgba(0,0,0,0.4);
-            
-            /* Espaciado y dimensiones */
-            --spacing-xs: 5px;
-            --spacing-sm: 10px;
-            --spacing: 20px;
-            --spacing-md: 30px;
-            --spacing-lg: 40px;
-            --spacing-xl: 60px;
-            --max-width: 1400px;
-            --header-height: 50px; /* Reducido el tamaño del header */
-            --footer-height: 200px;
-            /* Tipografía */
-            --main-font: 'Orbitron', sans-serif;
-            --font-size-xs: 0.75rem;
-            --font-size-sm: 0.875rem;
-            --font-size: 1rem;
-            --font-size-md: 1.125rem;
-            --font-size-lg: 1.25rem;
-            --font-size-xl: 1.5rem;
-            --font-size-xxl: 2rem;
-            
-            /* Animaciones */
-            --transition: all 0.3s ease;
-            --transition-fast: all 0.2s ease;
-            --transition-slow: all 0.5s ease;
-            --animation-duration: 0.8s;
-            --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* Reset y Estilos Base */
-        *, *::before, *::after {
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            font-size: 14px; /* Reducción del zoom */
-            overflow-x: hidden;
-            height: 100%;
-            scroll-padding-top: var(--header-height);
         }
 
         body {
-            font-family: var(--main-font);
+            font-family: Arial, sans-serif;
             background-color: #f0f2f5;
             overflow-x: hidden;
-            line-height: 1.6;
-            color: var(--text-color);
-            min-height: 100%;
-            display: flex;
-            flex-direction: column;
-            position: relative;
         }
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            object-fit: cover;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        button {
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-family: inherit;
-            transition: var(--transition);
-        }
-
-        ul, ol {
-            list-style: none;
-        }
-
-        input, textarea, select {
-            font-family: inherit;
-            font-size: inherit;
-            border: none;
-            outline: none;
-            transition: var(--transition);
-        }
-
-        /* Utilidades Globales */
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing);
-            width: 100%;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .hidden {
-            display: none !important;
-        }
-
-        .visually-hidden {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border: 0;
-        }
-
-        /* Animaciones Base */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes rotate {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes shimmer {
-            0% {
-                background-position: -200% 0;
-            }
-            100% {
-                background-position: 200% 0;
-            }
-        }
-
-        /* Header Styles Extendidos */
+        /* Header Styles */
         header {
             background: var(--primary-gradient);
-            padding: calc(var(--spacing) * 1.5) var(--spacing); /* Aumento del padding para un diseño más atractivo */
+            padding: 20px;
             text-align: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
-            /* Estilos adicionales para un diseño más atractivo */
-            border-bottom: 2px solid var(--accent-color); /* Bordes inferiores para un diseño más atractivo */
-            box-sizing: border-box; /* Ajuste de caja para incluir el borde en el ancho total */
-        }
-
-        header.scrolled {
-            padding: var(--spacing) var(--spacing);
-            background: rgba(75, 108, 183, 0.95);
-            backdrop-filter: blur(10px);
-            /* Estilos adicionales para un diseño más atractivo */
-            border-bottom: 2px solid var(--accent-color); /* Bordes inferiores para un diseño más atractivo */
-        }
-
-        header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
-            opacity: 0.5;
-            /* Estilos adicionales para un diseño más atractivo */
-            background-size: 4em 4em; /* Ajuste del tamaño del fondo para un diseño más atractivo */
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            color: var(--light-text);
-            font-size: var(--font-size-lg); /* Reducción del tamaño de fuente */
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: var(--text-shadow);
+            color: white;
+            font-size: 2.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        /* About Section Styles */
+        .about-section {
+            background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+            color: white;
+            padding: 60px 20px;
             margin: 0;
             position: relative;
-            z-index: 1;
-            animation: fadeInDown var(--animation-duration) var(--animation-timing);
-            /* Estilos adicionales para un diseño más atractivo */
-            font-size: var(--font-size-xl); /* Aumento del tamaño de fuente para un diseño más atractivo */
-            text-shadow: var(--text-shadow), 0 0 8px var(--accent-color); /* Sombra de texto adicional para un diseño más atractivo */
-        }
-
-        /* Navigation Styles */
-        .nav-menu {
-            display: flex;
-            justify-content: center;
-            gap: var(--spacing-md);
-            margin-top: var(--spacing);
-            /* Estilos adicionales para un diseño más atractivo */
-            margin-top: calc(var(--spacing) * 1.5); /* Ajuste del margen superior para un diseño más atractivo */
-        }
-
-        .nav-link {
-            color: var(--light-text);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--border-radius-sm);
-            transition: var(--transition);
-            /* Estilos adicionales para un diseño más atractivo */
-            padding: var(--spacing-sm) var(--spacing-md); /* Ajuste del padding para un diseño más atractivo */
-            border-radius: var(--border-radius-md); /* Ajuste del radio de borde para un diseño más atractivo */
-        }
-
-        .nav-link:hover {
-            background: rgba(255,255,255,0.1);
-            transform: translateY(-2px);
-            /* Estilos adicionales para un diseño más atractivo */
-            background: rgba(255,255,255,0.2); /* Ajuste del fondo para un diseño más atractivo */
-            transform: translateY(-4px); /* Ajuste de la transformación para un diseño más atractivo */
-        }
-
-        /* Estilos de la Sección Acerca de */
-        .about-section {
-            padding: var(--spacing-xl) var(--spacing);
-            background: var(--dark-gradient);
-            color: var(--light-text);
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            animation: fadeInDown var(--animation-duration) var(--animation-timing);
+            overflow: hidden;
         }
 
         .about-section::before {
@@ -401,1438 +74,580 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: var(--glass-gradient);
-            z-index: -1;
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
+            background-size: 3em 3em;
             animation: backgroundMove 30s linear infinite;
         }
 
         .about-content {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: var(--spacing-md);
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: var(--border-radius);
-            box-shadow: var(--blue-shadow);
-            transform: scale(0.9);
-            transition: var(--transition);
-        }
-
-        .about-content:hover {
-            transform: scale(1);
-            box-shadow: var(--hover-shadow);
+            position: relative;
+            z-index: 1;
+            text-align: center;
         }
 
         .about-content h2 {
-            font-size: var(--font-size-xl);
-            margin-bottom: var(--spacing);
-            color: var(--accent-color);
-            text-shadow: var(--text-shadow);
-            animation: fadeInUp var(--animation-duration) var(--animation-timing);
+            color: #00bfff;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
         .about-content p {
-            font-size: var(--font-size);
+            font-size: 1.1em;
             line-height: 1.6;
-            margin-bottom: var(--spacing);
-            color: var(--light-text);
-            opacity: 0.8;
-            transition: var(--transition);
+            margin-bottom: 20px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            padding: 0 20px;
         }
 
-        .about-content p:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-
-        /* Estilos de la Misión y Visión */
-        .mission-vision {
-            padding: var(--spacing-xl) var(--spacing);
-            background: var(--card-gradient);
-            color: var(--text-color);
+        /* Vision Section Styles */
+        .vision-section {
+            background: var(--primary-gradient);
+            padding: 60px 20px;
             text-align: center;
-            border-radius: var(--border-radius);
-            box-shadow: var(--box-shadow);
-            margin: var(--spacing) 0;
-            animation: fadeInUp var(--animation-duration) var(--animation-timing);
-            transform: scale(0.9);
-            transition: var(--transition);
-        }
-
-        .mission-vision:hover {
-            transform: scale(1);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .mission-vision h3 {
-            font-size: var(--font-size-lg);
-            margin-bottom: var(--spacing-sm);
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
-            color: var(--accent-color);
-            text-shadow: var(--text-shadow);
-        }
-
-        .mission-vision p {
-            font-size: var(--font-size);
-            line-height: 1.6;
-            margin-bottom: var(--spacing);
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
-            opacity: 0.8;
-            transition: var(--transition);
-        }
-
-        .mission-vision p:hover {
-            opacity: 1;
-            transform: translateY(-2px);
-        }
-        /* Estilos de la Sección de Productos */
-        .products-section {
-            padding: calc(var(--header-height) + var(--spacing-xl)) var(--spacing) var(--spacing-xl);
-            background: var(--dark-gradient);
+            margin: 0;
             position: relative;
             overflow: hidden;
-            animation: fadeInUp var(--animation-duration) var(--animation-timing);
-            background-image: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
-            background-size: 3em 3em;
         }
 
-        .products-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
-            opacity: 0.5;
+        .vision-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
+        .vision-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .vision-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .vision-item i {
+            font-size: 2.5em;
+            color: #00bfff;
+            margin-bottom: 20px;
+        }
+
+        .vision-item h3 {
+            color: #00bfff;
+            margin: 15px 0;
+            font-size: 1.5em;
+        }
+
+        .vision-item p {
+            color: white;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        /* Products Grid Styles */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-lg);
-            max-width: var(--max-width);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 40px 20px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: var(--spacing-lg) var(--spacing);
-            position: relative;
-            z-index: 1;
-            animation: scaleIn var(--animation-duration) var(--animation-timing);
         }
 
         .product-card {
             background: var(--card-gradient);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-md);
-            box-shadow: var(--box-shadow);
-            transition: var(--transition);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-            animation: productCardBeforeAnimation var(--animation-duration) var(--animation-timing);
-        }
-
-        @keyframes productCardBeforeAnimation {
-            from {
-                transform: scaleX(0);
-            }
-            to {
-                transform: scaleX(1);
-            }
-        }
-
-        .product-card:hover::before {
-            transform: scaleX(1);
         }
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: var(--blue-shadow);
-            animation: productCardHoverAnimation var(--animation-duration) var(--animation-timing);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
 
-        @keyframes productCardHoverAnimation {
-            from {
-                transform: translateY(0);
-                box-shadow: var(--box-shadow);
-            }
-            to {
-                transform: translateY(-10px);
-                box-shadow: var(--blue-shadow);
-            }
-        }
-
-        .product-image-container {
-            position: relative;
-            padding-bottom: 75%;
-            overflow: hidden;
-            border-radius: var(--border-radius-sm);
-            margin-bottom: var(--spacing);
-            animation: fadeInUp var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-image {
-            position: absolute;
-            top: 0;
-            left: 0;
+        .product-card img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
         }
 
-        .product-card:hover .product-image {
-            transform: scale(1.1);
-            animation: productImageHoverAnimation var(--animation-duration) var(--animation-timing);
+        .product-card:hover img {
+            transform: scale(1.05);
         }
 
-        @keyframes productImageHoverAnimation {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.1);
-            }
+        .product-card h2 {
+            color: #4b6cb7;
+            margin: 15px 0;
+            font-size: 1.8em;
         }
 
-        .product-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-            opacity: 0;
-            transition: var(--transition);
+        .product-card p {
+            color: #666;
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+
+        /* Button Styles */
+        .button-container {
             display: flex;
-            align-items: flex-end;
-            padding: var(--spacing);
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .product-card:hover .product-overlay {
-            opacity: 1;
-            animation: productOverlayHoverAnimation var(--animation-duration) var(--animation-timing);
-        }
-
-        @keyframes productOverlayHoverAnimation {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .product-title {
-            color: var(--text-color);
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            margin: var(--spacing) 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.4;
-            animation: fadeInUp var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-description {
-            color: var(--dark-text);
-            font-size: var(--font-size);
-            line-height: 1.6;
-            margin-bottom: var(--spacing);
-            flex-grow: 1;
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-price {
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            color: var(--primary-color);
-            margin: var(--spacing-sm) 0;
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-xs);
-            animation: fadeInUp var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-price-old {
-            text-decoration: line-through;
-            color: var(--dark-text);
-            font-size: var(--font-size);
-            font-weight: normal;
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-badge {
-            position: absolute;
-            top: var(--spacing);
-            right: var(--spacing);
-            background: var(--primary-gradient);
-            color: var(--light-text);
-            padding: var(--spacing-xs) var(--spacing-sm);
-            border-radius: var(--border-radius-sm);
-            font-size: var(--font-size-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            z-index: 1;
-            animation: fadeIn var(--animation-duration) var(--animation-timing);
-        }
-
-        .product-actions {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-top: auto;
-        }
-
-        .product-button {
+        .buy-button, .info-button {
             flex: 1;
-            padding: var(--spacing-sm) var(--spacing);
-            border-radius: var(--border-radius-sm);
-            font-size: var(--font-size-sm);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1.1em;
             text-align: center;
         }
 
-        .button-primary {
+        .buy-button {
             background: var(--primary-gradient);
-            color: var(--light-text);
+            color: white;
         }
 
-        .button-secondary {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+        .info-button {
+            background: var(--secondary-gradient);
+            color: white;
         }
 
-        .button-primary:hover {
+        .buy-button:hover, .info-button:hover {
             transform: translateY(-2px);
-            box-shadow: var(--blue-shadow);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        .button-secondary:hover {
-            background: var(--primary-color);
-            color: var(--light-text);
+        /* Cart Styles */
+        .cart {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
         }
 
-        /* Product Categories */
-        .categories-filter {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: var(--spacing-sm);
-            margin-bottom: var(--spacing-lg);
-        }
-
-        .category-button {
-            padding: var(--spacing-xs) var(--spacing);
-            border-radius: var(--border-radius-sm);
-            font-size: var(--font-size-sm);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-            background: transparent;
-            color: var(--light-text);
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-
-        .category-button:hover,
-        .category-button.active {
+        .cart-icon {
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
             background: var(--primary-gradient);
-            border-color: transparent;
-            transform: translateY(-2px);
-        }
-
-        /* Reviews Section Styles */
-        .reviews-section {
-            padding: var(--spacing-xl) var(--spacing);
-            background: var(--dark-gradient);
-            position: relative;
-            overflow: hidden;
-            color: var(--light-text);
-        }
-
-        .reviews-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(75,108,183,0.05) 25%, transparent 25%);
-            background-size: 3em 3em;
-            animation: backgroundMove 30s linear infinite;
-            pointer-events: none;
-        }
-
-        .reviews-header {
-            text-align: center;
-            margin-bottom: var(--spacing-xl);
-            position: relative;
-            z-index: 2;
-        }
-
-        .reviews-title {
-            color: var(--primary-color);
-            font-size: var(--font-size-xxl);
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: var(--spacing);
-            text-shadow: var(--text-shadow);
-            position: relative;
-            display: inline-block;
-        }
-
-        .reviews-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60%;
-            height: 4px;
-            background: var(--primary-gradient);
-            border-radius: 2px;
-        }
-
-        .reviews-subtitle {
-            color: var(--light-text);
-            font-size: var(--font-size-md);
-            max-width: 600px;
-            margin: 0 auto;
-            opacity: 0.8;
-        }
-
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-lg);
-            max-width: var(--max-width);
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .review-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border-radius: var(--border-radius);
-            padding: var(--spacing-lg);
-            transition: var(--transition);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-        }
-
-        .review-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: var(--spacing);
-        }
-
-        .review-avatar {
-            width: 50px;
-            height: 50px;
             border-radius: 50%;
-            overflow: hidden;
-            margin-right: var(--spacing);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
-        .review-avatar img {
-            width: 100%;
-            height: auto;
+        .cart-icon:hover {
+            transform: scale(1.1);
         }
 
-        .review-info {
-            flex-grow: 1;
+        .cart-content {
+            display: none;
+            position: fixed;
+            top: 80px;
+            right: 20px;
+            background: white;
+            min-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            padding: 25px;
+            z-index: 1001;
         }
 
-        .review-name {
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            color: var(--primary-color);
+        .cart.active .cart-content {
+            display: block;
+            animation: slideIn 0.3s ease-out;
         }
 
-        .review-rating {
-            color: var(--success-color);
+        .cart-items {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px;
+            max-height: 300px;
+            overflow-y: auto;
         }
 
-        .review-date {
-            font-size: var(--font-size-sm);
-            color: var(--dark-text);
-        }
-
-        .review-content {
-            margin-top: var(--spacing);
-        }
-
-        .review-text {
-            font-size: var(--font-size);
-            line-height: 1.6;
-            margin-bottom: var(--spacing);
-        }
-
-        .review-tags {
+        .cart-item {
             display: flex;
-            gap: var(--spacing-xs);
-            margin-bottom: var(--spacing);
-        }
-
-        .review-tag {
-            background: rgba(75,108,183,0.1);
-            color: var(--primary-color);
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: var(--font-size-xs);
-            font-weight: 500;
-            transition: var(--transition);
-        }
-
-        .review-tag:hover {
-            background: var(--primary-color);
-            color: var(--light-text);
-            transform: translateY(-2px);
-        }
-
-        .review-verified {
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: var(--spacing-xs);
-            color: var(--success-color);
-            font-size: var(--font-size-sm);
-            margin-top: var(--spacing);
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
         }
 
-        .review-verified i {
-            font-size: var(--font-size-xs);
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 20px 0;
+            padding-top: 10px;
+            border-top: 2px solid #eee;
         }
 
-        /* Animaciones de las Estrellas */
-        @keyframes starPulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 10px #4b6cb7, 0 0 20px #4b6cb7, 0 0 30px #4b6cb7, 0 0 40px #4b6cb7;
-            }
-            50% {
-                transform: scale(1.2);
-                box-shadow: 0 0 20px #4b6cb7, 0 0 30px #4b6cb7, 0 0 40px #4b6cb7, 0 0 50px #4b6cb7;
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 10px #4b6cb7, 0 0 20px #4b6cb7, 0 0 30px #4b6cb7, 0 0 40px #4b6cb7;
-            }
+        .checkout-button {
+            background: var(--primary-gradient);
+            color: white;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
         }
 
-        .review-card:hover .star {
-            animation: starPulse 1s infinite;
-        }
-
-        /* Review Grid Animations */
-        .reviews-grid {
-            perspective: 1000px;
-        }
-
-        .review-card {
-            transform-style: preserve-3d;
-            animation: reviewCardIn var(--animation-duration) var(--animation-timing);
-        }
-
-        @keyframes reviewCardIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px) rotateX(-10deg);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) rotateX(0);
-            }
-        }
-
-        /* Review Loading Skeleton */
-        .review-skeleton {
-            background: linear-gradient(90deg, 
-                rgba(255,255,255,0.05) 25%, 
-                rgba(255,255,255,0.1) 50%, 
-                rgba(255,255,255,0.05) 75%);
-            background-size: 200% 100%;
-            animation: shimmer 1.5s infinite;
+        .checkout-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         /* Footer Styles */
         .footer {
-            background: var(--dark-gradient);
-            color: var(--light-text);
-            padding: var(--spacing-xl) 0 var(--spacing-lg);
+            background: var(--primary-gradient);
+            padding: 40px 20px;
+            color: white;
+            text-align: center;
+            margin-top: 60px;
             position: relative;
             overflow: hidden;
-            margin-top: auto;
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--primary-gradient);
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: var(--spacing-xl);
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing);
-            position: relative;
-            z-index: 1;
-        }
-
-        .footer-section {
+        .social-links {
             display: flex;
-            flex-direction: column;
-            gap: var(--spacing);
-        }
-
-        .footer-title {
-            color: var(--primary-color);
-            font-size: var(--font-size-lg);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: var(--spacing);
-            position: relative;
-            padding-bottom: var(--spacing-sm);
-        }
-
-        .footer-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--primary-gradient);
-            border-radius: 2px;
-        }
-
-        .footer-links {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing-sm);
-        }
-
-        .footer-link {
-            color: rgba(255,255,255,0.8);
-            font-size: var(--font-size);
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: var(--spacing-sm);
-        }
-
-        .footer-link:hover {
-            color: var(--primary-color);
-            transform: translateX(5px);
-        }
-
-        .footer-link i {
-            font-size: var(--font-size-sm);
-            color: var(--primary-color);
-        }
-
-        .footer-social {
-            display: flex;
-            gap: var(--spacing);
-            margin-top: var(--spacing);
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.1);
-            display: flex;
-            align-items: center;
             justify-content: center;
-            transition: var(--transition);
-            color: var(--light-text);
-            font-size: var(--font-size-lg);
+            gap: 30px;
+            margin: 20px 0;
         }
 
-        .social-link:hover {
-            background: var(--primary-gradient);
-            transform: translateY(-5px);
-            box-shadow: var(--blue-shadow);
+        .social-links a {
+            color: white;
+            font-size: 32px;
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .footer-contact {
-            display: flex;
-            flex-direction: column;
-            gap: var(--spacing);
+        .social-links a:hover {
+            transform: scale(1.2) rotate(8deg);
         }
 
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: var(--spacing);
+        .copyright {
+            margin-top: 20px;
+            font-size: 0.9em;
             color: rgba(255,255,255,0.8);
-            font-size: var(--font-size);
         }
 
-        .contact-item i {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: rgba(75,108,183,0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-color);
-            font-size: var(--font-size-lg);
-            transition: var(--transition);
-        }
-
-        .contact-item:hover i {
-            background: var(--primary-gradient);
-            color: var(--light-text);
-            transform: rotate(360deg);
-        }
-
-        .footer-newsletter {
-            margin-top: var(--spacing);
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: var(--spacing-sm);
-            margin-top: var(--spacing);
-        }
-
-        .newsletter-input {
-            flex: 1;
-            padding: var(--spacing-sm) var(--spacing);
-            border-radius: var(--border-radius-sm);
-            background: rgba(255,255,255,0.1);
-            color: var(--light-text);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .newsletter-input::placeholder {
-            color: rgba(255,255,255,0.5);
-        }
-
-        .newsletter-input:focus {
-            border-color: var(--primary-color);
-            background: rgba(255,255,255,0.15);
-        }
-
-        .newsletter-button {
-            padding: var(--spacing-sm) var(--spacing-md);
-            border-radius: var(--border-radius-sm);
-            background: var(--primary-gradient);
-            color: var(--light-text);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .newsletter-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--blue-shadow);
-        }
-
-        .footer-bottom {
-            margin-top: var(--spacing-xl);
-            padding-top: var(--spacing);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            color: rgba(255,255,255,0.6);
-            font-size: var(--font-size-sm);
-        }
-
-        .footer-bottom a {
-            color: var(--primary-color);
-            font-weight: 600;
-        }
-
-        /* Media Queries */
-        @media (max-width: 1200px) {
-            :root {
-                --font-size-xxl: 1.8rem;
-                --font-size-xl: 1.4rem;
-                --font-size-lg: 1.2rem;
-                --spacing-xl: 50px;
+        /* Animations */
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
             }
-
-            .products-grid,
-            .reviews-grid {
-                grid-template-columns: repeat(3, 1fr);
+            to {
+                transform: translateX(0);
+                opacity: 1;
             }
         }
 
-        @media (max-width: 992px) {
-            :root {
-                --font-size-xxl: 1.6rem;
-                --font-size-xl: 1.3rem;
-                --spacing-xl: 40px;
+        @keyframes fadeInDown {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
             }
-
-            .products-grid,
-            .reviews-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: repeat(2, 1fr);
+            to {
+                transform: translateY(0);
+                opacity: 1;
             }
         }
 
+        @keyframes backgroundMove {
+            from {
+                background-position: 0 0;
+            }
+            to {
+                background-position: 100% 100%;
+            }
+        }
+
+        /* Responsive Design */
         @media (max-width: 768px) {
-            :root {
-                --font-size-xxl: 1.4rem;
-                --font-size-xl: 1.2rem;
-                --spacing-lg: 30px;
-            }
-
-            .products-grid,
-            .reviews-grid {
+            .vision-grid {
                 grid-template-columns: 1fr;
             }
-
-            .product-card,
-            .review-card {
-                max-width: 400px;
-                margin: 0 auto;
+            
+            .about-content {
+                padding: 0 20px;
             }
 
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             }
 
-            .footer-title::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            .footer-social {
-                justify-content: center;
-            }
-
-            .contact-item {
-                justify-content: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            :root {
-                --font-size-xxl: 1.3rem;
-                --font-size-xl: 1.1rem;
-                --spacing: 15px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-button {
-                width: 100%;
-            }
-
-            .social-link {
-                width: 35px;
-                height: 35px;
-                font-size: var(--font-size);
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            .footer-newsletter,
-            .footer-social,
-            .newsletter-form {
-                display: none;
-            }
-
-            .footer {
-                background: none;
-                color: black;
-            }
-
-            .footer-title {
-                color: black;
-            }
-
-            .footer-link,
-            .contact-item {
-                color: black;
+            .cart-content {
+                width: 90%;
+                right: 5%;
+                min-width: unset;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Animación de Carga -->
-    <div class="loading">
-        <div class="loading-spinner"></div>
-        <div class="loading-text">Cargando...</div>
-        <div class="loading-progress">
-            <div class="loading-progress-bar"></div>
+    <header>
+        <h1>StarProject</h1>
+    </header>
+
+    <!-- Sección About -->
+    <section class="about-section">
+        <div class="about-content">
+            <h2>¿Qué es StarProyect?</h2>
+            <p>StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
+            <p>Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
+        </div>
+    </section>
+
+    <!-- Sección de Visión -->
+    <section class="vision-section">
+        <div class="vision-grid">
+            <div class="vision-item">
+                <i class="fas fa-bullseye"></i>
+                <h3>Objetivo</h3>
+                <p>Ser la tienda líder en componentes de PC en Uruguay, ofreciendo productos de última generación y asesoramiento experto.</p>
+            </div>
+            <div class="vision-item">
+                <i class="fas fa-handshake"></i>
+                <h3>Compromiso</h3>
+                <p>Garantizamos productos 100% originales, con garantía oficial y soporte técnico especializado.</p>
+            </div>
+            <div class="vision-item">
+                <i class="fas fa-star"></i>
+                <h3>Valores</h3>
+                <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Carrito -->
+    <div class="cart">
+        <i class="fas fa-shopping-cart cart-icon"></i>
+        <div class="cart-content">
+            <button class="minimize-button" onclick="minimizeCart(event)">
+                <i class="fas fa-minus"></i>
+            </button>
+            <h3>Carrito de Compras</h3>
+            <ul class="cart-items" id="cartItems"></ul>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span>$UYU <span id="totalPrice">0</span></span>
+            </div>
+            <button onclick="showCheckoutForm()" class="checkout-button">
+                Finalizar Compra
+            </button>
         </div>
     </div>
 
-    <!-- Botón de Scroll to Top -->
-    <button class="scroll-top">
-        <i class="fas fa-chevron-up"></i>
-        <span>Subir</span>
-    </button>
-    <header style="position: fixed; top: 0; width: 100%; z-index: 1000; background-color: #fff; padding: 10px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-        <h1 style="font-size: 20px;">Star Proyect</h1>
-        <nav class="nav-menu">
-            <a href="#about" class="nav-link">Sobre Nosotros</a>
-            <a href="#products" class="nav-link">Productos</a>
-            <a href="#reviews" class="nav-link">Opiniones</a>
-            <a href="#contact" class="nav-link">Contacto</a>
-        </nav>
-    </header>
-
-    <!-- Sección Acerca de -->
-    <section class="about-section" id="about" style="margin-top: 50px;">
-        <div class="about-content">
-            <h2>¿Qué es Star Proyect?</h2>
-            <p>Star Proyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de gabinetes, componentes de hardware, y servicios de mantenimiento.</p>
-            <p>Nuestra misión es proporcionar a nuestros clientes los mejores productos y servicios, asegurando que cada experiencia de compra sea excepcional. Nuestra visión es ser la tienda de referencia en Uruguay para todos los entusiastas de la tecnología.</p>
-        </div>
-    </section>
-
-    <!-- Mission and Vision Section -->
-    <section class="mission-vision">
-        <h3>Misión</h3>
-        <p>Ofrecer productos de alta calidad y un servicio al cliente excepcional, ayudando a nuestros clientes a construir sus sistemas ideales.</p>
-        <h3>Visión</h3>
-        <p>Convertirnos en el líder del mercado en la venta de componentes de PC y servicios de mantenimiento en Uruguay.</p>
-    </section>
-
-    <!-- Products Section -->
-    <section class="products-section" id="products">
-        <div class="container">
-            <div class="categories-filter">
-                <button class="category-button active">Todos</button>
-                <button class="category-button">Procesadores</button>
-                <button class="category-button">Tarjetas Gráficas</button>
-                <button class="category-button">Memorias</button>
-                <button class="category-button">HDD</button> <!-- Cambiado de "Almacenamiento" a "HDD" -->
-                <button class="category-button">SSD</button>
-                <button class="category-button">Gabinetes</button>
-                <button class="category-button">Placas Madre</button> <!-- Añadido "Placas Madre" -->
-                <button class="category-button">Mantenimiento</button> <!-- Añadido "Mantenimiento" -->
+    <!-- Grid de Productos -->
+    <div class="products-grid">
+        <!-- Procesador -->
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
+            <h2>Procesadores</h2>
+            <p>AMD e Intel de última generación</p>
+            <div class="button-container">
+                <button onclick="addToCart('Procesador', 25000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/procesador.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
             </div>
-            
-            <div class="products-grid">
-                <!-- Procesador -->
-                <div class="product-card" data-category="procesadores">
-                    <div class="product-image-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Nuevo</span>
-                        </div>
-                    </div>
-                    <h3 class="product-title">Procesadores</h3>
-                    <p class="product-description">AMD e Intel de última generación para máximo rendimiento</p>
-                    <div class="product-actions">
-                        <a href="procesador.html" class="product-button button-primary">Ver Más</a>
-                    </div>
-                </div>
+        </div>
 
-                <!-- Tarjeta Gráfica -->
-                <div class="product-card" data-category="graficas">
-                    <div class="product-image-container">
-                        <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Popular</span>
-                        </div>
-                    </div>
-                    <h3 class="product-title">Tarjetas Gráficas</h3>
-                    <p class="product-description">Alto rendimiento para gaming y diseño profesional</p>
-                    <div class="product-actions">
-                        <a href="targetagrafica.html" class="product-button button-primary">Ver Más</a>
-                    </div>
-                </div>
+        <!-- Tarjeta Gráfica -->
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
+            <h2>Tarjeta Gráfica</h2>
+            <p>Alto rendimiento para gaming</p>
+            <div class="button-container">
+                <button onclick="addToCart('Tarjeta Gráfica', 35000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/targetagrafica.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
 
-                <!-- Memoria RAM -->
-                <div class="product-card" data-category="memorias">
-                    <div class="product-image-container">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGUv2cBPvqnY_1Qa3lS8h0zBZGwbBQePH_Yw&s" alt="Memoria RAM" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Oferta</span>
-                        </div>
-                    </div>
-                    <h3 class="product-title">Memorias RAM</h3>
-                    <p class="product-description">DDR4 y DDR5 de alta velocidad</p>
-                    <div class="product-actions">
-                        <a href="ram.html" class="product-button button-primary">Ver Más</a>
-                    </div>
-                </div>
+        <!-- Memoria RAM -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
+            <h2>Memorias RAM</h2>
+            <p>DDR4 y DDR5 de alto rendimiento</p>
+            <div class="button-container">
+                <button onclick="addToCart('Memoria RAM', 15000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/ram.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
 
-                <!-- HDD -->
-                <div class="product-card" data-category="hdd">
-                    <div class="product-image-container">
-                        <img src="https://www.seagate.com/www-content/dam/seagate/migration/solutions/enterprise-hdd/enterprise-hdd-hero.jpg" alt="HDD" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Destacado</span>
-                        </div>
-                    </div>
-                    <h3 class="product-title">HDD</h3>
-                    <p class="product-description">Almacenamiento confiable y de gran capacidad</p>
-                    <div class="product-actions">
-                        <a href="hdd.html" class="product-button button-primary">Ver Más</a>
-                    </div>
-                </div>
+        <!-- Fuente de Poder -->
+        <div class="product-card">
+            <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
+            <h2>Fuentes de Poder</h2>
+            <p>Certificación 80 Plus, alta eficiencia</p>
+            <div class="button-container">
+                <button onclick="addToCart('Fuente de Poder', 12000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/fuente.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
 
-                <!-- SSD -->
-                <div class="product-card" data-category="ssd">
-                    <div class="product-image-container">
-                        <img src="https://www.crucial.com/na/en/ssd/ct1000mx500ssd1/ct1000mx500ssd1-1" alt="SSD" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Rápido</span>
-                        </div>
-                    </div>
-                    <h3 class="product-title">SSD</h3>
-                    <p class="product-description">Velocidades de lectura y escritura ultrarrápidas</p>
-                    <div class="product-actions">
-                        <a href="ssd.html" class="product-button button-primary">Ver Más</a>
-                    </div>
-                </div>
+        <!-- Placa Madre -->
+        <div class="product-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
+            <h2>Placas Madre</h2>
+            <p>Para AMD e Intel, últimos chipsets</p>
+            <div class="button-container">
+                <button onclick="addToCart('Placa Madre', 18000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/placamadre.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
 
-                <!-- Gabinete -->
-                <div class="product-card" data-category="gabinetes">
-                    <div class="product-image-container">
-                        <img src="https://www.coolermaster.com/uploads/products/1/1/1/1111/1111_1.jpg" alt="Gabinete" class="product-image">
-                        <div class="product-overlay">
-                            <span class="product-badge">Nuevo</span>
-                        </div>
+        <!-- SSD -->
+        <div class="product-card">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
+            <h2>Discos SSD</h2>
+            <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
+            <div class="button-container">
+                <button onclick="addToCart('Disco SSD', 8000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/sdd.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- HDD -->
+        <div class="product-card">
+            <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
+            <h2>Discos HDD</h2>
+            <p>Gran capacidad de almacenamiento</p>
+            <div class="button-container">
+                <button onclick="addToCart('Disco HDD', 5000)" class="buy-button">Añadir al carrito</button>
+                <a href="https://starproyect778.github.io/starproyect/hdd.html" class="info-button">
+                    <i class="fas fa-info-circle"></i> Info
+                </a>
+            </div>
+        </div>
+
+        <!-- Mantenimiento -->
+        <div class="product-card">
+            <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
+            <h2>Mantenimiento</h2>
+            <p>Servicio técnico especializado</p>
+            <div class="button-container">
+                <button onclick="addToCart('Servicio de Mantenimiento', 3000)" class="buy-button">Añadir al carrito</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" target="_blank" title="Encuéntranos aquí">
+                <i class="fas fa-map-marker-alt"></i>
+            </a>
+        </div>
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        const cart = [];
+        let totalPrice = 0;
+
+        function addToCart(item, price) {
+            cart.push({ item, price });
+            totalPrice += price;
+            updateCart();
+            document.querySelector('.cart').classList.add('active');
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById('cartItems');
+            cartItems.innerHTML = '';
+            cart.forEach(({ item, price }, index) => {
+                const li = document.createElement('li');
+                li.className = 'cart-item';
+                li.innerHTML = `
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${item}</div>
+                        <div class="cart-item-price">$UYU ${price}</div>
                     </div>
-                    <h3 class="product-title">Gabinete</h3>
-                    <p class="product-description">Diseños elegantes y funcionales para tu PC</p>
-                    <div class="product-actions">
-                        <a href="gabinete.html" class="product-button button-primary">Ver Más</a>
-                    </div>
-                </div>
-                <div class="reviews-section" id="reviews">
-                    <div class="reviews-header">
-                        <h2 class="reviews-title">Opiniones de Nuestros Clientes</h2>
-                        <p class="reviews-subtitle">Descubre lo que dicen nuestros clientes sobre su experiencia con Star Proyect</p>
-                    </div>
-                    <div class="reviews-carousel">
-                        <!-- Carrusel de Opiniones -->
-                        <div class="reviews-carousel" data-aos="fade-up">
-                            <!-- Review 1 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Santiago Rodríguez</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            15 marzo 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"Increíble experiencia comprando mi setup gaming completo. El asesoramiento técnico fue excepcional y los precios muy competitivos. La build que armaron superó mis expectativas."</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Gaming PC</span>
-                                        <span class="review-tag">Servicio Técnico</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 2 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">María Fernández</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star-half-alt star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            10 marzo 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"Los productos son de excelente calidad y el servicio al cliente es inmejorable. Definitivamente volveré a comprar aquí."</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Calidad</span>
-                                        <span class="review-tag">Servicio</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 3 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Carlos Pérez</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            5 marzo 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"La mejor tienda para comprar componentes de PC. Tienen todo lo que necesitas y más. ¡Recomendados!"</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Componentes</span>
-                                        <span class="review-tag">Recomendados</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 4 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Lucía Gómez</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            1 marzo 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"El mantenimiento de mi PC fue rápido y eficiente. Estoy muy satisfecha con el servicio."</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Mantenimiento</span>
-                                        <span class="review-tag">Satisfacción</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 5 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/men/5.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Javier Martínez</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star-half-alt star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            20 febrero 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Variedad</span>
-                                        <span class="review-tag">Precios</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 6 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/men/6.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Fernando López</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            15 febrero 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Variedad</span>
-                                        <span class="review-tag">Precios</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 7 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/women/7.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Ana Torres</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            28 febrero 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"Excelente atención al cliente y productos de alta calidad. Estoy muy satisfecha con mi compra."</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Calidad</span>
-                                        <span class="review-tag">Atención</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                
-                            <!-- Review 8 -->
-                            <div class="review-card" style="border: 1px solid #ccc; border-radius: 10px; padding: 10px;">
-                                <div class="review-header">
-                                    <div class="review-avatar">
-                                        <img src="https://randomuser.me/api/portraits/men/8.jpg" alt="Cliente" class="avatar">
-                                    </div>
-                                    <div class="review-info">
-                                        <h3 class="review-name">Diego Martínez</h3>
-                                        <div class="review-rating">
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star star"></i>
-                                            <i class="fas fa-star-half-alt star"></i>
-                                        </div>
-                                        <span class="review-date">
-                                            <i class="far fa-calendar-alt"></i>
-                                            30 febrero 2024
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="review-content">
-                                    <p class="review-text">"Gran variedad de productos y precios competitivos. ¡Definitivamente volveré!"</p>
-                                    <div class="review-tags">
-                                        <span class="review-tag">Variedad</span>
-                                        <span class="review-tag">Precios</span>
-                                    </div>
-                                    <div class="review-verified">
-                                        <i class="fas fa-check-circle"></i>
-                                        Compra verificada
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                
-                        <!-- Sección de Newsletter y Síguenos -->
-                        <div class="newsletter-follow-section">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="newsletter-section">
-                                        <div class="newsletter-header">
-                                            <h3 class="newsletter-title">Newsletter</h3>
-                                            <p>Suscríbete para recibir las últimas novedades y ofertas</p>
-                                        </div>
-                                        <form class="newsletter-form">
-                                            <input type="email" class="newsletter-input" placeholder="Tu email">
-                                            <button type="submit" class="newsletter-button">Suscribirse</button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="follow-us-section">
-                                        <h3 class="follow-us-title">Síguenos</h3>
-                                        <div class="follow-us-social">
-                                            <a href="https://www.instagram.com/empresa_starproyect/" class="social-link" target="_blank">
-                                                <i class="fab fa-instagram"></i>
-                                            </a>
-                                            <a href="https://www.facebook.com/profile.php?id=61565967616974" class="social-link" target="_blank">
-                                                <i class="fab fa-facebook"></i>
-                                            </a>
-                                            <a href="https://maps.app.goo.gl/c6mU4NB9LuMDYmVF6" class="social-link" target="_blank">
-                                                <i class="fas fa-map-marker-alt"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                                    <div class="footer-bottom">
-                                        <p>&copy; 2024 Star Proyect. Todos los derechos reservados.</p>
-                                    </div>
-                                </footer>
-                
-                                <!-- Scripts -->
-                                <script>
-                                    // Pantalla de carga
-                                    window.addEventListener('load', () => {
-                                        document.querySelector('.loading').style.display = 'none';
-                                    });
-                                    // Desplazarse hacia arriba
-                                    const scrollTopBtn = document.querySelector('.scroll-top');
-                                    
-                                    window.addEventListener('scroll', () => {
-                                        if (window.pageYOffset > 300) {
-                                            scrollTopBtn.classList.add('visible');
-                                        } else {
-                                            scrollTopBtn.classList.remove('visible');
-                                        }
-                                    });
-                
-                                    scrollTopBtn.addEventListener('click', () => {
-                                        window.scrollTo({
-                                            top: 0,
-                                            behavior: 'smooth'
-                                        });
-                                    });
-                
-                                    // Filtrado de productos
-                                    const categoryButtons = document.querySelectorAll('.category-button');
-                                    const productCards = document.querySelectorAll('.product-card');
-                
-                                    categoryButtons.forEach(button => {
-                                        button.addEventListener('click', () => {
-                                            // Eliminar la clase activa de todos los botones
-                                            categoryButtons.forEach(btn => btn.classList.remove('active'));
-                                            // Agregar la clase activa al botón clickeado
-                                            button.classList.add('active');
-                
-                                            const category = button.textContent.toLowerCase();
-                
-                                            productCards.forEach(card => {
-                                                if (category === 'todos' || card.dataset.category === category) {
-                                                    card.style.display = 'block';
-                                                } else {
-                                                    card.style.display = 'none';
-                                                }
-                                            });
-                                        });
-                                    });
-                
-                                    // Observador de Intersección para animaciones
-                                    const observer = new IntersectionObserver((entries) => {
-                                        entries.forEach(entry => {
-                                            if (entry.isIntersecting) {
-                                                entry.target.classList.add('animate');
-                                            }
-                                        });
-                                    }, {
-                                        threshold: 0.1
-                                    });
-                
-                                    document.querySelectorAll('.product-card, .review-card').forEach(card => {
-                                        observer.observe(card);
-                                    });
-                
-                                    // Formulario de Newsletter
-                                    const newsletterForm = document.querySelector('.newsletter-form');
-                                    newsletterForm.addEventListener('submit', (e) => {
-                                        e.preventDefault();
-                                        const email = newsletterForm.querySelector('input').value;
-                                        if (email) {
-                                            alert('¡Gracias por suscribirte!');
-                                            newsletterForm.reset();
-                                        }
-                                    });
-                                </script>
-                            </body>
-                </html>
+                    <i class="fas fa-times remove-item" onclick="removeItem(${index})"></i>
+                `;
+                cartItems.appendChild(li);
+            });
+            document.getElementById('totalPrice').textContent = totalPrice;
+        }
+
+        function removeItem(index) {
+            totalPrice -= cart[index].price;
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function minimizeCart(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        function showCheckoutForm() {
+            if (cart.length === 0) {
+                alert('El carrito está vacío');
+                return;
+            }
+            alert(`Total a pagar: $UYU ${totalPrice}\nGracias por tu compra!`);
+            cart.length = 0;
+            totalPrice = 0;
+            updateCart();
+            document.querySelector('.cart').classList.remove('active');
+        }
+
+        document.querySelector('.cart-icon').addEventListener('click', function(event) {
+            event.stopPropagation();
+            document.querySelector('.cart').classList.toggle('active');
+        });
+
+        document.addEventListener('click', function(event) {
+            const cart = document.querySelector('.cart');
+            if (!cart.contains(event.target)) {
+                cart.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
