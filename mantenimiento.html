@@ -167,16 +167,17 @@
             font-size: 14px; /* Tamaño del texto */
         }
 
+        /* Estilos del contenido del carrito */
         .cart-content {
             display: none;
-            position: fixed;
-            top: 60px;
-            right: 10px;
-            background-color: white;
-            min-width: 300px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            padding: 20px;
+            position: absolute;
+            top: 40px;
+            right: 0;
+            background: white;
             border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            padding: 20px;
+            width: 300px;
             z-index: 1001;
         }
 
@@ -190,6 +191,7 @@
             font-size: 20px;
             cursor: pointer;
             color: #4b6cb7;
+            float: right;
         }
 
         .checkout-button {
@@ -207,8 +209,10 @@
             background-color: #182848;
         }
 
+        /* Estilos del formulario de checkout */
         .checkout-form {
             display: none;
+            margin-top: 20px;
         }
 
         .checkout-form.active {
@@ -226,11 +230,12 @@
 
         .form-group input {
             width: 100%;
-            padding: 8px;
+            padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
         }
 
+        /* Estilos del pie de página */
         .footer {
             background: #222222;
             color: white;
@@ -252,20 +257,27 @@
         }
 
         .copyright {
-            margin: 10px 0;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Servicios de Mantenimiento</h1>
+        <h1>StarProject</h1>
     </header>
 
-    <a href="index.html" class="back-button">Volver</a>
-
     <div class="product-info">
-        <h2>Servicios Ofrecidos</h2>
-        <p>Ofrecemos una variedad de servicios de mantenimiento para asegurar el óptimo funcionamiento de su equipo.</p>
+        <h2>Servicios de Mantenimiento</h2>
+        <p>Ofrecemos una variedad de servicios de mantenimiento para asegurar que tu equipo funcione de manera óptima.</p>
+
+        <h3>¿Por qué elegir nuestro servicio?</h3>
+        <ul>
+            <li>Profesionales capacitados y con experiencia</li>
+            <li>Garantía de satisfacción en todos nuestros servicios</li>
+            <li>Atención personalizada y asesoramiento técnico</li>
+            <li>Precios competitivos y transparentes</li>
+            <li>Soporte técnico post-servicio</li>
+        </ul>
     </div>
 
     <div class="services-grid">
