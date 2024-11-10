@@ -156,6 +156,17 @@
             transform: scale(1.1);
         }
 
+        .cart-count {
+            position: absolute;
+            top: -5px; /* Ajusta según sea necesario */
+            right: -10px; /* Ajusta según sea necesario */
+            background-color: red; /* Color del círculo */
+            color: white; /* Color del texto */
+            border-radius: 50%; /* Hace que sea un círculo */
+            padding: 5px 10px; /* Espaciado alrededor del número */
+            font-size: 14px; /* Tamaño del texto */
+        }
+
         .cart-content {
             display: none;
             position: fixed;
@@ -174,47 +185,30 @@
         }
 
         .minimize-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
             background: none;
             border: none;
-            color: #808080;
             font-size: 20px;
             cursor: pointer;
-            padding: 5px;
-        }
-
-        .minimize-button:hover {
             color: #4b6cb7;
         }
 
-        .cart-content h3 {
-            color: black;
-            margin-top: 0;
-            padding-right: 30px;
+        .checkout-button {
+            background-color: #4b6cb7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
         }
 
-        .cart-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 15px 0;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        .cart-content li {
-            color: #28a745;
-            padding: 5px 0;
-            border-bottom: 1px solid #eee;
+        .checkout-button:hover {
+            background-color: #182848;
         }
 
         .checkout-form {
             display: none;
-            background: white;
-            padding: 20px;
-            border-radius: 5px;
-            margin-top: 20px;
         }
 
         .checkout-form.active {
@@ -228,102 +222,50 @@
         .form-group label {
             display: block;
             margin-bottom: 5px;
-            color: black;
         }
 
         .form-group input {
             width: 100%;
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box;
         }
 
-        .checkout-button {
-            background-color: #28a745;
-            width: 100%;
-            color: white;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        /* Estilos del footer */
         .footer {
             background: #222222;
-            padding: 30px 20px;
             color: white;
             text-align: center;
-            margin-top: 40px;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
         .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
+            margin: 10px 0;
         }
 
         .social-links a {
             color: white;
-            font-size: 28px;
+            margin: 0 10px;
             text-decoration: none;
-            transition: transform 0.3s;
-        }
-
-        .social-links a:hover {
-            transform: scale(1.2);
         }
 
         .copyright {
-            margin-top: 20px;
-            font-size: 0.9em;
-            color: #888;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-            .cart-content {
-                width: 90%;
-                right: 5%;
-            }
+            margin: 10px 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>StarProject</h1>
+        <h1>Servicios de Mantenimiento</h1>
     </header>
 
-    <a href="index.html" class="back-button">
-        <i class="fas fa-arrow-left"></i> Volver
-    </a>
+    <a href="index.html" class="back-button">Volver</a>
 
     <div class="product-info">
-        <h2>Mantenimiento</h2>
-        <p>Ofrecemos servicios de mantenimiento técnico para asegurar que tu computadora funcione de manera óptima y prolongar su vida útil.</p>
-
-        <h3>Servicios Disponibles</h3>
-        <ul>
-            <li>Revisión y limpieza de hardware</li>
-            <li>Actualización de componentes</li>
-            <li>Instalación de software y sistemas operativos</li>
-            <li>Diagnóstico de problemas y reparación</li>
-            <li>Asesoramiento personalizado para mejoras</li>
-        </ul>
-
-        <h3>¿Por qué elegir nuestro servicio de mantenimiento?</h3>
-        <ul>
-            <li>Profesionales capacitados y con experiencia</li>
-            <li>Garantía de satisfacción en todos nuestros servicios</li>
-            <li>Atención personalizada y asesoramiento técnico</li>
-            <li>Precios competitivos y transparentes</li>
-            <li>Soporte técnico post-servicio</li>
-        </ul>
+        <h2>Servicios Ofrecidos</h2>
+        <p>Ofrecemos una variedad de servicios de mantenimiento para asegurar el óptimo funcionamiento de su equipo.</p>
     </div>
 
     <div class="services-grid">
@@ -393,7 +335,9 @@
     </div>
 
     <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
+        <i class="fas fa-shopping-cart cart-icon">
+            <span id="cartCount" class="cart-count">0</span> <!-- Contador de productos -->
+        </i>
         <div class="cart-content">
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
@@ -458,6 +402,7 @@
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
+            document.getElementById('cartCount').textContent = cart.length; // Actualiza el contador
         }
 
         function minimizeCart(event) {
