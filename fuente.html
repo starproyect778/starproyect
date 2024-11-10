@@ -155,6 +155,21 @@
             transform: scale(1.1);
         }
 
+        .cart-count {
+            position: absolute;
+            top: 5px; /* Ajusta según sea necesario */
+            right: 5px; /* Ajusta según sea necesario */
+            background-color: red; /* Color del círculo */
+            color: white; /* Color del texto */
+            border-radius: 50%; /* Hace que el fondo sea un círculo */
+            width: 20px; /* Ancho del círculo */
+            height: 20px; /* Alto del círculo */
+            display: flex;
+            align-items: center; /* Centra verticalmente el texto */
+            justify-content: center; /* Centra horizontalmente el texto */
+            font-size: 12px; /* Tamaño del texto */
+        }
+
         .cart-content {
             display: none;
             position: fixed;
@@ -304,99 +319,26 @@
 
     <div class="product-info">
         <h2>Fuentes de Poder</h2>
-        <p>La fuente de poder es el corazón energético de tu PC, proporcionando energía estable y confiable a todos los componentes.</p>
+        <p>Las fuentes de poder son esenciales para proporcionar energía a todos los componentes de tu computadora.</p>
 
-        <h3>Características Destacadas</h3>
+        <h3>Marcas Disponibles</h3>
         <ul>
-            <li>Certificación 80 PLUS (Gold/Platinum)</li>
-            <li>Diseño modular para mejor gestión de cables</li>
-            <li>Protecciones eléctricas completas</li>
-            <li>Ventiladores de alta calidad</li>
-        </ul>
-
-        <h3>¿Por qué elegir nuestras fuentes?</h3>
-        <ul>
-            <li>Garantía extendida de hasta 10 años</li>
-            <li>Máxima eficiencia energética</li>
-            <li>Componentes de primera calidad</li>
-            <li>Soporte técnico especializado</li>
-            <li>100% nuevas y selladas</li>
+            <li>Thermaltake</li>
+            <li>Cooler Master</li>
         </ul>
     </div>
 
     <div class="models-grid">
-        <!-- Gama Alta -->
         <div class="model-card">
-            <h3>Corsair RM1000x</h3>
-            <ul>
-                <li>Potencia: 1000W</li>
-                <li>Certificación: 80 PLUS Gold</li>
-                <li>Modularidad: Totalmente modular</li>
-                <li>Ventilador: 135mm con modo Zero RPM</li>
-                <li>Garantía: 10 años</li>
-                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
-                <li>Conectores: 2x EPS, 6x PCIe, 12x SATA</li>
-                <li>Precio: $UYU 32.900</li>
-            </ul>
-            <button onclick="addToCart('Corsair RM1000x 1000W', 32900)">Agregar al carrito</button>
-        </div>
-
-        <div class="model-card">
-            <h3>EVGA SuperNOVA 850 G6</h3>
-            <ul>
-                <li>Potencia: 850W</li>
-                <li>Certificación: 80 PLUS Gold</li>
-                <li>Modularidad: Totalmente modular</li>
-                <li>Ventilador: 135mm Fluid Dynamic</li>
-                <li>Garantía: 10 años</li>
-                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
-                <li>Conectores: 2x EPS, 4x PCIe, 10x SATA</li>
-                <li>Precio: $UYU 28.900</li>
-            </ul>
-            <button onclick="addToCart('EVGA SuperNOVA 850 G6', 28900)">Agregar al carrito</button>
-        </div>
-
-        <div class="model-card">
-            <h3>be quiet! Dark Power Pro 12</h3>
-            <ul>
-                <li>Potencia: 1200W</li>
-                <li>Certificación: 80 PLUS Titanium</li>
-                <li>Modularidad: Totalmente modular</li>
-                <li>Ventilador: 135mm Silent Wings</li>
-                <li>Garantía: 10 años</li>
-                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
-                <li>Conectores: 2x EPS, 8x PCIe, 14x SATA</li>
-                <li>Precio: $UYU 42.900</li>
-            </ul>
-            <button onclick="addToCart('be quiet! Dark Power Pro 12 1200W', 42900)">Agregar al carrito</button>
-        </div>
-
-        <!-- Gama Media -->
-        <div class="model-card">
-            <h3>Seasonic Focus GX-750</h3>
-            <ul>
-                <li>Potencia: 750W</li>
-                <li>Certificación: 80 PLUS Gold</li>
-                <li>Modularidad: Totalmente modular</li>
-                <li>Ventilador: 120mm con modo híbrido</li>
-                <li>Garantía: 10 años</li>
-                <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
-                <li>Conectores: 2x EPS, 4x PCIe, 8x SATA</li>
-                <li>Precio: $UYU 24.900</li>
-            </ul>
-            <button onclick="addToCart('Seasonic Focus GX-750', 24900)">Agregar al carrito</button>
-        </div>
-
-        <div class="model-card">
-            <h3>Thermaltake Toughpower GF1</h3>
+            <h3>Thermaltake Toughpower GF1 650W</h3>
             <ul>
                 <li>Potencia: 650W</li>
                 <li>Certificación: 80 PLUS Gold</li>
                 <li>Modularidad: Totalmente modular</li>
-                <li>Ventilador: 140mm con modo Zero RPM</li>
+                <li>Ventilador: 140mm con control térmico</li>
                 <li>Garantía: 10 años</li>
                 <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
-                <li>Conectores: 1x EPS, 3x PCIe, 8x SATA</li>
+                <li>Conectores: 1x EPS, 4x PCIe, 6x SATA</li>
                 <li>Precio: $UYU 22.900</li>
             </ul>
             <button onclick="addToCart('Thermaltake Toughpower GF1 650W', 22900)">Agregar al carrito</button>
@@ -421,6 +363,7 @@
     <!-- Carrito -->
     <div class="cart">
         <i class="fas fa-shopping-cart cart-icon"></i>
+        <span class="cart-count" id="cartCount">0</span> <!-- Contador de productos -->
         <div class="cart-content">
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
@@ -485,6 +428,7 @@
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
+            document.getElementById('cartCount').textContent = cart.length; // Actualiza el contador
         }
 
         function minimizeCart(event) {
@@ -539,30 +483,5 @@
             event.stopPropagation();
         });
     </script>
-    <!-- ... resto del contenido de la página ... -->
-
-    <!-- Carrito -->
-    <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
-        <div class="cart-content">
-            <button class="minimize-button" onclick="minimizeCart(event)">
-                <i class="fas fa-minus"></i>
-            </button>
-            <h3>Carrito de Compras</h3>
-            <ul class="cart-items" id="cartItems"></ul>
-            <div class="cart-total">
-                <span>Total:</span>
-                <span>$UYU <span id="totalPrice">0</span></span>
-            </div>
-            <button onclick="showCheckoutForm()" class="checkout-button">
-                Finalizar Compra
-            </button>
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="cart.js"></script>
-</body>
-</html>
 </body>
 </html>
