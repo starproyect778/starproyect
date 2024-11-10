@@ -151,21 +151,6 @@
             transition: transform 0.3s ease;
         }
 
-        .cart-count {
-    position: absolute;
-    top: 5px; /* Ajusta según sea necesario */
-    right: 5px; /* Ajusta según sea necesario */
-    background-color: red; /* Color del círculo */
-    color: white; /* Color del texto */
-    border-radius: 50%; /* Hace que el fondo sea un círculo */
-    width: 20px; /* Ancho del círculo */
-    height: 20px; /* Alto del círculo */
-    display: flex;
-    align-items: center; /* Centra verticalmente el texto */
-    justify-content: center; /* Centra horizontalmente el texto */
-    font-size: 12px; /* Tamaño del texto */
-}
-
         .cart-icon:hover {
             transform: scale(1.1);
         }
@@ -433,7 +418,6 @@
 
     <div class="cart">
         <i class="fas fa-shopping-cart cart-icon"></i>
-        <span class="cart-count" id="cartCount">0</span> <!-- Contador de productos -->
         <div class="cart-content">
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
@@ -498,7 +482,6 @@
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
-            document.getElementById('cartCount').textContent = cart.length; // Actualiza el contador
         }
 
         function minimizeCart(event) {
