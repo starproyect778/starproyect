@@ -151,6 +151,39 @@
             transition: transform 0.3s ease;
         }
 
+        .cart {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.cart-icon {
+    font-size: 24px;
+    color: #808080;
+    cursor: pointer;
+    padding: 10px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+.cart-count {
+    position: absolute;
+    top: 5px; /* Ajusta según sea necesario */
+    right: 5px; /* Ajusta según sea necesario */
+    background-color: red; /* Color del círculo */
+    color: white; /* Color del texto */
+    border-radius: 50%; /* Hace que el fondo sea un círculo */
+    width: 20px; /* Ancho del círculo */
+    height: 20px; /* Alto del círculo */
+    display: flex;
+    align-items: center; /* Centra verticalmente el texto */
+    justify-content: center; /* Centra horizontalmente el texto */
+    font-size: 12px; /* Tamaño del texto */
+}
+
         .cart-icon:hover {
             transform: scale(1.1);
         }
@@ -471,6 +504,7 @@
             totalPrice += price;
             updateCart();
             document.querySelector('.cart').classList.add('active');
+            <span class="cart-count" id="cartCount">0</span> <!-- Contador de productos -->
         }
 
         function updateCart() {
@@ -492,6 +526,19 @@
         function showCheckoutForm() {
             document.getElementById('checkoutForm').classList.add('active');
         }
+
+
+        function updateCart() {
+    const cartItems = document.getElementById('cartItems');
+    cartItems.innerHTML = '';
+    cart.forEach(({ item, price }) => {
+        const li = document.createElement('li');
+        li.textContent = `${item} - $UYU ${price}`;
+        cartItems.appendChild(li);
+    });
+    document.getElementById('totalPrice').textContent = totalPrice;
+    document.getElementById('cartCount').textContent = cart.length; // Actualiza el contador
+}
 
         document.getElementById('checkoutForm').addEventListener('submit', function(e) {
             e.preventDefault();
