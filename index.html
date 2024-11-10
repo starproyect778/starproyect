@@ -18,6 +18,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="img/favicon.png">
     <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -280,6 +281,21 @@
             transition: all 0.3s ease;
             padding: 10px;
         }
+
+           .social-links a {
+       display: inline-block;
+       margin: 0 10px;
+       transition: transform 0.3s ease;
+   }
+
+   .social-links a:hover {
+       transform: scale(1.2); /* Escala el ícono al pasar el mouse */
+   }
+
+   .social-links i {
+       font-size: 24px; /* Tamaño del ícono */
+       color: #808080; /* Color del ícono */
+   }
 
         .copyright {
             margin-top: 15px;
