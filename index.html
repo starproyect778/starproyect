@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -23,16 +22,18 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #4b6cb7 0%, #182848 100%);
-            --secondary-gradient: linear-gradient(135deg, #28a745 0%, #145a23 100%);
-            --card-gradient: linear-gradient(to bottom, #ffffff 0%, #f8f9fa 100%);
-            --hover-gradient: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+            --primary-color: #142841;
+            --secondary-color: #1e4d7b;
+            --accent-color: #1e4d7b;
+            --text-primary: #4a90e2;
+            --text-secondary: #7f8c8d;
+            --divider-color: #D1D5DB;
         }
 
         * {
@@ -43,35 +44,44 @@
         }
 
         body {
-            background-color: #f0f2f5;
+            background: linear-gradient(to bottom, #142841 0%, #2a5890 33%, #2a5890 66%, #2b6bb8 100%);
             overflow-x: hidden;
             width: 100%;
         }
 
+        /* Separador horizontal */
+        .horizontal-divider {
+            width: 100%;
+            height: 2px;
+            background-color: #007bff;
+            margin: 0;
+            border: none;
+        }
+
         header {
-            background: var(--primary-gradient);
+            background: transparent;
             padding: 20px;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 0 #007bff;
             width: 100%;
         }
 
         header img {
             max-width: 300px;
             height: auto;
-            animation: fadeInDown 0.8s ease-out;
         }
 
         /* About Section Styles */
         .about-section {
-            background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-            color: white;
-            padding: 40px 20px;
+            background: #142841;
+            color: #ffffff;
+            padding: 60px 20px;
             margin: 0;
             position: relative;
             overflow: hidden;
         }
+
 
         .about-section::before {
             content: '';
@@ -86,6 +96,19 @@
             z-index: 0;
         }
 
+
+
+        @keyframes backgroundMove {
+            0% {
+                background-position: 0 0; /* Comienza en la esquina superior izquierda */
+            }
+            100% {
+                background-position: 100% 100%; /* Termina en la esquina inferior derecha */
+            }
+        }
+
+
+
         .about-content {
             max-width: 1200px;
             margin: 0 auto;
@@ -95,54 +118,71 @@
         }
 
         .about-content h2 {
-            color: #00bfff;
-            margin-bottom: 20px;
-            font-size: 2em;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            color: #4a90e2;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: glowText 2s ease-in-out infinite;
         }
 
         .about-content p {
-            font-size: 1em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            padding: 0 15px;
-            font-weight: 400;
+            font-size: 1.1em;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #ffffff;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+        /* Divider */
+        .section-divider {
+            width: 100%;
+            height: 0.2px;
+            background: #808080;
+            margin: 40px auto;
+            opacity: 0.8;
         }
 
         /* Vision Section Styles */
         .vision-section {
-            background: var(--primary-gradient);
-            padding: 40px 20px;
+            background: #2a5890;
+            padding: 30px 15px;
             text-align: center;
-            margin: 0;
             position: relative;
             overflow: hidden;
         }
 
         .vision-content {
-            max-width: 1200px;
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .vision-content h2 {
-            color: white;
+            color: #000000;
             font-size: 2em;
             margin-bottom: 20px;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-family: 'Orbitron', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #000000, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000;
+            animation: neonPulse 1.5s ease-in-out infinite;
         }
 
-        .vision-content > p {
-            color: white;
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 400;
-            padding: 0 15px;
+        @keyframes neonPulse {
+            0%, 100% {
+                text-shadow: 0 0 10px #488DDD, 0 0 20px #488DDD;
+            }
+            50% {
+                text-shadow: 0 0 15px #488DDD, 0 0 25px #488DDD;
+            }
         }
 
         .vision-grid {
@@ -150,119 +190,201 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
             margin-top: 30px;
-            padding: 0 15px;
+            padding: 0 10px;
         }
 
         .vision-item {
-            background: rgba(255, 255, 255, 0.1);
+            background: #142841;
             padding: 25px;
             border-radius: 15px;
             backdrop-filter: blur(5px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(30,77,123,0.2);
+            transition: all 0.5s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .vision-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                transparent,
+                rgba(74, 144, 226, 0.2),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .vision-item:hover::before {
+            left: 100%;
         }
 
         .vision-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(30,77,123,0.3);
+            border-color: #4a90e2;
+            background: #1a3557;
         }
 
         .vision-item i {
-            font-size: 2.2em;
-            color: #00bfff;
+            font-size: 2em;
+            color: #4a90e2;
             margin-bottom: 15px;
+            transition: all 0.5s ease;
+        }
+
+        .vision-item:hover i {
+            transform: rotateY(360deg);
+            color: #6ba5e7;
         }
 
         .vision-item h3 {
-            color: #00bfff;
-            margin: 12px 0;
+            color: #e6e6e6;
             font-size: 1.3em;
-            font-weight: 600;
+            margin: 10px 0;
+            font-family: 'Orbitron', sans-serif;
+            transition: all 0.3s ease;
+        }
+
+        .vision-item:hover h3 {
+            color: #4a90e2;
+            transform: scale(1.1);
+            text-shadow: 0 0 10px rgba(74, 144, 226, 0.5);
         }
 
         .vision-item p {
-            color: white;
+            color: #cccccc;
             font-size: 1em;
-            line-height: 1.5;
-            font-weight: 400;
+            line-height: 1.4;
+            text-shadow: 0 0 5px rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .vision-item:hover p {
+            color: #ffffff;
+            transform: translateY(-5px);
         }
 
         /* Products Grid Styles */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
-            padding: 20px;
-            max-width: 1400px;
+            padding: 25px 15px;
+            max-width: 100%;
             margin: 0 auto;
+            background: #7c9fca;
+            width: 100%;
         }
 
         .product-card {
-            background: var(--card-gradient);
+            background: #1a3557;
             border-radius: 15px;
             padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(30,77,123,0.1);
             transition: all 0.3s ease;
+            border: 1px solid rgba(30,77,123,0.1);
             position: relative;
             overflow: hidden;
         }
 
         .product-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            box-shadow: 0 10px 20px rgba(30,77,123,0.3);
+            border-color: var(--accent-color);
         }
 
         .product-card img {
             width: 100%;
-            height: 180px;
+            height: 200px;
             object-fit: contain;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease;
+            margin-bottom: 20px;
+            transition: transform 0.6s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
         }
 
         .product-card h2 {
-            color: #4b6cb7;
-            margin: 12px 0;
-            font-size: 1.6em;
-            font-weight: 700;
+            color: #ffffff;
+            margin: 15px 0;
+            font-size: 1.8em;
+            font-family: 'Orbitron', sans-serif;
         }
 
         .product-card p {
-            color: #666;
+            color: #ffffff;
             margin: 12px 0;
-            font-size: 1em;
-            font-weight: 400;
+            font-size: 1.1em;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
         }
 
         /* Button Styles */
-        .button-container {
-            display: flex;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
         .info-button {
-            flex: 1;
-            padding: 12px 20px;
-            border-radius: 8px;
-            background: var(--secondary-gradient);
+            background: #1e4d7b;
             color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: 600;
+            letter-spacing: 1px;
             transition: all 0.3s ease;
-            text-align: center;
-            min-height: 44px;
-            display: flex;
+            display: inline-flex;
             align-items: center;
             justify-content: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+            animation: pulsar 2s infinite;
+        }
+
+        .info-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(30,77,123,0.4);
+            background: #142841;
+            animation: brillar 1s ease-in-out infinite;
+        }
+
+        @keyframes pulsar {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes brillar {
+            0% {
+                box-shadow: 0 0 5px #1e4d7b;
+            }
+            50% {
+                box-shadow: 0 0 20px #1e4d7b;
+            }
+            100% {
+                box-shadow: 0 0 5px #1e4d7b;
+            }
         }
 
         /* Footer Styles */
         .footer {
-            background: var(--primary-gradient);
-            padding: 30px 20px;
-            color: white;
+            background: var(--primary-color);
+            padding: 50px 20px;
+            color: #ffffff;
             text-align: center;
-            margin-top: 40px;
             position: relative;
             overflow: hidden;
         }
@@ -270,44 +392,96 @@
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin: 15px 0;
+            gap: 30px;
+            margin: 30px 0;
+            position: relative;
+            z-index: 1;
         }
 
         .social-links a {
-            color: white;
-            font-size: 28px;
+            color: #ffffff;
+            font-size: 24px;
             text-decoration: none;
-            transition: all 0.3s ease;
-            padding: 10px;
+            transition: all 0.5s ease;
+            padding: 15px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+            border: 2px solid transparent;
+            text-shadow: 0 0 15px rgba(255,255,255,0.5);
+            animation: flotar 3s ease-in-out infinite;
         }
 
-           .social-links a {
-       display: inline-block;
-       margin: 0 10px;
-       transition: transform 0.3s ease;
-   }
+        .social-links a:hover {
+            transform: translateY(-5px) rotate(360deg);
+            background: var(--accent-color);
+            border-color: #ffffff;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: brillar 1s ease-in-out infinite;
+        }
 
-   .social-links a:hover {
-       transform: scale(1.2); /* Escala el ícono al pasar el mouse */
-   }
+        @keyframes flotar {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
 
-   .social-links i {
-       font-size: 24px; /* Tamaño del ícono */
-       color: #FFFFFF; /* Color del ícono */
-   }
+        @keyframes brillar {
+            0% {
+                box-shadow: 0 0 5px rgba(255,255,255,0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(255,255,255,0.8);
+            }
+            100% {
+                box-shadow: 0 0 5px rgba(255,255,255,0.5);
+            }
+        }
 
         .copyright {
-            margin-top: 15px;
-            font-size: 0.9em;
-            color: rgba(255,255,255,0.8);
-            font-weight: 400;
+            color: #ffffff;
+            font-size: 1em;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
         }
 
-        /* Media Queries */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
         @media screen and (max-width: 768px) {
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+
+            .about-content h2,
+            .vision-content h2 {
+                font-size: 2em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
             header img {
-                max-width: 250px;
+                max-width: 220px;
             }
 
             .about-content h2,
@@ -315,28 +489,8 @@
                 font-size: 1.8em;
             }
 
-            .about-content p,
-            .vision-content > p {
-                font-size: 1em;
-                padding: 0 10px;
-            }
-
-            .vision-grid {
-                grid-template-columns: 1fr;
-                padding: 0 10px;
-            }
-
-            .products-grid {
-                grid-template-columns: 1fr;
-                padding: 15px;
-            }
-
             .product-card {
-                padding: 15px;
-            }
-
-            .product-card h2 {
-                font-size: 1.4em;
+                padding: 20px;
             }
 
             .social-links {
@@ -344,90 +498,48 @@
             }
 
             .social-links a {
-                font-size: 24px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
             }
         }
-
-        @media screen and (max-width: 480px) {
-            header img {
-                max-width: 200px;
-            }
-
-            .about-content h2,
-            .vision-content h2 {
-                font-size: 1.6em;
-            }
-
-            .vision-item {
-                padding: 20px;
-            }
-
-            .vision-item h3 {
-                font-size: 1.2em;
-            }
-
-            .product-card img {
-                height: 160px;
-            }
-
-            .info-button {
-                padding: 10px 15px;
-                font-size: 0.9em;
-            }
-        }
-
-        /* Animaciones */
-        @keyframes slideIn { /* ... */ }
-        @keyframes fadeInDown { /* ... */ }
-        @keyframes backgroundMove { 
-            0% {
-                background-position: 0 0;
-            }
-            100% {
-                background-position: 100% 100%;
-            }
-        }
-        @keyframes fadeIn { /* ... */ }
-        @keyframes slideOut { /* ... */ }
-        @keyframes fadeOut { /* ... */ }
-        @keyframes zoomIn { /* ... */ }
-        @keyframes zoomOut { /* ... */ }
-        @keyframes starPulse { /* ... */ }
-
+    </style>
     </style>
 </head>
 <body>
     <header>
-        <img src="https://i.ibb.co/M1Z9Sbk/Captura-de-pantalla-2024-11-09-184743-removebg-preview.png" alt="StarProject Logo">
+        <img src="https://i.ibb.co/M1Z9Sbk/Captura-de-pantalla-2024-11-09-184743-removebg-preview.png" alt="StarProject Logo" class="animate__animated animate__fadeInDown">
     </header>
+
+    <hr class="horizontal-divider">
 
     <!-- Sección About -->
     <section class="about-section">
         <div class="about-content">
-            <h2>¿Qué es StarProyect?</h2>
-            <p>StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
-            <p>Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
+            <h2 class="animate__animated animate__fadeIn" style="text-shadow: 0 0 10px #4a90e2, 0 0 20px #4a90e2; animation: neonPulse 1.5s ease-in-out infinite;">¿Qué es StarProyect?</h2>
+            <p class="animate__animated animate__fadeInUp">StarProyect es una tienda de informática especializada en ofrecer soluciones tecnológicas de alta calidad para entusiastas de la tecnología, profesionales y amantes del universo de Star Wars. Nos dedicamos a la venta de componentes de hardware, servicios técnicos y gabinetes personalizados inspirados en el emblemático modelo TIE Avanzado 1 de Star Wars.</p>
+            <p class="animate__animated animate__fadeInUp" style="animation-delay: 0.2s">Ofrecemos una amplia gama de componentes y accesorios de las mejores marcas en el mercado, tales como procesadores, tarjetas gráficas, memorias RAM, fuentes de alimentación, almacenamiento y más. Nuestro equipo se especializa en asesorarte y ayudarte a construir la PC ideal, ya sea para gaming, trabajo profesional o uso cotidiano, todo dentro de un ambiente visualmente atractivo y divertido.</p>
         </div>
     </section>
+
+    <hr class="horizontal-divider">
 
     <!-- Sección de Visión -->
     <section class="vision-section">
         <div class="vision-content">
-            <h2>Nuestro Compromiso con la Excelencia</h2>
-            <p>En StarProject nos esforzamos por revolucionar el mercado de componentes informáticos con un servicio personalizado y productos de primera calidad.</p>
-            
+            <h2 class="animate__animated animate__fadeIn">Nuestro Compromiso con la Excelencia</h2>         
             <div class="vision-grid">
-                <div class="vision-item">
+                <div class="vision-item animate__animated animate__fadeInLeft">
                     <i class="fas fa-bullseye"></i>
                     <h3>Misión</h3>
                     <p>Brindar soluciones tecnológicas innovadoras y personalizadas, garantizando la máxima satisfacción de nuestros clientes a través de productos de calidad y un servicio excepcional.</p>
                 </div>
-                <div class="vision-item">
+                <div class="vision-item animate__animated animate__fadeInUp">
                     <i class="fas fa-handshake"></i>
                     <h3>Visión</h3>
                     <p>Convertirnos en el referente nacional en tecnología y componentes informáticos, destacándonos por nuestra atención personalizada y conocimiento experto.</p>
                 </div>
-                <div class="vision-item">
+                <div class="vision-item animate__animated animate__fadeInRight">
                     <i class="fas fa-star"></i>
                     <h3>Valores</h3>
                     <p>Honestidad, transparencia y excelencia en servicio al cliente son nuestros pilares fundamentales.</p>
@@ -436,11 +548,12 @@
         </div>
     </section>
 
+    <hr class="horizontal-divider">
 
     <!-- Grid de Productos -->
     <div class="products-grid">
         <!-- Procesador -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSznQTW2TRxFiHN4CUktxwTC3qP6DndgloSgQ&s" alt="Procesador">
             <h2>Procesadores</h2>
             <p>AMD e Intel de última generación</p>
@@ -452,7 +565,7 @@
         </div>
 
         <!-- Tarjeta Gráfica -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 0.2s">
             <img src="https://m.media-amazon.com/images/I/71986c9tEBL._AC_UF894,1000_QL80_.jpg" alt="Tarjeta Gráfica">
             <h2>Tarjeta Gráfica</h2>
             <p>Alto rendimiento para gaming</p>
@@ -464,7 +577,7 @@
         </div>
 
         <!-- Memoria RAM -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 0.4s">
             <img src="https://f.fcdn.app/imgs/beacd4/www.covercompany.com.uy/coveuy/2daa/original/catalogo/2-4399_11290_1/2000-2000/modulo-de-memoria-ram-para-pc-kingston-32gb-ddr4-3200mhz-dimm-negro.jpg" alt="Memoria RAM">
             <h2>Memorias RAM</h2>
             <p>DDR4 y DDR5 de alto rendimiento</p>
@@ -476,7 +589,7 @@
         </div>
 
         <!-- Fuente de Poder -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 0.6s">
             <img src="https://www.hardpc.com.uy/imgs/productos/productos34_4078.jpg" alt="Fuente de Poder">
             <h2>Fuentes de Poder</h2>
             <p>Certificación 80 Plus, alta eficiencia</p>
@@ -488,7 +601,7 @@
         </div>
 
         <!-- Placa Madre -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 0.8s">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGZ7oaY0J7xleWPORf9lO_BjeYeGq1Hh5w0A&s" alt="Placa Madre">
             <h2>Placas Madre</h2>
             <p>Para AMD e Intel, últimos chipsets</p>
@@ -500,7 +613,7 @@
         </div>
 
         <!-- SSD -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 1s">
             <img src="https://http2.mlstatic.com/D_NQ_NP_830625-MLA52062909392_102022-O.webp" alt="Disco SSD">
             <h2>Discos SSD</h2>
             <p>NVMe PCIe 4.0 y SATA de alta velocidad</p>
@@ -512,7 +625,7 @@
         </div>
 
         <!-- HDD -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 1.2s">
             <img src="https://f.fcdn.app/imgs/092ee4/www.compupel.com.uy/coeluy/3e78/original/catalogo/1030608U1030608U1/460x460/disco-duro-western-digital-hdd-3-5-wd-blue-1-tb-disco-duro-western-digital-hdd-3-5-wd-blue-1-tb.jpg" alt="Disco HDD">
             <h2>Discos HDD</h2>
             <p>Gran capacidad de almacenamiento</p>
@@ -524,7 +637,7 @@
         </div>
 
         <!-- Mantenimiento -->
-        <div class="product-card">
+        <div class="product-card animate__animated animate__fadeIn" style="animation-delay: 1.4s">
             <img src="https://www.mgtech.cl/wp-content/uploads/2023/05/Fotos-web-1-2.jpg" alt="Servicio de Mantenimiento">
             <h2>Mantenimiento</h2>
             <p>Servicio técnico especializado</p>
@@ -536,20 +649,22 @@
         </div>
     </div>
 
+    <hr class="horizontal-divider">
+
     <!-- Footer -->
     <footer class="footer">
         <div class="social-links">
-            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
+            <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram" class="animate__animated animate__bounceIn">
                 <i class="fab fa-instagram"></i>
             </a>
-            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook">
+            <a href="https://www.facebook.com/profile.php?id=61565967616974" target="_blank" title="Síguenos en Facebook" class="animate__animated animate__bounceIn" style="animation-delay: 0.2s">
                 <i class="fab fa-facebook"></i>
             </a>
-            <a href="https://www.google.com/maps/place/Caf%C3%A9+del+Centro/@-34.0985588,-56.2180868,17z/data=!3m1!4b1!4m6!3m5!1s0x95a102baa6655a2b:0x88e07da46e13c175!8m2!3d-34.0985633!4d-56.2155119!16s%2Fg%2F1tsbn92_?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Encuéntranos aquí">
+            <a href="https://www.google.com/maps/place/Caf%C3%A9+del+Centro/@-34.0985588,-56.2180868,17z/data=!3m1!4b1!4m6!3m5!1s0x95a102baa6655a2b:0x88e07da46e13c175!8m2!3d-34.0985633!4d-56.2155119!16s%2Fg%2F1tsbn92_?entry=ttu&g_ep=EgoyMDI0MTEwNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" title="Encuéntranos aquí" class="animate__animated animate__bounceIn" style="animation-delay: 0.4s">
                 <i class="fas fa-map-marker-alt"></i>
             </a>
         </div>
-        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+        <p class="copyright animate__animated animate__fadeIn" style="animation-delay: 0.6s">&copy; 2024 StarProject. Todos los derechos reservados.</p>
     </footer>
 </body>
 </html>
