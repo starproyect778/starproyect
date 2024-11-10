@@ -28,6 +28,22 @@
             margin: 0;
         }
 
+        /* Estilos del botón volver */
+        .back-button {
+            display: inline-block;
+            background-color: #4b6cb7;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #182848;
+        }
+
         /* Estilos de la sección info */
         .product-info {
             padding: 40px;
@@ -116,22 +132,6 @@
             background-color: #182848;
         }
 
-        /* Estilos del botón volver */
-        .back-button {
-            display: inline-block;
-            background-color: #4b6cb7;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #182848;
-        }
-
         /* Estilos del carrito */
         .cart {
             position: fixed;
@@ -149,6 +149,7 @@
             border-radius: 50%;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
+            position: relative; /* Para el contador */
         }
 
         .cart-icon:hover {
@@ -358,6 +359,36 @@
                 <li>Precio: $UYU 3.000</li>
             </ul>
             <button onclick="addToCart('Actualización de Componentes', 3000)">Agregar al carrito</button>
+        </div>
+
+        <div class="service-card">
+            <h3>Diagnóstico de Problemas</h3>
+            <ul>
+                <li>Identificación de fallos en el sistema</li>
+                <li>Recomendaciones para reparación</li>
+                <li>Precio: $UYU 1.500</li>
+            </ul>
+            <button onclick="addToCart('Diagnóstico de Problemas', 1500)">Agregar al carrito</button>
+        </div>
+
+        <div class="service-card">
+            <h3>Instalación de Software</h3>
+            <ul>
+                <li>Instalación de sistemas operativos</li>
+                <li>Configuración de software de seguridad</li>
+                <li>Precio: $UYU 2.000</li>
+            </ul>
+            <button onclick="addToCart('Instalación de Software', 2000)">Agregar al carrito</button>
+        </div>
+
+        <div class="service-card">
+            <h3>Asesoramiento Personalizado</h3>
+            <ul>
+                <li>Recomendaciones para mejoras de hardware</li>
+                <li>Optimización del rendimiento del sistema</li>
+                <li>Precio: $UYU 1.000</li>
+            </ul>
+            <button onclick="addToCart('Asesoramiento Personalizado', 1000)">Agregar al carrito</button>
         </div>
     </div>
 
