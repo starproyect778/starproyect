@@ -116,22 +116,6 @@
             background-color: #182848;
         }
 
-        /* Estilos del botón volver */
-        .back-button {
-            display: inline-block;
-            background-color: #4b6cb7;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #182848;
-        }
-
         /* Estilos del carrito */
         .cart {
             position: fixed;
@@ -149,6 +133,18 @@
             border-radius: 50%;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
+            position: relative; /* Para el contador */
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px; /* Ajusta según sea necesario */
+            right: -10px; /* Ajusta según sea necesario */
+            background-color: red; /* Color del círculo */
+            color: white; /* Color del texto */
+            border-radius: 50%; /* Hace que sea un círculo */
+            padding: 5px 10px; /* Espaciado alrededor del número */
+            font-size: 14px; /* Tamaño del texto */
         }
 
         .cart-icon:hover {
@@ -304,122 +300,62 @@
 
     <div class="product-info">
         <h2>Discos SSD</h2>
-        <p>Los discos SSD ofrecen la máxima velocidad y rendimiento para tu sistema, con tiempos de carga ultrarrápidos.</p>
+        <p>Los discos de estado sólido ofrecen alta velocidad y rendimiento para tus necesidades de almacenamiento.</p>
 
-        <h3>Tipos Disponibles</h3>
+        <h3>Características Principales</h3>
         <ul>
-            <li>M.2 NVMe PCIe 4.0</li>
-            <li>M.2 NVMe PCIe 3.0</li>
-            <li>SATA 2.5"</li>
-        </ul>
-
-        <h3>¿Por qué elegir nuestros SSD?</h3>
-        <ul>
-            <li>Máxima velocidad de lectura/escritura</li>
-            <li>Garantía del fabricante</li>
-            <li>Alta durabilidad y fiabilidad</li>
-            <li>Soporte técnico especializado</li>
-            <li>100% nuevos y sellados</li>
+            <li>Alta velocidad de lectura y escritura</li>
+            <li>Menor consumo de energía</li>
+            <li>Sin partes móviles, mayor durabilidad</li>
         </ul>
     </div>
 
     <div class="models-grid">
-        <!-- SSDs NVMe PCIe 4.0 -->
         <div class="model-card">
-            <h3>Samsung 990 PRO</h3>
-            <ul>
-                <li>Capacidad: 2TB</li>
-                <li>Interfaz: PCIe 4.0 x4</li>
-                <li>Lectura: 7450 MB/s</li>
-                <li>Escritura: 6900 MB/s</li>
-                <li>DRAM: Sí</li>
-                <li>TBW: 1200TB</li>
-                <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 29.900</li>
-            </ul>
-            <button onclick="addToCart('Samsung 990 PRO 2TB', 29900)">Agregar al carrito</button>
-        </div>
-
-        <div class="model-card">
-            <h3>WD Black SN850X</h3>
+            <h3>Samsung 970 EVO Plus</h3>
             <ul>
                 <li>Capacidad: 1TB</li>
-                <li>Interfaz: PCIe 4.0 x4</li>
-                <li>Lectura: 7300 MB/s</li>
-                <li>Escritura: 6300 MB/s</li>
-                <li>DRAM: Sí</li>
-                <li>TBW: 600TB</li>
-                <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 19.900</li>
-            </ul>
-            <button onclick="addToCart('WD Black SN850X 1TB', 19900)">Agregar al carrito</button>
-        </div>
-
-        <div class="model-card">
-            <h3>Corsair Force MP600 PRO</h3>
-            <ul>
-                <li>Capacidad: 2TB</li>
-                <li>Interfaz: PCIe 4.0 x4</li>
-                <li>Lectura: 7100 MB/s</li>
-                <li>Escritura: 6800 MB/s</li>
-                <li>DRAM: Sí</li>
-                <li>TBW: 1200TB</li>
-                <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 27.900</li>
-            </ul>
-            <button onclick="addToCart('Corsair Force MP600 PRO 2TB', 27900)">Agregar al carrito</button>
-        </div>
-
-        <!-- SSDs SATA -->
-        <div class="model-card">
-            <h3>Samsung 870 EVO</h3>
-            <ul>
-                <li>Capacidad: 1TB</li>
-                <li>Interfaz: SATA III</li>
-                <li>Lectura: 560 MB/s</li>
-                <li>Escritura: 530 MB/s</li>
-                <li>DRAM: Sí</li>
-                <li>TBW: 600TB</li>
+                <li>Interfaz: NVMe M.2</li>
+                <li>Velocidad de lectura: 3500 MB/s</li>
+                <li>Velocidad de escritura: 3300 MB/s</li>
                 <li>Garantía: 5 años</li>
                 <li>Precio: $UYU 12.900</li>
             </ul>
-            <button onclick="addToCart('Samsung 870 EVO 1TB', 12900)">Agregar al carrito</button>
+            <button onclick="addToCart('Samsung 970 EVO Plus 1TB', 12900)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
             <h3>Crucial MX500</h3>
             <ul>
-                <li>Capacidad: 1TB</li>
+                <li>Capacidad: 500GB</li>
                 <li>Interfaz: SATA III</li>
-                <li>Lectura: 560 MB/s</li>
-                <li>Escritura: 510 MB/s</li>
-                <li>DRAM: Sí</li>
-                <li>TBW: 360TB</li>
+                <li>Velocidad de lectura: 550 MB/s</li>
+                <li>Velocidad de escritura: 500 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 11.900</li>
+                <li>Precio: $UYU 6.900</li>
             </ul>
-            <button onclick="addToCart('Crucial MX500 1TB', 11900)">Agregar al carrito</button>
+            <button onclick="addToCart('Crucial MX500 500GB', 6900)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
-            <h3>WD Blue 3D NAND</h3>
+            <h3>Western Digital Blue SN550</h3>
             <ul>
-                <li>Capacidad: 2TB</li>
-                <li>Interfaz: SATA III</li>
-                <li>Lectura: 560 MB/s</li>
-                <li>Escritura: 530 MB/s</li>
-                <li>DRAM: Sí</li>
-                <li>TBW: 500TB</li>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: NVMe M.2</li>
+                <li>Velocidad de lectura: 2400 MB/s</li>
+                <li>Velocidad de escritura: 1750 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 19.900</li>
+                <li>Precio: $UYU 10.900</li>
             </ul>
-            <button onclick="addToCart('WD Blue 3D NAND 2TB', 19900)">Agregar al carrito</button>
+            <button onclick="addToCart('WD Blue SN550 1TB', 10900)">Agregar al carrito</button>
         </div>
     </div>
 
     <!-- Carrito -->
     <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
+        <i class="fas fa-shopping-cart cart-icon">
+            <span id="cartCount" class="cart-count">0</span> <!-- Contador de productos -->
+        </i>
         <div class="cart-content">
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
