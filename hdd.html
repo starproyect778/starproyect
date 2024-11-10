@@ -116,22 +116,6 @@
             background-color: #182848;
         }
 
-        /* Estilos del botón volver */
-        .back-button {
-            display: inline-block;
-            background-color: #4b6cb7;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            margin: 20px;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #182848;
-        }
-
         /* Estilos del carrito */
         .cart {
             position: fixed;
@@ -149,10 +133,22 @@
             border-radius: 50%;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             transition: transform 0.3s ease;
+            position: relative; /* Para el contador */
         }
 
         .cart-icon:hover {
             transform: scale(1.1);
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -5px; /* Ajusta según sea necesario */
+            right: -10px; /* Ajusta según sea necesario */
+            background-color: red; /* Color del círculo */
+            color: white; /* Color del texto */
+            border-radius: 50%; /* Hace que sea un círculo */
+            padding: 5px 10px; /* Espaciado alrededor del número */
+            font-size: 14px; /* Tamaño del texto */
         }
 
         .cart-content {
@@ -420,7 +416,9 @@
 
     <!-- Carrito -->
     <div class="cart">
-        <i class="fas fa-shopping-cart cart-icon"></i>
+        <i class="fas fa-shopping-cart cart-icon">
+            <span id="cartCount" class="cart-count">0</span> <!-- Contador de productos -->
+        </i>
         <div class="cart-content">
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
