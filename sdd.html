@@ -28,6 +28,22 @@
             margin: 0;
         }
 
+        /* Estilos del botón volver */
+        .back-button {
+            display: inline-block;
+            margin: 20px;
+            padding: 10px 20px;
+            background-color: #4b6cb7;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #182848;
+        }
+
         /* Estilos de la sección info */
         .product-info {
             padding: 40px;
@@ -348,6 +364,45 @@
                 <li>Precio: $UYU 10.900</li>
             </ul>
             <button onclick="addToCart('WD Blue SN550 1TB', 10900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>ADATA XPG SX8200 Pro</h3>
+            <ul>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: NVMe M.2</li>
+                <li>Velocidad de lectura: 3500 MB/s</li>
+                <li>Velocidad de escritura: 3000 MB/s</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 11.500</li>
+            </ul>
+            <button onclick="addToCart('ADATA XPG SX8200 Pro 1TB', 11500)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>Kingston A2000</h3>
+            <ul>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: NVMe M.2</li>
+                <li>Velocidad de lectura: 2200 MB/s</li>
+                <li>Velocidad de escritura: 2000 MB/s</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 9.900</li>
+            </ul>
+            <button onclick="addToCart('Kingston A2000 1TB', 9900)">Agregar al carrito</button>
+        </div>
+
+        <div class="model-card">
+            <h3>SanDisk Extreme Pro</h3>
+            <ul>
+                <li>Capacidad: 1TB</li>
+                <li>Interfaz: NVMe M.2</li>
+                <li>Velocidad de lectura: 3400 MB/s</li>
+                <li>Velocidad de escritura: 2900 MB/s</li>
+                <li>Garantía: 5 años</li>
+                <li>Precio: $UYU 12.500</li>
+            </ul>
+            <button onclick="addToCart('SanDisk Extreme Pro 1TB', 12500)">Agregar al carrito</button>
         </div>
     </div>
 
