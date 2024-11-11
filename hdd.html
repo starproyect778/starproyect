@@ -925,6 +925,39 @@
         </div>
     </div>
 
+
+      <script>
+    function updateCartCount() {
+        const cartCountElement = document.querySelector('.cart-count');
+        if (cartCountElement) {
+            cartCountElement.textContent = cart.length;
+            cartCountElement.style.display = 'flex';
+            cartCountElement.style.opacity = '1';
+            
+            cartCountElement.style.animation = 'none';
+            cartCountElement.offsetHeight; // Trigger reflow
+            cartCountElement.style.animation = 'bounce 1s ease';
+        } else {
+            const newCartCount = document.createElement('span');
+            newCartCount.className = 'cart-count';
+            newCartCount.textContent = cart.length;
+            document.querySelector('.cart-icon').appendChild(newCartCount);
+        }
+    }
+
+    function minimizeCart(event) {
+        event.stopPropagation();
+        const cart = document.querySelector('.cart');
+        cart.classList.remove('active');
+    }
+
+    function showCheckoutForm() {
+        const form = document.getElementById('checkoutForm');
+        form.classList.add('active');
+    }
+    </script>
+
+
     <footer class="footer">
         <div class="social-links">
             <a href="https://www.instagram.com/empresa_tie/" target="_blank" title="Síguenos en Instagram">
