@@ -807,7 +807,7 @@
                 <li>Cache L3: 32MB</li>
                 <li>TDP: 65W</li>
                 <li>Socket: AM4</li>
-                <li>Precio: $UYU 15.900</li>
+                <li>Precio: $USD 130</li>
             </ul>
             <button onclick="addToCart('AMD Ryzen 5 5600X', 15900)">Agregar al carrito</button>
         </div>
@@ -822,7 +822,7 @@
                 <li>Cache L3: 32MB</li>
                 <li>TDP: 105W</li>
                 <li>Socket: AM4</li>
-                <li>Precio: $UYU 19.900</li>
+                <li>Precio: $USD 370</li>
             </ul>
             <button onclick="addToCart('AMD Ryzen 7 5800X', 19900)">Agregar al carrito</button>
         </div>
@@ -837,7 +837,7 @@
                 <li>Cache L3: 64MB</li>
                 <li>TDP: 105W</li>
                 <li>Socket: AM4</li>
-                <li>Precio: $UYU 24.900</li>
+                <li>Precio: $USD 227</li>
             </ul>
             <button onclick="addToCart('AMD Ryzen 9 5900X', 24900)">Agregar al carrito</button>
         </div>
@@ -853,7 +853,7 @@
                 <li>Cache inteligente: 20MB</li>
                 <li>TDP: 125W</li>
                 <li>Socket: LGA 1700</li>
-                <li>Precio: $UYU 18.900</li>
+                <li>Precio: $USD 168.99</li>
             </ul>
             <button onclick="addToCart('Intel Core i5-12600K', 18900)">Agregar al carrito</button>
         </div>
@@ -868,7 +868,7 @@
                 <li>Cache inteligente: 25MB</li>
                 <li>TDP: 125W</li>
                 <li>Socket: LGA 1700</li>
-                <li>Precio: $UYU 22.900</li>
+                <li>Precio: $USD 466</li>
             </ul>
             <button onclick="addToCart('Intel Core i7-12700K', 22900)">Agregar al carrito</button>
         </div>
@@ -883,7 +883,7 @@
                 <li>Cache inteligente: 30MB</li>
                 <li>TDP: 125W</li>
                 <li>Socket: LGA 1700</li>
-                <li>Precio: $UYU 29.900</li>
+                <li>Precio: $USD 675</li>
             </ul>
             <button onclick="addToCart('Intel Core i9-12900K', 29900)">Agregar al carrito</button>
         </div>
@@ -896,7 +896,7 @@
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
             <ul id="cartItems"></ul>
-            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <p>Total: $USD <span id="totalPrice">0</span></p>
             <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
             
             <form id="checkoutForm" class="checkout-form">
@@ -952,7 +952,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }) => {
                 const li = document.createElement('li');
-                li.textContent = `${item} - $UYU ${price}`;
+                li.textContent = `${item} - $USD ${price}`;
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
@@ -976,7 +976,7 @@
             const address = document.getElementById('address').value;
 
             alert(`¡Gracias por tu compra ${name}!
-                \nTotal a pagar: $UYU ${totalPrice}
+                \nTotal a pagar: $USD ${totalPrice}
                 \nEnviaremos la confirmación a: ${email}
                 \nTeléfono de contacto: ${phone}
                 \nDirección de envío: ${address}`);
