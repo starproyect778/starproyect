@@ -795,9 +795,9 @@
                 <li>Velocidad de lectura: 3500 MB/s</li>
                 <li>Velocidad de escritura: 3300 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 12.900</li>
+                <li>Precio: $USD 322.50</li>
             </ul>
-            <button onclick="addToCart('Samsung 970 EVO Plus 1TB', 12900)">Agregar al carrito</button>
+            <button onclick="addToCart('Samsung 970 EVO Plus 1TB', 322.50)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -808,9 +808,9 @@
                 <li>Velocidad de lectura: 550 MB/s</li>
                 <li>Velocidad de escritura: 500 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 6.900</li>
+                <li>Precio: $USD 172.50</li>
             </ul>
-            <button onclick="addToCart('Crucial MX500 500GB', 6900)">Agregar al carrito</button>
+            <button onclick="addToCart('Crucial MX500 500GB', 172.50)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -821,9 +821,9 @@
                 <li>Velocidad de lectura: 2400 MB/s</li>
                 <li>Velocidad de escritura: 1750 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 10.900</li>
+                <li>Precio: $USD 272.50</li>
             </ul>
-            <button onclick="addToCart('WD Blue SN550 1TB', 10900)">Agregar al carrito</button>
+            <button onclick="addToCart('WD Blue SN550 1TB', 272.50)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -834,9 +834,9 @@
                 <li>Velocidad de lectura: 3500 MB/s</li>
                 <li>Velocidad de escritura: 3000 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 11.500</li>
+                <li>Precio: $USD 287.50</li>
             </ul>
-            <button onclick="addToCart('ADATA XPG SX8200 Pro 1TB', 11500)">Agregar al carrito</button>
+            <button onclick="addToCart('ADATA XPG SX8200 Pro 1TB', 287.50)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -847,9 +847,9 @@
                 <li>Velocidad de lectura: 2200 MB/s</li>
                 <li>Velocidad de escritura: 2000 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 9.900</li>
+                <li>Precio: $USD 247.50</li>
             </ul>
-            <button onclick="addToCart('Kingston A2000 1TB', 9900)">Agregar al carrito</button>
+            <button onclick="addToCart('Kingston A2000 1TB', 247.50)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -860,9 +860,9 @@
                 <li>Velocidad de lectura: 3400 MB/s</li>
                 <li>Velocidad de escritura: 2900 MB/s</li>
                 <li>Garantía: 5 años</li>
-                <li>Precio: $UYU 12.500</li>
+                <li>Precio: $USD 337.50</li>
             </ul>
-            <button onclick="addToCart('SanDisk Extreme Pro 1TB', 12500)">Agregar al carrito</button>
+            <button onclick="addToCart('SanDisk Extreme Pro 1TB', 337.50)">Agregar al carrito</button>
         </div>
     </div>
 
@@ -875,7 +875,7 @@
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
             <ul id="cartItems"></ul>
-            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <p>Total: $USD <span id="totalPrice">0</span></p>
             <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
             
             <form id="checkoutForm" class="checkout-form">
@@ -963,7 +963,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }) => {
                 const li = document.createElement('li');
-                li.textContent = `${item} - $UYU ${price}`;
+                li.textContent = `${item} - $USD ${price}`;
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
@@ -987,7 +987,7 @@
             const address = document.getElementById('address').value;
 
             alert(`¡Gracias por tu compra ${name}!
-                \nTotal a pagar: $UYU ${totalPrice}
+                \nTotal a pagar: $USD ${totalPrice}
                 \nEnviaremos la confirmación a: ${email}
                 \nTeléfono de contacto: ${phone}
                 \nDirección de envío: ${address}`);
