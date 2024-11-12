@@ -806,9 +806,9 @@
                 <li>Ray Tracing: Sí</li>
                 <li>DLSS: 2.0 y 3.0</li>
                 <li>Consumo: 170W</li>
-                <li>Precio: $UYU 24.900</li>
+                <li>Precio: $USD 350</li>
             </ul>
-            <button onclick="addToCart('NVIDIA RTX 3060 12GB', 24900)">Agregar al carrito</button>
+            <button onclick="addToCart('NVIDIA RTX 3060 12GB', 350)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -821,9 +821,9 @@
                 <li>Ray Tracing: Sí</li>
                 <li>DLSS: 2.0 y 3.0</li>
                 <li>Consumo: 220W</li>
-                <li>Precio: $UYU 34.900</li>
+                <li>Precio: $USD 500</li>
             </ul>
-            <button onclick="addToCart('NVIDIA RTX 3070 8GB', 34900)">Agregar al carrito</button>
+            <button onclick="addToCart('NVIDIA RTX 3070 8GB', 500)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -836,9 +836,9 @@
                 <li>Ray Tracing: Sí</li>
                 <li>DLSS: 2.0 y 3.0</li>
                 <li>Consumo: 320W</li>
-                <li>Precio: $UYU 44.900</li>
+                <li>Precio: $USD 700</li>
             </ul>
-            <button onclick="addToCart('NVIDIA RTX 3080 10GB', 44900)">Agregar al carrito</button>
+            <button onclick="addToCart('NVIDIA RTX 3080 10GB', 700)">Agregar al carrito</button>
         </div>
 
         <!-- AMD Models -->
@@ -852,9 +852,9 @@
                 <li>Ray Tracing: Sí</li>
                 <li>FSR: 2.0</li>
                 <li>Consumo: 160W</li>
-                <li>Precio: $UYU 22.900</li>
+                <li>Precio: $USD 325</li>
             </ul>
-            <button onclick="addToCart('AMD RX 6600 XT 8GB', 22900)">Agregar al carrito</button>
+            <button onclick="addToCart('AMD RX 6600 XT 8GB', 325)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -867,9 +867,9 @@
                 <li>Ray Tracing: Sí</li>
                 <li>FSR: 2.0</li>
                 <li>Consumo: 230W</li>
-                <li>Precio: $UYU 32.900</li>
+                <li>Precio: $USD 450</li>
             </ul>
-            <button onclick="addToCart('AMD RX 6700 XT 12GB', 32900)">Agregar al carrito</button>
+            <button onclick="addToCart('AMD RX 6700 XT 12GB', 450)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -882,9 +882,9 @@
                 <li>Ray Tracing: Sí</li>
                 <li>FSR: 2.0</li>
                 <li>Consumo: 300W</li>
-                <li>Precio: $UYU 42.900</li>
+                <li>Precio: $USD 600</li>
             </ul>
-            <button onclick="addToCart('AMD RX 6800 XT 16GB', 42900)">Agregar al carrito</button>
+            <button onclick="addToCart('AMD RX 6800 XT 16GB', 600)">Agregar al carrito</button>
         </div>
     </div>
 
@@ -896,7 +896,7 @@
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
             <ul id="cartItems"></ul>
-            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <p>Total: $USD <span id="totalPrice">0</span></p>
             <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
             
             <form id="checkoutForm" class="checkout-form">
@@ -952,7 +952,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }) => {
                 const li = document.createElement('li');
-                li.textContent = `${item} - $UYU ${price}`;
+                li.textContent = `${item} - $USD ${price}`;
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
@@ -976,7 +976,7 @@
             const address = document.getElementById('address').value;
 
             alert(`¡Gracias por tu compra ${name}!
-                \nTotal a pagar: $UYU ${totalPrice}
+                \nTotal a pagar: $USD ${totalPrice}
                 \nEnviaremos la confirmación a: ${email}
                 \nTeléfono de contacto: ${phone}
                 \nDirección de envío: ${address}`);
