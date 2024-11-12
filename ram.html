@@ -806,9 +806,9 @@
                 <li>Perfil XMP: Sí</li>
                 <li>RGB: No</li>
                 <li>Disipador: Aluminio</li>
-                <li>Precio: $UYU 8.900</li>
+                <li>Precio: $USD 64.99</li>
             </ul>
-            <button onclick="addToCart('Corsair Vengeance LPX DDR4 16GB', 8900)">Agregar al carrito</button>
+            <button onclick="addToCart('Corsair Vengeance LPX DDR4 16GB', 64.99)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -821,9 +821,9 @@
                 <li>Perfil XMP: Sí</li>
                 <li>RGB: Sí</li>
                 <li>Disipador: Aluminio Premium</li>
-                <li>Precio: $UYU 15.900</li>
+                <li>Precio: $USD 109.99</li>
             </ul>
-            <button onclick="addToCart('G.Skill Trident Z RGB DDR4 32GB', 15900)">Agregar al carrito</button>
+            <button onclick="addToCart('G.Skill Trident Z RGB DDR4 32GB', 109.99)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -836,9 +836,9 @@
                 <li>Perfil XMP: Sí</li>
                 <li>RGB: Sí</li>
                 <li>Disipador: Aluminio Premium</li>
-                <li>Precio: $UYU 18.900</li>
+                <li>Precio: $USD 129.99</li>
             </ul>
-            <button onclick="addToCart('Crucial Ballistix MAX DDR4 32GB', 18900)">Agregar al carrito</button>
+            <button onclick="addToCart('Crucial Ballistix MAX DDR4 32GB', 129.99)">Agregar al carrito</button>
         </div>
 
         <!-- DDR5 Models -->
@@ -852,9 +852,9 @@
                 <li>Perfil XMP: Sí</li>
                 <li>RGB: No</li>
                 <li>Disipador: Aluminio</li>
-                <li>Precio: $UYU 19.900</li>
+                <li>Precio: $USD 89.99</li>
             </ul>
-            <button onclick="addToCart('Kingston Fury Beast DDR5 16GB', 19900)">Agregar al carrito</button>
+            <button onclick="addToCart('Kingston Fury Beast DDR5 16GB', 89.99)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -867,9 +867,9 @@
                 <li>Perfil XMP: Sí</li>
                 <li>RGB: Sí</li>
                 <li>Disipador: Aluminio Premium</li>
-                <li>Precio: $UYU 24.900</li>
+                <li>Precio: $USD 169.99</li>
             </ul>
-            <button onclick="addToCart('Corsair Dominator Platinum RGB DDR5 32GB', 24900)">Agregar al carrito</button>
+            <button onclick="addToCart('Corsair Dominator Platinum RGB DDR5 32GB', 169.99)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -882,9 +882,9 @@
                 <li>Perfil XMP: Sí</li>
                 <li>RGB: Sí</li>
                 <li>Disipador: Aluminio Premium</li>
-                <li>Precio: $UYU 28.900</li>
+                <li>Precio: $USD 189.99</li>
             </ul>
-            <button onclick="addToCart('G.Skill Trident Z5 RGB DDR5 32GB', 28900)">Agregar al carrito</button>
+            <button onclick="addToCart('G.Skill Trident Z5 RGB DDR5 32GB', 189.99)">Agregar al carrito</button>
         </div>
     </div>
 
@@ -896,7 +896,7 @@
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras</h3>
             <ul id="cartItems"></ul>
-            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <p>Total: $USD <span id="totalPrice">0</span></p>
             <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
             
             <form id="checkoutForm" class="checkout-form">
@@ -952,7 +952,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }) => {
                 const li = document.createElement('li');
-                li.textContent = `${item} - $UYU ${price}`;
+                li.textContent = `${item} - $USD ${price}`;
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
@@ -976,7 +976,7 @@
             const address = document.getElementById('address').value;
 
             alert(`¡Gracias por tu compra ${name}!
-                \nTotal a pagar: $UYU ${totalPrice}
+                \nTotal a pagar: $USD ${totalPrice}
                 \nEnviaremos la confirmación a: ${email}
                 \nTeléfono de contacto: ${phone}
                 \nDirección de envío: ${address}`);
