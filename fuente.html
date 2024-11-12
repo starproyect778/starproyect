@@ -796,9 +796,9 @@
                 <li>Garantía: 10 años</li>
                 <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
                 <li>Conectores: 1x EPS, 4x PCIe, 6x SATA</li>
-                <li>Precio: $UYU 22.900</li>
+                <li>Precio: $USD 70</li>
             </ul>
-            <button onclick="addToCart('Thermaltake Toughpower GF1 650W', 22900)">Agregar al carrito</button>
+            <button onclick="addToCart('Thermaltake Toughpower GF1 650W', 70)">Agregar al carrito</button>
         </div>
 
         <div class="model-card">
@@ -811,9 +811,9 @@
                 <li>Garantía: 5 años</li>
                 <li>Protecciones: OVP, UVP, OCP, OPP, SCP</li>
                 <li>Conectores: 2x EPS, 4x PCIe, 8x SATA</li>
-                <li>Precio: $UYU 20.900</li>
+                <li>Precio: $USD 160</li>
             </ul>
-            <button onclick="addToCart('Cooler Master MWE Gold 750 V2', 20900)">Agregar al carrito</button>
+            <button onclick="addToCart('Cooler Master MWE Gold 750 V2', 160)">Agregar al carrito</button>
         </div>
     </div>
     <!-- Carrito -->
@@ -824,7 +824,7 @@
             <button class="minimize-button" onclick="minimizeCart(event)">-</button>
             <h3>Carrito de Compras (<span id="itemCount">0</span> items)</h3>
             <ul id="cartItems"></ul>
-            <p>Total: $UYU <span id="totalPrice">0</span></p>
+            <p>Total: $USD <span id="totalPrice">0</span></p>
             <button onclick="showCheckoutForm()" class="checkout-button">Finalizar Compra</button>
             
             <form id="checkoutForm" class="checkout-form" onsubmit="procesarCompra(event)">
@@ -894,7 +894,7 @@
             cartItems.innerHTML = '';
             cart.forEach(({ item, price }) => {
                 const li = document.createElement('li');
-                li.textContent = `${item} - $UYU ${price}`;
+                li.textContent = `${item} - $USD ${price}`;
                 cartItems.appendChild(li);
             });
             document.getElementById('totalPrice').textContent = totalPrice;
@@ -944,14 +944,14 @@
             confirmationMessage.innerHTML = `
                 <i class="fas fa-check-circle"></i>
                 <h3>¡Gracias por tu compra ${name}!</h3>
-                <p>Total a pagar: $UYU ${totalPrice}</p>
+                <p>Total a pagar: $USD ${totalPrice}</p>
                 <p>Enviaremos la confirmación a: ${email}</p>
             `;
             document.body.appendChild(confirmationMessage);
 
             // Mostrar alerta con los detalles
             alert(`¡Gracias por tu compra ${name}!
-                \nTotal a pagar: $UYU ${totalPrice}
+                \nTotal a pagar: $USD ${totalPrice}
                 \nEnviaremos la confirmación a: ${email}
                 \nTeléfono de contacto: ${phone}
                 \nDirección de envío: ${address}`);
