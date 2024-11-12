@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabinete TIE Avanzado V1 - StarProject</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4b6cb7;
+            --secondary-color: #182848;
+            --accent-color: #00bfff;
+            --text-color: #ffffff;
+        }
+
+        /* Estilos base mejorados */
+        body {
+            font-family: 'Orbitron', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(45deg, #000000, #222222);
+            padding: 30px;
+            text-align: center;
+            margin: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .model-card {
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 10px 10px 20px rgba(0,0,0,0.3);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+            display: flex; /* Para alinear el modelo y la información */
+        }
+
+        #modelContainer {
+            width: 300px; /* Ajusta el tamaño del contenedor del modelo */
+            height: 300px; /* Ajusta el tamaño del contenedor del modelo */
+            border: 1px solid #ccc;
+            margin-right: 20px; /* Espacio entre el modelo y la información */
+        }
+
+        .product-info {
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--text-color);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            flex: 1; /* Para que ocupe el espacio restante */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .copyright {
+            margin-top: 30px;
+            font-size: 1em;
+            color: #888;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>StarProject</h1>
+    </header>
+
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i> Volver
+    </a>
+
+    <div class="model-card">
+        <div id="modelContainer"></div> <!-- Contenedor para el modelo 3D -->
+        <div class="product-info">
+            <h3>Gabinete TIE Avanzado V1</h3>
+            <ul>
+                <li>Precio: $USD 150</li>
+                <li>Incluye: Placa madre y monitor de 24 pulgadas</li>
+                <li>Materiales: 
+                    <ul>
+                        <li>Primeras capas: Diario y cascola para una base ligera y resistente</li>
+                        <li>Capas intermedias: Masilla de auto para un acabado suave y duradero</li>
+                        <li>Detalles finales: Pintura acrílica y detalles en vinilo para un acabado auténtico</li>
+                    </ul>
+                </li>
+                <li>Dimensiones: 50 cm (alto) x 30 cm (ancho) x 40 cm (profundidad)</li>
+                <li>Peso: 5 kg</li>
+                <li>Características adicionales:
+                    <ul>
+                        <li>Diseño inspirado en la nave TIE Avanzado V1 de Star Wars</li>
+                        <li>Ventilación optimizada con rejillas de aire en la parte superior y lateral</li>
+                        <li>Espacio para hasta 3 discos duros y 2 unidades SSD</li>
+                        <li>Puertos USB 3.0 y 2.0 en la parte frontal para fácil acceso</li>
+                    </ul>
+                </li>
+                <li>Detalles de diseño: 
+                    <ul>
+                        <li>Acabado en negro mate con detalles en gris metálico</li>
+                        <li>Iluminación LED azul en el interior para un efecto visual impresionante</li>
+                        <li>Panel lateral de vidrio templado para mostrar el interior del gabinete</li>
+                    </ul>
+                </li>
+            </ul>
+            <button onclick="addToCart('Gabinete TIE Avanzado V1', 150)">Agregar al carrito</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p class="copyright">&copy; 2024 StarProject. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/loaders/GLTFLoader.js"></script>
+    <script>
+        // Configuración de la escena
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(300, 300); // Tamaño del contenedor
+        document.getElementById('modelContainer').appendChild(renderer.domElement);
+
+        // Cargar el modelo 3D
+        const loader = new THREE.GLTFLoader();
+        loader.load('https://skfb.ly/osJMq', function(gltf) {
+            scene.add(gltf.scene);
+            gltf.scene.position.set(0, -1, 0); // Ajustar la posición del modelo
+            animate();
+        }, undefined, function(error) {
+            console.error(error);
+        });
+
+        // Configurar la cámara
+        camera.position.z = 5;
+
+        // Función de animación
+        function animate() {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        }
+    </script>
+</body>
+</html>
