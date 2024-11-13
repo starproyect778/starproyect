@@ -945,6 +945,8 @@
             totalPrice += price;
             updateCart();
             document.querySelector('.cart').classList.add('active');
+            document.body.style.transform = 'scale(0.9)'; // Reduce la escala del body
+            document.body.style.transition = 'transform 0.3s ease'; // Agrega transición suave
         }
 
         function updateCart() {
@@ -962,6 +964,7 @@
         function minimizeCart(event) {
             event.stopPropagation();
             document.querySelector('.cart').classList.remove('active');
+            document.body.style.transform = 'scale(1)'; // Restaura la escala normal
         }
 
         function showCheckoutForm() {
@@ -986,6 +989,7 @@
             updateCart();
             document.querySelector('.cart').classList.remove('active');
             document.getElementById('checkoutForm').classList.remove('active');
+            document.body.style.transform = 'scale(1)'; // Restaura la escala normal
             this.reset();
         });
 
@@ -996,6 +1000,11 @@
         document.querySelector('.cart-icon').addEventListener('click', function(event) {
             event.stopPropagation();
             document.querySelector('.cart').classList.toggle('active');
+            if (document.querySelector('.cart').classList.contains('active')) {
+                document.body.style.transform = 'scale(0.9)'; // Reduce la escala cuando se abre
+            } else {
+                document.body.style.transform = 'scale(1)'; // Restaura cuando se cierra
+            }
         });
 
         document.addEventListener('click', function(event) {
@@ -1004,6 +1013,7 @@
             
             if (!cart.contains(event.target) && !form.classList.contains('active')) {
                 cart.classList.remove('active');
+                document.body.style.transform = 'scale(1)'; // Restaura la escala normal
             }
         });
 
