@@ -979,7 +979,11 @@
             totalPrice += price;
             updateCart();
             updateCartCount();
-            document.querySelector('.cart').classList.add('active');
+            const cartElement = document.querySelector('.cart');
+            cartElement.classList.add('active');
+            // Aplicar escala reducida al maximizar
+            document.body.style.transform = 'scale(0.95)';
+            document.body.style.transition = 'transform 0.3s ease';
         }
 
         function updateCart() {
@@ -997,6 +1001,8 @@
         function minimizeCart(event) {
             event.stopPropagation();
             document.querySelector('.cart').classList.remove('active');
+            // Restaurar escala normal al minimizar
+            document.body.style.transform = 'scale(1)';
         }
 
         function showCheckoutForm() {
@@ -1022,6 +1028,8 @@
             updateCartCount();
             document.querySelector('.cart').classList.remove('active');
             document.getElementById('checkoutForm').classList.remove('active');
+            // Restaurar escala normal después del checkout
+            document.body.style.transform = 'scale(1)';
             this.reset();
         });
 
@@ -1031,7 +1039,14 @@
 
         document.querySelector('.cart-icon').addEventListener('click', function(event) {
             event.stopPropagation();
-            document.querySelector('.cart').classList.toggle('active');
+            const cartElement = document.querySelector('.cart');
+            cartElement.classList.toggle('active');
+            // Alternar escala según el estado del carrito
+            if(cartElement.classList.contains('active')) {
+                document.body.style.transform = 'scale(0.95)';
+            } else {
+                document.body.style.transform = 'scale(1)';
+            }
         });
 
         document.addEventListener('click', function(event) {
@@ -1040,6 +1055,8 @@
             
             if (!cart.contains(event.target) && !form.classList.contains('active')) {
                 cart.classList.remove('active');
+                // Restaurar escala normal al cerrar el carrito
+                document.body.style.transform = 'scale(1)';
             }
         });
 
