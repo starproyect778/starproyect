@@ -922,6 +922,8 @@
             event.stopPropagation();
             const cart = document.querySelector('.cart');
             cart.classList.remove('active');
+            // Restaurar escala original
+            document.body.style.transform = 'scale(1)';
         }
 
         function showCheckoutForm() {
@@ -929,6 +931,9 @@
             form.classList.add('active');
             // Efecto de desplazamiento suave
             form.scrollIntoView({ behavior: 'smooth' });
+            // Reducir escala del contenido principal
+            document.body.style.transform = 'scale(0.95)';
+            document.body.style.transition = 'transform 0.3s ease';
         }
 
         document.getElementById('checkoutForm').addEventListener('submit', function(e) {
@@ -962,6 +967,8 @@
             updateCart();
             document.querySelector('.cart').classList.remove('active');
             document.getElementById('checkoutForm').classList.remove('active');
+            // Restaurar escala original
+            document.body.style.transform = 'scale(1)';
             this.reset();
 
             // Remover mensaje de confirmación después de 3 segundos
@@ -977,6 +984,13 @@
         document.querySelector('.cart-icon').addEventListener('click', function(event) {
             event.stopPropagation();
             document.querySelector('.cart').classList.toggle('active');
+            // Reducir escala del contenido principal cuando se abre el carrito
+            if(document.querySelector('.cart').classList.contains('active')) {
+                document.body.style.transform = 'scale(0.95)';
+                document.body.style.transition = 'transform 0.3s ease';
+            } else {
+                document.body.style.transform = 'scale(1)';
+            }
         });
 
         document.addEventListener('click', function(event) {
@@ -985,6 +999,8 @@
             
             if (!cart.contains(event.target) && !form.classList.contains('active')) {
                 cart.classList.remove('active');
+                // Restaurar escala original
+                document.body.style.transform = 'scale(1)';
             }
         });
 
